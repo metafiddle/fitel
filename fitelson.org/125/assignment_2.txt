@@ -1,0 +1,80 @@
+Dear 125ers,
+
+This email contains the second set of paper topics and study questions.
+A copy of this email is posted on our website (see the course home
+page). You are to write on ONE of the (FOUR) paper topics below, and you
+are to answer ALL of the (THREE) study questions below.  Both are due at
+the final exam on Thursday 12/11/03 at 12:30pm (in our usual classroom).
+
+PAPER TOPICS: Choose ONE of the FOUR topics below
+
+(1) Compare and contrast Lewis' realist, non-actualist Counterpart
+Theory of de re modality and Plantinga's realist, actualist account of
+de re modality.  In particular, compare and contrast the ways in which
+each of these accounts reconciles the indiscernibility of identicals
+with the naive possible world semantics rendition of "Socrates
+contingently has five fingers on his right hand".  Your discussion
+should cover what you take to be the most important ways in which Lewis
+and Plantinga disagree about modality generally and de re modality in
+particular, as well as those objections the each account that you think
+are most important and worrisome.  In the end, which account of de re
+modality do you think is more plausible, and why?
+
+(2) Pick your favorite account of concrete particulars (e.g., some
+version of bundle theory, or substratum theory, or the Aristotelian
+theory of particulars, etc.), and explain the conception of concrete
+particulars that it endorses.  Your discussion should (at least) include
+an explanation of where your favorite theory comes down on: (i) the
+identity of indiscernibles, (ii) whether particulars have any attributes
+necessarily, (iii) whether particulars are complexes or simples.  Also,
+you should describe what you take to be the most compelling objection to
+your favorite theory, and explain how you think the objection can (or
+should) be answered.  [If you're really ambitious, you might also want
+to consider what consequences your favorite theory of particulars has
+for DE RE modal claims about particulars (e.g., as in question (1)).]
+
+(3) Describe the realist account of propositions, its motivation, and at
+least one of its applications (preferably, the application of
+proposition-realism that you think is most important or compelling).
+Then, describe your favorite version of nominalism about propositions
+(e.g., Quine's, or Sellars', or Prior's).  Can your favorite
+nominalistic theory of propositions do the work that the realist theory
+is supposed to do (in the central application you discussed above)?
+What's the strongest objection against your favorite nominalistic theory
+of propositions, and how is it best handled?
+
+(4) What is the slingshot argument, and how do the Russellian theory of
+descriptions and facts provide a way to avoid its conclusion?  More
+precisely: briefly outline the slingshot argument (your favorite version
+of it), and explain what it's key assumptions are. Then, briefly
+describe Russell's theory of descriptions and facts and show how this
+Russellian combination can provide us with a way to avoid the
+undesirable conclusion of the slingshot argument.
+
+
+STUDY QUESTIONS:  Answer ALL of the THREE questions below
+
+(1) Describe the similarities and differences between Kim and Davidson's
+respective theories of events.  Specifically, what does  each theory say
+about: (i) the logical structure of events (e.g., the relationship
+between "the bolt gave way suddenly" and "the bolt gave way"), and (ii)
+the role that events play in causal claims (e.g., what do they say about
+"the bolt's giving way suddenly, and not the bolt's giving way, caused
+the collapse")?
+
+(2) What is an intensional operator, and what is an opaque statement?
+Explain why modal operators are intensional (use examples).  Also,
+explain why the operator "I believe that" is intensional (use examples).
+Do you think the operator "that" is intensional (Loux discusses this on
+pp.146-147)?  Explain.
+
+(3) Consider the following anonymous objection to Lewisian nominalism
+about properties and propositions: "On Lewis' view, properties and
+propositions are just sets.  But, sets have their members necessarily.
+So, on Lewis' view, it follows that nobody could have had any properties
+other than those they actually have (hence, his account of DE RE
+modality is absurd).  And, it also follows from Lewis' nominalism that
+no propositions could have been true, other than those that are actually
+true (hence his theory of DE DICTO modality is absurd)."  Do you think
+this is a good objection?  Or does it rest on a misunderstanding of
+Lewis' account?  Explain.

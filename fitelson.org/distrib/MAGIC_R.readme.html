@@ -1,0 +1,59 @@
+In order to generate 5-element non-distributive R+ matrices, all one needs
+to do is run MaGIC on the ->, &, v, t, T, F fragment of its built-in system
+LR, using the formula (p & (q v r)) -> ((p & q) v (p & r)) as the `badguy'.
+
+NOTE: MaGIC only outputs the implication matrix.  To generate 
+the matrices for the other connectives, one can use MACE.
+
+Here is the output from just such a MaGIC run:
+
+ Logic:        LR
+
+ Fragment:     ->, &, v, t, T, F
+
+ Fail:         (p & (q v r)) -> ((p & q) v (p & r))
+
+ TTY output:   pretty
+ File output:  none
+
+ Search concludes when 1 matrix found
+ or when size 8 finished.
+
+
+    A)xiom    B)adguy      C)onnective   D)elete
+    E)xit     F)ragment    G)enerate     H)elp
+    I)O       J)ump        K)ill         L)ogic
+    M)aGIC    N)o. Procs   O)rder        P)rint Opts
+    Q)uit     R)ead        S)tore                       g
+
+ Searching.....
+
+
+ Size: 5
+
+
+ Order 5.1
+
+         < | 0 1 2 3 4
+         --+----------
+         0 | + + + + +
+         1 | - + - - +
+         2 | - - + - +
+         3 | - - - + +
+         4 | - - - - +
+
+
+ Choice 5.1.1 of t:  1
+
+
+ Implication matrix 5.1.1.1
+
+        -> | 0 1 2 3 4
+        ---+----------
+         0 | 4 4 4 4 4
+         1 | 0 1 2 3 4
+         2 | 0 0 1 0 4
+         3 | 0 0 0 1 4
+         4 | 0 0 0 0 4
+
+ Failure: (3 & (2 v 1)) -> ((3 & 2) v (3 & 1))

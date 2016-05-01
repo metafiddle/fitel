@@ -1,0 +1,18 @@
+Frege claims that there is a close connection between proof and conceptual
+analysis. Specifically, he claims (a) that some propositions can be proven only
+on the basis of conceptual analyses, and (b) that this is the motivation for the
+analysis of arithmetic that he provides inGrundlagen. It has been argued that
+Frege's practice shows that he can't be taken at his word here, and that the
+so-called analyses provided in Grundlagenare not in fact appropriately so
+called. This paper has two purposes. The first is to clarify the Fregean
+understanding of the connection between analysis and proof, and to argue that
+Frege's foundational work in arithmetic is indeed centrally concerned with
+conceptual analysis. The second is to clarify the role of formal systems in
+demonstrating relations of logical entailment when proof, entailment, and
+analysis are understood in the Fregean way. It turns out that the role of models
+in assessing relations of logical entailment looks significantly different from
+the Fregean point of view than it does from the more modern Hilbert/Tarski point
+of view, and that some central metatheoretic results are of considerably
+different significance from the two different viewpoints. A central motivation
+for this work is the view that when we lose sight of the now-unfashionable
+Fregean point of view, we lose something significant.

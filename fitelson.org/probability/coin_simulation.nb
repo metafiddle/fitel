@@ -1,0 +1,223 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8801,        214]
+NotebookOptionsPosition[      6298,        156]
+NotebookOutlinePosition[      8742,        211]
+CellTagsIndexPosition[      8699,        208]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The following function ",
+ StyleBox["CoinSim[n]", "Input"],
+ " generates a simulation of a fair coin being tossed ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " times:"
+}], "Text",
+ CellChangeTimes->{{3.4130921975583982`*^9, 3.413092220946115*^9}, {
+  3.413092496987445*^9, 3.413092506054222*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CoinSim", "[", "n_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"population", ",", "Pr", ",", "sim"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"population", "=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"RandomInteger", "[", "]"}], ",", 
+        RowBox[{"{", "n", "}"}]}], "]"}]}], ";", "\n", 
+     RowBox[{
+      RowBox[{"Pr", "[", "k_", "]"}], ":=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Mean", "[", 
+         RowBox[{"Take", "[", 
+          RowBox[{"population", ",", "i"}], "]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}], ";", "\n", 
+     RowBox[{"sim", "=", 
+      RowBox[{"Manipulate", "[", 
+       RowBox[{
+        RowBox[{"ListPlot", "[", 
+         RowBox[{
+          RowBox[{"Pr", "[", "j", "]"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "Automatic"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", ".1"}], ",", "1.1"}], "}"}]}], "}"}]}], ",", 
+          RowBox[{"PlotStyle", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"PointSize", "[", "0.015", "]"}], "}"}]}], ",", 
+          RowBox[{"AxesLabel", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"TraditionalForm", "[", "\"\<n\>\"", "]"}], ",", 
+             RowBox[{
+             "TraditionalForm", "[", 
+              "\"\<\!\(\*SubscriptBox[\(f\), \(n\)]\)(H)\>\"", "]"}]}], 
+            "}"}]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"j", ",", "1", ",", 
+            RowBox[{"TraditionalForm", "[", "\"\<n\>\"", "]"}]}], "}"}], ",", 
+          "1", ",", 
+          RowBox[{"Length", "[", "population", "]"}], ",", "1"}], "}"}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "sim"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.412543977425735*^9, 3.412543989532703*^9}, {
+   3.4125443685045767`*^9, 3.412544401496138*^9}, {3.412544540292012*^9, 
+   3.412544623859243*^9}, {3.412576181602227*^9, 3.412576181919573*^9}, {
+   3.4125762536571407`*^9, 3.4125762538383093`*^9}, {3.412597709775539*^9, 
+   3.4125977171320333`*^9}, {3.412597788055365*^9, 3.412597835483727*^9}, {
+   3.412597885591661*^9, 3.41259801114093*^9}, {3.412598080368887*^9, 
+   3.412598132516802*^9}, 3.4125982253443403`*^9, {3.4125982619594603`*^9, 
+   3.412598390897397*^9}, {3.4125985255644617`*^9, 3.412598541949952*^9}, {
+   3.4125985752826347`*^9, 3.41259866665364*^9}, {3.412736901390593*^9, 
+   3.412736981162718*^9}, {3.412739972333815*^9, 3.412739972448977*^9}, {
+   3.4127404891561623`*^9, 3.4127404912110662`*^9}, {3.41274812768323*^9, 
+   3.412748174554036*^9}, {3.412748423196013*^9, 3.41274845036157*^9}, {
+   3.412790659523347*^9, 3.4127906599278727`*^9}, 3.412790991670302*^9, {
+   3.4127981977195187`*^9, 3.412798199758226*^9}, {3.412868670455714*^9, 
+   3.412868715427367*^9}, {3.4130921340425386`*^9, 3.413092171633642*^9}, {
+   3.413092227676017*^9, 3.413092268761495*^9}, {3.4130923006362677`*^9, 
+   3.4130923030167933`*^9}, {3.413092360010303*^9, 3.413092395905655*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CoinSim", "[", "1000", "]"}]], "Input",
+ CellChangeTimes->{{3.413092278506879*^9, 3.413092278554676*^9}, {
+  3.413092325384297*^9, 3.413092334518608*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`j$$ = 109, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`j$$], 1, 
+       TraditionalForm["n"]}, 1, 1000, 1}}, Typeset`size$$ = {
+    540., {160., 171.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`j$349$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`j$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`j$$, $CellContext`j$349$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ListPlot[
+        $CellContext`Pr$346[$CellContext`j$$], 
+        PlotRange -> {{0, Automatic}, {-0.1, 1.1}}, PlotStyle -> {
+          PointSize[0.015]}, AxesLabel -> {
+          TraditionalForm["n"], 
+          TraditionalForm["\!\(\*SubscriptBox[\(f\), \(n\)]\)(H)"]}], 
+      "Specifications" :> {{{$CellContext`j$$, 1, 
+          TraditionalForm["n"]}, 1, 1000, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{587., {215.0625, 222.9375}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.413092279144972*^9, {3.4130923113253813`*^9, 3.413092421337187*^9}, 
+   3.413092477239159*^9}]
+}, Open  ]]
+},
+WindowSize->{1162, 756},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+InputAliases->{"intt" -> RowBox[{"\[Integral]", 
+     RowBox[{"\[SelectionPlaceholder]", 
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> 
+  RowBox[{
+     SubsuperscriptBox[
+     "\[Integral]", "\[SelectionPlaceholder]", "\[Placeholder]"], 
+     RowBox[{"\[Placeholder]", 
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "sumt" -> RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"\[SelectionPlaceholder]", "=", "\[Placeholder]"}], 
+      "\[Placeholder]"], "\[Placeholder]"}], "prodt" -> RowBox[{
+     UnderoverscriptBox["\[Product]", 
+      RowBox[{"\[SelectionPlaceholder]", "=", "\[Placeholder]"}], 
+      "\[Placeholder]"], "\[Placeholder]"}], "dt" -> RowBox[{
+     SubscriptBox["\[PartialD]", "\[Placeholder]"], " ", 
+     "\[SelectionPlaceholder]"}], "notation" -> RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongLeftRightArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "notation>" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongRightArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "notation<" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongLeftArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "symb" -> 
+  RowBox[{"Symbolize", "[", 
+     TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], "]"}], 
+  "infixnotation" -> RowBox[{"InfixNotation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], ",", 
+       "\[Placeholder]"}], "]"}], "addia" -> RowBox[{"AddInputAlias", "[", 
+     RowBox[{"\"\[SelectionPlaceholder]\"", "\[Rule]", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "pattwraper" -> 
+  TagBox["\[SelectionPlaceholder]", "NotationPatternTag"], "madeboxeswraper" -> 
+  TagBox["\[SelectionPlaceholder]", "NotationMadeBoxesTag"]},
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (February 7, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 313, 9, 39, "Text"],
+Cell[884, 32, 3294, 72, 204, "Input"],
+Cell[CellGroupData[{
+Cell[4203, 108, 178, 3, 40, "Input"],
+Cell[4384, 113, 1898, 40, 463, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

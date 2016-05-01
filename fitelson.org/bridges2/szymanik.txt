@@ -1,0 +1,3 @@
+Probabilistic Mental Logic for Human Reasoning
+
+Abstract: The aim of this project is to study the mental logic possibly underlying human reasoning. In the talk I will focus on probabilistic natural logic for syllogistic reasoning that captures some aspects of human performance on inferential tasks. We used empirical data and machine learning techniques to assign a difficulty weight to each inference rule and then compared the complexity of the minimal proof with cognitive difficulty of particular syllogistic reasonings.

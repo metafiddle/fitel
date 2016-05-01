@@ -1,0 +1,5 @@
+Smart Transformations: or, the Evolution of Choice Principles
+
+ABSTRACT:
+
+Evolutionary game theory classically investigates which behavioral patterns are evolutionarily successful in a single game. More recently, a number of contributions have studied the evolution of preferences instead: which subjective conceptualizations of a game's payoffs give rise to evolutionarily successful behavior in a single game. Here, we want to extend this existing approach even further by asking: which general patterns of subjective conceptualizations of payoff functions are evolutionarily successful across a class of games. In other words, we will look at evolutionary competition of payoff transformations in "meta-games", obtained from averaging over payoffs of single games. Focusing for a start on the class of 2x2 symmetric games, we show that regret minimization can outperform payoff maximization if agents resort to a security strategy in case of radical uncertainty.

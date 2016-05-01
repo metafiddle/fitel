@@ -1,0 +1,58 @@
+% Axioms and rules of normal modal systems in MaGIC notation
+% Here, "[]" is box, ">>" is interpretability operator
+%  "~" is negation, and "->" is implication
+%  For instructions, see the MaGIC manual, on Slaney's website:
+%  
+%  	http://arp.anu.edu.au/~jks/magic.html
+%  	
+%  I have included a full session below, to see what yours should
+%  look like, in order to get modal logics into MaGIC properly
+
+% First, you need to add the following classical axioms:
+(~p -> p) -> p
+p -> (~p -> q)
+
+% Then, you can to put any of the following modal formulas in 
+% as user defined rules and axioms.  See full session, below:
+% Modal axioms/rules
+RN. p / [] p
+K. [] (p -> q) -> ([] p -> [] q)
+D. [] p -> ~ [] ~ p
+4. [] p -> [] [] p   
+T. [] p -> p
+5. ~ [] ~ p -> [] ~ [] ~ p   
+B. p -> [] ~ [] ~ p
+
+G.  [] ~ [] ~ p -> ~ [] ~ [] p
+L.  [] ([] p -> p) -> [] p
+
+
+% Full MaGIC session for Exercise (2'): KDB does not entail 4
+
+ Logic:        S4
+
+ Extra:        (~p -> p) -> p
+               p -> (~p -> q)
+               [] (p -> q) -> ([] p -> [] q)
+               [] p -> ~[] ~p
+               p -> [] ~[] ~p
+               p  /  [] p
+
+ Fragment:     ->, ~
+
+ Definition:   [] a       Primitive
+
+ Fail:         [] p -> [] [] p
+ 
+ TTY output:   pretty
+ File output:  none
+
+ Search concludes when 1 matrix found
+ or when size 7 finished.
+
+
+    A)xiom    B)adguy      C)onnective   D)elete
+    E)xit     F)ragment    G)enerate     H)elp
+    I)O       J)ump        K)ill         L)ogic
+    M)aGIC    N)o. Procs   O)rder        P)rint Opts
+    Q)uit     R)ead        S)tore                       g

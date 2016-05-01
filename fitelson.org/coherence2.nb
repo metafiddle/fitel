@@ -1,0 +1,614 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     14506,        452]*)
+(*NotebookOutlinePosition[     15207,        477]*)
+(*  CellTagsIndexPosition[     15163,        473]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(algorithm\ for\ generating\ \[ScriptCapitalF][S]\)], "Subsubsection"],
+
+Cell[BoxData[{
+    \(Needs["\<DiscreteMath`Combinatorica`\>"]\), "\n", 
+    \(P1[S_] := 
+      Flatten[Join[Table[KSubsets[S, i], {i, 1, Length[S]}]], 1]; \), "\n", 
+    \(P2[S_] := 
+      Flatten[Permutations /@ 
+          Select[KSubsets[P1[S], 2], 
+            Length[\((#1\[LeftDoubleBracket]1\[RightDoubleBracket])\) \
+\[Intersection] \((#1\[LeftDoubleBracket]2\[RightDoubleBracket])\)] \[Equal] 
+                0 &], 1]; \), "\n", 
+    \(\[GothicF][{s1_, s2_}] := F[And @@ s1, And @@ s2]; \), "\n", 
+    \(\[ScriptCapitalF][S_] := \[GothicF] /@ P2[S]; \)}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["examples", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[ScriptCapitalF][{p, q}] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[ScriptCapitalF][{p, q, r}] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, r), F(r, p), F(p, q \[And] r), 
+      F(q \[And] r, p), F(q, r), F(r, q), F(q, p \[And] r), F(p \[And] r, q), 
+      F(r, p \[And] q), F(p \[And] q, r)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[ScriptCapitalF][{p, q, r, s}] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, r), F(r, p), F(p, s), F(s, p), 
+      F(p, q \[And] r), F(q \[And] r, p), F(p, q \[And] s), F(q \[And] s, p), 
+      F(p, r \[And] s), F(r \[And] s, p), F(p, q \[And] r \[And] s), 
+      F(q \[And] r \[And] s, p), F(q, r), F(r, q), F(q, s), F(s, q), 
+      F(q, p \[And] r), F(p \[And] r, q), F(q, p \[And] s), F(p \[And] s, q), 
+      F(q, r \[And] s), F(r \[And] s, q), F(q, p \[And] r \[And] s), 
+      F(p \[And] r \[And] s, q), F(r, s), F(s, r), F(r, p \[And] q), 
+      F(p \[And] q, r), F(r, p \[And] s), F(p \[And] s, r), F(r, q \[And] s), 
+      F(q \[And] s, r), F(r, p \[And] q \[And] s), F(p \[And] q \[And] s, r), 
+      F(s, p \[And] q), F(p \[And] q, s), F(s, p \[And] r), F(p \[And] r, s), 
+      F(s, q \[And] r), F(q \[And] r, s), F(s, p \[And] q \[And] r), 
+      F(p \[And] q \[And] r, s), F(p \[And] q, r \[And] s), 
+      F(r \[And] s, p \[And] q), F(p \[And] r, q \[And] s), 
+      F(q \[And] s, p \[And] r), F(p \[And] s, q \[And] r), 
+      F(q \[And] r, p \[And] s)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[Length[\[ScriptCapitalF][Range[n]]], {n, 2, 10}]\)], "Input"],
+
+Cell[BoxData[
+    \({2, 12, 50, 180, 602, 1932, 6050, 18660, 57002}\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+  "Adding ",
+  StyleBox["T",
+    FontFamily->"Helvetica Neue"],
+  " to a (contingent) coherent set of size 2 can never yield an incoherent \
+set"
+}], "Subsubsection"],
+
+Cell["Here's  \[ScriptCapitalF][{p,q,T}]:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[ScriptCapitalF][{p, q, T}] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, T), F(T, p), F(p, q \[And] T), 
+      F(q \[And] T, p), F(q, T), F(T, q), F(q, p \[And] T), F(p \[And] T, q), 
+      F(T, p \[And] q), F(p \[And] q, T)}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "Any term of the form ",
+  StyleBox["F",
+    FontSlant->"Italic"],
+  "[_, T] will be zero, by the definition of ",
+  StyleBox["F",
+    FontSlant->"Italic"],
+  ".  So,"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% //. F[x_, T] \[Rule] 0 // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), 0, F(T, p), F(p, q \[And] T), 
+      F(q \[And] T, p), 0, F(T, q), F(q, p \[And] T), F(p \[And] T, q), 
+      F(T, p \[And] q), 0}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Moreover, any conjunction of the form X & T can be rewritten as X, \
+since it is logically equivalent to X:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% //. x_ && T \[Rule] x // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), 0, F(T, p), F(p, q), F(q, p), 0, 
+      F(T, q), F(q, p), F(p, q), F(T, p \[And] q), 0}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "Finally, any term of the form ",
+  StyleBox["F",
+    FontSlant->"Italic"],
+  "[T,_] will be 1, by the definition of ",
+  StyleBox["F",
+    FontSlant->"Italic"],
+  ":"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% //. F[T, x_] \[Rule] 1 // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), 0, 1, F(p, q), F(q, p), 0, 1, 
+      F(q, p), F(p, q), 1, 0}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Now, we can take the Mean, to yield \
+\[ScriptCapitalC]({p,q,T}):\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Mean[%] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/12\ \((3\ \(F(p, q)\) + 3\ \(F(q, p)\) + 
+          3)\)\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Now, let's compare this with \[ScriptCapitalC]({p,q}):\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Mean[\[ScriptCapitalF][{p, q}]] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/2\ \((F(p, q) + F(q, p))\)\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+The following proves that If \[ScriptCapitalC]({p,q}) \
+\[GreaterEqual] 0, then \[ScriptCapitalC]({p,q,T}) \[GreaterEqual] 0.\
+\>", \
+"Text"],
+
+Cell[BoxData[
+    \(Needs["\<Algebra`InequalitySolve`\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InequalitySolve[
+      x\/2 \[GreaterEqual] 0 && 
+        1\/12\ \((3\ x + 3)\) < 0 && \(-2\) \[LessEqual] x \[LessEqual] 
+          2, {x}]\)], "Input"],
+
+Cell[BoxData[
+    \(False\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+  "Adding ",
+  StyleBox["T",
+    FontFamily->"Helvetica Neue"],
+  " to a  (contingent) coherent set of size 3 can never yield an incoherent \
+set"
+}], "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\[ScriptCapitalF][{p, q, r, T}] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, r), F(r, p), F(p, T), F(T, p), 
+      F(p, q \[And] r), F(q \[And] r, p), F(p, q \[And] T), F(q \[And] T, p), 
+      F(p, r \[And] T), F(r \[And] T, p), F(p, q \[And] r \[And] T), 
+      F(q \[And] r \[And] T, p), F(q, r), F(r, q), F(q, T), F(T, q), 
+      F(q, p \[And] r), F(p \[And] r, q), F(q, p \[And] T), F(p \[And] T, q), 
+      F(q, r \[And] T), F(r \[And] T, q), F(q, p \[And] r \[And] T), 
+      F(p \[And] r \[And] T, q), F(r, T), F(T, r), F(r, p \[And] q), 
+      F(p \[And] q, r), F(r, p \[And] T), F(p \[And] T, r), F(r, q \[And] T), 
+      F(q \[And] T, r), F(r, p \[And] q \[And] T), F(p \[And] q \[And] T, r), 
+      F(T, p \[And] q), F(p \[And] q, T), F(T, p \[And] r), F(p \[And] r, T), 
+      F(T, q \[And] r), F(q \[And] r, T), F(T, p \[And] q \[And] r), 
+      F(p \[And] q \[And] r, T), F(p \[And] q, r \[And] T), 
+      F(r \[And] T, p \[And] q), F(p \[And] r, q \[And] T), 
+      F(q \[And] T, p \[And] r), F(p \[And] T, q \[And] r), 
+      F(q \[And] r, p \[And] T)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% //. F[x_, T] \[Rule] 0 // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, r), F(r, p), 0, F(T, p), 
+      F(p, q \[And] r), F(q \[And] r, p), F(p, q \[And] T), F(q \[And] T, p), 
+      F(p, r \[And] T), F(r \[And] T, p), F(p, q \[And] r \[And] T), 
+      F(q \[And] r \[And] T, p), F(q, r), F(r, q), 0, F(T, q), 
+      F(q, p \[And] r), F(p \[And] r, q), F(q, p \[And] T), F(p \[And] T, q), 
+      F(q, r \[And] T), F(r \[And] T, q), F(q, p \[And] r \[And] T), 
+      F(p \[And] r \[And] T, q), 0, F(T, r), F(r, p \[And] q), 
+      F(p \[And] q, r), F(r, p \[And] T), F(p \[And] T, r), F(r, q \[And] T), 
+      F(q \[And] T, r), F(r, p \[And] q \[And] T), F(p \[And] q \[And] T, r), 
+      F(T, p \[And] q), 0, F(T, p \[And] r), 0, F(T, q \[And] r), 0, 
+      F(T, p \[And] q \[And] r), 0, F(p \[And] q, r \[And] T), 
+      F(r \[And] T, p \[And] q), F(p \[And] r, q \[And] T), 
+      F(q \[And] T, p \[And] r), F(p \[And] T, q \[And] r), 
+      F(q \[And] r, p \[And] T)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% //. x_ && T \[Rule] x // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, r), F(r, p), 0, F(T, p), 
+      F(p, q \[And] r), F(q \[And] r, p), F(p, q), F(q, p), F(p, r), F(r, p), 
+      F(p, q \[And] r), F(q \[And] r, p), F(q, r), F(r, q), 0, F(T, q), 
+      F(q, p \[And] r), F(p \[And] r, q), F(q, p), F(p, q), F(q, r), F(r, q), 
+      F(q, p \[And] r), F(p \[And] r, q), 0, F(T, r), F(r, p \[And] q), 
+      F(p \[And] q, r), F(r, p), F(p, r), F(r, q), F(q, r), F(r, p \[And] q), 
+      F(p \[And] q, r), F(T, p \[And] q), 0, F(T, p \[And] r), 0, 
+      F(T, q \[And] r), 0, F(T, p \[And] q \[And] r), 0, F(p \[And] q, r), 
+      F(r, p \[And] q), F(p \[And] r, q), F(q, p \[And] r), F(p, q \[And] r), 
+      F(q \[And] r, p)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(% //. F[T, x_] \[Rule] 1 // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`{F(p, q), F(q, p), F(p, r), F(r, p), 0, 1, 
+      F(p, q \[And] r), F(q \[And] r, p), F(p, q), F(q, p), F(p, r), F(r, p), 
+      F(p, q \[And] r), F(q \[And] r, p), F(q, r), F(r, q), 0, 1, 
+      F(q, p \[And] r), F(p \[And] r, q), F(q, p), F(p, q), F(q, r), F(r, q), 
+      F(q, p \[And] r), F(p \[And] r, q), 0, 1, F(r, p \[And] q), 
+      F(p \[And] q, r), F(r, p), F(p, r), F(r, q), F(q, r), F(r, p \[And] q), 
+      F(p \[And] q, r), 1, 0, 1, 0, 1, 0, 1, 0, F(p \[And] q, r), 
+      F(r, p \[And] q), F(p \[And] r, q), F(q, p \[And] r), F(p, q \[And] r), 
+      F(q \[And] r, p)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Mean[%] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/50\ \((3\ \(F(p, q)\) + 3\ \(F(p, r)\) + 
+          3\ \(F(p, q \[And] r)\) + 3\ \(F(q, p)\) + 3\ \(F(q, r)\) + 
+          3\ \(F(q, p \[And] r)\) + 3\ \(F(r, p)\) + 3\ \(F(r, q)\) + 
+          3\ \(F(r, p \[And] q)\) + 3\ \(F(p \[And] q, r)\) + 
+          3\ \(F(p \[And] r, q)\) + 3\ \(F(q \[And] r, p)\) + 
+          7)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Mean[\[ScriptCapitalF][{p, q, r}]] // TraditionalForm\)], "Input"],
+
+Cell[BoxData[
+    \(TraditionalForm\`1\/12\ \((F(p, q) + F(p, r) + F(p, q \[And] r) + 
+          F(q, p) + F(q, r) + F(q, p \[And] r) + F(r, p) + F(r, q) + 
+          F(r, p \[And] q) + F(p \[And] q, r) + F(p \[And] r, q) + 
+          F(q \[And] r, p))\)\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+The following proves that if \[ScriptCapitalC]({p,q,r}) \
+\[GreaterEqual] 0, then \[ScriptCapitalC]({p,q,r,T}) \[GreaterEqual] 0.\
+\>", \
+"Text"],
+
+Cell[BoxData[
+    \(Needs["\<Algebra`InequalitySolve`\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InequalitySolve[
+      x\/12 \[GreaterEqual] 0 && 
+        1\/50\ \((3\ x + 7)\) < 0 && \(-12\) \[LessEqual] x \[LessEqual] 
+          12, {x}]\)], "Input"],
+
+Cell[BoxData[
+    \(False\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "This can easily be generalized to an inductive proof, for all ",
+  StyleBox["n",
+    FontSlant->"Italic"],
+  "."
+}], "Text"],
+
+Cell[TextData[{
+  "But, we can still have the coherence being DECREASED when we add a \
+tautology.  This is seen in the following result (",
+  StyleBox["n ",
+    FontSlant->"Italic"],
+  "= 2 case):"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(InequalitySolve[
+      x\/2 > 1\/12\ \((3\ x + 3)\) && \(-2\) \[LessEqual] x \[LessEqual] 
+          2, {x}]\)], "Input"],
+
+Cell[BoxData[
+    \(1 < x \[LessEqual] 2\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "This is an artifact of the ",
+  StyleBox["averaging",
+    FontSlant->"Italic"],
+  " in the definition.  If we just take the ",
+  StyleBox["sum",
+    FontSlant->"Italic"],
+  " of the ",
+  StyleBox["F",
+    FontSlant->"Italic"],
+  "-values, then this cannot happen.  In the ",
+  StyleBox["n",
+    FontSlant->"Italic"],
+  " = 2 case:"
+}], "Text"],
+
+Cell[BoxData[{
+    FormBox[
+      RowBox[{\(\[ScriptCapitalC]({p, q})\  = \ F(p, q) + F(q, p)\), 
+        "\[IndentingNewLine]"}], TraditionalForm], "\[IndentingNewLine]", 
+    FormBox[
+      RowBox[{
+        RowBox[{"\[ScriptCapitalC]", "(", 
+          RowBox[{"{", 
+            RowBox[{"p", ",", "q", ",", 
+              StyleBox["T",
+                FontSlant->"Plain"]}], "}"}], ")"}], " ", "=", 
+        " ", \(3\ \ F \((p, q)\) + 3\ \(F(q, p)\)\  + \ 3\  = \ 
+          3\ [\[ScriptCapitalC]({p, q})\  + \ 1]\)}], 
+      TraditionalForm]}], "Input",
+  FormatType->StandardForm]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Macintosh",
+ScreenRectangle->{{4, 896}, {0, 578}},
+WindowSize->{892, 557},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{1, 9999},
+Magnification->2
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 89, 1, 53, "Subsubsection"],
+Cell[1868, 56, 573, 11, 363, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2478, 72, 33, 0, 54, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[2536, 76, 77, 1, 53, "Input"],
+Cell[2616, 79, 69, 1, 55, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2722, 85, 80, 1, 53, "Input"],
+Cell[2805, 88, 227, 3, 89, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3069, 96, 83, 1, 53, "Input"],
+Cell[3155, 99, 1067, 15, 361, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4259, 119, 87, 1, 53, "Input"],
+Cell[4349, 122, 81, 1, 53, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4479, 129, 182, 6, 85, "Subsubsection"],
+Cell[4664, 137, 51, 0, 61, "Text"],
+
+Cell[CellGroupData[{
+Cell[4740, 141, 80, 1, 53, "Input"],
+Cell[4823, 144, 227, 3, 89, "Output"]
+}, Open  ]],
+Cell[5065, 150, 197, 8, 61, "Text"],
+
+Cell[CellGroupData[{
+Cell[5287, 162, 76, 1, 53, "Input"],
+Cell[5366, 165, 200, 3, 89, "Output"]
+}, Open  ]],
+Cell[5581, 171, 131, 3, 94, "Text"],
+
+Cell[CellGroupData[{
+Cell[5737, 178, 75, 1, 53, "Input"],
+Cell[5815, 181, 157, 2, 89, "Output"]
+}, Open  ]],
+Cell[5987, 186, 197, 8, 61, "Text"],
+
+Cell[CellGroupData[{
+Cell[6209, 198, 76, 1, 53, "Input"],
+Cell[6288, 201, 130, 2, 55, "Output"]
+}, Open  ]],
+Cell[6433, 206, 89, 3, 61, "Text"],
+
+Cell[CellGroupData[{
+Cell[6547, 213, 59, 1, 53, "Input"],
+Cell[6609, 216, 110, 2, 78, "Output"]
+}, Open  ]],
+Cell[6734, 221, 78, 2, 61, "Text"],
+
+Cell[CellGroupData[{
+Cell[6837, 227, 83, 1, 53, "Input"],
+Cell[6923, 230, 80, 1, 78, "Output"]
+}, Open  ]],
+Cell[7018, 234, 151, 4, 61, "Text"],
+Cell[7172, 240, 70, 1, 53, "Input"],
+
+Cell[CellGroupData[{
+Cell[7267, 245, 173, 4, 122, "Input"],
+Cell[7443, 251, 39, 1, 53, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7531, 258, 183, 6, 85, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[7739, 268, 83, 1, 53, "Input"],
+Cell[7825, 271, 1067, 15, 361, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8929, 291, 76, 1, 53, "Input"],
+Cell[9008, 294, 973, 14, 327, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10018, 313, 75, 1, 53, "Input"],
+Cell[10096, 316, 729, 10, 259, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10862, 331, 76, 1, 53, "Input"],
+Cell[10941, 334, 635, 9, 225, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11613, 348, 59, 1, 53, "Input"],
+Cell[11675, 351, 378, 6, 148, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12090, 362, 86, 1, 53, "Input"],
+Cell[12179, 365, 268, 4, 148, "Output"]
+}, Open  ]],
+Cell[12462, 372, 155, 4, 61, "Text"],
+Cell[12620, 378, 70, 1, 53, "Input"],
+
+Cell[CellGroupData[{
+Cell[12715, 383, 176, 4, 122, "Input"],
+Cell[12894, 389, 39, 1, 53, "Output"]
+}, Open  ]],
+Cell[12948, 393, 143, 5, 61, "Text"],
+Cell[13094, 400, 210, 6, 94, "Text"],
+
+Cell[CellGroupData[{
+Cell[13329, 410, 141, 3, 122, "Input"],
+Cell[13473, 415, 54, 1, 78, "Output"]
+}, Open  ]],
+Cell[13542, 419, 362, 14, 94, "Text"],
+Cell[13907, 435, 583, 14, 126, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,1388 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     44465,       1379]
+NotebookOptionsPosition[     38070,       1195]
+NotebookOutlinePosition[     40513,       1250]
+CellTagsIndexPosition[     40470,       1247]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["PrSAT: First Examples", "Title",
+ CellChangeTimes->{{3.410479319369316*^9, 3.4104793290989656`*^9}, {
+  3.410480940720664*^9, 3.410480952182976*^9}}],
+
+Cell["Philosophy 148", "Subtitle",
+ CellChangeTimes->{{3.4104793452058277`*^9, 3.410479347538538*^9}}],
+
+Cell["January 31, 2008", "Subsubtitle",
+ CellChangeTimes->{{3.410479333635778*^9, 3.4104793367167377`*^9}, {
+  3.4107339516966352`*^9, 3.410733951861197*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "First, load in the ",
+ StyleBox["PrSAT", "Input"],
+ " package"
+}], "Subsection",
+ CellChangeTimes->{{3.410479367724856*^9, 3.410479374867741*^9}}],
+
+Cell[TextData[{
+ "See my ",
+ StyleBox[ButtonBox["PrSAT",
+  BaseStyle->"Hyperlink",
+  ButtonData->"http://fitelson.org/PrSAT/"], "Input",
+  FontWeight->"Bold"],
+ StyleBox[ButtonBox[" website",
+  BaseStyle->"Hyperlink",
+  ButtonData->"http://fitelson.org/PrSAT/"],
+  FontWeight->"Bold"],
+ " for instructions on downloading and installing ",
+ StyleBox["PrSAT", "Input"],
+ " (assuming you have ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " installed)."
+}], "Text",
+ CellChangeTimes->{{3.4104793903598824`*^9, 3.4104794145239487`*^9}, {
+  3.410480893109788*^9, 3.410480925781674*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "PrSAT`"}]], "Input",
+ CellChangeTimes->{{3.4104793800900497`*^9, 3.4104793855274773`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example #1", "Subsection",
+ CellChangeTimes->{{3.410479429514853*^9, 3.410479445274488*^9}}],
+
+Cell["\<\
+The first example of a probability model that we saw was the following:\
+\>", "Text",
+ CellChangeTimes->{{3.410479470171661*^9, 3.41047948333704*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MODEL1", " ", "=", " ", 
+  RowBox[{"PrSAT", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "\[And]", "Y"}], "]"}], "==", 
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "\[And]", 
+        RowBox[{"\[Not]", "Y"}]}], "]"}], "==", 
+      FractionBox["1", "4"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "X"}], "\[And]", "Y"}], "]"}], "==", 
+      FractionBox["1", "8"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "X"}], "\[And]", 
+        RowBox[{"\[Not]", "Y"}]}], "]"}], "==", 
+      FractionBox["11", "24"]}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.410479484993518*^9, 3.410479535525733*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"X", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"]}], "}"}]}], ",", 
+     RowBox[{"Y", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", 
+      FractionBox["11", "24"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", 
+      FractionBox["1", "4"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", 
+      FractionBox["1", "8"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", 
+      FractionBox["1", "6"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.410479536714077*^9, 3.410733800171772*^9, 
+  3.410733868324669*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["PrSAT", "Input"],
+ " will show us an STT representation of ",
+ StyleBox["MODEL1", "Input"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.4104796113921003`*^9, 3.4104796215964746`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TruthTable", "[", "MODEL1", "]"}]], "Input",
+ CellChangeTimes->{{3.410479629327343*^9, 3.410479632525918*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"X", "Y", "var", "Pr"},
+    {"T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "4"], 
+     FractionBox["1", "6"]},
+    {"T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"], 
+     FractionBox["1", "4"]},
+    {"F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "3"], 
+     FractionBox["1", "8"]},
+    {"F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"], 
+     FractionBox["11", "24"]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.410479632811454*^9, 3.4107338002207623`*^9, 
+  3.410733868415711*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We can use ",
+ StyleBox["PrSAT", "Input"],
+ " to calculate probability, using ",
+ StyleBox["MODEL1", "Input"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.4104795411921253`*^9, 3.4104795539470797`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvaluateProbability", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "\[Or]", "Y"}], "]"}], ",", 
+     RowBox[{"Pr", "[", "X", "]"}], ",", 
+     RowBox[{"Pr", "[", "Y", "]"}]}], "}"}], ",", "MODEL1"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.4104795548942327`*^9, 3.410479606842733*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["13", "24"], ",", 
+   FractionBox["5", "12"], ",", 
+   FractionBox["7", "24"]}], "}"}]], "Output",
+ CellChangeTimes->{3.41047960715028*^9, 3.410733800263253*^9, 
+  3.410733868516324*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We can also check arbitrary claims to see if they are ",
+ StyleBox["true on",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["MODEL1", "Input"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.410479653453453*^9, 3.4104796740536737`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvaluateProbability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "|", "Y"}], "]"}], ">", 
+    RowBox[{"Pr", "[", "X", "]"}]}], ",", "MODEL1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.410479680871214*^9, 3.4104796900437927`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.410479685822771*^9, 3.410479690245777*^9}, 
+   3.4107338003130407`*^9, 3.410733869297421*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example #2", "Subsection",
+ CellChangeTimes->{{3.4104797041992617`*^9, 3.4104797057866497`*^9}}],
+
+Cell["\<\
+The second example we saw was an algebraic proof of the following theorem:\
+\>", "Text",
+ CellChangeTimes->{{3.410479716236717*^9, 3.410479730327897*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Pr", "(", 
+    RowBox[{"X", "\[Or]", "Y"}], ")"}], "\[LongEqual]", 
+   RowBox[{
+    RowBox[{"Pr", "(", "X", ")"}], "+", 
+    RowBox[{"Pr", "(", "Y", ")"}], "-", 
+    RowBox[{"Pr", "(", 
+     RowBox[{"X", "\[And]", "Y"}], ")"}]}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.410479732974824*^9, 3.4104797560754633`*^9}}],
+
+Cell[TextData[{
+ StyleBox["PrSAT", "Input"],
+ " easily verifies this theorem (note: it does not present a readable \
+proof)."
+}], "Text",
+ CellChangeTimes->{{3.410479769227844*^9, 3.410479787940076*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "\[Or]", "Y"}], "]"}], "\[NotEqual]", 
+    RowBox[{
+     RowBox[{"Pr", "[", "X", "]"}], "+", 
+     RowBox[{"Pr", "[", "Y", "]"}], "-", 
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "\[And]", "Y"}], "]"}]}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4104797653534203`*^9, 3.410479809042427*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrSAT", "::", "\<\"srchfail\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Search phase failed; attempting FindInstance\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.410479810955168*^9, 3.4107338010846367`*^9, 
+  3.410733874498343*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.410479811028801*^9, 3.41073380111814*^9, 
+  3.410733874501405*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "This output means there are no probability models on which ",
+ StyleBox["Pr[X \[Or] Y]", "Input"],
+ " ",
+ StyleBox["\[NotEqual]", "Input"],
+ " ",
+ StyleBox["Pr[X]", "Input"],
+ " ",
+ StyleBox["+", "Input"],
+ " ",
+ StyleBox["Pr[Y]", "Input"],
+ " ",
+ StyleBox["-", "Input"],
+ " ",
+ StyleBox["Pr[X \[And] Y]", "Input"],
+ ".  That \"proves\" that the above statement is a theorem of probability \
+calculus."
+}], "Text",
+ CellChangeTimes->{{3.4104798133080606`*^9, 3.4104798574041653`*^9}, {
+  3.410479945807618*^9, 3.410479953334174*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example #3", "Subsection",
+ CellChangeTimes->{{3.4104797041992617`*^9, 3.4104797057866497`*^9}, {
+  3.410479869928804*^9, 3.410479870003787*^9}}],
+
+Cell["\<\
+The second example we saw was an algebraic proof of the following theorem:\
+\>", "Text",
+ CellChangeTimes->{{3.410479716236717*^9, 3.410479730327897*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Pr", "(", "X", ")"}], "\[LongEqual]", 
+   RowBox[{
+    RowBox[{"Pr", "(", 
+     RowBox[{"X", "\[And]", "Y"}], ")"}], "+", 
+    RowBox[{"Pr", "(", 
+     RowBox[{"X", "\[And]", 
+      RowBox[{"\[Not]", "Y"}]}], ")"}]}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.410479732974824*^9, 3.4104797560754633`*^9}, {
+  3.4104798746126757`*^9, 3.410479884683978*^9}}],
+
+Cell[TextData[{
+ StyleBox["PrSAT", "Input"],
+ " easily verifies this theorem (note: it does not present a readable \
+proof)."
+}], "Text",
+ CellChangeTimes->{{3.410479769227844*^9, 3.410479787940076*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Pr", "[", "X", "]"}], "\[NotEqual]", 
+    RowBox[{
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "\[And]", "Y"}], "]"}], "+", 
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "\[And]", 
+       RowBox[{"\[Not]", "Y"}]}], "]"}]}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4104797653534203`*^9, 3.410479809042427*^9}, {
+  3.410479894528101*^9, 3.410479912663978*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrSAT", "::", "\<\"srchfail\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Search phase failed; attempting FindInstance\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.410479810955168*^9, 3.410479912980761*^9, 
+  3.41073380130062*^9, 3.410733877429474*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.410479811028801*^9, 3.410479912984062*^9, 
+  3.410733801303397*^9, 3.410733877432887*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "This output means there are no probability models on which ",
+ StyleBox["Pr[X]", "Input"],
+ " ",
+ StyleBox["\[NotEqual]", "Input"],
+ " ",
+ StyleBox["Pr[X \[And] Y]", "Input"],
+ " ",
+ StyleBox["+", "Input"],
+ " ",
+ StyleBox["Pr[X \[And] \[Not] Y]", "Input"],
+ ".  That \"proves\" that the above statement is a theorem of probability \
+calculus."
+}], "Text",
+ CellChangeTimes->{{3.4104798133080606`*^9, 3.4104798574041653`*^9}, {
+  3.410479921523017*^9, 3.4104799431112328`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example #4", "Subsection",
+ CellChangeTimes->{{3.4104797041992617`*^9, 3.4104797057866497`*^9}, {
+  3.410479869928804*^9, 3.410479870003787*^9}, {3.4104799648718023`*^9, 
+  3.4104799649773483`*^9}}],
+
+Cell["The next example involves the following theorem:", "Text",
+ CellChangeTimes->{{3.410479716236717*^9, 3.410479730327897*^9}, {
+  3.410479990746258*^9, 3.4104800126210003`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Pr", "(", 
+    RowBox[{"X", "\[RightArrow]", "Y"}], ")"}], "\[GreaterEqual]", 
+   RowBox[{"Pr", "(", 
+    RowBox[{"Y", " ", "|", " ", "X"}], ")"}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.410479732974824*^9, 3.4104797560754633`*^9}, {
+   3.4104798746126757`*^9, 3.410479884683978*^9}, {3.410480059247991*^9, 
+   3.4104800913175983`*^9}, 3.410480127141708*^9}],
+
+Cell[TextData[{
+ StyleBox["PrSAT", "Input"],
+ " easily verifies this theorem (note: it does not present a readable proof). \
+ First, we need to define the conditional operator."
+}], "Text",
+ CellChangeTimes->{{3.410479769227844*^9, 3.410479787940076*^9}, {
+  3.410480132362317*^9, 3.410480140920138*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"X_", "\[RightArrow]", "Y_"}], ":=", 
+   RowBox[{
+    RowBox[{"\[Not]", "X"}], "\[Or]", "Y"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.410733839053074*^9, 3.410733853019298*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "\[RightArrow]", "Y"}], "]"}], "<", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"Y", "|", "X"}], "]"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4104797653534203`*^9, 3.410479809042427*^9}, {
+   3.410479894528101*^9, 3.410479912663978*^9}, {3.4104800868675947`*^9, 
+   3.410480106573678*^9}, 3.410480160866143*^9, {3.41048037112705*^9, 
+   3.410480387535713*^9}, {3.410480451240322*^9, 3.410480453989214*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrSAT", "::", "\<\"srchfail\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Search phase failed; attempting FindInstance\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{{3.410733855201565*^9, 3.4107338805179462`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.410479811028801*^9, 3.410479912984062*^9, 3.410480095785934*^9, 
+   3.410480162106215*^9, {3.410480382124778*^9, 3.410480387875024*^9}, 
+   3.41048045511602*^9, 3.4107338025825043`*^9, {3.4107338561424017`*^9, 
+   3.410733880544154*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "This output means there are no probability models on which ",
+ StyleBox["Pr[X \[RightArrow] Y]", "Input"],
+ " ",
+ StyleBox["\[GreaterEqual]", "Input"],
+ " ",
+ StyleBox["Pr[Y | X]", "Input"],
+ ".  That \"proves\" that the above statement is a theorem of probability \
+calculus."
+}], "Text",
+ CellChangeTimes->{{3.4104798133080606`*^9, 3.4104798574041653`*^9}, {
+  3.410479921523017*^9, 3.4104799431112328`*^9}, {3.410480170816001*^9, 
+  3.410480183250033*^9}, {3.410480394444191*^9, 3.4104804083547087`*^9}, {
+  3.4104804586487627`*^9, 3.410480469690214*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example #5", "Subsection",
+ CellChangeTimes->{{3.4104797041992617`*^9, 3.4104797057866497`*^9}, {
+  3.410479869928804*^9, 3.410479870003787*^9}, {3.4104799648718023`*^9, 
+  3.4104799649773483`*^9}, {3.4104804742290993`*^9, 3.410480474577409*^9}}],
+
+Cell["The next example involves the following theorem:", "Text",
+ CellChangeTimes->{{3.410479716236717*^9, 3.410479730327897*^9}, {
+  3.410479990746258*^9, 3.4104800126210003`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"d", "(", 
+     RowBox[{"X", ",", "Y"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{"d", "(", 
+      RowBox[{
+       RowBox[{"X", "\[Or]", "Y"}], ",", "Y"}], ")"}], "+", 
+     RowBox[{"d", "(", 
+      RowBox[{
+       RowBox[{"X", "\[Or]", 
+        RowBox[{"\[Not]", "Y"}]}], ",", "Y"}], ")"}]}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"where", " ", 
+     RowBox[{"d", "(", 
+      RowBox[{"X", ",", "Y"}], ")"}]}], "=", " ", 
+    RowBox[{
+     RowBox[{"Pr", "(", 
+      RowBox[{"X", "|", "Y"}], ")"}], "-", 
+     RowBox[{
+      RowBox[{"Pr", "(", "X", ")"}], "."}]}]}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.410479732974824*^9, 3.4104797560754633`*^9}, {
+   3.4104798746126757`*^9, 3.410479884683978*^9}, {3.410480059247991*^9, 
+   3.4104800913175983`*^9}, 3.410480127141708*^9, {3.410480482269432*^9, 
+   3.410480508937825*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[TextData[{
+ StyleBox["PrSAT", "Input"],
+ " easily verifies this theorem (note: it does not present a readable proof). \
+ First, we need to define ",
+ StyleBox["d(X,", "Input"],
+ " ",
+ StyleBox["Y)", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.410479769227844*^9, 3.410479787940076*^9}, {
+  3.410480132362317*^9, 3.410480140920138*^9}, {3.410480526805705*^9, 
+  3.410480535177965*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"d", "[", 
+    RowBox[{"X_", ",", "Y_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "|", "Y"}], "]"}], "-", 
+    RowBox[{"Pr", "[", "X", "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.410733898536294*^9, 3.41073391182726*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"d", "[", 
+     RowBox[{"X", ",", "Y"}], "]"}], "\[NotEqual]", 
+    RowBox[{
+     RowBox[{"d", "[", 
+      RowBox[{
+       RowBox[{"X", "\[Or]", "Y"}], ",", "Y"}], "]"}], "+", 
+     RowBox[{"d", "[", 
+      RowBox[{
+       RowBox[{"X", "\[Or]", 
+        RowBox[{"\[Not]", "Y"}]}], ",", "Y"}], "]"}]}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.4104797653534203`*^9, 3.410479809042427*^9}, {
+   3.410479894528101*^9, 3.410479912663978*^9}, {3.4104800868675947`*^9, 
+   3.410480106573678*^9}, 3.410480160866143*^9, {3.41048037112705*^9, 
+   3.410480387535713*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrSAT", "::", "\<\"srchfail\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Search phase failed; attempting FindInstance\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.410480387871686*^9, 3.4104805381126623`*^9, 
+  3.410733803656722*^9, 3.410733913399466*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.410479811028801*^9, 3.410479912984062*^9, 3.410480095785934*^9, 
+   3.410480162106215*^9, {3.410480382124778*^9, 3.410480387875024*^9}, 
+   3.410480538115705*^9, 3.4107338042696133`*^9, 3.410733913402643*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "This output means there are no probability models on which ",
+ StyleBox["d[X, Y]", "Input"],
+ " ",
+ StyleBox["\[NotEqual]", "Input"],
+ " ",
+ StyleBox["d[X \[Or] Y, Y]", "Input"],
+ " ",
+ StyleBox["+", "Input"],
+ " ",
+ StyleBox["d[X \[Or] \[Not] Y, Y]", "Input"],
+ ".  That \"proves\" that the above statement is a theorem of probability \
+calculus."
+}], "Text",
+ CellChangeTimes->{{3.4104798133080606`*^9, 3.4104798574041653`*^9}, {
+  3.410479921523017*^9, 3.4104799431112328`*^9}, {3.410480170816001*^9, 
+  3.410480183250033*^9}, {3.410480394444191*^9, 3.4104804083547087`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example #6", "Subsection",
+ CellChangeTimes->{{3.4104797041992617`*^9, 3.4104797057866497`*^9}, {
+  3.410479869928804*^9, 3.410479870003787*^9}, {3.4104799648718023`*^9, 
+  3.4104799649773483`*^9}, {3.4104804742290993`*^9, 3.410480474577409*^9}, {
+  3.4104805445721893`*^9, 3.4104805449119663`*^9}}],
+
+Cell["\<\
+The next example involves the fact that the following is NOT a theorem:\
+\>", "Text",
+ CellChangeTimes->{{3.410479716236717*^9, 3.410479730327897*^9}, {
+  3.410479990746258*^9, 3.4104800126210003`*^9}, {3.4104805485018263`*^9, 
+  3.410480561441362*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Pr", "(", 
+    RowBox[{"X", "|", 
+     RowBox[{"Y", "\[Or]", "Z"}]}], ")"}], "=", 
+   RowBox[{"Pr", "(", 
+    RowBox[{"X", "|", 
+     RowBox[{"Y", "\[And]", "Z"}]}], ")"}]}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.410479732974824*^9, 3.4104797560754633`*^9}, {
+   3.4104798746126757`*^9, 3.410479884683978*^9}, {3.410480059247991*^9, 
+   3.4104800913175983`*^9}, 3.410480127141708*^9, {3.410480482269432*^9, 
+   3.410480508937825*^9}, {3.410480567580142*^9, 3.410480577634822*^9}}],
+
+Cell[TextData[{
+ StyleBox["PrSAT", "Input"],
+ " easily finds a counter-model to this claim."
+}], "Text",
+ CellChangeTimes->{{3.410479769227844*^9, 3.410479787940076*^9}, {
+  3.410480132362317*^9, 3.410480140920138*^9}, {3.410480526805705*^9, 
+  3.410480535177965*^9}, {3.410480585157*^9, 3.410480589649562*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "|", 
+      RowBox[{"Y", "\[Or]", "Z"}]}], "]"}], "\[NotEqual]", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "|", 
+      RowBox[{"Y", "\[And]", "Z"}]}], "]"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4104797653534203`*^9, 3.410479809042427*^9}, {
+   3.410479894528101*^9, 3.410479912663978*^9}, {3.4104800868675947`*^9, 
+   3.410480106573678*^9}, 3.410480160866143*^9, {3.41048037112705*^9, 
+   3.410480387535713*^9}, {3.4104806086097918`*^9, 3.410480610499316*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"X", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Y", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Z", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", 
+      FractionBox["1", "28"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", 
+      FractionBox["13", "28"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["1", "2"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", "0"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.410479811028801*^9, 3.410479912984062*^9, 3.410480095785934*^9, 
+   3.410480162106215*^9, {3.410480382124778*^9, 3.410480387875024*^9}, 
+   3.410480538115705*^9, 3.410480611606084*^9, 3.410733806158354*^9, 
+   3.410733920767105*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The model ",
+ StyleBox["PrSAT", "Input"],
+ " finds by defualt is ",
+ StyleBox["non",
+  FontSlant->"Italic"],
+ "-regular.  We can force it to find a ",
+ StyleBox["regular",
+  FontSlant->"Italic"],
+ " counter-model, as follows:"
+}], "Text",
+ CellChangeTimes->{{3.410480624745554*^9, 3.410480674080036*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MODEL2", "=", 
+  RowBox[{"PrSAT", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "|", 
+        RowBox[{"Y", "\[Or]", "Z"}]}], "]"}], "\[NotEqual]", 
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "|", 
+        RowBox[{"Y", "\[And]", "Z"}]}], "]"}]}], "}"}], ",", 
+    RowBox[{"Probabilities", "\[Rule]", "Regular"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.410480651316984*^9, 3.410480657006118*^9}, {
+  3.410480851769436*^9, 3.41048085282195*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"X", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Y", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Z", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", 
+      FractionBox["147181", "77577345"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", 
+      FractionBox["1", "999"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", 
+      FractionBox["46", "93"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", 
+      FractionBox["1", "405"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", 
+      FractionBox["1", "999"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", 
+      FractionBox["1", "999"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["1", "999"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", 
+      FractionBox["83", "167"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.410480657931759*^9, 3.410480853946578*^9, 
+  3.410733807612543*^9, 3.410733924757769*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here is an STT representation of ",
+ StyleBox["MODEL2", "Input"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.410480837070116*^9, 3.410480846225956*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TruthTable", "[", "MODEL2", "]"}]], "Input",
+ CellChangeTimes->{{3.410480856886291*^9, 3.410480861653878*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"X", "Y", "Z", "var", "Pr"},
+    {"T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "8"], 
+     FractionBox["83", "167"]},
+    {"T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "5"], 
+     FractionBox["1", "999"]},
+    {"T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "6"], 
+     FractionBox["1", "999"]},
+    {"T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"], 
+     FractionBox["1", "999"]},
+    {"F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "7"], 
+     FractionBox["1", "999"]},
+    {"F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "3"], 
+     FractionBox["46", "93"]},
+    {"F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "4"], 
+     FractionBox["1", "405"]},
+    {"F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"], 
+     FractionBox["147181", "77577345"]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.410480862336733*^9, 3.410733807811091*^9, 
+  3.410733926778955*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We can calculate the values of ",
+ StyleBox["Pr[X | Y ", "Input"],
+ "\[And]",
+ StyleBox[" Z]", "Input"],
+ ", ",
+ StyleBox["Pr[X | Y ", "Input"],
+ "\[Or]",
+ StyleBox[" Z]", "Input"],
+ " on this model as follows:"
+}], "Text",
+ CellChangeTimes->{{3.41048097537249*^9, 3.410481008695406*^9}, {
+  3.410481295800973*^9, 3.410481299938586*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvaluateProbability", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "|", 
+       RowBox[{"Y", "\[And]", "Z"}]}], "]"}], ",", 
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "|", 
+       RowBox[{"Y", "\[Or]", "Z"}]}], "]"}]}], "}"}], ",", "MODEL2"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.410481010077409*^9, 3.410481026059134*^9}, {
+  3.410481286455331*^9, 3.410481289640348*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["82917", "83084"], ",", 
+   FractionBox["38711715", "77352509"]}], "}"}]], "Output",
+ CellChangeTimes->{3.410481026228292*^9, 3.4104812899566193`*^9, 
+  3.410733808228982*^9, 3.410733930620598*^9}]
+}, Open  ]],
+
+Cell["\<\
+We can look at decimal representations of these exact real numbers, as \
+follows:\
+\>", "Text",
+ CellChangeTimes->{{3.410481036782228*^9, 3.410481054958776*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "//", "N"}]], "Input",
+ CellChangeTimes->{{3.41048105662401*^9, 3.410481057225731*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.9979899860382264`", ",", "0.5004584272760952`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.410481057480013*^9, 3.4107338083134193`*^9, 
+  3.4107339332145643`*^9}]
+}, Open  ]],
+
+Cell["\<\
+We gave a different model in the lecture notes.  We can enter that model in \
+by hand, and then verify it has the desired properties, as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.410481104065938*^9, 3.410481126225082*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MODEL3", "=", 
+  RowBox[{"PrSAT", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "\[And]", "Y", "\[And]", "Z"}], "]"}], "==", 
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "\[And]", "Y", "\[And]", 
+        RowBox[{"\[Not]", "Z"}]}], "]"}], "==", 
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "\[And]", 
+        RowBox[{"\[Not]", "Y"}], "\[And]", "Z"}], "]"}], "==", 
+      FractionBox["1", "4"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"X", "\[And]", 
+        RowBox[{"\[Not]", "Y"}], "\[And]", 
+        RowBox[{"\[Not]", "Z"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "X"}], "\[And]", "Y", "\[And]", "Z"}], "]"}], "==", 
+      
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "X"}], "\[And]", "Y", "\[And]", 
+        RowBox[{"\[Not]", "Z"}]}], "]"}], "==", 
+      FractionBox["1", "12"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "X"}], "\[And]", 
+        RowBox[{"\[Not]", "Y"}], "\[And]", "Z"}], "]"}], "==", 
+      FractionBox["1", "24"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "X"}], "\[And]", 
+        RowBox[{"\[Not]", "Y"}], "\[And]", 
+        RowBox[{"\[Not]", "Z"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4104811278797007`*^9, 3.41048123193407*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"X", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Y", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Z", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", 
+      FractionBox["1", "12"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", 
+      FractionBox["1", "24"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", 
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", 
+      FractionBox["1", "4"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["1", "6"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", 
+      FractionBox["1", "6"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.410481232769068*^9, 3.4107338084175253`*^9, 
+  3.4107339350529013`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TruthTable", "[", "MODEL3", "]"}]], "Input",
+ CellChangeTimes->{{3.410481234842928*^9, 3.410481237866806*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"X", "Y", "Z", "var", "Pr"},
+    {"T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "8"], 
+     FractionBox["1", "6"]},
+    {"T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "5"], 
+     FractionBox["1", "6"]},
+    {"T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "6"], 
+     FractionBox["1", "4"]},
+    {"T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"], 
+     FractionBox["1", "16"]},
+    {"F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "7"], 
+     FractionBox["1", "6"]},
+    {"F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "3"], 
+     FractionBox["1", "12"]},
+    {"F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "4"], 
+     FractionBox["1", "24"]},
+    {"F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"], 
+     FractionBox["1", "16"]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.410481238356681*^9, 3.410733808482737*^9, 
+  3.41073393710236*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvaluateProbability", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "|", 
+       RowBox[{"Y", "\[And]", "Z"}]}], "]"}], ",", 
+     RowBox[{"Pr", "[", 
+      RowBox[{"X", "|", 
+       RowBox[{"Y", "\[Or]", "Z"}]}], "]"}]}], "}"}], ",", "MODEL3"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.410481259379622*^9, 3.410481280768156*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["1", "2"], ",", 
+   FractionBox["2", "3"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.41048126895927*^9, 3.4104812810443907`*^9}, 
+   3.410733808543215*^9, 3.4107339384326687`*^9}]
+}, Open  ]],
+
+Cell["\<\
+We can also see the algebraic form of an expression, as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.410481313796186*^9, 3.410481328389385*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AlgebraicForm", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "|", 
+      RowBox[{"Y", "\[And]", "Z"}]}], "]"}], "==", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"X", "|", 
+      RowBox[{"Y", "\[Or]", "Z"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"X", ",", "Y", ",", "Z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.410481335954288*^9, 3.410481351479731*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SubscriptBox["\[DoubleStruckA]", "8"], 
+   RowBox[{
+    SubscriptBox["\[DoubleStruckA]", "7"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "8"]}]], "\[Equal]", 
+  FractionBox[
+   RowBox[{
+    SubscriptBox["\[DoubleStruckA]", "5"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "6"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "8"]}], 
+   RowBox[{
+    SubscriptBox["\[DoubleStruckA]", "3"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "4"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "5"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "6"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "7"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "8"]}]]}]], "Output",
+ CellChangeTimes->{3.410481351928729*^9, 3.4107338086096153`*^9, 
+  3.410733940306315*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Note that ",
+ StyleBox["PrSAT", "Input"],
+ " uses different conventions (",
+ StyleBox["i.e",
+  FontSlant->"Italic"],
+ "., a different ordering in the truth-table) for the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[DoubleStruckA]", "i"], TraditionalForm]]],
+ " than I use in the lecture notes.  "
+}], "Text",
+ CellChangeTimes->{{3.410481354949873*^9, 3.410481415499865*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1064, 1156},
+WindowMargins->{{-5, Automatic}, {Automatic, 0}},
+InputAliases->{"intt" -> RowBox[{"\[Integral]", 
+     RowBox[{"\[SelectionPlaceholder]", 
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> 
+  RowBox[{
+     SubsuperscriptBox[
+     "\[Integral]", "\[SelectionPlaceholder]", "\[Placeholder]"], 
+     RowBox[{"\[Placeholder]", 
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "sumt" -> RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"\[SelectionPlaceholder]", "=", "\[Placeholder]"}], 
+      "\[Placeholder]"], "\[Placeholder]"}], "prodt" -> RowBox[{
+     UnderoverscriptBox["\[Product]", 
+      RowBox[{"\[SelectionPlaceholder]", "=", "\[Placeholder]"}], 
+      "\[Placeholder]"], "\[Placeholder]"}], "dt" -> RowBox[{
+     SubscriptBox["\[PartialD]", "\[Placeholder]"], " ", 
+     "\[SelectionPlaceholder]"}], "notation" -> RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongLeftRightArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "notation>" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongRightArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "notation<" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongLeftArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "symb" -> 
+  RowBox[{"Symbolize", "[", 
+     TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], "]"}], 
+  "infixnotation" -> RowBox[{"InfixNotation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], ",", 
+       "\[Placeholder]"}], "]"}], "addia" -> RowBox[{"AddInputAlias", "[", 
+     RowBox[{"\"\[SelectionPlaceholder]\"", "\[Rule]", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "pattwraper" -> 
+  TagBox["\[SelectionPlaceholder]", "NotationPatternTag"], "madeboxeswraper" -> 
+  TagBox["\[SelectionPlaceholder]", "NotationMadeBoxesTag"]},
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 155, 2, 114, "Title"],
+Cell[748, 27, 102, 1, 69, "Subtitle"],
+Cell[853, 30, 158, 2, 39, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1036, 36, 164, 5, 51, "Subsection"],
+Cell[1203, 43, 588, 18, 39, "Text"],
+Cell[1794, 63, 120, 2, 40, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1951, 70, 98, 1, 51, "Subsection"],
+Cell[2052, 73, 160, 3, 39, "Text"],
+Cell[CellGroupData[{
+Cell[2237, 80, 821, 25, 66, "Input"],
+Cell[3061, 107, 1323, 37, 63, "Output"]
+}, Open  ]],
+Cell[4399, 147, 205, 6, 39, "Text"],
+Cell[CellGroupData[{
+Cell[4629, 157, 134, 2, 40, "Input"],
+Cell[4766, 161, 695, 21, 186, "Output"]
+}, Open  ]],
+Cell[5476, 185, 215, 7, 39, "Text"],
+Cell[CellGroupData[{
+Cell[5716, 196, 356, 10, 40, "Input"],
+Cell[6075, 208, 241, 7, 62, "Output"]
+}, Open  ]],
+Cell[6331, 218, 240, 8, 39, "Text"],
+Cell[CellGroupData[{
+Cell[6596, 230, 280, 7, 40, "Input"],
+Cell[6879, 239, 147, 2, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7075, 247, 102, 1, 51, "Subsection"],
+Cell[7180, 250, 164, 3, 39, "Text"],
+Cell[7347, 255, 374, 10, 40, "Input"],
+Cell[7724, 267, 203, 5, 39, "Text"],
+Cell[CellGroupData[{
+Cell[7952, 276, 407, 11, 40, "Input"],
+Cell[8362, 289, 266, 7, 32, "Message"],
+Cell[8631, 298, 133, 3, 40, "Output"]
+}, Open  ]],
+Cell[8779, 304, 551, 19, 62, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9367, 328, 151, 2, 51, "Subsection"],
+Cell[9521, 332, 164, 3, 39, "Text"],
+Cell[9688, 337, 413, 11, 40, "Input"],
+Cell[10104, 350, 203, 5, 39, "Text"],
+Cell[CellGroupData[{
+Cell[10332, 359, 444, 12, 40, "Input"],
+Cell[10779, 373, 285, 7, 32, "Message"],
+Cell[11067, 382, 156, 3, 40, "Output"]
+}, Open  ]],
+Cell[11238, 388, 495, 15, 62, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11770, 408, 204, 3, 51, "Subsection"],
+Cell[11977, 413, 181, 2, 39, "Text"],
+Cell[12161, 417, 418, 9, 40, "Input"],
+Cell[12582, 428, 304, 6, 62, "Text"],
+Cell[12889, 436, 225, 6, 42, "Input"],
+Cell[CellGroupData[{
+Cell[13139, 446, 518, 11, 40, "Input"],
+Cell[13660, 459, 243, 6, 32, "Message"],
+Cell[13906, 467, 307, 6, 40, "Output"]
+}, Open  ]],
+Cell[14228, 476, 576, 13, 62, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14841, 494, 252, 3, 51, "Subsection"],
+Cell[15096, 499, 181, 2, 39, "Text"],
+Cell[15280, 503, 925, 27, 40, "Input"],
+Cell[16208, 532, 394, 11, 39, "Text"],
+Cell[16605, 545, 301, 9, 42, "Input"],
+Cell[CellGroupData[{
+Cell[16931, 558, 649, 18, 40, "Input"],
+Cell[17583, 578, 288, 7, 32, "Message"],
+Cell[17874, 587, 278, 5, 40, "Output"]
+}, Open  ]],
+Cell[18167, 595, 596, 16, 62, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18800, 616, 305, 4, 51, "Subsection"],
+Cell[19108, 622, 263, 5, 39, "Text"],
+Cell[19374, 629, 539, 12, 40, "Input"],
+Cell[19916, 643, 311, 6, 39, "Text"],
+Cell[CellGroupData[{
+Cell[20252, 653, 581, 13, 40, "Input"],
+Cell[20836, 668, 2515, 63, 126, "Output"]
+}, Open  ]],
+Cell[23366, 734, 322, 11, 39, "Text"],
+Cell[CellGroupData[{
+Cell[23713, 749, 523, 14, 40, "Input"],
+Cell[24239, 765, 2515, 64, 126, "Output"]
+}, Open  ]],
+Cell[26769, 832, 166, 5, 39, "Text"],
+Cell[CellGroupData[{
+Cell[26960, 841, 134, 2, 40, "Input"],
+Cell[27097, 845, 1123, 33, 320, "Output"]
+}, Open  ]],
+Cell[28235, 881, 355, 12, 39, "Text"],
+Cell[CellGroupData[{
+Cell[28615, 897, 450, 13, 40, "Input"],
+Cell[29068, 912, 252, 6, 63, "Output"]
+}, Open  ]],
+Cell[29335, 921, 171, 4, 39, "Text"],
+Cell[CellGroupData[{
+Cell[29531, 929, 115, 2, 40, "Input"],
+Cell[29649, 933, 205, 5, 40, "Output"]
+}, Open  ]],
+Cell[29869, 941, 235, 4, 62, "Text"],
+Cell[CellGroupData[{
+Cell[30129, 949, 1685, 50, 170, "Input"],
+Cell[31817, 1001, 2474, 64, 126, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34328, 1070, 134, 2, 40, "Input"],
+Cell[34465, 1074, 1099, 33, 317, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35601, 1112, 401, 12, 40, "Input"],
+Cell[36005, 1126, 234, 6, 63, "Output"]
+}, Open  ]],
+Cell[36254, 1135, 154, 3, 39, "Text"],
+Cell[CellGroupData[{
+Cell[36433, 1142, 416, 12, 40, "Input"],
+Cell[36852, 1156, 779, 20, 62, "Output"]
+}, Open  ]],
+Cell[37646, 1179, 396, 12, 62, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

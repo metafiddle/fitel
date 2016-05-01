@@ -1,0 +1,1063 @@
+<HTML>
+<!--This file created 11/25/01 3:51 PM by Claris Home Page version 3.0-->
+<HEAD>
+   <TITLE>New Elegant Axiomatizations of Some Logics</TITLE>
+   <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
+   <X-CLARIS-WINDOW TOP=40 BOTTOM=598 LEFT=0 RIGHT=687>
+   <X-CLARIS-REMOTESAVE SERVER="philosophy.wisc.edu" USER=fitelson DIR="/fitelson/" FILE="">
+   <X-CLARIS-TAGVIEW MODE=minimal>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H1><CENTER><FONT SIZE="+3" FACE="Times"><TT><A NAME=TOP></A>New
+Elegant Axiomatizations of Some Sentential Logics<BR>
+<BR>
+</TT></FONT></CENTER></H1>
+
+<CENTER><A HREF="index.html"><FONT SIZE="+1" FACE="Times"><TT>Branden
+Fitelson</TT></FONT></A><A HREF="ar.html#tthFtNtAAB"><FONT SIZE="+1" FACE="Times"><TT><SUP>1</SUP></TT></FONT></A><FONT SIZE="+1" FACE="Times"><TT><BR>
+<BR>
+</TT></FONT></CENTER>
+
+<H3><FONT SIZE="+1" FACE="Times"><TT>
+
+<HR>
+
+</TT></FONT></H3>
+
+<H2><FONT SIZE="+2" FACE="Times"><TT><U>Table of
+Contents</U></TT></FONT></H2>
+
+<OL>
+   <LI><A HREF="ar.html#LG"><FONT SIZE="+2" FACE="Times"><TT>Left Group
+   Calculus</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#SH"><FONT SIZE="+2" FACE="Times"><TT>Classical
+   Sentential Logic --- In the Sheffer Stroke
+   (D)</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#CO"><FONT SIZE="+2" FACE="Times"><TT>Classical
+   Sentential Logic --- In Implication (C) and The False
+   (O)</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#C5"><FONT SIZE="+2" FACE="Times"><TT>The
+   Implicational Fragment (C5) of the Modal Logic
+   S5</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#C4"><FONT SIZE="+2" FACE="Times"><TT>The
+   Implicational Fragment (C4) of the Modal Logic
+   S4</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#RM"><FONT SIZE="+2" FACE="Times"><TT>The
+   Implicational Fragment (RM</TT></FONT></A><FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT><A HREF="ar.html#RM"><FONT SIZE="+2" FACE="Times"><TT>)
+   of the "Classical" Relevance Logic RM</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#OTHER"><FONT SIZE="+2" FACE="Times"><TT>Single
+   Axioms for the Implicational Fragments of Some Other Non-Classical
+   Logics</TT></FONT></A></LI>
+   
+   <LI><A HREF="ar.html#AR"><FONT SIZE="+2" FACE="Times"><TT>Automated
+   Reasoning Techniques Used</TT></FONT></A></LI>
+</OL>
+
+<UL>
+   <LI><A HREF="ar.html#REF"><FONT SIZE="+1">References</FONT></A></LI>
+   
+   <LI><A HREF="ar.html#NOTE"><FONT SIZE="+1">Footnotes</FONT></A></LI>
+</UL>
+
+<CENTER><FONT SIZE="+1" FACE="Times"><TT>
+
+<HR>
+
+<BR>
+</TT></FONT>&nbsp;</CENTER>
+
+<H2><A NAME=LG></A><FONT SIZE="+2" FACE="Times"><TT>1 Left Group
+Calculus</TT></FONT></H2>
+
+<UL>
+   <LI>Let the operation E<FONT FACE="symbol">ab</FONT> correspond to
+   left division <FONT FACE="symbol">a</FONT><SUP>-1</SUP><FONT FACE="symbol">b</FONT>
+   in groups. Kalman &#91;<A HREF="ar.html#kalmanLG" name=CITEkalmanLG>3</A>&#93;
+   shows that the following is an equational 2-basis for group
+   theory:<BR>
+   <BR>
+   
+   <CENTER><TABLE>
+      <TR>
+         <TD ALIGN=center>
+            <P>EExEyyEzz = x</P>
+         </TD>
+         <TD ALIGN=center>
+            <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EExyExz = Eyz</P>
+         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>It is also shown in &#91;<A HREF="ar.html#kalmanLG" name=CITEkalmanLG>3</A>&#93;
+   that the following is a 5-axiom <EM>logical calculus</EM>
+   (assuming <I>condensed detachment</I> as the sole rule of
+   inference) for groups (<I>i.e.</I>, <FONT FACE="symbol">a =
+   b</FONT> is a theorem of group theory iff both <FONT FACE="symbol">Eab</FONT>
+   and <FONT FACE="symbol">Eba</FONT> are derivable from the
+   following five axioms using only condensed detachment as the sole
+   rule of inference):<BR>
+   <BR>
+   
+   <CENTER><TABLE>
+      <TR>
+         <TD ALIGN=center>
+            <P>(L<SUB>1</SUB>) EEEpEEqqprr</P>
+         </TD>
+         <TD ALIGN=center>
+            <P>(L<SUB>2</SUB>) EEEEEpqEprEqrss</P>
+         </TD>
+      </TR>
+      <TR>
+         <TD ALIGN=center>
+            <P>(L<SUB>3</SUB>) EEEEEEpqEprsEEqrstt</P>
+         </TD>
+         <TD ALIGN=center>
+            <P>&nbsp;&nbsp;&nbsp; (L<SUB>4</SUB>)
+            EEEEpqrsEEEptrEEqts</P>
+         </TD>
+      </TR>
+      <TR>
+         <TD ALIGN=center COLSPAN=2>
+            <P>(L<SUB>5</SUB>) EEEpEEqprEEsptEEEEpqsrt</P>
+         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>With OTTER, McCune &#91;<A HREF="ar.html#McCuneLG" name=CITEMcCuneLG>13</A>&#93;
+   showed (<EM>inter alia</EM>) that L<SUB>1</SUB>, L<SUB>4</SUB>,
+   L<SUB>5</SUB> are dependent, and that the following 27-symbol
+   formula is a single axiom for LG:<BR>
+   <BR>
+   
+   <CENTER>EEEEpqrEEstEEEutEusvErEEqpv<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Recently, we found the following 23-symbol axiom for LG (and
+   several others of the same length):<BR>
+   <BR>
+   
+   <CENTER>EEEpqrEEEspEEEtuEqsEutr<BR>
+   </CENTER>
+   
+   <P><B>Open Question</B>: Is there a shorter single axiom for LG?
+   The 11-symbol formula EEpqEEprEqr cannot be ruled-out using only
+   finite models.<BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="UP.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></P>
+   </LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><A NAME=SH></A><FONT SIZE="+2" FACE="Times"><TT>2 Classical
+Sentential Logic --- In the Sheffer Stroke (D)</TT></FONT></H2>
+
+<UL>
+   <LI>In 1917, Nicod &#91;<A HREF="ar.html#nicod" name=CITEnicod>21</A>&#93;
+   showed<A HREF="ar.html#tthFtNtAAD" name=tthFrefAAD><SUP>3</SUP></A> that
+   the following 23-symbol formula (in Polish notation) is a single
+   axiom for classical sentential logic (D is interpreted
+   semantically as NAND, <EM>i.e.</EM>, the Sheffer stroke):<BR>
+   <BR>
+   
+   <CENTER><TABLE BORDER=0 align=center>
+      <TR>
+         <TD>
+            <P><TABLE align=left>
+               <TR>
+                  <TD ALIGN=center NOWRAP>
+                     <P>DDpDqrDDtDttDDsqDDpsDps</P>                  </TD>
+               </TR>
+            </TABLE>
+            </P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>The only rule of inference for Nicod's single axiom system is
+   the following, somewhat odd, detachment rule for D:<BR>
+   <BR>
+   
+   <CENTER><TABLE BORDER=0 align=center>
+      <TR>
+         <TD>
+            <P><TABLE align=left>
+               <TR>
+                  <TD ALIGN=center NOWRAP>
+                     <P>From DpDqr and p, infer r.</P>                  </TD>
+               </TR>
+            </TABLE>
+            </P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Lukasiewicz &#91;<A HREF="ar.html#luka" name=CITEluka>7</A>&#93;
+   later showed that the following <EM>substitution instance</EM>
+   (t/s) of Nicod's axiom (N) would suffice:<BR>
+   <BR>
+   
+   <CENTER><TABLE BORDER=0 align=center>
+      <TR>
+         <TD>
+            <P><TABLE align=left>
+               <TR>
+                  <TD ALIGN=center NOWRAP>
+                     <P>DDpDqrDDsDssDDsqDDpsDps</P>                  </TD>
+               </TR>
+            </TABLE>
+            </P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Lukasiewicz's student Mordchaj Wajsberg &#91;<A HREF="ar.html#wajsberg" name=CITEwajsberg>37</A>&#93;
+   later discovered the following <EM>organic</EM><A HREF="ar.html#tthFtNtAAE" name=tthFrefAAE><SUP>4</SUP></A>
+   23-symbol single axiom for D:<BR>
+   <BR>
+   
+   <CENTER><TABLE BORDER=0 align=center>
+      <TR>
+         <TD>
+            <P><TABLE align=left>
+               <TR>
+                  <TD ALIGN=center NOWRAP>
+                     <P>DDpDqrDDDsrDDpsDpsDpDpq</P>                  </TD>
+               </TR>
+            </TABLE>
+            </P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Lukasiewicz later discovered another 23-symbol organic axiom:
+   
+   <CENTER><BR>
+   <TABLE BORDER=0 align=center>
+      <TR>
+         <TD>
+            <P><TABLE align=left>
+               <TR>
+                  <TD ALIGN=center NOWRAP>
+                     <P>DDpDqrDDpDrpDDsqDDpsDps<SUB>2</SUB></P>                  </TD>
+               </TR>
+            </TABLE>
+            </P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>We have discovered many new 23-symbol single axioms, some of
+   which are organic and have only 4 variables, <EM>e.g.</EM>,<BR>
+   <BR>
+   
+   <CENTER><TABLE BORDER=0 align=center>
+      <TR>
+         <TD>
+            <P><TABLE align=left>
+               <TR>
+                  <TD ALIGN=center NOWRAP>
+                     <P>DDpDqrDDpDqrDDsrDDrsDps</P>                  </TD>
+               </TR>
+            </TABLE>
+            </P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>We can now report that <EM>the shortest single axioms for
+   these Sheffer Stroke systems contain 23 symbols</EM>. No shorter
+   axioms exist.<BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="UP.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><A NAME=CO></A><FONT SIZE="+2" FACE="Times"><TT>3 Classical
+Sentential Logic --- In Implication (C) and The False (O)<BR>
+</TT></FONT></H2>
+
+<UL>
+   <LI>Meredith &#91;<A HREF="ar.html#meredith" name=CITEmeredith>18</A>,<A HREF="ar.html#MP" name=CITEMP>16</A>&#93;
+   reports two 19-symbol single axioms for classical sentential logic
+   (using only the rule of condensed detachment) in terms of
+   implication C and the constant O (semantically, O is ``The
+   False''):<BR>
+   <BR>
+   
+   <CENTER>CCCCCpqCrOstCCtpCrp<BR>
+   CCCpqCCOrsCCspCtCup<BR>
+   <BR>
+   &nbsp;</CENTER></LI>
+   
+   <LI>Meredith &#91;<A HREF="ar.html#meredith" name=CITEmeredith>18</A>&#93;
+   claims to have ``almost completed a proof that no single axiom of
+   (C,O) can contain less than 19 letters.'' As far as we know, no
+   such proof was ever completed (that is, until now...).<BR>
+   <BR>
+   </LI>
+   
+   <LI>We have performed an exhaustive search/elimination of all
+   (C,O) theorems with fewer than 19 symbols. We have proven
+   Meredith's conjecture: <EM>no single axiom of (C,O) can contain
+   less than 19 letters</EM>.<A HREF="ar.html#tthFtNtAAF" name=tthFrefAAF><SUP>5</SUP></A><SUP><BR>
+   <BR>
+   </SUP><A HREF="ar.html#TOP"><IMG SRC="UP.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><A NAME=C5></A><FONT SIZE="+2" FACE="Times"><TT>4 The
+Implicational Fragment (C5) of the Modal Logic S5<BR>
+<BR>
+</TT></FONT></H2>
+
+<UL>
+   <LI>In their classic paper &#91;<A HREF="ar.html#PSI" name=CITEPSI>6</A>&#93;,
+   Lemmon, Meredith, Meredith, Prior, and Thomas present several
+   axiomatizations (assuming only the rule of condensed detachment)
+   of the system C5, which is the strict implicational fragment of
+   the modal logic S5.<BR>
+   <BR>
+   </LI>
+   
+   <LI>Bases for C5 containing 4, 3, 2, and a single axiom are
+   presented in &#91;<A HREF="ar.html#PSI" name=CITEPSI>6</A>&#93;. The
+   following 2-basis is the shortest of these bases. It contains 20
+   symbols, 5-variables, and 9 occurrences of the connective C.<BR>
+   <BR>
+   
+   <CENTER>Cpp<BR>
+   CCCCpqrqCCqsCtCps<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>The following 21-symbol (6-variable, 10-C) single axiom (due
+   to C.A.&nbsp;Meredith) for C5 is also reported in &#91;<A HREF="ar.html#PSI" name=CITEPSI>6</A>&#93;:<BR>
+   <BR>
+   
+   <CENTER>CCCCCttpqCrsCCspCuCrp<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>We searched both for new (hopefully, shorter than previously
+   known) single axioms for C5 and for new 2-bases for C5.<BR>
+   <BR>
+   </LI>
+   
+   <LI>We discovered the following new 2-basis for C5, which (to the
+   best of our knowledge) is shorter than any previously known basis
+   (it has 18 symbols, 4 variables, and 8 occurrences of C):<BR>
+   <BR>
+   
+   <CENTER>Cpp<BR>
+   CCpqCCCCqrsrCpr<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Moreover, we discovered the following new 21-symbol
+   (6-variable, 10-C) single axiom for C5 (as well as 5 others, not
+   given here):<BR>
+   <BR>
+   
+   <CENTER>CCCCpqrCCssqCCqtCuCpt<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI><EM>No formula with fewer than 21 symbols is a single axiom
+   for C5</EM>. And, <EM>no basis for C5
+   </EM><B><EM>whatsoever</EM></B><EM> has fewer than 18
+   symbols</EM>.<BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="up.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><A NAME=C4></A><FONT SIZE="+2" FACE="Times"><TT>5 The
+Implicational Fragment (C4) of the Modal Logic S4<BR>
+<BR>
+</TT></FONT></H2>
+
+<UL>
+   <LI>C4 is the strict-implicational fragment of the modal logic S4
+   (and several other modal logics in the neighborhood of S4 - see
+   Ulrich's &#91;<A HREF="ar.html#ulrichS4" name=CITEulrichS4>34</A>&#93;).<BR>
+   <BR>
+   &nbsp;</LI>
+   
+   <LI>As far as we know, the shortest known basis for C4 is due to
+   Ulrich (see Ulrich's &#91;<A HREF="ar.html#ulrichS4" name=CITEulrichS4>34</A>&#93;),
+   and is the following 25-symbol, 11-C, 3-axiom basis:<BR>
+   <BR>
+   
+   <CENTER>Cpp<BR>
+   CCpqCrCpq<BR>
+   CCpCqrCCpqCpr<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Anderson <EM>&amp;</EM> Belnap &#91;<A HREF="ar.html#AB" name=CITEAB>1</A>&#93;
+   state the finding of a (short) single axiom for C4 as an open
+   problem (as far as we know, this has <EM>remained</EM> open). The
+   following is a 21-symbol (6-variable, 10-C) single axiom for
+   C4:<BR>
+   <BR>
+   
+   <CENTER>CCpCCqCrrCpsCCstCuCpt<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>We have also the following 20-symbol 2-basis for C4:<BR>
+   <BR>
+   
+   <CENTER>CpCqq &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   CCpCqrCCpqCsCpr<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI><EM>No formula with fewer than 21 symbols is a single axiom
+   for C4</EM>. And, <EM>no basis for C4
+   </EM><B><EM>whatsoever</EM></B><EM> has fewer than 20
+   symbols</EM>.<BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="up.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><FONT SIZE="+2"><A NAME=RM></A></FONT><FONT SIZE="+2" FACE="Times"><TT>6
+The Implicational Fragment
+</TT></FONT><FONT SIZE="+2">(RM</FONT><FONT SIZE="+2" FACE="symbol"><SUB>&rarr;</SUB></FONT><FONT SIZE="+2">)
+</FONT><FONT SIZE="+2" FACE="Times"><TT>of the "Classical" Relevance
+Logic RM</TT></FONT></H2>
+
+<UL>
+   <LI>The ``classical'' relevance logic R-Mingle (RM) was first
+   carefully studied by Dunn in the late 60's (<EM>e.g.</EM>, in
+   &#91;<A HREF="ar.html#dunn" name=CITEdunn>2</A>&#93;). Interestingly, the
+   implicational fragment of R-Mingle (RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>)
+   has an older history.<BR>
+   <BR>
+   </LI>
+   
+   <LI>RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT> was studied
+   (albeit, unwittingly!)&nbsp;by Sobocinski in the early 50's.
+   Sobocinski &#91;<A HREF="ar.html#sobo" name=CITEsobo>30</A>&#93;
+   discusses a two-designated-value-variant of Lukasiewicz's
+   three-valued implication-negation logic (I'll call Sobocinski's
+   logic <B>S</B>). Sobocinski leaves the axiomatization of
+   <B>S</B><FONT FACE="symbol"><SUB>&rarr;</SUB></FONT> as an open
+   problem.<BR>
+   <BR>
+   </LI>
+   
+   <LI>Rose &#91;<A HREF="ar.html#rose1" name=CITErose1>26</A>,<A HREF="ar.html#rose2" name=CITErose2>27</A>&#93;
+   solved Sobocinski's open problem, but his axiomatizations of
+   <B>S</B><FONT FACE="symbol"><SUB>&rarr;</SUB></FONT> are very
+   complicated and highly redundant (see Parks' &#91;<A HREF="ar.html#parks1" name=CITEparks1>23</A>&#93;).<BR>
+   <BR>
+   </LI>
+   
+   <LI>Meyer and Parks &#91;<A HREF="ar.html#meyer" name=CITEmeyer>19</A>,<A HREF="ar.html#parks2" name=CITEparks2>24</A>&#93;
+   report an independent 4-axiom basis for <B>S</B><FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>.
+   They also show that <B> S</B><FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>
+   = RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>, thus providing
+   an independent 4-basis for RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>.
+   Meyer and Parks show that RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>
+   can be axiomatized by adding the following ``unintelligible''
+   21-symbol formula to R<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>:<BR>
+   <BR>
+   
+   <CENTER>CCCCCpqqprCCCCCqppqrr<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>In other words, the following is a 5-basis for RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>:<BR>
+   <BR>
+   
+   <CENTER><TABLE>
+      <TR>
+         <TD ALIGN=center>
+            <P>Cpp</P>         </TD>
+         <TD ALIGN=center>
+            <P>CpCCpqq</P>         </TD>
+      </TR>
+      <TR>
+         <TD ALIGN=center>
+            <P>CCpqCCrpCrq</P>         </TD>
+         <TD ALIGN=center>
+            <P>&nbsp;&nbsp;&nbsp; CCpCpqCpq</P>         </TD>
+      </TR>
+      <TR>
+         <TD ALIGN=center COLSPAN=2>
+            <P>CCCCCpqqprCCCCCqppqrr</P>         </TD>
+      </TR>
+   </TABLE>
+   <BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>The reflexivity axiom Cpp is dependent in the above 5-basis.
+   The remaining (independent) 4-basis is the Meyer-Parks basis for
+   RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>.<BR>
+   <BR>
+   </LI>
+   
+   <LI>After much effort (and, with valuable assistance from Bob and
+   Larry), we discovered the following 13-symbol replacement for
+   Parks' 21-symbol formula (we've also shown that there are none
+   shorter):<BR>
+   <BR>
+   
+   <CENTER>CCCCCpqrCqprr<A HREF="ar.html#tthFtNtAAG" name=tthFrefAAG><SUP>6</SUP></A><SUP><BR>
+   <BR>
+   </SUP></CENTER></LI>
+   
+   <LI>The contraction axiom CCpCpqCpq is dependent in our new
+   4-basis. The remaining (independent) <EM>3</EM>-basis for
+   RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT> contains 31
+   symbols and 14 C's (the Meyer-Parks basis has 4 axioms, 48
+   symbols, and 22 C's).<BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="up.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><A NAME=OTHER></A><FONT SIZE="+2" FACE="Times"><TT>7 Single
+Axioms for the Implicational Fragments of Some Other Non-Classical
+Logics<BR>
+</TT></FONT></H2>
+
+<UL>
+   <LI>It was shown by Rezus &#91;<A HREF="ar.html#Rezus" name=CITERezus>25</A>&#93;
+   (building on earlier seminal work of Tarksi and Lukasiewicz
+   &#91;<A HREF="ar.html#TL" name=CITETL>8</A>&#93;) that the systems
+   E<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>, R<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>,
+   and L<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>have single
+   axioms. However, applying the methods of &#91;<A HREF="ar.html#Rezus" name=CITERezus>25</A>&#93;
+   yields very long, <EM>in</EM>organic single axioms. As far as we
+   know, these axioms have never been explicitly written down. Here
+   is a 69-symbol (17-variable!) single axiom for the implicational
+   fragment of Lukasiewicz's infinite-valued logic L<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>(obtained using the methods of &#91;<A HREF="ar.html#Rezus" name=CITERezus>25</A>&#93;):<BR>
+   <BR>
+   
+   <CENTER>CCCfCgfCCCCCCCCCcdCCecCedCCaCbazzCCCCxyyCCyxxwwCCCCtuCutCutssCCqCrqpp<BR>
+   <BR>
+   </CENTER></LI>
+   
+   <LI>Single axioms of comparable length (<EM>i.e.</EM>, containing
+   fewer than 75 symbols) can also be generated for the relevance
+   logics E<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>and
+   R<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>(omitted). Here's
+   what we know about the shortest single axioms for the systems
+   E<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>, R<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>,
+   L<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>, and RM<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>:<BR>
+   &nbsp;
+   
+   <UL>
+      <LI>The shortest single axiom for E<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>has between 25 and 75 symbols.<BR>
+      </LI>
+      
+      <LI>The shortest single axiom for R<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>has between 25 and 75 symbols.<BR>
+      </LI>
+      
+      <LI>The shortest single axiom for L<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>has at most 69 symbols.<BR>
+      </LI>
+      
+      <LI>The shortest single axiom for RM<FONT SIZE="+2" FACE="Symbol" COLOR="#000000"><TT><SUB>&rarr;</SUB></TT></FONT>(if there is one<A HREF="ar.html#tthFtNtAAH" name=tthFrefAAH><SUP>7</SUP></A>)
+      has at least 25 symbols.<BR>
+      </LI>
+   </UL>
+   
+   <P><A HREF="ar.html#TOP"><IMG SRC="up.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></P></LI>
+</UL>
+
+<P>
+
+<HR>
+
+</P>
+
+<H2><A NAME=AR></A><FONT SIZE="+2" FACE="Times"><TT>8 Automated
+Reasoning Techniques Used</TT></FONT><FONT SIZE="+2">&nbsp;<BR>
+</FONT></H2>
+
+<OL type=1>
+   <LI>First, we wrote computer programs to generate a large list of
+   candidate formulas which were to be tested as axioms. For most
+   problems, it was practical to generate an exhaustive list of all
+   formulas with up to twenty-one symbols (we can now do these
+   through 23 symbols).<A NAME="gen_step"></A><BR>
+   <BR>
+   </LI>
+   
+   <LI>All the formulas in the list would be tested (using matrices)
+   to see which are likely to be tautologies in the system in
+   question.<A HREF="ar.html#tthFtNtAAI" name=tthFrefAAI><SUP>8</SUP></A><A NAME="tautology_step"></A><BR>
+   <BR>
+   </LI>
+   
+   <LI>We immediately eliminated large numbers of formulas by
+   applying known results about axiomatizations in the various
+   systems. For example, as reported by Lemmon et.&nbsp;al., every
+   axiomatization for C5 must contain a formula with Cpp as a
+   (possibly improper) subformula &#91;<A HREF="ar.html#PSI" name=CITEPSI>6</A>&#93;.
+   Another useful result for this purpose is the Diamond-McKinsey
+   theorem that no Boolean algebra can be axiomatized by formulas
+   containing less than three distinct propositional letters
+   &#91;<A HREF="ar.html#AB" name=CITEAB>1</A>&#93;.<A NAME="known_step"></A><BR>
+   <BR>
+   </LI>
+   
+   <LI>A set of formulas was selected from the list at random. Using
+   either SEM &#91;<A HREF="ar.html#sem" name=CITEsem>40</A>&#93; or a
+   program written by the authors, we found a matrix that respects
+   modus ponens, invalidates a known axiom-basis for the system, but
+   validates the formulas selected from the list. Such a model
+   suffices to show that the formulas are not single axioms for the
+   system.<A NAME="matrix_step"></A><BR>
+   <BR>
+   </LI>
+   
+   <LI>All the remaining formulas in the list were then tested
+   against that matrix. Every formula validated by that matrix would
+   be eliminated.<A NAME="eliminate_step"></A><BR>
+   <BR>
+   </LI>
+   
+   <LI>Steps <A HREF="ar.html#matrix_step">4</A> and <A HREF="ar.html#eliminate_step">5</A>
+   were repeated until the list of candidate formulas was down to a
+   small number, or eliminated
+   entirely.<A NAME="repeat_step"></A><BR>
+   <BR>
+   </LI>
+   
+   <LI>We then use OTTER&nbsp;&#91;<A HREF="ar.html#otter3" name=CITEotter3>14</A>&#93;
+   (+strategies! - see &#91;<A HREF="ar.html#larry" name=CITElarry>39</A>&#93;
+   and &#91;<A HREF="ar.html#kalman-otter" name="CITEkalman-otter">4</A>&#93;)
+   to attempt to prove a known axiom basis from each of the remaining
+   candidates.<A NAME="otter_step"></A><BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="up.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></LI>
+</OL>
+
+<P type=1>
+
+<HR>
+
+</P>
+
+<H2><A NAME=REF></A><FONT SIZE="+2">References</FONT></H2>
+
+<DL compact>
+   <DT>&nbsp;</DT>
+   
+   <DT>&#91;<A HREF="ar.html#CITEAB" name=AB>1</A>&#93; Alan&nbsp;Ross
+   Anderson and Nuel&nbsp;D. Belnap, Jr., <EM>Entailment</EM>,
+   Princeton University Press, Princeton, N. J., 1975, Volume I: The
+   logic of relevance and necessity.<BR>
+   <BR>
+   </DT>
+   
+   <DT>&#91;<A HREF="ar.html#CITEdunn" name=dunn>2</A>&#93; J.&nbsp;Michael
+   Dunn, <EM>Algebraic completeness results for R-mingle and its
+   extensions</EM>, J. Symbolic Logic <B>35</B> (1970), 1-13.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEkalmanLG" name=kalmanLG>3</A>&#93; J.A.
+   Kalman, <EM>Axiomatizations of logics with values in groups</EM>,
+   Journal of the London Math.&nbsp;Society <B>2</B> (1975),
+   193-199.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEkalman-otter" name="kalman-otter">4</A>&#93;
+   J.A. Kalman, <EM>Automated reasoning with Otter</EM>, Rinton
+   Press, 2001.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEkunen" name=kunen>5</A>&#93; Kenneth Kunen,
+   <EM>Single axioms for groups</EM>, J. Automat. Reason. <B>9</B>
+   (1992), 291-308.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEPSI" name=PSI>6</A>&#93; E.&nbsp;J. Lemmon,
+   C.&nbsp;A. Meredith, D.&nbsp;Meredith, A.&nbsp;N. Prior, and
+   I.&nbsp;Thomas, <EM>Calculi of pure strict implication</EM>, in
+   <EM>Philosophical Logic</EM> (J.W. Davis, ed.), D. Reidel,
+   1969.<BR>
+   <BR>
+   &nbsp;</DT>
+   
+   <DT>&#91;<A HREF="ar.html#CITEluka" name=luka>7</A>&#93;
+   J.&nbsp;Lukasiewicz, <EM>Selected Works</EM>, Noth Holland,
+   1970.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITETL" name=TL>8</A>&#93; J.&nbsp;Lukasiewicz
+   and A.&nbsp;Tarski, <EM>Investigations into the Sentential
+   Calculus</EM>, (1956), Appears as chapter IV in &#91;<A HREF="ar.html#TL1" name=CITETL1>32</A>&#93;.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEmgroup" name=mgroup>9</A>&#93;
+   W.&nbsp;McCune, <EM>Single Axioms for Groups and Abelian Groups
+   with Various Operations</EM>, Tech. Memo ANL/MCS-P270-1091, MCS @
+   ANL, Argonne, IL, 1991.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITErobbins" name=robbins>10</A>&#93; W.
+   McCune, <EM>Solution of the Robbins problem</EM>, J. Automat.
+   Reason. <B>19</B> (1997), 263-276.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEMcCuneLG" name=McCuneLG>13</A>&#93; W.
+   McCune, <EM>Automated discovery of new axiomatizations of the left
+   group and right group calculi</EM>, J. Automat. Reason. <B>9</B>
+   (1992), 1-24.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEotter3" name=otter3>14</A>&#93; W. McCune,
+   <EM>Otter 3.0 Reference Manual and Guide</EM>, Tech. Report
+   ANL-94/6, Argonne National Laboratory, Argonne, IL, 1994.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEmeredith-sheffer" name="meredith-sheffer">15</A>&#93;
+   C.&nbsp;A. Meredith, <EM>Equational postulates for the Sheffer
+   stroke</EM>, Notre Dame J. Formal Logic (NDJFL) <B>10</B> (1969),
+   no.&nbsp;3, 266-270.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEMP" name=MP>16</A>&#93; C.&nbsp;A. Meredith
+   and A.&nbsp;N. Prior, <EM>Notes on the axiomatics of the
+   propositional calculus</EM>, Notre Dame J. Formal Logic <B>4</B>
+   (1963), 171-187.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEmeredith-eq" name="meredith-eq">17</A>&#93;
+   C.&nbsp;A. Meredith and A.&nbsp;N. Prior, <EM>Equational
+   logic</EM>, NDJFL <B>9</B> (1968), 212-226.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEmeredith" name=meredith>18</A>&#93;
+   C.&nbsp;A. Meredith, <EM>Single axioms for the systems
+   (C,N),&nbsp;(C,O) and (A,N) of the two-valued propositional
+   calculus</EM>, J. Computing Systems <B>1</B> (1953), 155-164.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEmeyer" name=meyer>19</A>&#93; R.K. Meyer
+   and Z.&nbsp;Parks, <EM>Independent axioms for the implicational
+   fragment of Sobocinski's three-valued logic</EM>, Z. Math. Logik
+   Grundlagen Math. <B>18</B> (1972), 291-295.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEneumann" name=neumann>20</A>&#93;
+   B.&nbsp;H. Neumann, <EM>Another single law for groups</EM>, Bull.
+   Austral. Math. Soc. <B>23</B> (1981), no.&nbsp;1, 81-102.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEnicod" name=nicod>21</A>&#93; J.G. Nicod,
+   <EM>A reduction in the number of primitive propositions of
+   logic</EM>, Proc.&nbsp;Camb.&nbsp;Phil.&nbsp;Soc. <B>19</B>
+   (1917), 32-41.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITErp-quack:congruences" name="rp-quack:congruences">22</A>&#93;
+   R.&nbsp;Padmanabhan and R.&nbsp;W. Quackenbush, <EM>Equational
+   theories of algebras with distributive congruences</EM>, Proc. AMS
+   <B>41</B> (1973), no.&nbsp;2, 373-377.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEparks1" name=parks1>23</A>&#93; Zane Parks,
+   <EM>Dependence of some axioms of Rose</EM>, Z. Math. Logik
+   Grundlagen Math. <B>18</B> (1972), 189-192.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEparks2" name=parks2>24</A>&#93; Zane Parks,
+   <EM>A note on R-Mingle and Sobocinski's three-valued logic</EM>,
+   Notre Dame J. Formal Logic <B>13</B> (1972), 227-228.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITERezus" name=Rezus>25</A>&#93; Adrian Rezus,
+   <EM>On a theorem of Tarski</EM>, Libertas Math. <B>2</B> (1982),
+   63-97.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITErose1" name=rose1>26</A>&#93; Alan Rose,
+   <EM>A formalization of Sobocinski's three-valued implicational
+   propositional calculus</EM>, J. Computing Systems <B>1</B> (1953),
+   165-168.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITErose2" name=rose2>27</A>&#93; Alan Rose,
+   <EM>An alternative formalisation of Sobocinski's three-valued
+   implicational propositional calculus</EM>, Z. Math. Logik.
+   Grundlagen Math. <B>2</B> (1956), 166-172.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEscharle" name=scharle>28</A>&#93;
+   T.&nbsp;W. Scharle, <EM>Axiomatization of propositional calculus
+   with Sheffer functors</EM>, Notre Dame J. Formal Logic <B>6</B>
+   (1965), 209-217.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEsheffer" name=sheffer>29</A>&#93;
+   H.&nbsp;Sheffer, <EM>A set of five independent postulates for
+   Boolean algebras, with application to logical constants</EM>,
+   Trans. AMS <B>14</B> (1913), no.&nbsp;4, 481-488.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEsobo" name=sobo>30</A>&#93; Bolesaw
+   Sobocinski, <EM>Axiomatization of a partial system of three-value
+   calculus of propositions</EM>, J. Computing Systems <B>1</B>
+   (1952), 23-55.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEtarski" name=tarski>31</A>&#93;
+   A.&nbsp;Tarski, <EM>Ein beitrag axiomatik der abelshen
+   gruppen</EM>, Fundamenta Mathematicae <B>30</B> (1938),
+   253-256.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITETL1" name=TL1>32</A>&#93; A.&nbsp;Tarski,
+   <EM>Logic, semantics, metamathematics. Papers from 1923 to
+   1938</EM>, Oxford at the Clarendon Press, 1956, Translated by J.
+   H. Woodger.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEulrichLS" name=ulrichLS>33</A>&#93; Dolph
+   Ulrich, <EM>Local search</EM>, mimeograph of unpublished lecture
+   notes (obtained in private correspondence of 12 March 2001).<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEulrichS4" name=ulrichS4>34</A>&#93; Dolph
+   Ulrich, <EM>Strict implication in a sequence of extensions of
+   S4</EM>, Z. Math. Logik Grundlag. Math. <B>27</B> (1981),
+   no.&nbsp;3, 201-212.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEulrichSI" name=ulrichSI>35</A>&#93; Dolph
+   Ulrich, <EM>A legacy recalled and a tradition continued</EM>,
+   <EM>J. Automat. Reason.</EM>, August 2001.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEveroff:ba26" name="veroff:ba26">36</A>&#93;
+   R.&nbsp;Veroff, <EM>Short 2-Bases for Boolean Algebra in Terms of
+   the Sheffer Stroke</EM>, Tech. Report TR-CS-2000-25, CS @ UNM,
+   Albuquerque, NM, 2000.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEwajsberg" name=wajsberg>37</A>&#93;
+   M.&nbsp;Wajsberg, <EM>Logical Works</EM>, Polish Academy of
+   Sciences, 1977.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITElarry" name=larry>39</A>&#93; L.&nbsp;Wos,
+   <EM>A fascinating country in the world of computing: Your guide to
+   automated reasoning</EM>, World Scientific, 1999.<BR>
+   <BR>
+   </DT>
+   
+   <DD>&nbsp;</DD>
+   
+   <DT>&#91;<A HREF="ar.html#CITEsem" name=sem>40</A>&#93; J.&nbsp;Zhang and
+   H.&nbsp;Zhang, <EM>SEM: A system for enumerating models</EM>,
+   <EM>IJCAI</EM>, 1995.<BR>
+   <BR>
+   <A HREF="ar.html#TOP"><IMG SRC="up.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></DT>
+</DL>
+
+<P compact>
+
+<HR>
+
+</P>
+
+<H2><A NAME=NOTE></A><FONT SIZE="+2">Footnotes</FONT></H2>
+
+<P><A NAME=tthFtNtAAB></A><A HREF="ar.html#tthFrefAAB"><SUP>1</SUP></A>
+Results reported here are either the result of joint work, or the
+work of others associated with AR @ MCS @ ANL: Larry Wos, Bill
+McCune, Bob Veroff, Ken Kunen, Ken Harris, Zac Ernst, Ted Ulrich, Bob
+Meyer, Michael Beeson <EM>et al</EM>.</P>
+
+<P><A NAME=tthFtNtAAD></A><A HREF="ar.html#tthFrefAAD"><SUP>3</SUP></A>
+Actually, Nicod's original proofs are erroneous (as noted by
+Lukasiewicz in &#91;<A HREF="ar.html#luka" name=CITEluka>7</A>&#93;). See
+Scharle's &#91;<A HREF="ar.html#scharle" name=CITEscharle>28</A>&#93; for a
+rigorous proof of the completeness of Nicod's system.</P>
+
+<P><A NAME=tthFtNtAAE></A><A HREF="ar.html#tthFrefAAE"><SUP>4</SUP></A> A
+single axiom is <EM>organic</EM> if it contains no tautologous
+subformulae. Nicod's original single axiom (and Lukasiewicz's
+simplifcation of it) are <EM>non</EM>-organic, because they contain
+tautologous subformulae of the form DxDxx.</P>
+
+<P><A NAME=tthFtNtAAF></A><A HREF="ar.html#tthFrefAAF"><SUP>5</SUP></A> The
+elimination of some (C,O) candidates relied on matrices generated
+using <EM>local search</EM> techniques (as described by Ted Ulrich in
+his &#91;<A HREF="ar.html#ulrichLS" name=CITEulrichLS>33</A>, <A HREF="ar.html#ulrichSI">35</A>&#93;).
+Local search is very powerful in the context of implicational logics.
+It has led to <EM>many</EM> useful models.</P>
+
+<P><A NAME=tthFtNtAAG></A><A HREF="ar.html#tthFrefAAG"><SUP>6</SUP></A> The
+alternative 13-symbol formula CCCpCCCqprqrr will also serve this
+purpose.</P>
+
+<P><A NAME=tthFtNtAAH></A><A HREF="ar.html#tthFrefAAH"><SUP>7</SUP></A>
+Rezus's work does <EM>not</EM> apply to RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT>,
+so whether RM<FONT FACE="symbol"><SUB>&rarr;</SUB></FONT> has a
+single axiom remains open.</P>
+
+<P><A NAME=tthFtNtAAI></A><A HREF="ar.html#tthFrefAAI"><SUP>8</SUP></A> We
+say `likely to be tautologies' because C4 and C5 do not have finite
+characteristic matrices. Thus, we used matrices which validate all
+tautologies for the system, but also validate a small number of
+contingent formulas.<BR>
+<BR>
+<A HREF="ar.html#TOP"><IMG SRC="UP.gif" WIDTH=17 HEIGHT=16 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom></A></P>
+</BODY>
+</HTML>

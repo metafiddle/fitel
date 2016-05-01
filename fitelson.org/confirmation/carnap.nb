@@ -1,0 +1,4049 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    134923,       4040]
+NotebookOptionsPosition[    120052,       3559]
+NotebookOutlinePosition[    122742,       3622]
+CellTagsIndexPosition[    122699,       3619]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "PrSAT`"}]], "Input",
+ CellChangeTimes->{{3.4028045482810802`*^9, 3.402804551574223*^9}, {
+  3.402845934126768*^9, 3.402845952690843*^9}, {3.402846135744638*^9, 
+  3.402846145221547*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Carnap's Early Systems: ",
+ Cell[BoxData[
+  TagBox[
+   SuperscriptBox["\[GothicM]", "\[Dagger]"],
+   "NotationTemplateTag"]],
+  CellChangeTimes->{{3.402846208831408*^9, 3.402846210171116*^9}}],
+ " and  ",
+ Cell[BoxData[
+  TagBox[
+   SuperscriptBox["\[GothicM]", "*"],
+   "NotationTemplateTag"]],
+  CellChangeTimes->{{3.402846208831408*^9, 3.402846210171116*^9}}]
+}], "Subsection",
+ CellChangeTimes->{{3.40293794246373*^9, 3.402937959772015*^9}, {
+  3.403246352596435*^9, 3.403246359339246*^9}}],
+
+Cell[TextData[{
+ "Here is the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[GothicM]", "\[Dagger]"], TraditionalForm]],
+  CellChangeTimes->{{3.402804585761022*^9, 3.402804786012807*^9}, 
+    3.402846216316539*^9, {3.402846249607501*^9, 3.402846250279059*^9}}],
+ " distribution, for the 2 prediate, 2 object case:"
+}], "Text",
+ CellChangeTimes->{{3.402846246076407*^9, 3.402846256641951*^9}, {
+  3.40293806567047*^9, 3.402938073730135*^9}, {3.4029381232040653`*^9, 
+  3.4029381239899263`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Symbolize", "[", 
+   TagBox[
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]],
+    "NotationTemplateTag"], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.402846208831408*^9, 3.402846210171116*^9}, {
+   3.402938047845282*^9, 3.4029380578755407`*^9}, 3.402938304583301*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox[
+   SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+   RowBox[{"2", ",", "2"}]], "=", 
+  RowBox[{"PrSAT", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", "Eb", "\[And]", "Gb"}], "]"}], 
+      "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", "Gb"}], "]"}], "==",
+       
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", "Eb", "\[And]", 
+        "Gb"}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", "Gb"}], "]"}], "==",
+       
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "16"]}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.402804585761022*^9, 3.402804786012807*^9}, 
+   3.402846216316539*^9, {3.402846249607501*^9, 3.402846250279059*^9}, {
+   3.40284635947027*^9, 3.402846368330718*^9}, 3.4028464592121487`*^9, 
+   3.40293806158394*^9, {3.402938099048999*^9, 3.4029381336679163`*^9}, 
+   3.402938241628962*^9, {3.403570731264353*^9, 3.403570745661126*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Ea", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"Eb", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "9"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "10"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"Ga", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "9"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "11"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"Gb", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "10"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "11"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "9"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "10"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "11"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "9"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "10"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "11"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "12"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "13"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "14"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "15"], "\[Rule]", 
+      FractionBox["1", "16"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "16"], "\[Rule]", 
+      FractionBox["1", "16"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.402804706299713*^9, 3.402804786538505*^9, {3.4028462167592916`*^9, 
+   3.402846226936083*^9}, 3.402846370242281*^9, 3.4028464601602793`*^9, {
+   3.40284692145578*^9, 3.402846939686091*^9}, 3.402937982787146*^9, {
+   3.4029380623603973`*^9, 3.402938100017211*^9}, 3.4029381342279453`*^9, {
+   3.40293823748138*^9, 3.402938242249555*^9}, {3.403009023432097*^9, 
+   3.403009049583497*^9}, 3.403106054867325*^9, 3.4032186925086403`*^9, 
+   3.403570130606188*^9, 3.4035704188838997`*^9, {3.403570756517185*^9, 
+   3.4035707759790373`*^9}, 3.403616246793816*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TruthTable", "[", 
+  SubscriptBox[
+   SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+   RowBox[{"2", ",", "2"}]], "]"}]], "Input",
+ CellChangeTimes->{{3.4028459264030523`*^9, 3.4028459279754333`*^9}, 
+   3.40284622928133*^9, 3.4029380809045467`*^9, 3.402938142151945*^9, {
+   3.402938250681836*^9, 3.4029382622409067`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"Ea", "Eb", "Ga", "Gb", "var", "Pr"},
+    {"T", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "16"], 
+     FractionBox["1", "16"]},
+    {"T", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "12"], 
+     FractionBox["1", "16"]},
+    {"T", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "13"], 
+     FractionBox["1", "16"]},
+    {"T", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "6"], 
+     FractionBox["1", "16"]},
+    {"T", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "14"], 
+     FractionBox["1", "16"]},
+    {"T", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "7"], 
+     FractionBox["1", "16"]},
+    {"T", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "8"], 
+     FractionBox["1", "16"]},
+    {"T", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"], 
+     FractionBox["1", "16"]},
+    {"F", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "15"], 
+     FractionBox["1", "16"]},
+    {"F", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "9"], 
+     FractionBox["1", "16"]},
+    {"F", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "10"], 
+     FractionBox["1", "16"]},
+    {"F", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "3"], 
+     FractionBox["1", "16"]},
+    {"F", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "11"], 
+     FractionBox["1", "16"]},
+    {"F", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "4"], 
+     FractionBox["1", "16"]},
+    {"F", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "5"], 
+     FractionBox["1", "16"]},
+    {"F", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"], 
+     FractionBox["1", "16"]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}],
+  DisplayForm]], "Output",
+ CellChangeTimes->{
+  3.402846230107547*^9, 3.4028463760063763`*^9, {3.402846921548073*^9, 
+   3.40284693977316*^9}, 3.402937983616754*^9, {3.4029380834509706`*^9, 
+   3.402938088855781*^9}, {3.4029381371555843`*^9, 3.4029381426753473`*^9}, {
+   3.4029382579086447`*^9, 3.40293826266335*^9}, {3.403009023657753*^9, 
+   3.4030090497002583`*^9}, 3.403106055052483*^9, 3.403218692967465*^9, 
+   3.4035701332807627`*^9, 3.403570419072442*^9, {3.4035707566896677`*^9, 
+   3.4035707761538763`*^9}, 3.403616246955587*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here are some salient ",
+ "Ea",
+ "cts about  ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[GothicM]", "\[Dagger]"], TraditionalForm]]],
+ ": "
+}], "Text",
+ CellChangeTimes->{{3.40284274389604*^9, 3.40284275790237*^9}, 
+   3.4035707325181227`*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"x_", "\[Superset]", "y_"}], ":=", 
+   RowBox[{
+    RowBox[{"\[Not]", "x"}], "\[Or]", "y"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x_", "\[Congruent]", "y_"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "\[Superset]", "y"}], ")"}], "\[And]", 
+    RowBox[{"(", 
+     RowBox[{"y", "\[Superset]", "x"}], ")"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.402938470019134*^9, 3.4029384851404963`*^9}, {
+  3.403218731921941*^9, 3.403218738479721*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "]"}], ",", " ", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402804797242034*^9, 3.402804839214284*^9}, {
+   3.402804871902073*^9, 3.402804872311943*^9}, {3.4028351188138123`*^9, 
+   3.402835119113703*^9}, {3.402842059468815*^9, 3.402842059879581*^9}, 
+   3.402846383623026*^9, 3.4029381507437162`*^9, {3.402938265389406*^9, 
+   3.402938269696219*^9}, 3.402938565047987*^9, {3.403570732596417*^9, 
+   3.403570745733624*^9}}],
+
+Cell[BoxData["0.5625`"], "Output",
+ CellChangeTimes->{{3.402804828627339*^9, 3.4028048396262627`*^9}, 
+   3.402804872575474*^9, 3.402835119512807*^9, 3.402842060086046*^9, {
+   3.4028463806985817`*^9, 3.402846383833769*^9}, {3.402846921616145*^9, 
+   3.402846939864141*^9}, 3.402937985210145*^9, 3.402938151200304*^9, {
+   3.402938265980344*^9, 3.4029382716778727`*^9}, 3.402938565490571*^9, {
+   3.4030090237416153`*^9, 3.4030090497886667`*^9}, 3.403106055109158*^9, 
+   3.403218696271735*^9, 3.4035701402680597`*^9, 3.403570423180797*^9, {
+   3.403570756771948*^9, 3.403570776237192*^9}, 3.403616247011215*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[And]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218776273677*^9, 3.403570745735619*^9}],
+
+Cell[BoxData["0.25`"], "Output",
+ CellChangeTimes->{
+  3.403218776881752*^9, 3.403570140386855*^9, 3.4035704254770412`*^9, {
+   3.4035707568118362`*^9, 3.403570776270574*^9}, 3.40361624705418*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218783969805*^9, {3.403218814842595*^9, 3.403218819958218*^9}, 
+   3.403570732698636*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.4032187846534653`*^9, {3.403218815468848*^9, 3.403218820209049*^9}, 
+   3.4035701404541483`*^9, 3.403570426595684*^9, {3.403570756959525*^9, 
+   3.4035707763299932`*^9}, 3.403616247099318*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218827858066*^9, 3.403570732797224*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218828145542*^9, 3.4035701405045347`*^9, 3.4035704275646133`*^9, {
+   3.403570757012208*^9, 3.403570776382201*^9}, 3.4036162471366997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Gb", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218833608591*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218833955962*^9, 3.403570140580036*^9, 3.403570428520933*^9, {
+   3.403570757070098*^9, 3.4035707764468327`*^9}, 3.403616247190606*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Congruent]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218754712686*^9, 3.403570745738207*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218755455996*^9, 3.4035701406357193`*^9, 3.403570429604363*^9, {
+   3.403570757129612*^9, 3.4035707764959717`*^9}, 3.403616247239419*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028048623967743`*^9, 3.402804875158139*^9}, 
+   3.402846385616489*^9, 3.402938153800091*^9, 3.4029382741295033`*^9, 
+   3.402938569053871*^9, {3.403218742137435*^9, 3.403218745183144*^9}, {
+   3.403570732897512*^9, 3.403570745740528*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{{3.402804868356085*^9, 3.402804875387122*^9}, 
+   3.402846385773252*^9, {3.4028469217014637`*^9, 3.40284693993295*^9}, 
+   3.4029381540484953`*^9, 3.402938274839126*^9, 3.402938569392344*^9, {
+   3.4030090237807837`*^9, 3.403009068026864*^9}, 3.403106055165721*^9, 
+   3.403218698787081*^9, 3.403218748204033*^9, 3.4035701477870417`*^9, 
+   3.403570430781909*^9, {3.40357075719429*^9, 3.403570776558127*^9}, 
+   3.40361624728827*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218958113801*^9, {3.403570732997842*^9, 3.403570745741926*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218958294744*^9, 3.403570147924313*^9, 3.403570431570335*^9, {
+   3.403570757262085*^9, 3.4035707766069403`*^9}, 3.4036162473405323`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403570733101995*^9, 3.4035707457433147`*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{
+  3.4035701479830933`*^9, 3.4035704321699467`*^9, {3.4035707573301477`*^9, 
+   3.403570776662866*^9}, 3.403616247391127*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403009085906938*^9, {3.4035707332665243`*^9, 3.403570745744688*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{
+  3.403009086868154*^9, 3.403106055201633*^9, 3.4035701480326757`*^9, 
+   3.403570432709661*^9, {3.403570757375257*^9, 3.4035707767918377`*^9}, 
+   3.403616247453071*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.4030090968335953`*^9, {3.403570733433522*^9, 3.403570745746057*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{
+  3.4030090972958517`*^9, 3.403106055266316*^9, 3.403570148100525*^9, 
+   3.40357043322581*^9, {3.403570757430461*^9, 3.403570776828004*^9}, 
+   3.403616247504059*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009105209553*^9, 3.40300910960285*^9}, {
+  3.403570733601706*^9, 3.403570745747704*^9}}],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{
+  3.403009109850049*^9, 3.403106055316704*^9, 3.403570148193433*^9, 
+   3.403570433710136*^9, {3.403570757484849*^9, 3.403570776923897*^9}, 
+   3.403616247534058*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"\[Not]", "Ea"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009118219421*^9, 3.40300912186554*^9}, {
+  3.4035707337685823`*^9, 3.403570745749464*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{
+  3.40300912230648*^9, 3.403106055367055*^9, 3.4035701507488728`*^9, 
+   3.403570434229376*^9, {3.4035707575471497`*^9, 3.40357077699641*^9}, 
+   3.4036162475849743`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", "Ga"}], "]"}], ",",
+     
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009133657589*^9, 3.4030091348470907`*^9}, {
+  3.4035707339359283`*^9, 3.40357074575076*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{
+  3.4030091350960083`*^9, 3.403106055415392*^9, 3.403570434747222*^9, {
+   3.403570757594924*^9, 3.4035707770484257`*^9}, 3.4036162476232557`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", 
+      RowBox[{"Gb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[And]", 
+         RowBox[{"\[Not]", "Eb"}]}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.4030091563948708`*^9, {3.403570734036134*^9, 3.403570745752007*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403009157311714*^9, 3.403106055446705*^9, 3.4035701544394903`*^9, 
+   3.4035704352838373`*^9, {3.4035707576446733`*^9, 3.403570777098729*^9}, 
+   3.403616247686751*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvaluateProbability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ea", "|", "Eb"}], "]"}], ">", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ea", "|", 
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ga", "\[And]", 
+         RowBox[{"\[Not]", "Gb"}]}], ")"}]}]}], "]"}], ">", 
+    RowBox[{"Pr", "[", "Ea", "]"}]}], ",", 
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+    RowBox[{"2", ",", "2"}]]}], "]"}]], "Input",
+ CellChangeTimes->{{3.403616540829451*^9, 3.403616600381998*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.403616570201952*^9, 3.4036166007189703`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403009165881455*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403009166268381*^9, 3.403106055501079*^9, 3.403570154568933*^9, 
+   3.403570435781371*^9, {3.403570757698401*^9, 3.403570777145904*^9}, 
+   3.4036162477232103`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Ga", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4030091734493732`*^9, 3.403009173601694*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.40300917390399*^9, 3.4031060555336657`*^9, 3.403570154612472*^9, 
+   3.403570436590292*^9, {3.4035707577454567`*^9, 3.403570777201264*^9}, 
+   3.403616247782655*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "In other words,  ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[GothicM]", "\[Dagger]"], TraditionalForm]]],
+ " violates instantial relevance and analogy, but it leads to all Hempelian \
+confirmatory instances for a universal generalization being confirmatory \
+(probabilistically relevant) instances for a universal generalization."
+}], "Text",
+ CellChangeTimes->{{3.4028427636184473`*^9, 3.402842792286427*^9}, 
+   3.402842849544752*^9, {3.4028462702791443`*^9, 3.4028462938903513`*^9}}],
+
+Cell[TextData[{
+ "Here is the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[GothicM]", "*"], TraditionalForm]]],
+ " distribution:"
+}], "Text",
+ CellChangeTimes->{{3.402842799849202*^9, 3.402842814212906*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Symbolize", "[", 
+   TagBox[
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]],
+    "NotationTemplateTag"], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.402846208831408*^9, 3.402846210171116*^9}, 
+   3.40284643229055*^9, {3.4029381815607967`*^9, 3.402938195771862*^9}, {
+   3.4029383002168627`*^9, 3.402938312859934*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox[
+   SuperscriptBox["\[GothicM]", "*"], 
+   RowBox[{"2", ",", "2"}]], "=", 
+  RowBox[{"PrSAT", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", "Eb", "\[And]", "Gb"}], "]"}], 
+      "==", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", "Gb"}], "]"}], "==",
+       
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "10"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"Ea", "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", "Eb", "\[And]", 
+        "Gb"}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga", "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", "Gb"}], "]"}], "==",
+       
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", "Eb", "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", "Gb"}], "]"}], "==", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{
+        RowBox[{"\[Not]", "Ea"}], "\[And]", 
+        RowBox[{"\[Not]", "Ga"}], "\[And]", 
+        RowBox[{"\[Not]", "Eb"}], "\[And]", 
+        RowBox[{"\[Not]", "Gb"}]}], "]"}], "==", 
+      FractionBox["1", "10"]}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4028050387311068`*^9, 3.4028050400313883`*^9}, {
+  3.40280507493069*^9, 3.4028051656216383`*^9}, {3.402846436613171*^9, 
+  3.4028464550762577`*^9}, {3.402846613275515*^9, 3.402846614999716*^9}, {
+  3.4028466583142223`*^9, 3.402846672014185*^9}, {3.40284676875498*^9, 
+  3.40284677082815*^9}, {3.402846899598439*^9, 3.4028469134389353`*^9}, {
+  3.4029383211648197`*^9, 3.4029383230657997`*^9}, {3.403570734137944*^9, 
+  3.403570745800745*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Ea", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"Eb", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "9"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "10"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"Ga", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "9"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "11"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"Gb", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "10"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "11"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "9"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "10"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "11"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "12"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "13"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "14"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "15"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "16"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "9"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "10"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "11"], "\[Rule]", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "12"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "13"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "14"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "15"], "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "16"], "\[Rule]", 
+      FractionBox["1", "10"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.402805167133573*^9, {3.402846437630121*^9, 3.402846466101767*^9}, 
+   3.4028465351493807`*^9, 3.40284661903959*^9, 3.402846713234314*^9, {
+   3.402846769224612*^9, 3.402846771824675*^9}, {3.402846915152521*^9, 
+   3.40284694086775*^9}, 3.4029379919251957`*^9, 3.402938323496689*^9, {
+   3.4030090249519978`*^9, 3.4030090506509533`*^9}, 3.40310605572718*^9, 
+   3.403219260392661*^9, 3.403570157540544*^9, 3.403570451321974*^9, {
+   3.40357075794622*^9, 3.40357077741396*^9}, 3.403616248064206*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TruthTable", "[", 
+  SubscriptBox[
+   SuperscriptBox["\[GothicM]", "*"], 
+   RowBox[{"2", ",", "2"}]], "]"}]], "Input",
+ CellChangeTimes->{{3.402846527851815*^9, 3.4028465374159184`*^9}, 
+   3.4029383288887157`*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"Ea", "Eb", "Ga", "Gb", "var", "Pr"},
+    {"T", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "16"], 
+     FractionBox["1", "10"]},
+    {"T", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "12"], 
+     FractionBox["1", "20"]},
+    {"T", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "13"], 
+     FractionBox["1", "20"]},
+    {"T", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "6"], 
+     FractionBox["1", "10"]},
+    {"T", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "14"], 
+     FractionBox["1", "20"]},
+    {"T", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "7"], 
+     FractionBox["1", "20"]},
+    {"T", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "8"], 
+     FractionBox["1", "20"]},
+    {"T", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"], 
+     FractionBox["1", "20"]},
+    {"F", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "15"], 
+     FractionBox["1", "20"]},
+    {"F", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "9"], 
+     FractionBox["1", "20"]},
+    {"F", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "10"], 
+     FractionBox["1", "20"]},
+    {"F", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "3"], 
+     FractionBox["1", "20"]},
+    {"F", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "11"], 
+     FractionBox["1", "10"]},
+    {"F", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "4"], 
+     FractionBox["1", "20"]},
+    {"F", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "5"], 
+     FractionBox["1", "20"]},
+    {"F", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"], 
+     FractionBox["1", "10"]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}],
+  DisplayForm]], "Output",
+ CellChangeTimes->{{3.4028465295139627`*^9, 3.402846538201496*^9}, 
+   3.402846620853697*^9, 3.402846774510017*^9, {3.402846917481123*^9, 
+   3.402846940954978*^9}, 3.402937994093918*^9, 3.4029383292081738`*^9, {
+   3.403009025045212*^9, 3.403009050737967*^9}, 3.403106055815262*^9, 
+   3.403219262250866*^9, 3.403570159890399*^9, 3.403570453259488*^9, {
+   3.4035707581495543`*^9, 3.403570777502489*^9}, 3.403616248150549*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here are some salient ",
+ "Ea",
+ "cts about ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[GothicM]", "*"], TraditionalForm]]],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.402842820489334*^9, 3.402842829638042*^9}, 
+   3.4035707352434797`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "]"}], ",", " ", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402804797242034*^9, 3.402804839214284*^9}, {
+   3.402804871902073*^9, 3.402804872311943*^9}, {3.4028351188138123`*^9, 
+   3.402835119113703*^9}, {3.402842059468815*^9, 3.402842059879581*^9}, 
+   3.402846383623026*^9, 3.4029381507437162`*^9, {3.402938265389406*^9, 
+   3.402938269696219*^9}, 3.402938565047987*^9, 3.403219273907028*^9, {
+   3.403570735326048*^9, 3.403570745803967*^9}}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{{3.402804828627339*^9, 3.4028048396262627`*^9}, 
+   3.402804872575474*^9, 3.402835119512807*^9, 3.402842060086046*^9, {
+   3.4028463806985817`*^9, 3.402846383833769*^9}, {3.402846921616145*^9, 
+   3.402846939864141*^9}, 3.402937985210145*^9, 3.402938151200304*^9, {
+   3.402938265980344*^9, 3.4029382716778727`*^9}, 3.402938565490571*^9, {
+   3.4030090237416153`*^9, 3.4030090497886667`*^9}, 3.403106055109158*^9, 
+   3.403218696271735*^9, 3.4032192743607388`*^9, 3.403570165973917*^9, {
+   3.403570758199133*^9, 3.403570777539803*^9}, 3.4036162481948833`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[And]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218776273677*^9, 3.403219282730562*^9, 
+  3.403570745805469*^9}],
+
+Cell[BoxData["0.25`"], "Output",
+ CellChangeTimes->{
+  3.403218776881752*^9, 3.403219283337037*^9, 3.403570166097836*^9, {
+   3.403570758257844*^9, 3.403570777571368*^9}, 3.403616248255115*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218783969805*^9, {3.403218814842595*^9, 3.403218819958218*^9}, 
+   3.403219285937405*^9, 3.403570735426597*^9}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{
+  3.4032187846534653`*^9, {3.403218815468848*^9, 3.403218820209049*^9}, 
+   3.403219286397213*^9, 3.403570166148004*^9, {3.40357075831734*^9, 
+   3.403570777622938*^9}, 3.403616248338546*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218827858066*^9, 3.403219293618484*^9, 
+  3.403570735525732*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218828145542*^9, 3.4032192944840927`*^9, 3.403570166177351*^9, {
+   3.403570758368376*^9, 3.403570777671659*^9}, 3.403616248406343*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Congruent]", "Ga"}], ")"}], "\[And]", "Eb"}]}], 
+     "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4032219313814898`*^9, 3.403221939890504*^9}, {
+  3.4035707356267767`*^9, 3.4035707458072147`*^9}}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{
+  3.403221940237281*^9, 3.403570166248876*^9, {3.4035707584339733`*^9, 
+   3.403570777732459*^9}, 3.403616248473618*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", "Eb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403221949702928*^9, 3.403221952258134*^9}, 
+   3.403570745808688*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.4032219525955153`*^9, 3.4035701663151503`*^9, {3.4035707584959497`*^9, 
+   3.403570777840652*^9}, 3.4036162485487328`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Gb", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218833608591*^9, 3.4032192970256977`*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218833955962*^9, 3.40321929738046*^9, 3.403570166383944*^9, {
+   3.403570758583186*^9, 3.403570777885171*^9}, 3.403616248623281*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Congruent]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218754712686*^9, 3.403219308826243*^9, 
+  3.403570745810651*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403218755455996*^9, 3.403219309316924*^9, 3.403570170382313*^9, {
+   3.403570758636292*^9, 3.403570777924362*^9}, 3.4036162487035303`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028048623967743`*^9, 3.402804875158139*^9}, 
+   3.402846385616489*^9, 3.402938153800091*^9, 3.4029382741295033`*^9, 
+   3.402938569053871*^9, {3.403218742137435*^9, 3.403218745183144*^9}, 
+   3.4032193111783743`*^9, {3.403570735727726*^9, 3.4035707458123207`*^9}}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{{3.402804868356085*^9, 3.402804875387122*^9}, 
+   3.402846385773252*^9, {3.4028469217014637`*^9, 3.40284693993295*^9}, 
+   3.4029381540484953`*^9, 3.402938274839126*^9, 3.402938569392344*^9, {
+   3.4030090237807837`*^9, 3.403009068026864*^9}, 3.403106055165721*^9, 
+   3.403218698787081*^9, 3.403218748204033*^9, 3.403219311510148*^9, 
+   3.403570170494223*^9, {3.403570758703072*^9, 3.4035707779936132`*^9}, 
+   3.4036162487658978`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218958113801*^9, 3.403570228013073*^9, {3.403570735828765*^9, 
+   3.403570745813517*^9}}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{
+  3.403218958294744*^9, 3.403219371632102*^9, 3.403570170562393*^9, 
+   3.4035702283158484`*^9, {3.4035707587707033`*^9, 3.403570778051242*^9}, 
+   3.4036162488255463`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Congruent]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403219377832733*^9, 3.403219377942256*^9}, 
+   3.403570230325836*^9, 3.403570745815158*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.403219378261525*^9, 3.403570170600574*^9, 3.403570230550269*^9, {
+   3.403570758820142*^9, 3.403570778161273*^9}, 3.4036162489565268`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402804797242034*^9, 3.402804839214284*^9}, {
+   3.402804871902073*^9, 3.402804872311943*^9}, {3.4028051832514973`*^9, 
+   3.4028051843191137`*^9}, 3.4028464735528603`*^9, 3.402938331897427*^9, {
+   3.4029384880048647`*^9, 3.402938494918342*^9}, {3.403570735927866*^9, 
+   3.403570745817417*^9}}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{{3.402804828627339*^9, 3.4028048396262627`*^9}, 
+   3.402804872575474*^9, 3.402805184757702*^9, 3.402846474352319*^9, 
+   3.40284686773806*^9, {3.402846923336343*^9, 3.402846940992165*^9}, 
+   3.402938332080701*^9, 3.402938497303709*^9, {3.403009025085824*^9, 
+   3.403009050785143*^9}, 3.403106055852598*^9, 3.403219265253119*^9, 
+   3.403570170655751*^9, {3.403570758887306*^9, 3.403570778223111*^9}, 
+   3.403616249009465*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028048623967743`*^9, 3.402804875158139*^9}, {
+   3.402805186610977*^9, 3.40280518770518*^9}, 3.402846476957244*^9, 
+   3.402938333865033*^9, {3.402938498937098*^9, 3.402938502736231*^9}, {
+   3.403570736028264*^9, 3.40357074581982*^9}}],
+
+Cell[BoxData["0.8`"], "Output",
+ CellChangeTimes->{{3.402804868356085*^9, 3.402804875387122*^9}, 
+   3.402805188389382*^9, 3.402846477380933*^9, 3.402846867883432*^9, {
+   3.4028469234255333`*^9, 3.402846941042248*^9}, 3.402938334054245*^9, 
+   3.4029385032293777`*^9, {3.403009025135994*^9, 3.403009050820457*^9}, 
+   3.403106055902296*^9, 3.403219266759605*^9, 3.4035701707265787`*^9, {
+   3.403570758954526*^9, 3.403570778290061*^9}, 3.4036162490879507`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028420025668287`*^9, 3.402842004691845*^9}, 
+   3.402846480873541*^9, 3.402938335512486*^9, {3.402938506046969*^9, 
+   3.402938513317984*^9}, {3.403570736195842*^9, 3.4035707458218317`*^9}}],
+
+Cell[BoxData["0.8`"], "Output",
+ CellChangeTimes->{
+  3.402842005176515*^9, 3.40284648116471*^9, 3.402846867934189*^9, {
+   3.402846923496628*^9, 3.40284694109099*^9}, 3.402938335695972*^9, 
+   3.402938513978105*^9, {3.403009025236958*^9, 3.4030090508852177`*^9}, 
+   3.403106056038068*^9, 3.4035701707850313`*^9, {3.403570759021471*^9, 
+   3.403570778339776*^9}, 3.403616249160954*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402842012521194*^9, 3.402842014335889*^9}, 
+   3.402846483737547*^9, 3.402938336976054*^9, {3.40293851628979*^9, 
+   3.402938519747402*^9}, {3.4035707363632174`*^9, 3.403570745823205*^9}}],
+
+Cell[BoxData["0.8`"], "Output",
+ CellChangeTimes->{
+  3.4028420147329283`*^9, 3.4028464838436337`*^9, 3.402846867984659*^9, {
+   3.402846923576706*^9, 3.402846941143503*^9}, 3.402938337150116*^9, 
+   3.402938519970749*^9, {3.40300902530443*^9, 3.403009050951325*^9}, 
+   3.4031060561026154`*^9, 3.403570170841454*^9, {3.403570759150318*^9, 
+   3.4035707784066277`*^9}, 3.403616249223548*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EvaluateProbability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ea", "|", "Eb"}], "]"}], ">", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ea", "|", 
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ga", "\[And]", 
+         RowBox[{"\[Not]", "Gb"}]}], ")"}]}]}], "]"}], ">", 
+    RowBox[{"Pr", "[", "Ea", "]"}]}], ",", 
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "*"], 
+    RowBox[{"2", ",", "2"}]]}], "]"}]], "Input",
+ CellChangeTimes->{{3.403616540829451*^9, 3.403616569141108*^9}, 
+   3.403616606123279*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.403616570201952*^9, 3.403616606445508*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028420198608*^9, 3.4028420222695436`*^9}, 
+   3.402846486552409*^9, 3.402938338120105*^9, 3.402938528140053*^9, {
+   3.403570736530249*^9, 3.403570745824506*^9}}],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{
+  3.40284202285255*^9, 3.402846486664757*^9, 3.402846868052706*^9, {
+   3.402846923659234*^9, 3.402846941210431*^9}, 3.402938338289638*^9, 
+   3.402938532262207*^9, {3.403009025420333*^9, 3.403009051002673*^9}, 
+   3.4031060561389513`*^9, 3.4035701745788813`*^9, {3.403570759213627*^9, 
+   3.4035707784661217`*^9}, 3.403616249287174*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", 
+      RowBox[{"Gb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[And]", 
+         RowBox[{"\[Not]", "Eb"}]}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028359478546124`*^9, 3.40283596059762*^9}, 
+   3.402846490496896*^9, 3.402938339687738*^9, {3.403570736698676*^9, 
+   3.40357074582583*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.402835961785244*^9, 3.4028464906262712`*^9, 3.402846868117841*^9, {
+   3.402846923742818*^9, 3.4028469412771883`*^9}, 3.402938339862073*^9, 
+   3.402938533299663*^9, {3.40300902547174*^9, 3.403009051066374*^9}, 
+   3.4031060562040577`*^9, 3.403570175704422*^9, 3.4035704647309227`*^9, {
+   3.403570759265163*^9, 3.403570778523437*^9}, 3.403616249352689*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402835969278769*^9, 3.402835969413241*^9}, 
+   3.402846493347889*^9, 3.4029383413998404`*^9}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{
+  3.4028359699703913`*^9, 3.402846493456297*^9, 3.40284686818427*^9, {
+   3.4028469238264637`*^9, 3.402846941425205*^9}, 3.4029383415703983`*^9, 
+   3.402938534654093*^9, {3.403009025538157*^9, 3.4030090511194487`*^9}, 
+   3.403106056270053*^9, 3.403570176744575*^9, 3.4035704635261793`*^9, {
+   3.403570759322456*^9, 3.403570778563459*^9}, 3.403616249417097*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Ga", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.402835988197983*^9, 3.402846496353755*^9, 
+  3.402938342783431*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.402835988519699*^9, 3.40284649665066*^9, 3.402846868250592*^9, {
+   3.402846923909934*^9, 3.402846941478449*^9}, 3.4029383429776363`*^9, 
+   3.402938535608489*^9, {3.403009025717176*^9, 3.4030090511497517`*^9}, 
+   3.403106056321928*^9, 3.403570177764138*^9, {3.403570759403028*^9, 
+   3.403570778624978*^9}, 3.403616249477232*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "In other words,  ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[GothicM]", "*"], TraditionalForm]]],
+ " satisfies instantial relevance and \"analogy by similarity\", but it also \
+leads to all Hempelian confirmatory instances for a universal generalization \
+being confirmatory (probabilistically relevant) instances for a universal \
+generalization."
+}], "Text",
+ CellChangeTimes->{{3.4028427636184473`*^9, 3.402842792286427*^9}, 
+   3.402842849544752*^9, {3.4028462702791443`*^9, 3.402846348550297*^9}, {
+   3.40284650252032*^9, 3.4028465068348227`*^9}}],
+
+Cell[TextData[{
+ "What about \"Grue\"?  Here, the 2-object, 3-predicate case is what we'd \
+want to look at (E, O, G, and a, b, c).  It's pretty complex.  We need to be \
+more clever now in specifying ",
+ Cell[BoxData[
+  TagBox[
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+    RowBox[{"2", ",", "3"}]],
+   "NotationTemplateTag"]],
+  CellChangeTimes->{{3.402938360116104*^9, 3.402938378995573*^9}}],
+ " and ",
+ Cell[BoxData[
+  TagBox[
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "*"], 
+    RowBox[{"2", ",", "3"}]],
+   "NotationTemplateTag"]],
+  CellChangeTimes->{{3.402938360116104*^9, 3.402938378995573*^9}}],
+ ".  We start with ",
+ Cell[BoxData[
+  TagBox[
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+    RowBox[{"2", ",", "3"}]],
+   "NotationTemplateTag"]],
+  CellChangeTimes->{{3.402938360116104*^9, 3.402938378995573*^9}}],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.402938004892281*^9, 3.4029380256501007`*^9}, {
+  3.402938944833742*^9, 3.4029390022857428`*^9}, {3.402976169024973*^9, 
+  3.402976172916278*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Symbolize", "[", 
+   TagBox[
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "3"}]],
+    "NotationTemplateTag"], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.402938360116104*^9, 3.402938378995573*^9}, 
+   3.402976174851241*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"atoms", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "Ea", ",", " ", "Eb", ",", " ", "Oa", ",", " ", "Ob", ",", " ", "Ga", ",",
+      " ", "Gb"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tvs", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"Outer", "[", 
+      RowBox[{"List", ",", 
+       RowBox[{"Sequence", "@@", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"True", ",", "False"}], "}"}], ",", 
+          RowBox[{"{", "6", "}"}]}], "]"}]}]}], "]"}], ",", "5"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"set", "[", "x_", "]"}], ":=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+        "\[Equal]", "True"}], ",", 
+       RowBox[{
+       "atoms", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], ",", 
+       RowBox[{"\[Not]", 
+        RowBox[{
+        "atoms", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}]}], 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "atoms", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sds", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"And", "@@", "#"}], "&"}], ")"}], "/@", 
+    RowBox[{"(", 
+     RowBox[{"set", "/@", "tvs"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "s_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Pr", "[", "s", "]"}], "\[Equal]", 
+    FractionBox["1", 
+     RowBox[{"Length", "[", "sds", "]"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+    RowBox[{"2", ",", "3"}]], "=", 
+   RowBox[{"PrSAT", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f", "/@", "sds"}], "}"}], ",", 
+     RowBox[{"BypassSearch", "\[Rule]", "True"}]}], "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.402939011669956*^9, 3.402939039891012*^9}, {
+   3.40293914214329*^9, 3.402939156250513*^9}, {3.402939228007283*^9, 
+   3.402939234339085*^9}, {3.402939816492888*^9, 3.402939866752653*^9}, {
+   3.402939902643433*^9, 3.402939904694418*^9}, {3.402976177743717*^9, 
+   3.402976187811634*^9}, {3.402976242255578*^9, 3.402976243176723*^9}, {
+   3.4029763420941353`*^9, 3.402976349801968*^9}, {3.402976391949156*^9, 
+   3.40297639293294*^9}, 3.402979131140953*^9, {3.402980881157659*^9, 
+   3.402980898129931*^9}, {3.4030066721906147`*^9, 3.403006673762518*^9}, 
+   3.4030067905552053`*^9, 3.4035707367983*^9, 3.403570825968775*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x_", "\[Congruent]", "y_"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "\[Superset]", "y"}], ")"}], "\[And]", 
+    RowBox[{"(", 
+     RowBox[{"y", "\[Superset]", "x"}], ")"}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Ea", "\[Superset]", 
+        RowBox[{"(", 
+         RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}], ")"}], "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Eb", "\[Superset]", 
+        RowBox[{"(", 
+         RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402804797242034*^9, 3.402804839214284*^9}, {
+   3.402804871902073*^9, 3.402804872311943*^9}, {3.4028051832514973`*^9, 
+   3.4028051843191137`*^9}, 3.4028464735528603`*^9, 3.402938331897427*^9, {
+   3.4029384880048647`*^9, 3.402938494918342*^9}, {3.402938631118271*^9, 
+   3.402938645492141*^9}, {3.402976418228202*^9, 3.402976458130674*^9}, 
+   3.403006798032898*^9, 3.4030206824393063`*^9}],
+
+Cell[BoxData["0.5625`"], "Output",
+ CellChangeTimes->{
+  3.402938645832962*^9, {3.402976418458487*^9, 3.402976459327199*^9}, 
+   3.40297908421179*^9, 3.4029809143571978`*^9, 3.403006798518508*^9, {
+   3.403009014262389*^9, 3.4030090637903433`*^9}, 3.403020683092256*^9, 
+   3.403106060754032*^9, 3.403570189499115*^9, 3.403570390708317*^9, {
+   3.4035704855788393`*^9, 3.403570511023988*^9}, 3.403570833971904*^9, 
+   3.403616253836447*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[And]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218776273677*^9, {3.40357064827947*^9, 3.40357065741285*^9}}],
+
+Cell[BoxData["0.25`"], "Output",
+ CellChangeTimes->{
+  3.403218776881752*^9, 3.403570140386855*^9, 3.4035704254770412`*^9, {
+   3.403570645975072*^9, 3.403570659906741*^9}, 3.403570835846458*^9, 
+   3.403616253899387*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ob", "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218783969805*^9, {3.403218814842595*^9, 3.403218819958218*^9}, {
+   3.403570666680655*^9, 3.403570679312017*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.4032187846534653`*^9, {3.403218815468848*^9, 3.403218820209049*^9}, 
+   3.4035701404541483`*^9, 3.403570426595684*^9, {3.4035706684736633`*^9, 
+   3.4035706796871853`*^9}, 3.403570837162299*^9, 3.403616253958179*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218827858066*^9, 3.40357072987405*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218828145542*^9, 3.4035701405045347`*^9, 
+  3.4035704275646133`*^9, 3.403570839363576*^9, 3.403616253995152*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Gb", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218833608591*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218833955962*^9, 3.403570140580036*^9, 
+  3.403570428520933*^9, 3.4035708405614967`*^9, 3.403616254049899*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Congruent]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218754712686*^9, 3.403570745827417*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218755455996*^9, 3.4035701406357193`*^9, 
+  3.403570429604363*^9, 3.4036162541004047`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028048623967743`*^9, 3.402804875158139*^9}, 
+   3.402846385616489*^9, 3.402938153800091*^9, 3.4029382741295033`*^9, 
+   3.402938569053871*^9, {3.403218742137435*^9, 3.403218745183144*^9}, {
+   3.403570729978311*^9, 3.4035707458293753`*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{{3.402804868356085*^9, 3.402804875387122*^9}, 
+   3.402846385773252*^9, {3.4028469217014637`*^9, 3.40284693993295*^9}, 
+   3.4029381540484953`*^9, 3.402938274839126*^9, 3.402938569392344*^9, {
+   3.4030090237807837`*^9, 3.403009068026864*^9}, 3.403106055165721*^9, 
+   3.403218698787081*^9, 3.403218748204033*^9, 3.4035701477870417`*^9, 
+   3.403570430781909*^9, 3.403570847630176*^9, 3.403616254159088*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218958113801*^9, {3.403570730085318*^9, 3.403570745830578*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218958294744*^9, 3.403570147924313*^9, 
+  3.403570431570335*^9, 3.4035708477651978`*^9, 3.4036162542012463`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403570730186764*^9, 3.4035707458318768`*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.4035701479830933`*^9, 3.4035704321699467`*^9, 
+  3.403570847818242*^9, 3.403616254258856*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403009085906938*^9, {3.403570730354362*^9, 3.40357074583315*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.403009086868154*^9, 3.403106055201633*^9, 
+  3.4035701480326757`*^9, 3.403570432709661*^9, 3.403570847884141*^9, 
+  3.403616254318289*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.4030090968335953`*^9, {3.4035707305217333`*^9, 3.403570745834412*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.4030090972958517`*^9, 3.403106055266316*^9, 
+  3.403570148100525*^9, 3.40357043322581*^9, 3.4035708479520597`*^9, 
+  3.403616254384328*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009105209553*^9, 3.40300910960285*^9}, {
+  3.403570730693555*^9, 3.40357074583567*^9}}],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{3.403009109850049*^9, 3.403106055316704*^9, 
+  3.403570148193433*^9, 3.403570433710136*^9, 3.403570848022271*^9, 
+  3.40361625444206*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"\[Not]", "Ea"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009118219421*^9, 3.40300912186554*^9}, {
+  3.4035707308729753`*^9, 3.403570745836915*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.40300912230648*^9, 3.403106055367055*^9, 
+  3.4035701507488728`*^9, 3.403570434229376*^9, 3.4035708481136303`*^9, 
+  3.403616254501945*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", "Ga"}], "]"}], ",",
+     
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009133657589*^9, 3.4030091348470907`*^9}, {
+  3.403570731042021*^9, 3.40357074583818*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.4030091350960083`*^9, 3.403106055415392*^9, 
+  3.403570434747222*^9, 3.403570848189884*^9, 3.4036162545463333`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", 
+      RowBox[{"Gb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[And]", 
+         RowBox[{"\[Not]", "Eb"}]}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.4030091563948708`*^9, {3.4035707311465607`*^9, 3.403570745839437*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403009157311714*^9, 3.403106055446705*^9, 
+  3.4035701544394903`*^9, 3.4035704352838373`*^9, 3.403570848279435*^9, 
+  3.403616254609321*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403009165881455*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403009166268381*^9, 3.403106055501079*^9, 
+  3.403570154568933*^9, 3.403570435781371*^9, 3.403570848364135*^9, 
+  3.403616254668549*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Ga", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4030091734493732`*^9, 3.403009173601694*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.40300917390399*^9, 3.4031060555336657`*^9, 
+  3.403570154612472*^9, 3.403570436590292*^9, 3.403570848447364*^9, 
+  3.403616254719304*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Now, for ",
+ Cell[BoxData[
+  SubscriptBox[
+   SuperscriptBox["\[GothicM]", "*"], 
+   RowBox[{"2", ",", "3"}]]],
+  CellChangeTimes->{{3.402938360116104*^9, 3.402938378995573*^9}, 
+    3.402976174851241*^9}],
+ ", we must be a little more clever.  We have to compute the structure \
+descriptions, and then the probabilities for them, etc."
+}], "Text",
+ CellChangeTimes->{{3.403006688222439*^9, 3.4030067077290373`*^9}, {
+  3.403020556049677*^9, 3.403020571911672*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"perm", "[", "s_", "]"}], ":=", 
+   RowBox[{"s", "/.", "\[InvisibleSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Ea", "\[Rule]", "Eb"}], ",", 
+      RowBox[{"Eb", "\[Rule]", "Ea"}], ",", 
+      RowBox[{"Ga", "\[Rule]", "Gb"}], ",", 
+      RowBox[{"Gb", "\[Rule]", "Ga"}], ",", 
+      RowBox[{"Oa", "\[Rule]", "Ob"}], ",", 
+      RowBox[{"Ob", "\[Rule]", "Oa"}]}], "}"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"states", "=", 
+    RowBox[{"set", "/@", "tvs"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"results", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{"Length", "[", "states", "]"}]}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{
+     RowBox[{"a", "=", 
+      RowBox[{
+      "states", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], ";",
+      
+     RowBox[{"temp", "=", 
+      RowBox[{"{", "}"}]}], ";", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"temp", ",", "i"}], "]"}], ";", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", "=", "1"}], ",", 
+       RowBox[{"j", "\[LessEqual]", 
+        RowBox[{"Length", "[", "states", "]"}]}], ",", 
+       RowBox[{"j", "++"}], ",", 
+       RowBox[{
+        RowBox[{"b", "=", 
+         RowBox[{
+         "states", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}]}], 
+        ";", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Sort", "[", "a", "]"}], "\[Equal]", 
+           RowBox[{"Sort", "[", 
+            RowBox[{"perm", "[", "b", "]"}], "]"}]}], ",", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"temp", ",", "j"}], "]"}]}], "]"}]}]}], "]"}], ";", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"results", ",", "temp"}], "]"}]}]}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"structIndices", "=", 
+    RowBox[{"Union", "/@", 
+     RowBox[{"Union", "[", 
+      RowBox[{"Sort", "/@", "results"}], "]"}]}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"in", "[", 
+    RowBox[{"x_", ",", "S_"}], "]"}], ":=", 
+   RowBox[{"Or", "@@", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"x", "===", 
+       RowBox[{"S", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", 
+        RowBox[{"Length", "[", "S", "]"}]}], "}"}]}], "]"}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pr", "[", "sn_", "]"}], ":=", 
+   FractionBox["1", 
+    RowBox[{"36", " ", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Select", "[", 
+        RowBox[{"structIndices", ",", 
+         RowBox[{
+          RowBox[{"in", "[", 
+           RowBox[{"sn", ",", "#1"}], "]"}], "&"}]}], "]"}], "]"}], 
+      "]"}]}]]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"And", "@@", 
+      RowBox[{
+      "states", "\[LeftDoubleBracket]", "n", "\[RightDoubleBracket]"}]}], 
+     "]"}], "\[Equal]", 
+    RowBox[{"pr", "[", "n", "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox[
+    SuperscriptBox["\[GothicM]", "*"], 
+    RowBox[{"2", ",", "3"}]], "=", 
+   RowBox[{"PrSAT", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f", "/@", 
+       RowBox[{"Range", "[", "64", "]"}]}], "}"}], ",", 
+     RowBox[{"BypassSearch", "\[Rule]", "True"}]}], "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.4035766397437773`*^9, 3.403576718272217*^9}, {
+  3.403576834801054*^9, 3.4035768384561853`*^9}, {3.403577162388537*^9, 
+  3.4035771714827223`*^9}, {3.4035772194542522`*^9, 3.4035772366187162`*^9}, {
+  3.403577270225922*^9, 3.4035773509232597`*^9}, {3.403577585170644*^9, 
+  3.403577601607058*^9}, {3.40357788680275*^9, 3.403577892870945*^9}, {
+  3.4035779682783337`*^9, 3.403577983954824*^9}, {3.4035783210931*^9, 
+  3.403578325704735*^9}, {3.403582304735424*^9, 3.4035823208919086`*^9}, {
+  3.403582791597866*^9, 3.4035829076926107`*^9}, {3.403582949780718*^9, 
+  3.403582952180835*^9}, {3.4035831619419947`*^9, 3.403583173275353*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TruthTable", "[", 
+  SubscriptBox[
+   SuperscriptBox["\[GothicM]", "*"], 
+   RowBox[{"2", ",", "3"}]], "]"}]], "Input",
+ CellChangeTimes->{{3.403582957295196*^9, 3.403582963411261*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"Ea", "Eb", "Ga", "Gb", "Oa", "Ob", "var", "Pr"},
+    {"T", "T", "T", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "64"], 
+     FractionBox["1", "36"]},
+    {"T", "T", "T", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "58"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "T", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "59"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "T", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "43"], 
+     FractionBox["1", "36"]},
+    {"T", "T", "T", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "60"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "T", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "44"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "T", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "45"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "T", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "23"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "61"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "46"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "47"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "24"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "48"], 
+     FractionBox["1", "36"]},
+    {"T", "T", "F", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "25"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "26"], 
+     FractionBox["1", "72"]},
+    {"T", "T", "F", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "8"], 
+     FractionBox["1", "36"]},
+    {"T", "F", "T", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "62"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "49"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "50"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "27"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "51"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "28"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "29"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "T", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "9"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "52"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "30"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "31"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "10"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "32"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "11"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "12"], 
+     FractionBox["1", "72"]},
+    {"T", "F", "F", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "63"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "53"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "54"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "33"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "55"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "34"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "35"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "T", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "13"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "56"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "36"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "37"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "14"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "38"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "15"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "16"], 
+     FractionBox["1", "72"]},
+    {"F", "T", "F", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "3"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "T", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "57"], 
+     FractionBox["1", "36"]},
+    {"F", "F", "T", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "39"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "T", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "40"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "T", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "17"], 
+     FractionBox["1", "36"]},
+    {"F", "F", "T", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "41"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "T", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "18"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "T", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "19"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "T", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "4"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "42"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "20"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "21"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "5"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "22"], 
+     FractionBox["1", "36"]},
+    {"F", "F", "F", "F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "6"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "7"], 
+     FractionBox["1", "72"]},
+    {"F", "F", "F", "F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"], 
+     FractionBox["1", "36"]}
+   },
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+     "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}],
+  DisplayForm]], "Output",
+ CellChangeTimes->{{3.403582963963264*^9, 3.403582990806452*^9}, 
+   3.403583186438324*^9, 3.403616823965042*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Ea", "\[Superset]", 
+        RowBox[{"(", 
+         RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}], ")"}], "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Eb", "\[Superset]", 
+        RowBox[{"(", 
+         RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402804797242034*^9, 3.402804839214284*^9}, {
+   3.402804871902073*^9, 3.402804872311943*^9}, {3.4028051832514973`*^9, 
+   3.4028051843191137`*^9}, 3.4028464735528603`*^9, 3.402938331897427*^9, {
+   3.4029384880048647`*^9, 3.402938494918342*^9}, {3.402938631118271*^9, 
+   3.402938645492141*^9}, {3.402976418228202*^9, 3.402976458130674*^9}, 
+   3.403006798032898*^9}],
+
+Cell[BoxData["0.5833333333333334`"], "Output",
+ CellChangeTimes->{
+  3.402938645832962*^9, {3.402976418458487*^9, 3.402976459327199*^9}, 
+   3.40297908421179*^9, 3.4029809143571978`*^9, 3.403006798518508*^9, {
+   3.403009014262389*^9, 3.4030090637903433`*^9}, 3.4031060691103277`*^9, 
+   3.403570311411607*^9, 3.4035708662990313`*^9, 3.403616262862973*^9, 
+   3.403616826255115*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Oa", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.402938651481658*^9, 3.402938662956657*^9}, {
+   3.402976421684577*^9, 3.402976461970125*^9}, 3.403006801360194*^9}],
+
+Cell[BoxData["0.7037037037037037`"], "Output",
+ CellChangeTimes->{
+  3.4029386639643507`*^9, {3.402976422260873*^9, 3.402976462348283*^9}, 
+   3.402979085726975*^9, 3.402980915390994*^9, 3.4030068018666067`*^9, {
+   3.403009038430534*^9, 3.4030090638280993`*^9}, 3.4031060691464376`*^9, 
+   3.403570866391337*^9, 3.403616262921604*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Oa", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403106551969973*^9, 3.403106568726172*^9}}],
+
+Cell[BoxData["0.7777777777777778`"], "Output",
+ CellChangeTimes->{3.403106569688725*^9, 3.403570866450274*^9, 
+  3.403616262972952*^9, 3.403616832023638*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106579760647*^9}],
+
+Cell[BoxData["0.5833333333333334`"], "Output",
+ CellChangeTimes->{3.403106580253078*^9, 3.403570866490643*^9, 
+  3.4036162630143423`*^9, 3.403616833244046*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403020617693177*^9}],
+
+Cell[BoxData["0.3888888888888889`"], "Output",
+ CellChangeTimes->{3.403020618974217*^9, 3.403106069211841*^9, 
+  3.403570866533526*^9, 3.403616263090065*^9, 3.4036168344434433`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Oa"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403020649368451*^9, 3.403020649530295*^9}}],
+
+Cell[BoxData["0.3888888888888889`"], "Output",
+ CellChangeTimes->{3.403020649692389*^9, 3.403106069262864*^9, 
+  3.403570866588554*^9, 3.403616263151422*^9, 3.403616835420479*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", 
+         RowBox[{"(", 
+          RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], ")"}]}], "|", 
+      RowBox[{"Ga", "\[And]", "Oa"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403020634117131*^9, 3.403020638754431*^9}}],
+
+Cell[BoxData["0.7777777777777778`"], "Output",
+ CellChangeTimes->{{3.4030206351962023`*^9, 3.4030206391301527`*^9}, 
+   3.4031060693140173`*^9, 3.403570866640671*^9, 3.4036162632118673`*^9, 
+   3.403616836651211*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Superset]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[Superset]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4031060932821093`*^9, 3.403106108284992*^9}}],
+
+Cell[BoxData["0.7777777777777778`"], "Output",
+ CellChangeTimes->{3.403106108504075*^9, 3.4035708666942873`*^9, 
+  3.403616263273781*^9, 3.403616837926085*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Superset]", 
+      RowBox[{"(", 
+       RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106114392177*^9}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.403106115150776*^9, 3.4035708667376003`*^9, 
+  3.4036162633265247`*^9, 3.4036168483760233`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Superset]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[And]", "Ga"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403106127704733*^9, 3.403106129075387*^9}}],
+
+Cell[BoxData["0.7777777777777778`"], "Output",
+ CellChangeTimes->{3.403106130218605*^9, 3.403570866795352*^9, 
+  3.403616263392029*^9, 3.403616848493476*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[And]", "Ga"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106184864504*^9}],
+
+Cell[BoxData["0.3333333333333333`"], "Output",
+ CellChangeTimes->{3.403106186271037*^9, 3.403570866837798*^9, 
+  3.403616263458667*^9, 3.4036168485442*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106279371662*^9}],
+
+Cell[BoxData["0.3333333333333333`"], "Output",
+ CellChangeTimes->{3.4031062797576523`*^9, 3.403570866887968*^9, 
+  3.4036162635251017`*^9, 3.403616848581718*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[And]", "Ob"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.40310640242246*^9, 3.403106414755192*^9}}],
+
+Cell[BoxData["0.4`"], "Output",
+ CellChangeTimes->{3.403106415532001*^9, 3.4035708669464893`*^9, 
+  3.403616263576128*^9, 3.403616848646844*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"(", 
+       RowBox[{"Oa", "\[And]", "Ob"}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106424280959*^9}],
+
+Cell[BoxData["0.25`"], "Output",
+ CellChangeTimes->{3.403106425309205*^9, 3.4035708670043697`*^9, 
+  3.4036162636428556`*^9, 3.403616848697611*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[Congruent]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[And]", "Ob"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403106460828741*^9, 3.4031064625178843`*^9}}],
+
+Cell[BoxData["0.4`"], "Output",
+ CellChangeTimes->{3.4031064697436943`*^9, 3.4035708670808992`*^9, 
+  3.4036162637088213`*^9, 3.403616848747414*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", "Gb"}], "|", 
+      RowBox[{"Oa", "\[And]", "Ob"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.40310650763776*^9, 3.403106509813066*^9}}],
+
+Cell[BoxData["0.25`"], "Output",
+ CellChangeTimes->{3.403106510089999*^9, 3.4035708671448307`*^9, 
+  3.403616263762559*^9, 3.403616848810212*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Ob", "\[Congruent]", "Gb"}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106203507646*^9}],
+
+Cell[BoxData["0.25`"], "Output",
+ CellChangeTimes->{3.4031062040142717`*^9, 3.403570867204666*^9, 
+  3.403616263875147*^9, 3.403616848868904*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[And]", 
+      RowBox[{"(", 
+       RowBox[{"Ob", "\[And]", "Gb"}], ")"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403106215040245*^9}],
+
+Cell[BoxData["0.125`"], "Output",
+ CellChangeTimes->{3.4031062153344927`*^9, 3.4035708672804537`*^9, 
+  3.4036162639220667`*^9, 3.403616848947214*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ob", "\[And]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Oa", "\[And]", "Ga"}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.4031062223767*^9}],
+
+Cell[BoxData["0.2222222222222222`"], "Output",
+ CellChangeTimes->{3.403106223386922*^9, 3.40357086743498*^9, 
+  3.4036162639770517`*^9, 3.403616849026423*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218827858066*^9, 3.40357072987405*^9, {3.403570935865264*^9, 
+   3.403570959103793*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{{3.403570951222664*^9, 3.4035709597138987`*^9}, 
+   3.403616264043631*^9, 3.4036168490972137`*^9}]
+}, Open  ]],
+
+Cell["Comparison with 2,2:", "Text",
+ CellChangeTimes->{{3.403570917830065*^9, 3.4035709214989853`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218827858066*^9, 3.40357072987405*^9, 
+  3.403570979713107*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218828145542*^9, 3.4035701405045347`*^9, 
+  3.4035704275646133`*^9, 3.403570839363576*^9, 3.403570980107088*^9, 
+  3.4036162641110973`*^9, 3.403616858524188*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Gb", "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403570984567431*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403570984762752*^9, 3.403616264162429*^9, 
+  3.403616858612091*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Gb", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218833608591*^9, 3.403570988679934*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218833955962*^9, 3.403570140580036*^9, 
+  3.403570428520933*^9, 3.4035708405614967`*^9, 3.403570988931485*^9, 
+  3.403616264232424*^9, 3.403616858660286*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Gb", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.40357099264727*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403570992883377*^9, 3.4036162642806787`*^9, 
+  3.403616858702001*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Congruent]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403218754712686*^9, 3.403570745827417*^9, 
+  3.403570995800557*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218755455996*^9, 3.4035701406357193`*^9, 
+  3.403570429604363*^9, 3.403570996458997*^9, 3.403616264336871*^9, 
+  3.403616858759592*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Eb", "\[Congruent]", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403571000583312*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.4035710010926857`*^9, 3.403616264412822*^9, 
+  3.403616858802507*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403571026407359*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.4035710273717747`*^9, 3.403616264463532*^9, 
+  3.403616858857339*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403571032263914*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403571032443084*^9, 3.403616264530149*^9, 
+  3.4036168588939734`*^9}]
+}, Open  ]],
+
+Cell["Here's a counterexample to Fine's L7:", "Text",
+ CellChangeTimes->{{3.403616869304206*^9, 3.403616884240294*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4028048623967743`*^9, 3.402804875158139*^9}, 
+   3.402846385616489*^9, 3.402938153800091*^9, 3.4029382741295033`*^9, 
+   3.402938569053871*^9, {3.403218742137435*^9, 3.403218745183144*^9}, {
+   3.403570729978311*^9, 3.4035707458293753`*^9}, 3.403571004873131*^9}],
+
+Cell[BoxData["0.6`"], "Output",
+ CellChangeTimes->{{3.402804868356085*^9, 3.402804875387122*^9}, 
+   3.402846385773252*^9, {3.4028469217014637`*^9, 3.40284693993295*^9}, 
+   3.4029381540484953`*^9, 3.402938274839126*^9, 3.402938569392344*^9, {
+   3.4030090237807837`*^9, 3.403009068026864*^9}, 3.403106055165721*^9, 
+   3.403218698787081*^9, 3.403218748204033*^9, 3.4035701477870417`*^9, 
+   3.403570430781909*^9, 3.403570847630176*^9, 3.40357100515458*^9, 
+   3.403616264579948*^9, 3.4036168589504757`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "*"], 
+     RowBox[{"2", ",", "3"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403571009983633*^9}],
+
+Cell[BoxData["0.5555555555555556`"], "Output",
+ CellChangeTimes->{3.4035710101457453`*^9, 3.403616264630495*^9, 
+  3.4036168590014877`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{"Eb", "\[Congruent]", "Gb"}], "|", 
+      RowBox[{"Ea", "\[Congruent]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403218958113801*^9, {3.403570730085318*^9, 3.403570745830578*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403218958294744*^9, 3.403570147924313*^9, 
+  3.403570431570335*^9, 3.4035708477651978`*^9, 3.403616264697454*^9, 
+  3.403616859054249*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403570730186764*^9, 3.4035707458318768`*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.4035701479830933`*^9, 3.4035704321699467`*^9, 
+  3.403570847818242*^9, 3.403616264747408*^9, 3.403616859107724*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.403009085906938*^9, {3.403570730354362*^9, 3.40357074583315*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.403009086868154*^9, 3.403106055201633*^9, 
+  3.4035701480326757`*^9, 3.403570432709661*^9, 3.403570847884141*^9, 
+  3.403616264797776*^9, 3.403616859161647*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{
+       RowBox[{"\[Not]", "Ea"}], "\[And]", "Ga"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.4030090968335953`*^9, {3.4035707305217333`*^9, 3.403570745834412*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.4030090972958517`*^9, 3.403106055266316*^9, 
+  3.403570148100525*^9, 3.40357043322581*^9, 3.4035708479520597`*^9, 
+  3.403616264905055*^9, 3.403616859226838*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"Ea", "\[And]", 
+       RowBox[{"\[Not]", "Ga"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009105209553*^9, 3.40300910960285*^9}, {
+  3.403570730693555*^9, 3.40357074583567*^9}}],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{3.403009109850049*^9, 3.403106055316704*^9, 
+  3.403570148193433*^9, 3.403570433710136*^9, 3.403570848022271*^9, 
+  3.403616264965686*^9, 3.403616859278323*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", 
+      RowBox[{"\[Not]", "Ea"}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009118219421*^9, 3.40300912186554*^9}, {
+  3.4035707308729753`*^9, 3.403570745836915*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.40300912230648*^9, 3.403106055367055*^9, 
+  3.4035701507488728`*^9, 3.403570434229376*^9, 3.4035708481136303`*^9, 
+  3.4036162649968233`*^9, 3.4036168593290787`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[Superset]", "Ga"}], ")"}], "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Eb", "\[Superset]", "Gb"}], ")"}]}], "|", "Ga"}], "]"}], ",",
+     
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.403009133657589*^9, 3.4030091348470907`*^9}, {
+  3.403570731042021*^9, 3.40357074583818*^9}}],
+
+Cell[BoxData["0.75`"], "Output",
+ CellChangeTimes->{3.4030091350960083`*^9, 3.403106055415392*^9, 
+  3.403570434747222*^9, 3.403570848189884*^9, 3.403616265065999*^9, 
+  3.403616859395739*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", 
+      RowBox[{"Gb", "\[And]", 
+       RowBox[{"(", 
+        RowBox[{"Ea", "\[And]", 
+         RowBox[{"\[Not]", "Eb"}]}], ")"}]}]}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{
+  3.4030091563948708`*^9, {3.4035707311465607`*^9, 3.403570745839437*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403009157311714*^9, 3.403106055446705*^9, 
+  3.4035701544394903`*^9, 3.4035704352838373`*^9, 3.403570848279435*^9, 
+  3.4036162651153812`*^9, 3.403616859462655*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"Ga", "|", "Gb"}], "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{3.403009165881455*^9}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.403009166268381*^9, 3.403106055501079*^9, 
+  3.403570154568933*^9, 3.403570435781371*^9, 3.403570848364135*^9, 
+  3.403616265173316*^9, 3.403616859513097*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EvaluateProbability", "[", 
+   RowBox[{
+    RowBox[{"Pr", "[", "Ga", "]"}], ",", 
+    SubscriptBox[
+     SuperscriptBox["\[GothicM]", "\[Dagger]"], 
+     RowBox[{"2", ",", "2"}]]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.4030091734493732`*^9, 3.403009173601694*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.40300917390399*^9, 3.4031060555336657`*^9, 
+  3.403570154612472*^9, 3.403570436590292*^9, 3.403570848447364*^9, 
+  3.4036162652334623`*^9, 3.4036168596516533`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1059, 676},
+WindowMargins->{{-13, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PrintCellBrackets"->True,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->False,
+"PrintingMargins"->36},
+InputAliases->{"intt" -> RowBox[{"\[Integral]", 
+     RowBox[{"\[SelectionPlaceholder]", 
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "dintt" -> 
+  RowBox[{
+     SubsuperscriptBox[
+     "\[Integral]", "\[SelectionPlaceholder]", "\[Placeholder]"], 
+     RowBox[{"\[Placeholder]", 
+       RowBox[{"\[DifferentialD]", "\[Placeholder]"}]}]}], "sumt" -> RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"\[SelectionPlaceholder]", "=", "\[Placeholder]"}], 
+      "\[Placeholder]"], "\[Placeholder]"}], "prodt" -> RowBox[{
+     UnderoverscriptBox["\[Product]", 
+      RowBox[{"\[SelectionPlaceholder]", "=", "\[Placeholder]"}], 
+      "\[Placeholder]"], "\[Placeholder]"}], "dt" -> RowBox[{
+     SubscriptBox["\[PartialD]", "\[Placeholder]"], " ", 
+     "\[SelectionPlaceholder]"}], "notation" -> RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongLeftRightArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "notation>" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongRightArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "notation<" -> 
+  RowBox[{"Notation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], " ", 
+       "\[DoubleLongLeftArrow]", " ", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "symb" -> 
+  RowBox[{"Symbolize", "[", 
+     TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], "]"}], 
+  "infixnotation" -> RowBox[{"InfixNotation", "[", 
+     RowBox[{
+       TagBox["\[SelectionPlaceholder]", "NotationTemplateTag"], ",", 
+       "\[Placeholder]"}], "]"}], "addia" -> RowBox[{"AddInputAlias", "[", 
+     RowBox[{"\"\[SelectionPlaceholder]\"", "\[Rule]", 
+       TagBox["\[Placeholder]", "NotationTemplateTag"]}], "]"}], "pattwraper" -> 
+  TagBox["\[SelectionPlaceholder]", "NotationPatternTag"], "madeboxeswraper" -> 
+  TagBox["\[SelectionPlaceholder]", "NotationMadeBoxesTag"]},
+Magnification->1.5,
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (June 19, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[568, 21, 216, 4, 40, "Input"],
+Cell[CellGroupData[{
+Cell[809, 29, 512, 15, 53, "Subsection"],
+Cell[1324, 46, 496, 11, 43, "Text"],
+Cell[1823, 59, 353, 9, 48, "Input"],
+Cell[CellGroupData[{
+Cell[2201, 72, 4281, 112, 430, "Input"],
+Cell[6485, 186, 5437, 126, 197, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11959, 317, 344, 7, 48, "Input"],
+Cell[12306, 326, 2394, 63, 585, "Output"]
+}, Open  ]],
+Cell[14715, 392, 267, 10, 43, "Text"],
+Cell[14985, 404, 533, 15, 66, "Input"],
+Cell[CellGroupData[{
+Cell[15543, 423, 801, 18, 48, "Input"],
+Cell[16347, 443, 612, 8, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16996, 456, 342, 9, 48, "Input"],
+Cell[17341, 467, 196, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17574, 475, 423, 12, 48, "Input"],
+Cell[18000, 489, 248, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18285, 498, 376, 10, 48, "Input"],
+Cell[18664, 510, 198, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18899, 518, 288, 8, 48, "Input"],
+Cell[19190, 528, 194, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19421, 536, 348, 9, 48, "Input"],
+Cell[19772, 547, 196, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20005, 555, 607, 14, 48, "Input"],
+Cell[20615, 571, 484, 7, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21136, 583, 442, 12, 48, "Input"],
+Cell[21581, 597, 196, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21814, 605, 543, 15, 48, "Input"],
+Cell[22360, 622, 177, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22574, 630, 624, 18, 48, "Input"],
+Cell[23201, 650, 223, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23461, 659, 596, 17, 48, "Input"],
+Cell[24060, 678, 220, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24317, 687, 617, 17, 48, "Input"],
+Cell[24937, 706, 217, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25191, 715, 585, 16, 48, "Input"],
+Cell[25779, 733, 223, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26039, 742, 565, 16, 48, "Input"],
+Cell[26607, 760, 199, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26843, 768, 492, 14, 48, "Input"],
+Cell[27338, 784, 224, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27599, 793, 562, 16, 48, "Input"],
+Cell[28164, 811, 100, 1, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28301, 817, 315, 9, 48, "Input"],
+Cell[28619, 828, 220, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28876, 837, 314, 8, 48, "Input"],
+Cell[29193, 847, 221, 4, 40, "Output"]
+}, Open  ]],
+Cell[29429, 854, 510, 10, 66, "Text"],
+Cell[29942, 866, 212, 7, 39, "Text"],
+Cell[30157, 875, 396, 10, 43, "Input"],
+Cell[CellGroupData[{
+Cell[30578, 889, 4382, 114, 430, "Input"],
+Cell[34963, 1005, 5378, 125, 197, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40378, 1135, 239, 6, 43, "Input"],
+Cell[40620, 1143, 2307, 61, 585, "Output"]
+}, Open  ]],
+Cell[42942, 1207, 259, 10, 39, "Text"],
+Cell[CellGroupData[{
+Cell[43226, 1221, 815, 18, 43, "Input"],
+Cell[44044, 1241, 611, 8, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44692, 1254, 359, 10, 43, "Input"],
+Cell[45054, 1266, 193, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45284, 1274, 437, 12, 43, "Input"],
+Cell[45724, 1288, 243, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46004, 1297, 393, 11, 43, "Input"],
+Cell[46400, 1310, 194, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46631, 1318, 494, 14, 43, "Input"],
+Cell[47128, 1334, 172, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47337, 1342, 357, 10, 43, "Input"],
+Cell[47697, 1354, 178, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47912, 1362, 304, 8, 43, "Input"],
+Cell[48219, 1372, 191, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48447, 1380, 365, 10, 43, "Input"],
+Cell[48815, 1392, 194, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49046, 1400, 625, 14, 43, "Input"],
+Cell[49674, 1416, 488, 7, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50199, 1428, 460, 13, 43, "Input"],
+Cell[50662, 1443, 224, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50923, 1452, 390, 10, 43, "Input"],
+Cell[51316, 1464, 194, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51547, 1472, 720, 17, 43, "Input"],
+Cell[52270, 1491, 480, 7, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52787, 1503, 727, 18, 43, "Input"],
+Cell[53517, 1523, 461, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54015, 1534, 737, 19, 43, "Input"],
+Cell[54755, 1555, 386, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55178, 1566, 706, 18, 43, "Input"],
+Cell[55887, 1586, 391, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56315, 1597, 580, 17, 43, "Input"],
+Cell[56898, 1616, 96, 1, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57031, 1622, 681, 18, 43, "Input"],
+Cell[57715, 1642, 388, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58140, 1653, 555, 15, 43, "Input"],
+Cell[58698, 1670, 413, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59148, 1681, 381, 10, 43, "Input"],
+Cell[59532, 1693, 415, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59984, 1704, 327, 9, 43, "Input"],
+Cell[60314, 1715, 387, 6, 40, "Output"]
+}, Open  ]],
+Cell[60716, 1724, 577, 12, 62, "Text"],
+Cell[61296, 1738, 1060, 31, 67, "Text"],
+Cell[62359, 1771, 305, 9, 48, "Input"],
+Cell[62667, 1782, 2686, 74, 194, "Input"],
+Cell[65356, 1858, 256, 8, 42, "Input"],
+Cell[CellGroupData[{
+Cell[65637, 1870, 966, 22, 48, "Input"],
+Cell[66606, 1894, 440, 7, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67083, 1906, 367, 10, 48, "Input"],
+Cell[67453, 1918, 221, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67711, 1927, 447, 12, 48, "Input"],
+Cell[68161, 1941, 272, 4, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68470, 1950, 375, 10, 48, "Input"],
+Cell[68848, 1962, 168, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69053, 1969, 288, 8, 48, "Input"],
+Cell[69344, 1979, 166, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69547, 1986, 348, 9, 48, "Input"],
+Cell[69898, 1997, 146, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70081, 2004, 609, 14, 48, "Input"],
+Cell[70693, 2020, 458, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71188, 2031, 442, 12, 48, "Input"],
+Cell[71633, 2045, 168, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71838, 2052, 543, 15, 48, "Input"],
+Cell[72384, 2069, 147, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72568, 2076, 621, 18, 48, "Input"],
+Cell[73192, 2096, 192, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73421, 2104, 598, 17, 48, "Input"],
+Cell[74022, 2123, 193, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74252, 2131, 616, 17, 48, "Input"],
+Cell[74871, 2150, 187, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75095, 2158, 585, 16, 48, "Input"],
+Cell[75683, 2176, 193, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75913, 2184, 563, 16, 48, "Input"],
+Cell[76479, 2202, 169, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76685, 2209, 494, 14, 48, "Input"],
+Cell[77182, 2225, 193, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77412, 2233, 315, 9, 48, "Input"],
+Cell[77730, 2244, 189, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77956, 2252, 314, 8, 48, "Input"],
+Cell[78273, 2262, 190, 3, 40, "Output"]
+}, Open  ]],
+Cell[78478, 2268, 483, 12, 65, "Text"],
+Cell[78964, 2282, 4196, 121, 355, "Input"],
+Cell[CellGroupData[{
+Cell[83185, 2407, 209, 5, 43, "Input"],
+Cell[83397, 2414, 7541, 201, 2169, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90975, 2620, 934, 22, 43, "Input"],
+Cell[91912, 2644, 382, 6, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92331, 2655, 767, 20, 66, "Input"],
+Cell[93101, 2677, 335, 5, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93473, 2687, 549, 15, 43, "Input"],
+Cell[94025, 2704, 157, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[94219, 2711, 444, 13, 43, "Input"],
+Cell[94666, 2726, 159, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[94862, 2733, 655, 19, 66, "Input"],
+Cell[95520, 2754, 181, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[95738, 2761, 679, 19, 66, "Input"],
+Cell[96420, 2782, 179, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96636, 2789, 679, 19, 66, "Input"],
+Cell[97318, 2810, 216, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97571, 2818, 547, 15, 43, "Input"],
+Cell[98121, 2835, 159, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98317, 2842, 384, 11, 43, "Input"],
+Cell[98704, 2855, 149, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98890, 2862, 534, 15, 43, "Input"],
+Cell[99427, 2879, 157, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99621, 2886, 505, 15, 43, "Input"],
+Cell[100129, 2903, 155, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100321, 2910, 511, 15, 43, "Input"],
+Cell[100835, 2927, 161, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101033, 2934, 613, 17, 43, "Input"],
+Cell[101649, 2953, 144, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101830, 2960, 470, 14, 43, "Input"],
+Cell[102303, 2976, 147, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102487, 2983, 547, 15, 43, "Input"],
+Cell[103037, 3000, 148, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103222, 3007, 396, 11, 43, "Input"],
+Cell[103621, 3020, 145, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103803, 3027, 379, 11, 43, "Input"],
+Cell[104185, 3040, 145, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104367, 3047, 373, 11, 43, "Input"],
+Cell[104743, 3060, 150, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104930, 3067, 497, 15, 43, "Input"],
+Cell[105430, 3084, 158, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105625, 3091, 420, 12, 43, "Input"],
+Cell[106048, 3105, 149, 2, 40, "Output"]
+}, Open  ]],
+Cell[106212, 3110, 104, 1, 39, "Text"],
+Cell[CellGroupData[{
+Cell[106341, 3115, 392, 11, 43, "Input"],
+Cell[106736, 3128, 217, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[106990, 3136, 346, 10, 43, "Input"],
+Cell[107339, 3148, 120, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107496, 3155, 302, 8, 43, "Input"],
+Cell[107801, 3165, 213, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108051, 3173, 279, 8, 43, "Input"],
+Cell[108333, 3183, 122, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108492, 3190, 365, 10, 43, "Input"],
+Cell[108860, 3202, 191, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109088, 3210, 318, 9, 43, "Input"],
+Cell[109409, 3221, 122, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109568, 3228, 387, 11, 48, "Input"],
+Cell[109958, 3241, 122, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110117, 3248, 387, 11, 48, "Input"],
+Cell[110507, 3261, 122, 2, 40, "Output"]
+}, Open  ]],
+Cell[110644, 3266, 119, 1, 39, "Text"],
+Cell[CellGroupData[{
+Cell[110788, 3271, 623, 14, 43, "Input"],
+Cell[111414, 3287, 507, 7, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111958, 3299, 379, 11, 43, "Input"],
+Cell[112340, 3312, 139, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112516, 3319, 442, 12, 48, "Input"],
+Cell[112961, 3333, 191, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113189, 3341, 543, 15, 48, "Input"],
+Cell[113735, 3358, 169, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113941, 3365, 621, 18, 48, "Input"],
+Cell[114565, 3385, 214, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114816, 3393, 598, 17, 48, "Input"],
+Cell[115417, 3412, 215, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115669, 3420, 616, 17, 48, "Input"],
+Cell[116288, 3439, 210, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116535, 3447, 585, 16, 48, "Input"],
+Cell[117123, 3465, 219, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[117379, 3473, 563, 16, 48, "Input"],
+Cell[117945, 3491, 192, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118174, 3499, 494, 14, 48, "Input"],
+Cell[118671, 3515, 217, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118925, 3523, 315, 9, 48, "Input"],
+Cell[119243, 3534, 211, 3, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119491, 3542, 314, 8, 48, "Input"],
+Cell[119808, 3552, 216, 3, 40, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

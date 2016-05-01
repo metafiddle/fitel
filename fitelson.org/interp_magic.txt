@@ -1,0 +1,82 @@
+% Axioms and rules of IL in MaGIC notation
+% Here, "[]" is box, ">>" is interpretability operator
+%  "~" is negation, and "->" is implication
+%  For instructions, see MaGIC manual, on Slaney's website:
+%  
+%  	http://arp.anu.edu.au/~jks/magic.html
+%  	
+%  I have included a full session below, to see what yours should
+%  look like, in order to get IL into MaGIC properly
+
+% First, You need to put all of the following modal and 
+% classical formulas in as user defined rules and axioms.
+% Modal axioms
+K:  [] (p -> q) -> ([] p -> [] q)
+RN:  p  /  [] p
+4:  [] p -> [] [] p
+Lob: [] ([] p -> p) -> [] p
+J1: [] (p -> q) -> (p >> q)
+J2: ((p >> q) & (q >> r)) -> (p >> r)
+J3: ((p >> r) & (q >> r)) -> ((p v q) >> r)
+J4: (p >> q) -> (~[] ~p -> ~[] ~q)
+J5: ~[] ~p >> p
+
+% Classical PL axioms
+(~p -> p) -> p
+p -> (~p -> q)
+(p & q) -> ~(p -> ~q)
+~(p -> ~q) -> (p & q)
+(p v q) -> (~p -> q)
+(~p -> q) -> (p v q)
+
+
+% Then, you can use these as additional formulas (to affirm or refute)
+% Other useful formulas
+P:  (p >> q) -> [] (p >> q)
+W:  (p >> q) -> (p >> (q & [] ~ p))
+P0: (p >> ~[] ~ q) -> [] (p >> q)
+M0: (p >> q) -> ((~[] ~ p & [] r) >> (q & [] r))
+C:  (p >> ~ [] ~ q) -> [] (p >> ~ [] ~ q)
+
+
+% % Here's what a full session in IL (which aims to find an IL model 
+% % in which P fails) looks like, when all needed formulas are input
+% % See Slaney's manual (or me) for help with MaGIC set-up
+
+ Logic:        S4
+
+ Extra:        [] (p -> q) -> ([] p -> [] q)
+               p  /  [] p
+               [] p -> [] [] p
+               [] ([] p -> p) -> [] p
+               [] (p -> q) -> (p >> q)
+               ((p >> q) & (q >> r)) -> (p >> r)
+               ((p >> r) & (q >> r)) -> ((p v q) >> r)
+               (p >> q) -> (~[] ~p -> ~[] ~q)
+               ~[] ~p >> p
+               (~p -> p) -> p
+               p -> (~p -> q)
+               (p & q) -> ~(p -> ~q)
+               ~(p -> ~q) -> (p & q)
+               (p v q) -> (~p -> q)
+               (~p -> q) -> (p v q)
+
+ Fragment:     ->, &, v, ~, t, f, T, F
+
+ Definitions:  [] a       Primitive
+               a >> b    Primitive
+
+ Fail:         (p >> q) -> [] (p >> q)
+
+ TTY output:   pretty
+ File output:  none
+
+ Search concludes when 1 matrix found
+ or when size 16 finished.
+
+
+    A)xiom    B)adguy      C)onnective   D)elete
+    E)xit     F)ragment    G)enerate     H)elp
+    I)O       J)ump        K)ill         L)ogic
+    M)aGIC    N)o. Procs   O)rder        P)rint Opts
+    Q)uit     R)ead        S)tore                       

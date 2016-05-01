@@ -1,0 +1,4 @@
+van Fraassen's Judy Benjamin Problem (1981) has essentially the same structure
+as Elga's Sleeping Beauty Problem (2000).  Solutions to problems of this nature
+are contingent on how the information is obtained by the informant, which makes
+them into cognates of the Monty Hall Problem.   

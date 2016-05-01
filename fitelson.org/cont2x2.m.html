@@ -1,0 +1,383 @@
+(* :Mathematica Version: 2.2 *)
+
+(* :Context: Dynamics` *)
+
+(* :Title: Continuous *)
+
+(* :Author: B.E. Fitelson *)
+
+(* :Summary: This package contains several functions for 
+   performing various kinds of simulations and 
+   stability analyses of the (continuous time) 
+   deliberational dynamics of 2x2 Normal-Form games.  
+   
+   Included are functions for (numerically) generating
+   graphics objects of both orbits and vector flows 
+   under both Darwin and Replicator Flows.  Moreover,
+   there are functions defined for both finding and
+   performing analytical stability analyses of the
+   Nash equilibria of 2x2 games under both kinds of
+   flows mentioned above.*)
+
+
+(* :Sources: "The Dynamics of Rational Deliberation", 
+Brian Skyrms, Harvard, 1990.*)
+
+BeginPackage["Continuous`",
+             "Graphics`PlotField`"]
+
+DarwinFlowOrbit::usage = 
+"DarwinFlowOrbit[{G_, T_, A_, PrR20_, PrC20_}]. 
+Takes the five-tuple <G, T, A, PrR20, PrC20> into a 
+graphics object of the orbit starting from the initial
+point <PrR20, PrC20> under the Darwin flow on the
+time interval [0, T]. The accuracy (i.e., step size in
+fourth order Runge Kutta numerical integration
+algorithm) is given by A.  G is the 2x2 Normal form 
+game--it is an eight-tuple of the form:
+G = {R11, C11, R12, C12, R21, C21, R22, C22}."
+
+ReplicatorFlowOrbit::usage = 
+"ReplicatorFlowOrbit[{G_, T_, A_, PrR20_, PrC20_}]. 
+Takes the five-tuple <G, T, A, PrR20, PrC20> into a 
+graphics object of the orbit starting from the initial
+point <PrR20, PrC20> under the Replicator flow on the
+time interval [0, T]. The accuracy (i.e., step size in
+fourth order Runge Kutta numerical integration
+algorithm) is given by A.  G is the 2x2 Normal form 
+game--it is an eight-tuple of the form:
+G = {R11, C11, R12, C12, R21, C21, R22, C22}."
+
+DarwinFlowStability::usage = 
+"DarwinFlowStability[G_], (1) finds the Nash 
+equilibria of a game G, and (2) performs 
+a linear stability analysis for the continuous time 
+Darwin flow at each of the Nash equilibria.  
+Specifically, this function outputs the real parts of 
+the eigenvalues of the Jacobian Matrix of the
+Darwin flow evaluated at each Nash equilibrium of G."
+
+ReplicatorFlowStability::usage = 
+"ReplicatorFlowStability[G_], (1) finds the Nash 
+equilibria of a game G, and (2) performs 
+a linear stability analysis for the continuous time 
+Replicator flow at each of the Nash equilibria.  
+Specifically, this function outputs the real parts of 
+the eigenvalues of the Jacobian Matrix of the
+Replicator flow evaluated at each Nash equilibrium of G."
+	
+DarwinFlowVectorField::usage = 
+"DarwinFlowVectorField[{G_, A_}] takes a 2x2 normal
+form game G and an accuracy (# of arrows in the
+vector field plot) A into a vector field plot of the
+Darwin flow set-up by G."
+
+ReplicatorFlowVectorField::usage = 
+"ReplicatorFlowVectorField[{G_, A_}] takes a 2x2 
+normal form game G and an accuracy (# of arrows 
+in the vector field plot) A into a vector field plot 
+of the Replicator flow set-up by G."
+
+Nash::usage ="Nash[game_] finds the Nash Equilibria of game, a game in 
+normal form. Example input: Nash[{{{2,1},{0,0}},{{0,0},{1,2}}}]. Nash 
+returns the probability weights on the different pure strategies."
+
+IsNash::usage ="IsNash[game_,strategies_] returns True if strategies is 
+a Nash Equilibrium of game and False otherwise.
+Example input: IsNash[game,{{2/3,1/3},{1/3,2/3}}]."
+
+
+Begin["FlowOrbits`Private`"]
+
+Unprotect[RungeKutta];
+
+Off[Power::"infy"]
+Off[\[Infinity]::"indet"]
+
+RKStep[f_, y_, y0_, dt_] :=
+	Module[{ k1, k2, k3, k4 },
+		k1 = dt N[ f /. Thread[y -> y0] ];
+		k2 = dt N[ f /. Thread[y -> y0 + k1/2] ];
+		k3 = dt N[ f /. Thread[y -> y0 + k2/2] ];
+		k4 = dt N[ f /. Thread[y -> y0 + k3] ];
+		y0 + (k1 + 2 k2 + 2 k3 + k4)/6
+	]
+
+RungeKutta[f_List, y_List, y0_List, {t1_, dt_}] :=
+	NestList[ RKStep[f, y, #, N[dt]]&, N[y0], Round[N[t1/dt]] ] /;
+		Length[f] == Length[y] == Length[y0]
+
+RungeKutta[f_List, y_List, y0_List, {t_, t0_, t1_, dt_}] :=
+	Module[{res},
+		res = RungeKutta[ Append[f, 1], Append[y, t], Append[y0, t0], {t1 - t0, dt} ];
+		Drop[#, -1]& /@ res
+	]  /;  Length[f] == Length[y] == Length[y0]
+
+
+DarwinFlowOrbit[{G_, T_, A_, PrR20_, PrC20_}] :=
+(
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+		
+(** Define Darwin Flow Differential Equations**)
+Eq1 = PrR2*(UR2-RUSQ)/RUSQ;
+Eq2 = PrC2*(UC2-CUSQ)/CUSQ;
+
+(** Find Numerical Solution to the system of equations
+				near the initial point**)
+Solution = RungeKutta[{Eq1, Eq2}, 
+							               {PrR2, PrC2},
+							               {PrR20, PrC20},
+						                {T, A}];
+
+(**Create a graphics object of the orbit**)
+Graphics[Line[Solution]]
+);
+	
+
+ReplicatorFlowOrbit[{G_, T_, A_, PrR20_, PrC20_}] :=
+(
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+		
+(** Define Replicator Flow Differential Equations**)
+Eq1 = PrR2*(UR2-RUSQ);
+Eq2 = PrC2*(UC2-CUSQ);
+
+(** Find Numerical Solution to the system of equations
+				near the initial point**)
+Solution = RungeKutta[{Eq1, Eq2}, 
+							               {PrR2, PrC2},
+							               {PrR20, PrC20},
+						                {T, A}];
+
+(**Create a graphics object of the orbit**)
+Graphics[Line[Solution]] 
+);
+
+End[]
+
+
+Begin["FlowStability`Private`"]
+
+IsNash[a_,S_]:=Block[{l}, 
+  l=Dimensions[a][[1]];
+  Isnash[a,S]
+];
+
+Isnash[a_,S_]:=Block[{m1,m2,Eu,br1,br2,t},
+   Eu[2,st_]:=N[S[[1]].a[[Range[1,l],st,2]]];
+   Eu[1,st_]:=N[S[[2]].a[[st,Range[1,l],1]]];
+   m1=Max[Table[Eu[1,t],{t,1,l}]];
+   m2=Max[Table[Eu[2,t],{t,1,l}]];
+   br1=Table[If[Eu[1,t]==m1,0,1],{t,1,l}];
+   br2=Table[If[Eu[2,t]==m2,0,1],{t,1,l}];
+   If[br1.S[[1]]+br2.S[[2]]==0,True,False]
+];
+
+Square[a_]:=Block[{n,l},
+ n[i_]:=Dimensions[a][[i]];
+ l=Max[n[1],n[2]];
+Table[ If[i<=n[1] && j<=n[2],a[[i,j]],{Min[a]-1,Min[a]-1}],{i,1,l},{j,1,l}]]
+
+Nash[a_]:=Block[{n,l,anew,MapD,Dropd,solns},
+
+   If[Length[Dimensions[a]]!=3,Return["Not a two-player game!"]];  
+   n[i_]:=Dimensions[a][[i]];
+   l=Max[n[1],n[2]];
+   If[2!=Dimensions[a][[3]],Return["Payoffs aren't defined for two players"]];
+   If[n[1]!=n[2],anew=Square[a];
+      solns=Nash[anew];
+      Dropd[i_][x_]:=Drop[x,n[i]-l];
+      MapD[x_]:=MapAt[Dropd[1],MapAt[Dropd[2],x,{{2}}],{{1}}];
+      Return[Map[MapD,solns]]
+   ,Return[NashSq[a]]];
+   
+]
+NashSq[a_]:=Block[{t1,t2,t3,l,p,pp,a1list,a2list,blist,f,pos,nq,pn,nlist,
+   eqn1,eqn2,eqns1,eqns2,ans1,ans2,i,j,NashE},
+   l=Dimensions[a][[1]];
+   pp=Table[p[i],{i,1,l}]; a1list={}; a2list={};
+   blist=Table[Mod[Floor[j/2^i],2],{j,1,2^l-1},{i,0,l-1}];   
+   For[t1=1,t1<=Length[blist],t1++,
+   { num=Apply[Plus,blist[[t1]]];
+     f[x_]:=If[Apply[Plus,x]==num,True,False];
+     slist=Select[blist,f];
+     For[t2=1,t2<=Length[slist],t2++,
+     { pos=Flatten[Position[slist[[t2]],1]];
+       eqn1=Table[(pp*blist[[t1]]).a[[Range[1,l],pos[[t3]],2]],{t3,1,num}];
+       eqn2=Table[(pp*blist[[t1]]).a[[pos[[t3]],Range[1,l],1]],{t3,1,num}];
+       eqns1=Table[eqn1[[i]]==eqn1[[i+1]],{i,1,num-1}];
+       eqns2=Table[eqn2[[i]]==eqn2[[i+1]],{i,1,num-1}];
+       ans1=Solve[Join[eqns1,{Apply[Plus,pp*blist[[t1]]]==1}],pp];
+       ans2=Solve[Join[eqns2,{Apply[Plus,pp*blist[[t1]]]==1}],pp];
+       AppendTo[a1list,Flatten[(pp*blist[[t1]])/.ans1]];
+       AppendTo[a2list,Flatten[(pp*blist[[t1]])/.ans2]];
+   }]}];
+   nq[x_]:=Apply[And,Table[NumberQ[N[x[[i]]]],{i,1,Length[x]}]];
+   pn[x_]:=Apply[And,Table[N[x[[i]]]>=0 && N[x[[i]]]<=1,{i,1,Length[x]}]];
+   a1list=Union[Select[Select[a1list,nq],pn]];
+   a2list=Union[Select[Select[a2list,nq],pn]];
+   nlist=Flatten[Table[{a1list[[i]],a2list[[j]]},{i,1,Length[a1list]},
+     {j,1,Length[a2list]}],1];
+   INash[S_]:=Isnash[a,S];
+   NashE=Select[nlist,INash]
+];
+
+DarwinFlowStability[G_] := 
+(
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+G1 = {{{R11, C11}, {R12, C12}},
+      {{R21, C21}, {R22, C22}}};
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+
+(**Define the Darwin Flow <f, g>**)
+f = PrR2*(UR2-RUSQ)/RUSQ;
+g = PrC2*(UC2-CUSQ)/CUSQ;
+
+(**Do Eigenvalue analysis at each of the Nash equilibria**)
+N0 = Drop[Flatten[Nash[G1]], 1];
+N1 = Flatten[Partition[N0, 1, 2]];
+NashEquilibria = N[Partition[N1, 2]];
+Print["The Nash equilibria of G are: ", NashEquilibria];
+EigAnal[X_] := (
+Jacob[{PrR2_, PrC2_}] = Outer[D,{f, g},{PrR2, PrC2}];
+Print["The Jacobian of the Darwin Flow ",
+      "at the point ", X, " is ", TableForm[Jacob[X]]];
+Eigen = Re[N[Eigenvalues[Jacob[X]]]];
+Print["The Real Parts of the Eigenvalues of the ",
+      "Jacobian of the Darwin Flow at the point ", X,
+						" are: ", Eigen];);
+Map[EigAnal, NashEquilibria];
+);
+
+
+ReplicatorFlowStability[G_] := 
+(
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+G1 = {{{R11, C11}, {R12, C12}},
+      {{R21, C21}, {R22, C22}}};
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+
+(**Define the Replicator Flow <f, g>**)
+f = PrR2*(UR2-RUSQ);
+g = PrC2*(UC2-CUSQ);
+
+(**Do Eigenvalue analysis at each of the Nash equilibria**)
+N0 = Drop[Flatten[Nash[G1]], 1];
+N1 = Flatten[Partition[N0, 1, 2]];
+NashEquilibria = N[Partition[N1, 2]];
+Print["The Nash equilibria of G are: ", NashEquilibria];
+EigAnal[X_] := (
+Jacob[{PrR2_, PrC2_}] = Outer[D,{f, g},{PrR2, PrC2}];
+Print["The Jacobian of the Replicator Flow ",
+      "at the point ", X, " is ", TableForm[Jacob[X]]];
+Eigen = Re[N[Eigenvalues[Jacob[X]]]];
+Print["The Real Parts of the Eigenvalues of the ",
+      "Jacobian of the Replicator Flow at the point ", X,
+						" are: ", Eigen];);
+Map[EigAnal, NashEquilibria];
+);
+
+End[]
+
+
+Begin["ReplicatorFlowVectorField`Private`"]
+
+ReplicatorFlowVectorField[{G_, A_}] := 		
+(	
+															
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+		
+(** Define Replicator Flow**)
+f = PrR2*(UR2-RUSQ);
+g = PrC2*(UC2-CUSQ);
+
+(** Create Vector Field Plot **)
+PlotVectorField[{f, g}, {PrR2, 0, 1}, {PrC2, 0, 1}, 
+			   PlotPoints->A, 
+					 Frame -> True, 
+					 FrameLabel ->	{"PrR2", "PrC2", 
+					 "Vector Field of G under Replicator Flow", ""}]
+);
+
+End[]
+
+Begin["DarwinFlowVectorField`Private`"]
+
+DarwinFlowVectorField[{G_, A_}] := 		
+(	
+															
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+		
+(** Define Darwin Flow**)
+f = PrR2*(UR2-RUSQ)/RUSQ;
+g = PrC2*(UC2-CUSQ)/CUSQ;
+
+(** Create Vector Field Plot **)
+PlotVectorField[{f, g}, {PrR2, 0, 1}, {PrC2, 0, 1}, 
+	     PlotPoints->A,
+	     Frame -> True, 
+					 FrameLabel ->	{"PrR2", "PrC2", 
+					 "Vector Field of G under Darwin Flow", ""}]
+);
+
+End[]
+
+EndPackage[]  

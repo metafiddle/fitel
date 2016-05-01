@@ -1,0 +1,256 @@
+(* :Mathematica Version: 2.2 *)
+
+(* :Context: Dynamics` *)
+
+(* :Title: Discrete *)
+
+(* :Author: B.E. Fitelson *)
+
+(* :Summary: This package contains several functions for 
+   performing various kinds of simulations and 
+   stability analyses of the (discrete time) 
+   deliberational dynamics of 2x2 Normal-Form games.  
+   
+   Included are functions for (numerically) generating
+   graphics objects of orbits and under both Darwin and
+   Nash discrete dynamical maps.  Moreover,
+   there are functions defined for both finding and
+   performing analytical stability analyses of the
+   Nash equilibria of 2x2 games under Darwin dynamics.*)
+
+
+(* :Sources: "The Dynamics of Rational Deliberation", 
+Brian Skyrms, Harvard, 1990.*)
+
+BeginPackage["Discrete`"]
+
+DarwinOrbit::usage = 
+"DarwinOrbit[{G_, K_, SAT_, IMAX_, PrR20_, PrC20_}]. 
+Takes the five-tuple <G, K, SAT, IMAX_, PrR20, PrC20> into a 
+graphics object of the orbit starting from the initial
+point <PrR20, PrC20> under Darwin dynamics.  Here,
+SAT is the satisficing index (IMAX is the maximum
+number of iterations allowed), and K is the index of 
+caution.  G is the 2x2 Normal form game--it is an 
+eight-tuple of the form:
+G = {R11, C11, R12, C12, R21, C21, R22, C22}
+See Skyrms (1990) Appendices for details."
+
+NashOrbit::usage = 
+"NashOrbit[{G_, K_, SAT_, IMAX_, PrR20_, PrC20_}] 
+Takes the five-tuple <G, K, SAT, IMAX, PrR20, PrC20> 
+into a graphics object of the orbit starting from the 
+initial point <PrR20, PrC20> under Nash dynamics.  Here,
+SAT is the satisficing index (IMAX is the maximum
+number of iterations allowed), and K is the index of 
+caution.  G is the 2x2 Normal form game--it is an 
+eight-tuple of the form:
+G = {R11, C11, R12, C12, R21, C21, R22, C22}
+See Skyrms (1990) Appendices for details."
+
+DarwinStability::usage = 
+"DarwinStability[G_], (1) finds all of the Nash 
+equilibria of the 2x2 Normal-Form game G, and then
+(2) performs a linear stability analysis for 
+the discrete time Darwin dynamical map at each of these
+equilibria.  Specifically, this function outputs the 
+absolute values of the eigenvalues of the Jacobian 
+Matrix of the Darwin map of G at each of its Nash points."
+
+Nash::usage ="Nash[game_] finds the Nash Equilibria of game, a game in 
+normal form. Example input: Nash[{{{2,1},{0,0}},{{0,0},{1,2}}}]. Nash 
+returns the probability weights on the different pure strategies."
+
+IsNash::usage ="IsNash[game_,strategies_] returns True if strategies is 
+a Nash Equilibrium of game and False otherwise.
+Example input: IsNash[game,{{2/3,1/3},{1/3,2/3}}]."
+
+
+Begin["DarwinOrbit`Private`"]
+
+DarwinOrbit[{G_, K_, SAT_, IMAX_, PrR20_, PrC20_}] :=
+(
+(**Setting the Initial 'State of Indecision'**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+PrR2=PrR20;
+PrC2=PrC20;
+(**Main Loop Structure**)
+covC1=1;
+i=0;
+data={{PrR2, PrC2}};
+While[(covR1>SAT || covR2>SAT || covC1>SAT || covC2>SAT) && i<IMAX,
+i=i+1;
+PrR1=1-PrR2;
+PrC1=1-PrC2;
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+UR1=PrC1*R11+PrC2*R12;
+UR2=PrC1*R21+PrC2*R22;
+RUSQ=PrR1*UR1+PrR2*UR2;
+UC1=PrR1*C11+PrR2*C21;
+UC2=PrR1*C12+PrR2*C22;
+CUSQ=PrC1*UC1+PrC2*UC2;
+(**Calculate Covetabilities**)
+covR1=Max[UR1-RUSQ,0];
+covR2=Max[UR2-RUSQ,0];
+covC1=Max[UC1-CUSQ,0];
+covC2=Max[UC2-CUSQ,0];
+(** Darwin Dynamics **)
+PrR2 = PrR2+((1/K)*PrR2*((UR2-RUSQ)/RUSQ));
+PrC2 = PrC2+((1/K)*PrC2*((UC2-CUSQ)/CUSQ));
+(**Generate Data Set, & Create a Graphics object of it**)
+AppendTo[data, {PrR2, PrC2}]];
+Graphics[Line[data]]
+		);
+		
+End[]
+
+
+Begin["NashOrbit`Private`"]
+   
+NashOrbit[{G_, K_, SAT_, IMAX_, PrR20_, PrC20_}] :=
+	(
+(**Setting the Initial 'State of Indecision'**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+PrR2=PrR20;
+PrC2=PrC20;
+(**Main Loop Structure**)
+covC1=1;
+i=0;
+data={{PrR2, PrC2}};
+While[(covR1>SAT || covR2>SAT || covC1>SAT || covC2>SAT) && i<IMAX,
+i=i+1;
+PrR1=1-PrR2;
+PrC1=1-PrC2;
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+UR1=PrC1*R11+PrC2*R12;
+UR2=PrC1*R21+PrC2*R22;
+RUSQ=PrR1*UR1+PrR2*UR2;
+UC1=PrR1*C11+PrR2*C21;
+UC2=PrR1*C12+PrR2*C22;
+CUSQ=PrC1*UC1+PrC2*UC2;
+(**Calculate Covetabilities**)
+covR1=Max[UR1-RUSQ,0];
+covR2=Max[UR2-RUSQ,0];
+covC1=Max[UC1-CUSQ,0];
+covC2=Max[UC2-CUSQ,0];
+(** Nash Dynamics **)
+PrR2 = ((K*PrR2+covR2)/(K+covR1+covR2));
+PrC2 = ((K*PrC2+covC2)/(K+covC1+covC2));
+(**Generate Data Set, & Create a Graphics object of it**)
+AppendTo[data, {PrR2, PrC2}]];
+Graphics[Line[data]]
+		);
+
+End[]
+
+
+Begin["DarwinStability`Private`"]
+
+Off[Solve::"svars"]
+
+IsNash[a_,S_]:=Block[{l}, 
+  l=Dimensions[a][[1]];
+  Isnash[a,S]
+];
+
+Isnash[a_,S_]:=Block[{m1,m2,Eu,br1,br2,t},
+   Eu[2,st_]:=N[S[[1]].a[[Range[1,l],st,2]]];
+   Eu[1,st_]:=N[S[[2]].a[[st,Range[1,l],1]]];
+   m1=Max[Table[Eu[1,t],{t,1,l}]];
+   m2=Max[Table[Eu[2,t],{t,1,l}]];
+   br1=Table[If[Eu[1,t]==m1,0,1],{t,1,l}];
+   br2=Table[If[Eu[2,t]==m2,0,1],{t,1,l}];
+   If[br1.S[[1]]+br2.S[[2]]==0,True,False]
+];
+
+Square[a_]:=Block[{n,l},
+ n[i_]:=Dimensions[a][[i]];
+ l=Max[n[1],n[2]];
+Table[ If[i<=n[1] && j<=n[2],a[[i,j]],{Min[a]-1,Min[a]-1}],{i,1,l},{j,1,l}]]
+
+Nash[a_]:=Block[{n,l,anew,MapD,Dropd,solns},
+
+   If[Length[Dimensions[a]]!=3,Return["Not a two-player game!"]];  
+   n[i_]:=Dimensions[a][[i]];
+   l=Max[n[1],n[2]];
+   If[2!=Dimensions[a][[3]],Return["Payoffs aren't defined for two players"]];
+   If[n[1]!=n[2],anew=Square[a];
+      solns=Nash[anew];
+      Dropd[i_][x_]:=Drop[x,n[i]-l];
+      MapD[x_]:=MapAt[Dropd[1],MapAt[Dropd[2],x,{{2}}],{{1}}];
+      Return[Map[MapD,solns]]
+   ,Return[NashSq[a]]];
+   
+]
+NashSq[a_]:=Block[{t1,t2,t3,l,p,pp,a1list,a2list,blist,f,pos,nq,pn,nlist,
+   eqn1,eqn2,eqns1,eqns2,ans1,ans2,i,j,NashE},
+   l=Dimensions[a][[1]];
+   pp=Table[p[i],{i,1,l}]; a1list={}; a2list={};
+   blist=Table[Mod[Floor[j/2^i],2],{j,1,2^l-1},{i,0,l-1}];   
+   For[t1=1,t1<=Length[blist],t1++,
+   { num=Apply[Plus,blist[[t1]]];
+     f[x_]:=If[Apply[Plus,x]==num,True,False];
+     slist=Select[blist,f];
+     For[t2=1,t2<=Length[slist],t2++,
+     { pos=Flatten[Position[slist[[t2]],1]];
+       eqn1=Table[(pp*blist[[t1]]).a[[Range[1,l],pos[[t3]],2]],{t3,1,num}];
+       eqn2=Table[(pp*blist[[t1]]).a[[pos[[t3]],Range[1,l],1]],{t3,1,num}];
+       eqns1=Table[eqn1[[i]]==eqn1[[i+1]],{i,1,num-1}];
+       eqns2=Table[eqn2[[i]]==eqn2[[i+1]],{i,1,num-1}];
+       ans1=Solve[Join[eqns1,{Apply[Plus,pp*blist[[t1]]]==1}],pp];
+       ans2=Solve[Join[eqns2,{Apply[Plus,pp*blist[[t1]]]==1}],pp];
+       AppendTo[a1list,Flatten[(pp*blist[[t1]])/.ans1]];
+       AppendTo[a2list,Flatten[(pp*blist[[t1]])/.ans2]];
+   }]}];
+   nq[x_]:=Apply[And,Table[NumberQ[N[x[[i]]]],{i,1,Length[x]}]];
+   pn[x_]:=Apply[And,Table[N[x[[i]]]>=0 && N[x[[i]]]<=1,{i,1,Length[x]}]];
+   a1list=Union[Select[Select[a1list,nq],pn]];
+   a2list=Union[Select[Select[a2list,nq],pn]];
+   nlist=Flatten[Table[{a1list[[i]],a2list[[j]]},{i,1,Length[a1list]},
+     {j,1,Length[a2list]}],1];
+   INash[S_]:=Isnash[a,S];
+   NashE=Select[nlist,INash]
+];
+
+
+DarwinStability[G_] := 
+(
+(**Calculate Expected Utilities (SQ=Status Quo)**)
+{R11, C11, R12, C12,
+ R21, C21, R22, C22} = G;
+G1 = {{{R11, C11}, {R12, C12}},
+      {{R21, C21}, {R22, C22}}};
+PrR1 = 1-PrR2;
+PrC1 = 1-PrC2;
+UR1 = PrC1*R11+PrC2*R12;
+UR2 = PrC1*R21+PrC2*R22;
+RUSQ = PrR1*UR1+PrR2*UR2;
+UC1 = PrR1*C11+PrR2*C21;	
+UC2 = PrR1*C12+PrR2*C22;
+CUSQ = PrC1*UC1+PrC2*UC2;
+
+(**Define the Darwin map F = <f, g>.**)
+f = PrR2*UR2/RUSQ;
+g = PrC2*UC2/CUSQ;
+
+(**Do Eigenvalue analysis at each of the Nash equilibria**)
+N0 = Drop[Flatten[Nash[G1]], 1];
+N1 = Flatten[Partition[N0, 1, 2]];
+NashEquilibria = N[Partition[N1, 2]];
+Print["The Nash equilibria of G are: ", NashEquilibria];
+EigAnal[X_] := (
+Jacob[{PrR2_, PrC2_}] = Outer[D,{f, g},{PrR2, PrC2}];
+Print["The Jacobian of the Discrete Darwin Map ",
+      "at the point ", X, " is ", TableForm[Jacob[X]]];
+Eigen = Abs[N[Eigenvalues[Jacob[X]]]];
+Print["The Absolute values of the Eigenvalues of the ",
+      "Jacobian of the Discrete Darwin Map at the point ", X,
+						" are: ", Eigen];);
+Map[EigAnal, NashEquilibria];
+);
+
+End[]
+
+EndPackage[]  

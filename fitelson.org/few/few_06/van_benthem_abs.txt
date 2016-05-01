@@ -1,0 +1,16 @@
+Belief Revision in a Dynamic Epistemic Framework
+
+Johan van Benthem, Amsterdam & Stanford
+
+http://staff.science.uva.nl/~johan/index.html
+
+We show how belief revision can be treated systematically in the format
+of current dynamic-epistemic logics, with belief operators added in a
+suitable manner. The core engine are update rules for preference
+relations which have been proposed independently in the dynamic
+epistemic literature for preference change. The result of this analysis
+are some complete sets of reduction axioms for particular revision
+mechanisms, as well as standard modal correspondence analysis for
+revision postulates in general AGM style.
+
+Ref. http://staff.science.uva.nl/~johan/DL-BR-new.pdf

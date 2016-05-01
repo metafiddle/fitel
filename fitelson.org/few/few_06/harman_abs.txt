@@ -1,0 +1,22 @@
+"Induction and Simplicity"
+
+Gilbert Harman and Sanjeev Kulkarni, Princeton University
+
+
+We are concerned with the reliability of inductive methods in the light
+of certain foundational results in statistical learning theory.  In this
+talk, we compare simple enumerative induction with methods that take
+into account some ordering of hypotheses, perhaps by simplicity.  We
+compare different methods for balancing data-coverage against an
+ordering of hypotheses in terms of simplicity or some simplicity
+substitute.  Then we consider how ideas from statistical learning theory
+might shed light on some philosophical issues.  In particular, we
+distinguish two ways to respond to Goodman's (1965) "new riddle of
+induction", corresponding to these two kinds of inductive methods.  We
+discuss some of Karl Popper's ideas about scientific method, trying to
+distinguish what is right and what is wrong about these ideas.  We
+consider how the two sorts of induction discussed in this talk might
+apply to first language acquisition.  And finally, we consider how an
+appeal to simplicity or some similar ordering might provide a principled
+way to prefer one hypothesis over another skeptical hypothesis that is
+empirically equivalent with it.

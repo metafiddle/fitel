@@ -1,0 +1,3 @@
+Believing Epistemic Contradictions
+
+Abstract: What is it to believe something might be the case?  We raise a challenge for standard answers to this question.  We begin by developing a new puzzle involving belief, epistemic modals, and certainty.  After showing that standard treatments of beliefs involving epistemic modals fail to resolve our puzzle, we propose our own solution, which integrates a Bayesian approach to belief with a dynamic semantics for epistemic modals.  We go on to investigate a surprising consequence of our solution to the puzzle:  virtually all of our beliefs about what might be the case provide counterexamples to the view that rational belief is closed under logical implication.

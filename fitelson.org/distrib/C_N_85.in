@@ -1,0 +1,135 @@
+% This OTTER input file generates an 85-step CD proof of distributivity in
+% the C,N fragment of Ln.  Here, we use prefix notation for C and N.
+
+set(hyper_res).  
+assign(max_weight, 1).
+clear(print_kept).  
+clear(print_new_demod).
+clear(print_back_demod).
+clear(print_back_sub).
+clear(print_given).
+assign(max_distinct_vars, 6).
+set(order_history).
+set(input_sos_first).
+assign(equiv_hint_wt, 1).
+set(keep_hint_subsumers).
+
+% Turning the following flag on causes OTTER to generate a proof object
+% which shows ALL instantiations and unifications in the proof.
+set(build_proof_object).
+
+list(hints).
+% 85 proof steps (as hints)
+P(C(C(C(C(x,y),C(z,y)),u),C(C(z,x),u))).
+P(C(C(C(x,y),z),C(y,z))).
+P(C(C(x,y),C(C(C(x,z),u),C(C(y,z),u)))).
+P(C(C(C(x,y),z),C(C(C(u,x),y),z))).
+P(C(N(x),C(x,y))).
+P(C(x,C(C(x,y),y))).
+P(C(C(C(C(x,y),y),z),C(C(C(y,x),x),z))).
+P(C(C(C(x,y),z),C(C(N(y),N(x)),z))).
+P(C(C(x,C(y,z)),C(C(u,y),C(x,C(u,z))))).
+P(C(C(C(x,C(y,z)),u),C(z,u))).
+P(C(C(C(x,y),z),C(C(C(u,C(v,x)),y),z))).
+P(C(C(C(N(x),y),z),C(C(C(x,u),y),z))).
+P(C(C(C(x,y),N(z)),C(z,x))).
+P(C(C(C(x,y),z),C(C(C(y,z),u),u))).
+P(C(C(x,C(y,z)),C(y,C(x,z)))).
+P(C(C(C(x,C(y,z)),u),C(C(y,C(x,z)),u))).
+P(C(C(x,y),C(C(z,x),C(z,y)))).
+P(C(C(x,C(y,z)),C(C(z,u),C(x,C(y,u))))).
+P(C(C(x,C(y,C(z,u))),C(x,C(z,C(y,u))))).
+P(C(C(x,C(C(y,z),z)),C(x,C(C(z,y),y)))).
+P(C(C(x,y),C(C(C(z,u),x),C(C(N(u),N(z)),y)))).
+P(C(C(x,C(y,C(z,u))),C(z,C(x,C(y,u))))).
+P(C(x,C(C(x,y),C(C(y,z),z)))).
+P(C(C(x,C(C(y,z),z)),C(C(z,y),C(x,y)))).
+P(C(C(C(x,y),z),C(C(x,C(C(y,u),u)),C(C(u,y),z)))).
+P(C(C(C(x,y),C(z,y)),C(C(y,x),C(z,x)))).
+P(C(C(C(C(x,y),C(z,y)),u),C(C(C(y,x),C(z,x)),u))).
+P(C(C(C(x,y),C(C(N(z),u),u)),C(C(u,N(z)),C(z,x)))).
+P(C(C(x,N(y)),C(y,N(x)))).
+P(C(C(C(C(C(x,y),C(z,y)),u),v),C(C(C(C(y,x),C(z,x)),u),v))).
+P(C(x,C(C(y,N(x)),N(y)))).
+P(C(C(C(C(x,y),C(z,y)),C(u,C(z,x))),C(C(C(z,x),C(y,x)),C(u,C(y,x))))).
+P(C(C(C(C(x,y),C(z,y)),C(u,C(v,w))),C(C(C(y,x),C(z,x)),C(v,C(u,w))))).
+P(C(C(x,C(y,N(z))),C(z,C(x,N(y))))).
+P(C(C(x,C(C(C(y,z),C(u,z)),C(v,C(u,y)))),C(x,C(C(C(u,y),C(z,y)),C(v,C(z,y)))))).
+P(C(C(C(x,y),C(z,N(u))),C(u,C(N(x),N(z))))).
+P(C(x,C(y,N(C(x,N(y)))))).
+P(C(C(x,y),C(C(C(z,x),C(y,x)),C(C(C(z,y),C(z,x)),C(y,x))))).
+P(C(C(x,y),C(z,C(N(y),N(x))))).
+P(C(C(N(C(x,N(y))),z),C(x,C(y,z)))).
+P(C(C(N(x),N(y)),C(z,N(C(C(y,x),N(z)))))).
+P(C(C(C(x,C(y,z)),u),C(C(N(C(x,N(y))),z),u))).
+P(C(C(C(N(x),N(y)),z),C(C(y,x),z))).
+P(C(C(C(C(x,y),z),u),C(C(C(N(y),N(x)),z),u))).
+P(C(C(C(C(N(x),N(y)),z),u),C(C(C(v,N(C(C(y,x),N(v)))),z),u))).
+P(C(C(x,C(C(y,C(z,u)),v)),C(x,C(C(N(C(y,N(z))),u),v)))).
+P(C(C(x,y),C(C(C(N(z),N(u)),x),C(C(u,z),y)))).
+P(C(C(C(N(x),N(y)),N(y)),C(C(x,y),N(x)))).
+P(C(C(C(N(x),N(y)),C(N(z),N(u))),C(C(y,x),C(u,z)))).
+P(C(C(x,C(C(C(N(y),N(z)),u),v)),C(x,C(C(C(w,N(C(C(z,y),N(w)))),u),v)))).
+P(C(N(x),C(C(y,x),N(y)))).
+P(C(C(C(N(x),N(y)),C(N(z),N(y))),C(C(x,y),C(x,z)))).
+P(C(C(N(x),y),C(N(y),x))).
+P(C(C(x,y),C(N(y),N(x)))).
+P(C(C(x,C(y,z)),C(N(z),C(x,N(y))))).
+P(C(C(x,C(C(N(y),N(z)),C(N(u),N(z)))),C(x,C(C(y,z),C(y,u))))).
+P(C(C(x,C(N(y),z)),C(x,C(N(z),y)))).
+P(C(C(C(x,y),C(z,u)),C(C(N(y),N(x)),C(N(u),N(z))))).
+P(C(N(C(C(x,y),N(x))),N(C(C(N(x),N(y)),N(y))))).
+P(C(C(x,C(y,z)),C(N(C(x,N(y))),z))).
+P(C(C(C(x,y),C(x,z)),C(C(y,x),C(y,z)))).
+P(C(C(x,N(C(C(y,z),N(y)))),C(x,N(C(C(N(y),N(z)),N(z)))))).
+P(C(C(C(N(x),N(y)),C(y,z)),C(C(x,y),C(x,z)))).
+P(C(C(x,C(y,z)),C(C(C(z,y),C(z,u)),C(x,C(y,u))))).
+P(C(C(x,C(C(y,x),y)),C(x,y))).
+P(C(C(C(C(x,y),C(x,z)),u),C(C(C(N(x),N(y)),C(y,z)),u))).
+P(C(C(C(x,y),C(x,z)),C(C(N(x),N(y)),C(y,z)))).
+P(C(C(C(C(x,N(C(C(y,z),N(y)))),u),v),C(C(C(x,N(C(C(N(y),N(z)),N(z)))),u),v))).
+P(C(C(C(x,y),C(y,x)),C(y,x))).
+P(C(C(x,C(C(C(y,z),C(y,u)),v)),C(x,C(C(C(N(y),N(z)),C(z,u)),v)))).
+P(C(C(x,C(C(C(y,N(C(C(z,u),N(z)))),v),w)),C(x,C(C(C(y,N(C(C(N(z),N(u)),N(u)))),v),w)))).
+P(C(C(C(x,C(y,C(z,u))),C(u,z)),C(u,z))).
+P(C(C(C(x,y),C(z,C(u,C(y,x)))),C(z,C(u,C(y,x))))).
+P(C(C(x,C(y,C(C(C(z,u),C(z,v)),w))),C(x,C(y,C(C(C(N(z),N(u)),C(u,v)),w))))).
+P(C(C(C(x,y),C(z,y)),C(C(C(x,z),C(x,y)),C(z,y)))).
+P(C(C(C(x,y),C(z,y)),C(C(C(N(x),N(z)),C(z,y)),C(z,y)))).
+P(C(C(C(x,y),C(z,y)),C(C(C(u,N(C(C(z,x),N(u)))),C(z,y)),C(z,y)))).
+P(C(C(C(x,y),C(z,y)),C(C(C(z,N(C(C(N(z),N(x)),N(x)))),C(z,y)),C(z,y)))).
+P(C(C(C(x,y),C(z,y)),C(C(C(z,y),C(z,N(C(C(N(z),N(x)),N(x))))),C(z,N(C(C(N(z),N(x)),N(x))))))).
+P(C(C(C(x,y),C(z,y)),C(z,C(C(C(z,x),C(z,N(C(C(N(z),N(y)),N(y))))),N(C(C(N(z),N(y)),N(y))))))).
+P(C(C(x,C(C(y,z),z)),C(x,C(C(C(x,y),C(x,N(C(C(N(x),N(z)),N(z))))),N(C(C(N(x),N(z)),N(z))))))).
+P(C(C(N(x),N(C(C(y,z),z))),C(C(C(y,z),z),C(C(C(x,y),C(x,N(C(C(N(x),N(z)),N(z))))),N(C(C(N(x),N(z)),N(z))))))).
+P(C(C(N(x),N(C(C(y,z),z))),C(C(C(y,z),z),C(C(C(N(x),N(y)),C(y,N(C(C(N(x),N(z)),N(z))))),N(C(C(N(x),N(z)),N(z))))))).
+P(C(N(C(C(N(x),N(C(C(y,z),z))),N(C(C(y,z),z)))),C(C(C(N(x),N(y)),C(y,N(C(C(N(x),N(z)),N(z))))),N(C(C(N(x),N(z)),N(z)))))).
+P(C(N(C(C(N(x),N(C(C(y,z),z))),N(C(C(y,z),z)))),C(C(N(C(C(N(x),N(y)),N(y))),N(C(C(N(x),N(z)),N(z)))),N(C(C(N(x),N(z)),N(z)))))).
+end_of_list.
+
+list(usable).
+% Condensed Detachment Rule (CD)
+-P(C(x,y)) | -P(x) | P(y).  
+end_of_list.
+
+list(sos).
+% Axioms A1--A4 of Ln
+P(C(x,C(y,x))) #label(A1).
+P(C(C(x,y),C(C(y,z),C(x,z)))) #label(A2).
+P(C(C(C(x,y),y),C(C(y,x),x))) #label(A3).
+P(C(C(N(x),N(y)),C(y,x))) #label(A4).
+end_of_list.
+
+list(passive).
+% Denial of Distributivity of K-over-A
+-P(C(N(C(C(N(a),N(C(C(b,c),c))),N(C(C(b,c),c)))),C(C(N(C(C(N(a),N(b)),N(b))),N(C(C(N(a),N(c)),N(c)))),N(C(C(N(a),N(c)),N(c)))))).
+end_of_list.
+
+%  Following purges all double-negation terms
+list(demodulators).
+(N(N(x)) = junk).
+(C(junk,x) = junk).
+(C(x,junk) = junk).
+(N(junk) = junk).
+(P(junk) = $T).
+end_of_list.

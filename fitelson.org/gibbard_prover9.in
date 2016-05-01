@@ -1,0 +1,64 @@
+% Gibbardian collapse input file --- prover9 syntax
+%					  	e(X,Y) := X entails Y (where X,Y are sentences)
+% 						t(X)   := X is a logical truth (or, a theorem)
+%						h(X,Y) := X hook Y (logical conditional)
+%						i(X,Y) := X -> Y (indicative conditional)
+%						a(X,Y) := X & Y (conjunction)
+
+clear(auto).
+set(prolog_style_variables).
+clear(print_given).
+set(hyper_resolution).
+set(input_sos_first).
+assign(max_proofs,1).
+assign(max_weight,1).
+set(breadth_first_hints).
+
+formulas(hints).
+% proof of claims (9) and (13) reported in paper
+t(h(a(a(h(A,B),C),A),B)).
+t(i(a(a(A,i(B,C)),B),C)).
+t(h(a(A,B),B)).
+e(a(A,B),A).
+e(a(a(h(A,B),C),A),B).
+t(h(a(a(A,i(B,C)),B),C)).
+e(a(A,B),B).
+e(a(a(A,i(B,C)),B),C).
+e(a(A,B),a(A,B)).
+e(a(A,B),a(B,A)).
+e(a(a(A,i(B,C)),B),a(a(a(A,i(B,C)),B),C)).
+e(a(A,B),a(a(A,B),B)).
+e(a(a(h(A,B),C),A),a(a(a(h(A,B),C),A),B)).
+t(i(a(A,B),A)).
+t(i(a(a(h(A,B),C),A),B)).
+t(i(a(a(i(A,B),C),A),B)).
+t(i(a(h(A,B),A),B)).
+t(i(a(i(A,B),A),B)).
+t(i(a(a(a(i(A,i(B,C)),D),A),B),C)).
+t(i(h(A,B),i(A,B))).
+t(h(a(i(A,B),A),B)).
+t(i(a(a(i(A,i(B,C)),i(A,B)),A),C)).
+t(h(h(A,B),i(A,B))).
+t(h(i(A,B),h(A,B))).
+t(i(a(i(A,i(B,C)),i(A,B)),i(A,C))).
+e(h(A,B),i(A,B)).
+e(i(A,B),h(A,B)).
+t(i(i(A,i(B,C)),i(i(A,B),i(A,C)))).
+end_of_list.
+
+formulas(sos).
+% axioms (1)-(8)
+t(h(a(A,B),A)) #label(ax1).
+t(i(a(A,B),B)) #label(ax5).
+-t(h(A,h(B,C)))|t(h(a(A,B),C)) #label(ax2).
+t(h(A,h(B,C)))|-t(h(a(A,B),C)) #label(ax2).
+-t(i(A,i(B,C)))|t(i(a(A,B),C)) #label(ax3).
+t(i(A,i(B,C)))|-t(i(a(A,B),C)) #label(ax3).
+-t(i(A,B))|t(h(A,B)) #label(ax4).
+-e(A,B)|-e(A,C)|e(A,a(B,C)) #label(ax6).
+-t(h(A,B))|e(A,B) #label(ax7).
+-e(A,B)|-e(B,A)|-t(i(A,C))|t(i(B,C)) #label(ax8).
+
+% denial of claims (9) and (13)
+-e(i(a1,a2),h(a1,a2)) | -e(h(c1,c2),i(c1,c2)) | -t(i(i(c6,i(c7,c8)),i(i(c6,c7),i(c6,c8)))) #label(theorems).
+end_of_list.

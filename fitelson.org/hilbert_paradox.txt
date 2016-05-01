@@ -1,0 +1,83 @@
+% Basic Paradox input file for reasoning about modal logics
+% For further Paradox options, see the Paradox website 
+%
+%    http://www.cs.chalmers.se/%7Ekoen/paradox/
+%
+% Remove "%" symbol from front of a line to activate it (uncomment it)
+% 
+% Example Paradox input: "paradox --print Model hilbert_paradox.txt" 
+% looks for models starting at size 1, until it finds one at some size 
+% (or runs out of memory!), and then it prints the model.  
+
+set(prolog_style_variables).
+
+list(usable).
+% % Rule of Modus Ponens (Condensed Detachment)
+-p(i(X,Y)) | -p(X) | p(Y).
+
+% Rule of Necessitation
+-p(X) | p(l(X)).
+
+% % Luka's axioms for classical propositional logic (PL)
+p(i(i(X,Y),i(i(Y,Z),i(X,Z)))).
+p(i(X,i(n(X),Y))).
+p(i(i(n(X),X),X)).
+n(n(X)) = X.
+i(X,Y) = i(n(Y),n(X)).
+
+% % Modal Axioms
+% % K axiom (valid in all normal modal systems)
+p(i(l(i(X,Y)),i(l(X),l(Y)))).
+
+% % D axiom (seriality)
+p(i(l(X),n(l(n(X))))).
+
+% % T axiom (reflexivity)
+% p(i(l(X),X)).
+
+% % B axiom (symmetry)
+% p(i(X,l(n(l(n(X)))))).
+
+% % 4 axiom (transitivity)
+% p(i(l(X),l(l(X)))).
+
+% % 5 axiom (euclidean-ness)
+p(i(n(l(n(X))),l(n(l(n(X)))))).
+
+% % McKinsey's axiom G
+% p(i(l(n(l(n(X)))),n(l(n(l(X)))))).
+
+% % Lob's axiom
+% p(i(l(i(l(X),X)),l(X))).
+
+% % Denials of formulas of interest
+% % First example on handout -- in classical PL, no modality needed
+% -p(i(n(n(a)),a)).
+
+% % Example 1.40 (page 35) of Blackburn et al
+% -p(i(n(i(l(a),n(l(b)))),l(n(i(a,n(b)))))).
+
+% % D axiom (seriality)
+% -p(i(l(a),n(l(n(a))))).
+% 
+% % T axiom (reflexivity)
+% -p(i(l(a),a)).
+
+% % B axiom (symmetry)
+% -p(i(a,l(n(l(n(a)))))).
+
+% % 4 axiom (transitivity)
+-p(i(l(a),l(l(a)))).
+
+% % 5 axiom (euclidean-ness)
+% -p(i(n(l(n(a))),l(n(l(n(a)))))).
+
+% % McKinsey axiom G
+% -p(i(l(n(l(n(a)))),n(l(n(l(a)))))).
+
+% % Lob's axiom
+% -p(i(l(i(l(a),a)),l(a))).
+
+% % McKinsey's Axiom G
+% -p(i(l(n(l(n(a)))),n(l(n(l(a)))))).
+end_of_list.

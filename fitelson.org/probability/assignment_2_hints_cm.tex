@@ -1,0 +1,169 @@
+\batchmode 
+\documentclass[leqno,12pt]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{fancybox,graphicx,pifont}
+\usepackage{mathrsfs}
+
+% Set Margins to 1 inch all around, and set text width/length to fill new larger text area
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\topskip}{0mm}
+%You can set \hoffset and \voffset to be -0.5, to get 1/2 inch 
+%margins,but, if you do this, then you must set \footskip to a smaller number
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+
+% Custom Commands for this document
+\newcommand{\cd}{\text{$\cdot$}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\EQUIV}{\ensuremath{\mathbin{\Dashv \vDash}}}
+\newcommand{\s}{\mathcal{S}}
+\newcommand{\AND}{\ensuremath{\mathbin{\&}}}
+\newcommand{\OR}{\ensuremath{\vee}}
+\newcommand{\IF}{\ensuremath{\supset}}
+\newcommand{\IFF}{\ensuremath{\equiv}}
+\newcommand{\NOT}{\ensuremath{\text{$\sim$}}}
+\newcommand{\entails}{\ensuremath{\vDash}}
+\newcommand{\EQ}{\ensuremath{\approx}}
+\newcommand{\nEQ}{\ensuremath{\napprox}}
+\newcommand{\nPerp}{\ensuremath{\mathbin{\,\text{\small{\slash}\!\!\!$\Perp$}}}}
+\newcommand{\nentails}{\ensuremath{\nvDash}}
+\newcommand{\absurd}{\ensuremath{\curlywedge}}
+\newcommand{\arrow}{\ensuremath{\rightarrow}}
+\newcommand{\darrow}{\ensuremath{\leftrightarrow}}
+\newcommand{\corr}{\ensuremath{\text{-\! $\overset{+}{\text{-}}$\! -}}}
+\newcommand{\acorr}{\ensuremath{\text{-\! $\overset{-}{\text{-}}$\! -}}}
+\newcommand{\given}{\, | \,}
+\newcommand{\ind}{\perp}
+\newcommand{\union}{\cup}
+\newcommand{\intersection}{\cap}
+\newcommand{\T}{\textsf{T}}
+\newcommand{\F}{\textsf{F}}
+\newcommand{\df}{\ensuremath{=_{\text{\emph{df}}}}}
+\newcommand{\passage}[2]{\begin{minipage}[b]{#1}{#2}\end{minipage}}
+\newcommand{\A}{\textsf{\textbf{A}}}
+\newcommand{\E}{\textsf{\textbf{E}}}
+\newcommand{\I}{\textsf{\textbf{I}}}
+\newcommand{\OO}{\textsf{\textbf{O}}}
+\newcommand{\point}{\raisebox{-4pt}{{\LARGE \Pisymbol{pzd}{43}}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\con}{\mathfrak{c}}
+\newcommand{\m}{\mathfrak{m}}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+\textbf{{\large Explanations, Hints, and Suggestions for Assignment \#2}}\\
+$[$Revised 03/18/08$]$
+
+\end{center}
+
+These notes help explain the problems and offer suggestions for how to proceed if you're stuck. The suggestions give one particular way of solving the problems; feel free to ignore them and solve the problems your own way.
+
+\section{Problem 1}
+Start by doing the first part, looking for Bob's violations of probability axioms and theorems (Bob's quotients are non-probabilistic in more than one way). On the second part, if you're having trouble finding a Dutch Book against Bob, try the following:
+\begin{itemize}
+\item{Look back at the lecture notes where Branden proved the Dutch Book Theorem. See how he constructed books against agents with probability violations like Bob's. Try to build an analogous book against Bob.}
+\item{If you're really stuck, try working backwards. Imagine you already had a book of bets against Bob's quotients. Let the stake of the first bet be $s_1$, the stake of the second bet be $s_2$, etc. Write a table of possible ways the bets could come out, then calculate Bob's total payoff for each possible outcome using the formulas from Lecture 11, Slide 12. Since Bob must lose on every possible outcome if your bets are to constitute a Dutch Book, each total payoff must be a negative number. Thus you can use your table to write some inequalities that have to be true for this to be a Book against Bob. Once you have a set of inequalities, either solve them for the $s_n$s using algebra or use trial-and-error to find some $s_n$ values that satisfy all the inequalities. Finally, translate the stake values back into actual bets using the formulas from Lecture 11, Slide 12.}
+\end{itemize} 
+
+On the third part of Problem 1, we're not looking for anything like a rigorous proof. Just give a reasonable argument for why you think your answer is correct.
+
+\section{Problem 2.1}
+\subsection{The Framework}
+A credence function $q(X)$ assigns a real number between 0 and 1 (inclusive) to every proposition in some set $\B$. We can also imagine a ``world function'' $w(X)$ that assigns 1 to every true proposition and 0 to every false proposition. It seems reasonable that the most accurate credence function you could have would be identical to the world function (you would assign a probability of 1 to every truth and a probability of 0 to every falsehood!).
+
+Unfortunately none of us is perfect, but we can measure how far our imperfect credence functions are from the world function. Suppose my credence function is $q$. We can start by looking at it one proposition at a time. We define a function $\rho$ such that my inaccuracy for any proposition $X$ is $\rho(q(X),w(X))$. To get the inaccuracy of my entire credence function, we add up the inaccuracies of my credences for individual propositions. So the inaccuracy of my overall credence function $q$ in world $w$ is
+\begin{equation*}
+I(q,w) = \sum_{X \in \B}\rho(q(X),w(X))
+\end{equation*}
+For instance, if there are only two propositions in $\B$, $A$ and $B$, the inaccuracy of my credence function $q$ is
+\begin{equation*}
+I(q,w)=\rho(q(A), w(A))+\rho(q(B),w(B))
+\end{equation*}
+
+Unfortunately (this kind of thing should be familiar by now), there are many different ways of measuring distance from the truth -- in other words, there are many different functions that could play the role of $\rho$. The one you'll be interested in Problem 2.1 is
+\begin{equation*}
+\rho^{\dag}(q(X),w(X))=(q(X)-w(X))^2
+\end{equation*}
+Applying this definition to our two-proposition example, 
+\begin{equation*}
+I(q,w)=(q(A)-w(A))^2+(q(B)-w(B))^2
+\end{equation*}
+
+\subsection{Suggestions for Problem 2.1, Weak Convexivity}
+In the Weak Convexivity part of Problem 2.1, you've got three credence functions to deal with: $q_1$, $q_2$, and $q_3$. You're given some relations between the functions and their inaccuracies, then are asked to prove some other stuff about the functions. This is going to require a lot of algebra involving the following quantities:
+\begin{center}
+\begin{tabular} {c c c}
+$q_1(A)-w(A)$		&\ \ \ \ \ 		&$q_1(B)-w(B)$ \\
+$q_2(A)-w(A)$		&\ \ \ \ \ 		&$q_2(B)-w(B)$ \\
+$q_3(A)-w(A)$		&\ \ \ \ \ 		&$q_3(B)-w(B)$
+\end{tabular}
+\end{center}
+To make the algebra easier and make your work easier to read, it helps to introduce variables for some of the values in the problem. Interestingly, how you define your variables affects how difficult the algebra turns out to be. For instance, you could let $x=q_1(A)$, $y=q_1(B)$, $a=w(A)$, etc. But personally, I found that the algebra got a lot easier when I defined my variables as follows:
+\begin{equation*}
+\begin{split}
+&\text{let } q_1(A)-w(A) = x \\
+&\text{let } q_2(A)-w(A) = x + a \\
+&\text{let } q_1(B)-w(B) = y \\
+&\text{let } q_2(B)-w(B) = y + b
+\end{split}
+\end{equation}
+All the other quantities in this problem can be expressed in terms of these four variables. To express the $q_3$ quantities, you will need to use the fact that $q_3=\frac{1}{2}q_1+\frac{1}{2}q_2$.
+
+Now that you have variables, express the givens as equations in terms of those variables. Next, express what you're trying to prove as a set of equations in terms of those variables. Then it's just algebra -- use the given equations and a bunch of algebraic moves to get the equations you're trying to prove.
+
+\textbf{Warning:} Make sure you don't at any point in your algebra divide by a variable! Any of the variables in this problem could equal 0.
+
+\subsection{Suggestions for Problem 2.1, Symmetry}
+Here you've only got two credence functions to deal with, $q_1$ and $q_2$. Still, it's helpful to define your variables the way I suggested defining them in the last problem. Next, use the variables to write out the given and the prove algebraically. The prove is a bit tricky notationally; here's a hint to get you started:
+\begin{equation*}
+\begin{split}
+I(\lambda \cd q_1 + (1-\lambda) \cd q_2, w) = &
+	\rho^{\dag}((\lambda \cd q_1(A) + (1-\lambda) \cd q_2(A)), w(A)) \\
+	& + \rho^{\dag}((\lambda \cd q_1(B) + (1-\lambda) \cd q_2(B)), w(B))
+\end{split}
+\end{equation*}
+That will get you started writing out the left half of the prove in terms of the variables -- you'll have to figure out how to write out the right half yourself!
+
+Once you've got both sides of the equation to prove written out, it's algebra again. The easiest way to do this one is to start with the prove equation, do a bunch of algebra to simplify it (invoking the given at a crucial step), and show that you wind up with a mathematical tautology (like $0=0$). For more on this style of proof, see my algebraic solution to Problem 3 on the solutions sheet for HW\#1. 
+
+\subsubsection{Additional Hints from Raul}
+
+We want to prove that for any $\lambda \in [0,1]$, $$I(\lambda \cdot q_1 + (1-\lambda) \cdot q_2, w) = I((\lambda-1) \cdot q_1 + \lambda \cdot q_2, w)$$ on the assumption that $$I(q_1, w) = I(q_2, w).$$
+
+\noindent Let's spell out our assumption with the variables suggested in the hints handout: $$ x^2 + y^2 = (x+a)^2 + (y+b)^2.$$
+\noindent And let's spell out what we want to prove:\\ $$((\lambda \cdot q_1(A)  + (1-\lambda) \cdot q_2(A)) - w(A))^2 + ((\lambda \cdot q_1(B)  + (1-\lambda) \cdot q_2(B)) - w(B))^2$$ $$=$$ $$(((\lambda-1) \cdot q_1(A) + \lambda \cdot q_2(A)) - w(A)) ^2 + (((\lambda-1) \cdot q_1(B) + \lambda \cdot q_2(B)) - w(B)) ^2. $$
+\noindent Now, here's the hint: using algebra, simplify the spelled out version of what we want to prove to the following:
+$$ (\lambda)(x^2 + y^2 - (x+a)^2 - (y+b)^2) = (1-\lambda)(x^2 + y^2 - (x+a)^2 - (y+b)^2). $$
+\noindent Once you've done this, justify why this simplified version of what we want to prove follows from the spelled out version of our assumption.\\
+
+\noindent That's the basic idea behind one way of proving that $\rho^\dagger$ satisfies symmetry---now fill in the details!
+
+\subsection{Suggestions for Problem 2.2}
+Here, you're going to have to compare $\rho^{\dag}$ with another distance-from-truth measure called $\rho^*$. Specifically, we want you to give a counter-example consisting of a set of propositions $\B$, a $w$ function, and two credence functions $q$ and $q'$. I would strongly suggest using a $\B$ that consists of two propositions, $A$ and $B$. Before trying to find your counter-example, it might help to practice messing around with these functions and the two inaccuracy measures. Just make up a $w$ function and two credence functions over the proposition set $\{A,B\}$, then calculate $I^{\dag}$ and $I^*$ for the example you've created. Try changing one of the values in one of the functions and see how it affects the inaccuracy measures.
+
+For your counter-example, we want you to give a setup where one of the inaccuracy measures gives one verdict about $q$ and $q'$ (e.g. $q$ is more inaccurate, $q$ is less inaccurate, they've got the same inaccuracy) and the other measure gives a different verdict. I found it easiest to do this by coming up with a $w$, $q$, and $q'$ that meet the following conditions:
+\begin{itemize}
+\item{$q$ and $q'$ are different.}
+\item{They assign some values that aren't 1 or 0.}
+\item{One of the inaccuracy measures says they're equally inaccurate.}
+\end{itemize}
+If you meet those conditions, you're almost guaranteed that the other inaccuracy measure will say one of the two credence functions is more accurate than the other.
+
+\textbf{Important Note:} To show what we asked you to prove in this question, you not only have to provide the counter-example; you also have to calculate $I^{\dag}$ and $I^*$ for both credence functions to show that the two inaccuracy measures give different verdicts.
+
+
+
+\end{document}

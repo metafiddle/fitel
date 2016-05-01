@@ -1,0 +1,228 @@
+% Basic OTTER input file for reasoning about Intepretability logics
+% For further OTTER options, see McCune's user manual (or Kalman's text)
+%
+%    http://www-unix.mcs.anl.gov/AR/otter/
+% 
+% Example OTTER input: "otter < interp_otter.txt" runs the file.  
+% All OTTER options are set within the input file.
+% 
+% In this case, the proofs are not easy, and require strategies and 
+% Otter options and parameter srttings.  I have also included hints
+% which encode lots of useful PL theorems, to help the search.
+% It would be nice to have further rewrite rules in the demodulator
+% list, in order to simplify and canonicalize formulas in the search.
+
+% Otter parameter and strategy settings (pretty good setting for these,
+% but see the OTTER manual or Kalman's book for usage and strategy).
+set(hyper_res).
+assign(max_weight, 24).
+assign(max_distinct_vars, 5).
+assign(pick_given_ratio, 3).
+assign(max_proofs, 1).
+clear(print_kept).
+clear(print_new_demod).
+clear(print_back_demod).
+clear(print_back_sub).
+set(order_history).
+set(input_sos_first).
+assign(max_mem, 200000).
+assign(bsub_hint_wt, 1).
+set(keep_hint_subsumers).
+
+% Hints -- lots of PL tautologies, and a lemma from Visser's survey
+list(hints).
+% PC theorems from Lukasiewicz
+P(i(i(i(i(x,y),i(z,y)),u),i(i(z,x),u))).
+P(i(i(x,i(y,z)),i(i(u,y),i(x,i(u,z))))).
+P(i(i(x,y),i(i(i(x,z),u),i(i(y,z),u)))).
+P(i(i(x,i(i(y,z),u)),i(i(y,v),i(x,i(i(v,z),u))))).
+P(i(i(x,y),i(i(z,x),i(i(y,u),i(z,u))))).
+P(i(i(i(n(x),y),z),i(x,z))).
+P(i(x,i(i(i(n(x),x),x),i(i(y,x),x)))).
+P(i(i(x,i(i(n(y),y),y)),i(i(n(y),y),y))).
+P(i(x,i(i(n(y),y),y))).
+P(i(i(n(x),y),i(z,i(i(y,x),x)))).
+P(i(i(i(x,i(i(y,z),z)),u),i(i(n(z),y),u))).
+P(i(i(n(x),y),i(i(y,x),x))).
+P(i(x,x)).
+P(i(x,i(i(y,x),x))).
+P(i(x,i(y,x))).
+P(i(i(i(x,y),z),i(y,z))).
+P(i(x,i(i(x,y),y))).
+P(i(i(x,i(y,z)),i(y,i(x,z)))).
+P(i(i(x,y),i(i(z,x),i(z,y)))).
+P(i(i(i(x,i(y,z)),u),i(i(y,i(x,z)),u))).
+P(i(i(i(x,y),x),x)).
+P(i(i(i(x,y),z),i(i(x,u),i(i(u,y),z)))).
+P(i(i(i(x,y),z),i(i(z,x),x))).
+P(i(i(i(x,y),y),i(i(y,x),x))).
+P(i(i(i(i(x,y),y),z),i(i(i(y,u),x),z))).
+P(i(i(i(x,y),z),i(i(x,z),z))).
+P(i(i(x,i(x,y)),i(x,y))).
+P(i(i(x,y),i(i(i(x,z),u),i(i(y,u),u)))).
+P(i(i(i(x,y),z),i(i(x,u),i(i(u,z),z)))).
+P(i(i(x,y),i(i(y,i(z,i(x,u))),i(z,i(x,u))))).
+P(i(i(x,i(y,i(z,u))),i(i(z,x),i(y,i(z,u))))).
+P(i(i(x,i(y,z)),i(i(x,y),i(x,z)))).
+P(i(n(x),i(x,y))).
+P(i(i(i(x,y),z),i(n(x),z))).
+P(i(i(x,n(x)),n(x))).
+P(i(n(n(x)),x)).
+P(i(x,n(n(x)))).
+P(i(i(x,y),i(n(n(x)),y))).
+P(i(i(i(n(n(x)),y),z),i(i(x,y),z))).
+P(i(i(x,y),i(i(y,n(x)),n(x)))).
+P(i(i(x,i(y,n(z))),i(i(z,y),i(x,n(z))))).
+P(i(i(x,i(y,z)),i(i(n(z),y),i(x,z)))).
+P(i(i(x,y),i(n(y),n(x)))).
+P(i(i(x,n(y)),i(y,n(x)))).
+P(i(i(n(x),y),i(n(y),x))).
+P(i(i(n(x),n(y)),i(y,x))).
+P(i(i(i(n(x),y),z),i(i(n(y),x),z))).
+P(i(i(x,i(y,z)),i(x,i(n(z),n(y))))).
+P(i(i(x,i(y,n(z))),i(x,i(z,n(y))))).
+P(i(i(n(x),y),i(i(x,y),y))).
+P(i(i(x,y),i(i(n(x),y),y))).
+P(i(i(x,y),i(i(x,n(y)),n(x)))).
+P(i(i(i(i(x,y),y),z),i(i(n(x),y),z))).
+P(i(i(n(x),y),i(i(x,z),i(i(z,y),y)))).
+P(i(i(i(i(x,y),i(i(y,z),z)),u),i(i(n(x),z),u))).
+P(i(i(n(x),y),i(i(z,y),i(i(x,z),y)))).
+P(i(i(x,i(n(y),z)),i(x,i(i(u,z),i(i(y,u),z))))).
+P(i(i(x,y),i(i(z,y),i(i(n(x),z),y)))).
+P(i(i(n(n(x)),y),i(x,y))).
+P(i(x,i(y,y))).
+P(i(n(i(x,x)),y)).
+P(i(i(n(x),n(i(y,y))),x)).
+P(i(n(i(x,y)),x)).
+P(i(n(i(x,y)),n(y))).
+P(i(n(i(x,n(y))),y)).
+P(i(x,i(n(y),n(i(x,y))))).
+P(i(x,i(y,n(i(x,n(y)))))).
+P(n(i(i(x,x),n(i(y,y))))).
+
+
+% Proof of K1b in Visser's survey
+P(i(i(i(i(x,y),i(z,y)),u),i(i(z,x),u))).
+P(i(i(x,y),i(i(n(x),x),y))).
+P(i(i(i(n(x),y),z),i(x,z))).
+P(i(i(x,i(y,z)),i(i(u,y),i(x,i(u,z))))).
+P(i(i(x,y),i(i(i(x,z),u),i(i(y,z),u)))).
+P(i(i(i(i(n(x),x),y),z),i(i(x,y),z))).
+P(i(i(x,n(y)),i(y,i(x,z)))).
+P(i(i(i(x,y),z),i(i(i(n(x),u),y),z))).
+P(i(x,x)).
+P(i(i(x,i(n(y),y)),i(i(y,z),i(x,z)))).
+P(i(i(x,i(i(y,z),u)),i(i(y,v),i(x,i(i(v,z),u))))).
+P(i(i(x,i(i(n(y),z),u)),i(i(i(y,u),v),i(x,v)))).
+P(L(i(x,x))).
+P(i(n(i(x,x)),y)).
+P(I(x,x)).
+P(i(x,i(n(i(y,y)),z))).
+P(i(n(I(x,x)),y)).
+P(i(i(i(x,x),y),i(z,y))).
+P(i(x,i(n(I(y,y)),z))).
+P(i(x,i(i(n(y),y),y))).
+P(i(i(I(x,x),y),i(z,y))).
+P(i(i(n(x),y),i(z,i(i(y,x),x)))).
+P(i(x,I(y,y))).
+P(i(i(i(x,i(i(y,z),z)),u),i(i(n(z),y),u))).
+P(i(i(n(x),y),i(i(y,x),x))).
+P(i(i(x,i(y,z)),i(i(n(z),y),i(x,z)))).
+P(i(x,i(i(y,x),x))).
+P(i(i(I(x,x),y),y)).
+P(i(i(n(x),n(y)),i(y,x))).
+P(i(i(i(x,y),z),i(y,z))).
+P(i(n(x),i(x,y))).
+P(i(x,i(i(x,y),y))).
+P(i(i(i(x,y),x),x)).
+P(i(i(x,i(y,z)),i(y,i(x,z)))).
+P(i(i(x,n(x)),n(x))).
+P(i(i(i(x,y),z),i(i(x,u),i(i(u,y),z)))).
+P(i(i(x,y),i(i(z,x),i(z,y)))).
+P(i(i(x,y),i(i(y,n(x)),n(x)))).
+P(i(i(x,n(i(I(y,z),n(I(u,z))))),i(x,I(i(n(y),u),z)))).
+P(i(i(x,i(y,n(z))),i(i(z,y),i(x,n(z))))).
+P(i(i(x,n(y)),i(y,n(x)))).
+P(i(x,n(i(I(y,y),n(x))))).
+P(i(I(x,y),I(i(n(y),x),y))).
+P(I(i(n(x),n(L(n(x)))),x)).
+end_of_list.
+
+weight_list(pick_and_purge).
+weight(junk,1000).
+end_of_list.
+
+list(usable).
+% Rule of Modus Ponens
+-P(i(x,y)) | -P(x) | P(y).
+
+% Rule of Necessitation
+-P(x) | P(L(x)). % L1
+end_of_list.
+
+list(sos).
+% % Luka's axioms for classical propositional logic (PL)
+% % With definitions of other connectives
+P(i(i(x,y),i(i(y,z),i(x,z)))).
+P(i(i(n(x),x),x)).
+P(i(x,i(n(x),y))).
+
+% Axioms of basic system IL -- translated into <L,i,n,I>
+P(i(L(i(x,y)),i(L(x),L(y)))). % L2
+P(i(L(x),L(L(x)))). % L3
+P(i(L(i(L(x),x)),L(x))). % L4
+P(i(L(i(x,y)),I(x,y))). % J1
+P(i(n(i(I(x,y),n(I(y,z)))),I(x,z))). % J2
+P(i(n(i(I(x,y),n(I(z,y)))),I(i(n(x),z),y))). % J3                       
+P(i(I(x,y),I(n(L(n(x))),n(L(n(y)))))). % J4
+P(I(n(L(n(x))),x)). % J5
+
+% Further formulas of interest
+% P(i(I(x,y),L(I(x,y)))). % P
+% P(i(I(x,y),I(n(i(x,n(L(z)))),n(i(y,n(L(z))))))). % M
+P(i(I(x,y),I(x,n(i(y,n(L(n(x)))))))). % W
+% P(i(I(x,n(L(n(y)))),L(I(x,y)))). % P$_0$
+P(i(I(x,y),I(n(i(n(L(n(x))),n(L(z)))),n(i(y,n(L(z))))))). % M$_0$. 
+% P(i(I(x,n(L(n(y)))),L(I(x,n(L(n(y))))))). % C
+end_of_list.
+
+
+list(passive).
+% % Denials of formulas, for "reductio" proofs
+
+% % some theorems from Visser's Overview
+% -P(i(L(A),I(n(A),n(i(B,B))))) | $ANS(K3a).  
+% -P(i(I(n(A),n(i(B,B))),L(A))) | $ANS(K3b).  
+% -P(I(A,i(n(A),n(L(n(A)))))) | $ANS(K1a). 
+% -P(I(i(n(A),n(L(n(A)))),A)) | $ANS(K1b). 
+% -P(I(A,n(i(A,n(L(n(A))))))) | $ANS(K2a). 
+
+% % Denials of some formulas of interest
+% -P(i(I(a,b),L(I(a,b)))) | $ANS(P). 
+% -P(i(I(a,b),I(n(i(a,n(L(c)))),n(i(b,n(L(c))))))) | $ANS(M). 
+% -P(i(I(a,b),I(a,n(i(b,n(L(n(a)))))))) | $ANS(W). 
+-P(i(I(a,n(L(n(b)))),L(I(a,b)))) | $ANS(P_0). 
+% -P(i(I(a,b),I(n(i(n(L(n(a))),n(L(c)))),n(i(b,n(L(c))))))) | $ANS(M_0). 
+% -P(i(I(a,n(L(n(b)))),L(I(a,n(L(n(b))))))) | $ANS(C). 
+end_of_list.
+  
+list(demodulators).
+% some useful reqrite rules for propositional logic
+i(n(y),n(x)) = i(x,y). 
+n(n(x)) = x.
+
+% purging complex terms
+% (n(n(n(x))) = junk).
+% (n(n(x)) = junk).
+% (L(L(L(x))) = junk).
+(L(L(x)) = junk).
+(L(junk) = junk).
+(I(x,junk) = junk).
+(I(junk,x,) = junk).
+(i(x,junk) = junk).
+(i(junk,x) = junk).
+(n(junk) = junk).
+(P(junk) = $T).
+end_of_list.
+

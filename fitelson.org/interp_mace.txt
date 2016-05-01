@@ -1,0 +1,56 @@
+% Basic MACE input file for reasoning about interpretability logics
+% For further MACE options, see McCune's MACE website 
+%
+%    http://www-unix.mcs.anl.gov/AR/mace/
+%
+% Remove "%" symbol from front of line to activate it (uncomment it)
+% 
+% Example MACE input: "mace -N 4 -p 1 < interp_mace.txt" looks for 
+% models up to size 4, and then prints out the first model found.
+
+set(process_input).
+
+list(usable).
+% Rule of Modus Ponens
+-P(i(x,y)) | -P(x) | P(y).
+
+% Rule of Necessitation
+-P(x) | P(L(x)). % L1
+
+% % Luka's axioms for classical propositional logic (PL)
+% % With definitions of other connectives
+P(i(i(x,y),i(i(y,z),i(x,z)))).
+P(i(i(n(x),x),x)).
+P(i(x,i(n(x),y))).
+
+% Axioms of basic system IL -- translated into <L,i,n,I>
+P(i(L(i(x,y)),i(L(x),L(y)))). % L2
+P(i(L(x),L(L(x)))). % L3
+P(i(L(i(L(x),x)),L(x))). % L4
+P(i(L(i(x,y)),I(x,y))). % J1
+P(i(n(i(I(x,y),n(I(y,z)))),I(x,z))). % J2
+P(i(n(i(I(x,y),n(I(z,y)))),I(i(n(x),z),y))). % J3                       
+P(i(I(x,y),I(n(L(n(x))),n(L(n(y)))))). % J4
+P(I(n(L(n(x))),x)). % J5
+
+% Further formulas of interest (to assert)
+% P(i(I(x,y),L(I(x,y)))). % P
+% P(i(I(x,y),I(n(i(x,n(L(z)))),n(i(y,n(L(z))))))). % M
+P(i(I(x,y),I(x,n(i(y,n(L(n(x)))))))). % W
+% P(i(I(x,n(L(n(y)))),L(I(x,y)))). % P$_0$
+P(i(I(x,y),I(n(i(n(L(n(x))),n(L(z)))),n(i(y,n(L(z))))))). % M$_0$. 
+% P(i(I(x,n(L(n(y)))),L(I(x,n(L(n(y))))))). % C
+
+% % Denials of some formulas of interest (to refute)
+% -P(i(L(A),I(n(A),n(i(B,B))))) | $ANS(K3a).  
+% -P(i(I(n(A),n(i(B,B))),L(A))) | $ANS(K3b).  
+% -P(I(A,i(n(A),n(L(n(A)))))) | $ANS(K1a). 
+% -P(I(i(n(A),n(L(n(A)))),A)) | $ANS(K1b). 
+% -P(I(A,n(i(A,n(L(n(A))))))) | $ANS(K2a). 
+% -P(i(I(a,b),L(I(a,b)))) | $ANS(P). 
+% -P(i(I(a,b),I(n(i(a,n(L(c)))),n(i(b,n(L(c))))))) | $ANS(M). 
+% -P(i(I(a,b),I(a,n(i(b,n(L(n(a)))))))) | $ANS(W). 
+-P(i(I(a,n(L(n(b)))),L(I(a,b)))) | $ANS(P_0). 
+% -P(i(I(a,b),I(n(i(n(L(n(a))),n(L(c)))),n(i(b,n(L(c))))))) | $ANS(M_0). 
+% -P(i(I(a,n(L(n(b)))),L(I(a,n(L(n(b))))))) | $ANS(C). 
+end_of_list.

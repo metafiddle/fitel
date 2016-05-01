@@ -1,0 +1,33 @@
+% Gibbardian collapse input file --- tptp/fof syntax
+%					  	e(X,Y) := X entails Y (where X,Y are sentences)
+% 						t(X)   := X is a logical truth (or, a theorem)
+%						h(X,Y) := X hook Y (logical conditional)
+%						i(X,Y) := X -> Y (indicative conditional)
+%						a(X,Y) := X & Y (conjunction)
+
+% Here are the eight (independent) axioms
+fof(ax1,axiom, ![X,Y]: t(h(a(X,Y),X))).
+fof(ax2,axiom, ![X,Y,Z]: (t(h(X,h(Y,Z))) <=> t(h(a(X,Y),Z)))).
+fof(ax3,axiom, ![X,Y,Z]: (t(i(X,i(Y,Z))) <=> t(i(a(X,Y),Z)))).
+fof(ax4, axiom, ![X,Y]: (t(i(X,Y)) => t(h(X,Y)))).
+fof(ax5,axiom, ![X,Y]: t(i(a(X,Y),Y))).
+fof(ax6,axiom, ![A,B,C]: ((e(A,B) & e(A,C)) => e(A,a(B,C)))).
+fof(ax7,axiom, ![X,Y]: (t(h(X,Y)) => e(X,Y))).
+fof(ax8w,axiom, ![X,Y]: ((e(X,Y) & e(Y,X)) => ![Z]: ((t(i(X,Z)) <=> t(i(Y,Z)))))).
+
+% denial of collapse theorem (follows from axioms 1-8 above)
+%fof(nthm,axiom, ?[X,Y,Z,U]: ~(e(i(X,Y),h(X,Y)) & e(h(Z,U),i(Z,U)))).
+
+% denial of Peirce's Law (does not follow from 1-8: 3-element models exist)
+%fof(peirce,axiom, ?[X,Y]: ~t(h(h(h(X,Y),X),X))).
+
+% denial of key intuitionistic axiom (13) for the logical conditional
+% (non-trivial) proof does not require ax3
+%fof(intuit2,axiom, ?[X,Y,Z]: ~(t(h(h(X,h(Y,Z)),h(h(X,Y),h(X,Z)))))).
+
+% denial of key intuitionistic axiom (13) for the indicative conditional
+% (non-trivial) proof does not require ax2
+%fof(intuit2,axiom, ?[X,Y,Z]: ~(t(i(i(X,i(Y,Z)),i(i(X,Y),i(X,Z)))))).
+
+% denial of the other direction of deduction theorem for the logical conditional
+%fof(dt,axiom, ?[X,Y]: ~(e(X,Y) => t(h(X,Y)))).

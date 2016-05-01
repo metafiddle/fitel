@@ -1,0 +1,142 @@
+set(hyper_res).
+assign(max_proofs,-1).
+set(prolog_style_variables).
+clear(print_kept).  
+clear(print_new_demod).
+clear(print_back_demod).
+clear(print_back_sub).
+clear(print_given).
+set(ancestor_subsume).
+assign(max_weight, 0).
+%assign(max_distinct_vars, 4).
+%assign(pick_given_ratio, 1).
+%assign(max_mem, 28000).
+set(order_history).
+set(input_sos_first).
+assign(bsub_hint_wt, 0).
+set(keep_hint_subsumers).
+
+list(hints).
+% 52/26/4 proof
+p(i(f(i(A,B),A),B)).
+p(i(A,i(B,f(A,B)))).
+p(i(f(i(A,B),i(B,C)),i(A,C))).
+p(i(i(i(i(A,B),i(C,B)),D),i(i(C,A),D))).
+p(i(i(A,B),i(f(i(C,A),C),B))).
+p(i(i(i(A,f(B,A)),C),i(B,C))).
+p(i(i(i(A,B),C),i(f(i(A,D),i(D,B)),C))).
+p(i(i(A,i(B,C)),i(i(D,B),i(A,i(D,C))))).
+p(i(f(i(A,f(i(B,C),B)),A),C)).
+p(i(f(i(A,i(i(B,C),C)),A),i(i(C,B),B))).
+p(i(i(A,B),i(C,i(A,f(C,B))))).
+p(i(i(A,B),i(i(C,A),i(i(B,D),i(C,D))))).
+p(i(i(A,i(B,C)),i(i(i(C,B),B),i(A,C)))).
+p(i(i(A,f(i(B,C),B)),i(A,C))).
+p(i(i(A,i(i(B,C),C)),i(A,i(i(C,B),B)))).
+p(i(i(A,i(i(B,C),C)),i(i(D,i(C,B)),i(A,i(D,B))))).
+p(i(i(A,B),i(i(i(C,A),A),i(i(B,C),C)))).
+p(i(i(i(i(i(A,B),B),i(C,A)),D),i(i(C,i(B,A)),D))).
+p(i(i(i(i(i(A,B),i(C,B)),i(C,D)),i(C,D)),i(i(D,A),i(i(A,B),i(C,B))))).
+p(i(i(i(i(A,i(B,C)),i(B,D)),i(B,D)),i(i(A,i(D,C)),i(A,i(B,C))))).
+p(i(A,i(i(B,f(i(C,D),C)),f(A,i(B,D))))).
+p(i(i(i(A,i(i(B,C),C)),D),i(i(A,i(i(C,B),B)),D))).
+p(i(A,i(i(i(B,C),C),i(i(f(A,C),B),B)))).
+p(i(i(A,i(i(A,B),B)),i(i(B,i(B,B)),i(B,i(A,B))))).
+p(i(i(A,i(f(i(i(B,C),C),i(B,C)),B)),i(i(i(B,C),C),i(A,B)))).
+p(i(i(A,i(i(B,C),C)),i(D,i(A,i(i(f(D,C),B),B))))).
+p(i(i(A,i(i(B,A),A)),i(i(B,i(B,B)),i(B,i(A,B))))).
+p(i(i(i(A,A),A),i(i(i(i(A,A),A),A),A))).
+p(i(i(A,i(i(B,C),C)),i(D,i(A,i(i(f(D,B),C),C))))).
+p(i(i(A,i(A,A)),i(A,i(i(i(A,A),A),A)))).
+p(i(A,i(i(i(B,B),B),i(i(f(A,i(i(B,B),B)),B),B)))).
+p(i(i(A,A),i(i(i(i(A,A),i(A,A)),i(A,A)),i(A,A)))).
+p(i(f(A,i(i(B,B),B)),i(i(f(A,i(i(B,B),B)),B),B))).
+p(i(i(i(i(A,A),i(A,A)),i(A,A)),i(A,A))).
+p(i(i(A,i(A,A)),i(A,i(f(B,i(i(A,A),A)),A)))).
+p(i(i(i(A,A),i(i(A,A),i(A,A))),i(i(A,A),i(A,A)))).
+p(i(i(A,A),i(f(B,i(i(i(A,A),i(A,A)),i(A,A))),i(A,A)))).
+p(i(f(A,i(i(i(B,B),i(B,B)),i(B,B))),i(B,B))).
+p(i(A,i(i(i(i(B,B),i(B,B)),i(B,B)),i(B,B)))).
+p(i(i(i(i(i(i(A,A),i(A,A)),i(A,A)),i(A,A)),B),i(C,B))).
+p(i(A,i(i(B,B),i(i(B,B),i(B,B))))).
+p(i(i(i(i(A,A),i(i(A,A),i(A,A))),B),i(C,B))).
+p(i(A,i(i(B,B),i(B,B)))).
+p(i(i(A,i(B,B)),i(C,i(A,i(B,B))))).
+p(i(i(A,i(A,A)),i(A,i(i(B,i(C,C)),A)))).
+p(i(i(A,A),i(i(B,i(C,C)),i(A,A)))).
+p(i(i(A,i(B,i(C,C))),i(i(D,D),i(A,i(D,D))))).
+p(i(i(A,A),i(B,i(A,A)))).
+p(i(A,i(B,B))).
+p(i(A,i(i(B,i(C,C)),A))).
+p(i(i(A,i(B,i(C,C))),i(D,i(A,D)))).
+p(i(A,i(B,A))).
+end_of_list.
+
+weight_list(pick_and_purge).
+% 52/26/4 proof
+weight(p(i(f(i(A,B),A),B)),2).
+weight(p(i(A,i(B,f(A,B)))),2).
+weight(p(i(f(i(A,B),i(B,C)),i(A,C))),2).
+weight(p(i(i(i(i(A,B),i(C,B)),D),i(i(C,A),D))),2).
+weight(p(i(i(A,B),i(f(i(C,A),C),B))),2).
+weight(p(i(i(i(A,f(B,A)),C),i(B,C))),2).
+weight(p(i(i(i(A,B),C),i(f(i(A,D),i(D,B)),C))),2).
+weight(p(i(i(A,i(B,C)),i(i(D,B),i(A,i(D,C))))),2).
+weight(p(i(f(i(A,f(i(B,C),B)),A),C)),2).
+weight(p(i(f(i(A,i(i(B,C),C)),A),i(i(C,B),B))),2).
+weight(p(i(i(A,B),i(C,i(A,f(C,B))))),2).
+weight(p(i(i(A,B),i(i(C,A),i(i(B,D),i(C,D))))),2).
+weight(p(i(i(A,i(B,C)),i(i(i(C,B),B),i(A,C)))),2).
+weight(p(i(i(A,f(i(B,C),B)),i(A,C))),2).
+weight(p(i(i(A,i(i(B,C),C)),i(A,i(i(C,B),B)))),2).
+weight(p(i(i(A,i(i(B,C),C)),i(i(D,i(C,B)),i(A,i(D,B))))),2).
+weight(p(i(i(A,B),i(i(i(C,A),A),i(i(B,C),C)))),2).
+weight(p(i(i(i(i(i(A,B),B),i(C,A)),D),i(i(C,i(B,A)),D))),2).
+weight(p(i(i(i(i(i(A,B),i(C,B)),i(C,D)),i(C,D)),i(i(D,A),i(i(A,B),i(C,B))))),2).
+weight(p(i(i(i(i(A,i(B,C)),i(B,D)),i(B,D)),i(i(A,i(D,C)),i(A,i(B,C))))),2).
+weight(p(i(A,i(i(B,f(i(C,D),C)),f(A,i(B,D))))),2).
+weight(p(i(i(i(A,i(i(B,C),C)),D),i(i(A,i(i(C,B),B)),D))),2).
+weight(p(i(A,i(i(i(B,C),C),i(i(f(A,C),B),B)))),2).
+weight(p(i(i(A,i(i(A,B),B)),i(i(B,i(B,B)),i(B,i(A,B))))),2).
+weight(p(i(i(A,i(f(i(i(B,C),C),i(B,C)),B)),i(i(i(B,C),C),i(A,B)))),2).
+weight(p(i(i(A,i(i(B,C),C)),i(D,i(A,i(i(f(D,C),B),B))))),2).
+weight(p(i(i(A,i(i(B,A),A)),i(i(B,i(B,B)),i(B,i(A,B))))),2).
+weight(p(i(i(i(A,A),A),i(i(i(i(A,A),A),A),A))),2).
+weight(p(i(i(A,i(i(B,C),C)),i(D,i(A,i(i(f(D,B),C),C))))),2).
+weight(p(i(i(A,i(A,A)),i(A,i(i(i(A,A),A),A)))),2).
+weight(p(i(A,i(i(i(B,B),B),i(i(f(A,i(i(B,B),B)),B),B)))),2).
+weight(p(i(i(A,A),i(i(i(i(A,A),i(A,A)),i(A,A)),i(A,A)))),2).
+weight(p(i(f(A,i(i(B,B),B)),i(i(f(A,i(i(B,B),B)),B),B))),2).
+weight(p(i(i(i(i(A,A),i(A,A)),i(A,A)),i(A,A))),2).
+weight(p(i(i(A,i(A,A)),i(A,i(f(B,i(i(A,A),A)),A)))),2).
+weight(p(i(i(i(A,A),i(i(A,A),i(A,A))),i(i(A,A),i(A,A)))),2).
+weight(p(i(i(A,A),i(f(B,i(i(i(A,A),i(A,A)),i(A,A))),i(A,A)))),2).
+weight(p(i(f(A,i(i(i(B,B),i(B,B)),i(B,B))),i(B,B))),2).
+weight(p(i(A,i(i(i(i(B,B),i(B,B)),i(B,B)),i(B,B)))),2).
+weight(p(i(i(i(i(i(i(A,A),i(A,A)),i(A,A)),i(A,A)),B),i(C,B))),2).
+weight(p(i(A,i(i(B,B),i(i(B,B),i(B,B))))),2).
+weight(p(i(i(i(i(A,A),i(i(A,A),i(A,A))),B),i(C,B))),2).
+weight(p(i(A,i(i(B,B),i(B,B)))),2).
+weight(p(i(i(A,i(B,B)),i(C,i(A,i(B,B))))),2).
+weight(p(i(i(A,i(A,A)),i(A,i(i(B,i(C,C)),A)))),2).
+weight(p(i(i(A,A),i(i(B,i(C,C)),i(A,A)))),2).
+weight(p(i(i(A,i(B,i(C,C))),i(i(D,D),i(A,i(D,D))))),2).
+weight(p(i(i(A,A),i(B,i(A,A)))),2).
+weight(p(i(A,i(B,B))),2).
+weight(p(i(A,i(i(B,i(C,C)),A))),2).
+weight(p(i(i(A,i(B,i(C,C))),i(D,i(A,D)))),2).
+weight(p(i(A,i(B,A))),2).
+end_of_list.
+
+list(usable).
+-p(i(A,B)) | -p(A) | p(B) # label(Det).
+-p(i(f(A,B),C)) | p(i(A,i(B,C))) # label(Resid1).
+p(i(f(A,B),C)) | -p(i(A,i(B,C))) # label(Resid2).
+-p(i(x,i(y,x))) # label(K_denial).
+end_of_list.
+
+list(sos).
+p(i(A,A)) # label(AxI).
+p(i(i(A,B),i(i(B,C),i(A,C)))) # label(AxBp).
+p(i(i(i(A,B),B),i(i(B,A),A))) # label(AxL).
+end_of_list.

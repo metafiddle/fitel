@@ -1,0 +1,52 @@
+% Basic Paradox input file for finding Kripke models
+%
+%    http://www.cs.chalmers.se/%7Ekoen/paradox/
+%
+% Remove "%" symbol from front of a line to activate it (uncomment it)
+% 
+% Example Paradox input: "paradox --print Model kripke_paradox.txt" 
+% looks for models starting at size 1, until it finds one at some size 
+% (or runs out of memory!), and then it prints the model.  
+
+set(prolog_style_variables).
+
+list(usable).
+% Properties of R (affirmed)
+
+% R is serial (axiom D)
+r(X,s(X)).
+
+% r is reflexive (axiom T)
+r(X,X).
+
+% r is symmetric (axiom B) 
+-r(X,Y) | r(Y,X).
+ 
+% r is transitive (axiom 4)
+% -r(X,Y) | -r(Y,Z) | r(X,Z).
+
+% r is Euclidean (axiom 5)
+% -r(X,Y) | -r(X,Z) | r(Y,Z).
+
+% Denials of r properties -- for "reductio" (resolution) proofs
+
+% r is NOT serial (denial of axiom D)
+% -r(c1,Y).
+
+% r is NOT reflexive (denial of axiom T)
+% -r(c2,c2).
+
+% r is NOT symmetric (denial of axiom B) 
+% r(c4,c3).
+% -r(c3,c4).
+
+% r is NOT transitive (denial of axiom 4)
+% r(c7,c6).
+% r(c6,c5).
+% -r(c7,c5).
+
+% r is NOT Euclidean (denial of axiom 5)
+% r(c10,c9).
+% r(c10,c8).
+% -r(c9,c8).
+end_of_list.

@@ -1,0 +1,13 @@
+How does the human brain represent meanings of words and pictures in terms of
+the underlying neural activity? This talk will present our research using
+machine learning methods together with fMRI brain imaging to study this
+question. One line of our research has involved training classifiers that
+identify which word a person is thinking about, based on their neural activity
+observed using fMRI. A more recent line involves developing a computational
+model that predicts the neural activity associated with arbitrary English words,
+including words for which we do not yet have brain image data. This
+computational model is trained using a combination of fMRI data associated with
+several dozen concrete nouns, together with statistics gathered from a
+trillion-word text corpus. Once trained, the model predicts fMRI activation for
+any other concrete noun appearing in the text corpus, with highly significant
+accuracies over the 60 nouns for which we currently have fMRI data.

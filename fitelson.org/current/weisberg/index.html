@@ -1,0 +1,1000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+
+<style>
+html,body{color:black;max-width:760px;margin-right:auto;margin-left:auto;}*:not('#mkdbuttons'){margin:0;padding:0}#wrapper{font:15px helvetica,arial,freesans,clean,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.7;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:solid 1px #ddd !important}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;padding:30px;margin:15px;font-size:15px;line-height:1.6}#wrapper>*:first-child{margin-top:0 !important}#wrapper>*:last-child{margin-bottom:0 !important}@media screen{#wrapper{border:solid 1px #ddd}}h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.7;cursor:text;position:relative;margin:1em 0 15px;padding:0}h1{font-size:2.5em;border-bottom:1px solid #ddd}h2{font-size:2em;border-bottom:1px solid #eee}h3{font-size:1.5em}h4{font-size:1.2em}h5{font-size:1em}h6{color:#777;font-size:1em}p,blockquote,table,pre{margin:15px 0}ul{padding-left:30px}ol{padding-left:30px}ol li ul:first-of-type{margin-top:0px}hr{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;border:0 none;color:#ccc;height:4px;margin:15px 0;padding:0}#wrapper>h2:first-child{margin-top:0;padding-top:0}#wrapper>h1:first-child{margin-top:0;padding-top:0}#wrapper>h1:first-child+h2{margin-top:0;padding-top:0}#wrapper>h3:first-child,#wrapper>h4:first-child,#wrapper>h5:first-child,#wrapper>h6:first-child{margin-top:0;padding-top:0}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6{margin-top:0;padding-top:0}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p,ul li>:first-child,ol li>:first-child{margin-top:0}dl{padding:0}dl dt{font-size:14px;font-weight:bold;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}blockquote{border-left:4px solid #DDD;padding:0 15px;color:#777}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{border-collapse:collapse;border-spacing:0;font-size:100%;font:inherit}table th{font-weight:bold;border:1px solid #ccc;padding:6px 13px}table td{border:1px solid #ccc;padding:6px 13px}table tr{border-top:1px solid #ccc;background-color:#fff}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px;font-family:Consolas, 'Liberation Mono', Courier, monospace;font-size:12px;color:#333}pre>code{margin:0;padding:0;white-space:pre;border:none;background:transparent}.highlight pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:14px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px;margin:26px 0}pre code,pre tt{background-color:transparent;border:none}.poetry pre{font-family:Georgia, Garamond, serif !important;font-style:italic;font-size:110% !important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia, Garamond, serif !important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:none !important;font-size:12px}pre code{overflow:visible}}@media screen{body.inverted{color:#eee !important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr,.inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee !important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted pre,.inverted code,.inverted tt{background:#eeeeee !important;color:#111}.inverted h2{border-color:#555555}.inverted hr{border-color:#777;border-width:1px !important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eeeeee}code span::selection{background-color:rgba(0,0,0,0.7) !important;color:#eeeeee !important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086B3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne,.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#EAF2F5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2B91AF}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#A31515}body.dark #wrapper{background:transparent !important;box-shadow:none !important}
+
+@media print{
+#generated-toc-clone,#generated-toc{display:none!important}
+}
+#generated-toc-clone li.missing,#mkreplaced-toc li.missing{list-style-type:none!important}#generated-toc-clone li, #mkreplaced-toc li{list-style-type:upper-roman}#generated-toc-clone li li, #mkreplaced-toc li li{list-style-type:decimal}#generated-toc-clone li li li,#mkreplaced-toc li li li{list-style-type:decimal-leading-zero}#generated-toc-clone li li li li,#mkreplaced-toc li li li li{list-style-type:lower-greek}#generated-toc-clone li li li li li,#mkreplaced-toc li li li li li{list-style-type:disc}#generated-toc-clone li li li li li li,#mkreplaced-toc li li li li li li{list-style-type:square}
+</style>
+
+
+</head>
+<body class="normal firstload">
+<div id="wrapper">
+
+<h2 id="belief-in-psyontology">Belief in Psyontology</h2>
+<h3 id="jonathan-weisberg">Jonathan Weisberg</h3>
+<h4 id="university-of-toronto">University of Toronto</h4>
+<h1 id="introduction">Introduction</h1>
+<h2 id="two-notions">Two Notions</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Full belief: <em>S believes that P</em>.
+<ul class="incremental">
+<li>Sonja believes Reykjavik is the capital of Iceland.</li>
+</ul></li>
+<li>Partial belief: <em>S is x confident that P</em>.
+<ul class="incremental">
+<li>Julia is 95% sure spiders have eight legs.</li>
+</ul></li>
+</ol>
+<h2 id="two-questions">Two Questions</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Metaphysics: how are full and partial beliefs related?
+<ul class="incremental">
+<li>Do full beliefs reduce to partial beliefs, e.g. are they just strong partial beliefs?</li>
+</ul></li>
+<li>Epistemology: when should one state affect the other?
+<ul class="incremental">
+<li>Is there a threshold above which partial belief warrants full belief?</li>
+<li>Should your partial beliefs be based on your full beliefs?</li>
+</ul></li>
+</ol>
+<h2 id="some-standard-views">Some Standard Views</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li><strong>Dualism</strong>: full and partial beliefs are both real, and they are fairly metaphysically independent.
+<ul class="incremental">
+<li>Serious epistemology must address both.</li>
+</ul></li>
+<li><strong>Eliminativism</strong>: no such thing as full belief; corrupt legacy notion.
+<ul class="incremental">
+<li>Replace it with partial belief.</li>
+</ul></li>
+<li><strong>Reductionism</strong>: full beliefs are real, but mere coarsenings of partial beliefs.
+<ul class="incremental">
+<li><strong>Dismissive Reductionism</strong>: these coarsenings have little/no epistemological significance.</li>
+<li><strong>Respectful Reductionism</strong>: these coarsenings are epistemologically signficant.</li>
+</ul></li>
+</ol>
+<h2 id="to-be-shown">To Be Shown</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Dualism ✔</li>
+<li>Eliminativism ✘</li>
+<li>Reductionism ✘</li>
+</ol>
+<h1 id="dualism">Dualism</h1>
+<h2 id="pros-of-dualism">Pros of Dualism</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Respects folk discourse</li>
+<li>Respects phenomenology:
+<ul class="incremental">
+<li>Acceptance/settling</li>
+<li>Premising</li>
+</ul></li>
+</ol>
+<h2 id="cons-of-dualism">Cons of Dualism</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Parsimony, or a lack thereof:
+<ul class="incremental">
+<li>Descriptive: ontological baggage + more convoluted psychology</li>
+<li>Normative: more convoluted epistemology<br /></li>
+</ul></li>
+<li>Causal overdetermination
+<ul class="incremental">
+<li>Beliefs are supposed to cause/explain inferences, actions, and assertions.</li>
+<li>Which kind of belief does this—full or partial?</li>
+</ul></li>
+<li>Normative conflict: The Dualist Dilemma</li>
+</ol>
+<h2 id="the-dualist-dilemma">The Dualist Dilemma</h2>
+<ul class="incremental">
+<li>What is the normative import of accepting <em>P</em>?
+<ul class="incremental">
+<li>Should we assume <em>P</em> in further inquiry?</li>
+<li>Should we assume <em>P</em> in practical deliberation?</li>
+<li>Should we assert <em>P</em> when relevant?</li>
+</ul></li>
+<li>If no, what’s the philosophical significance of full belief?
+<ul class="incremental">
+<li>Epistemology, decision theory, and philosophy of language can get on without it.</li>
+</ul></li>
+<li>If yes, we’ll do dumb things.
+<ul class="incremental">
+<li>Paradoxes of acceptance, betting your life, hyper-assertiveness</li>
+</ul></li>
+<li>Case study: Levi’s Journey</li>
+</ul>
+<h2 id="from-epiphenomenonalism">From Epiphenomenonalism…</h2>
+<ul class="incremental">
+<li>In <em>Gambling With Truth</em> <span class="citation">(1965)</span>, Levi advocates accepting propositions that balance informativeness and probability.</li>
+<li>In his review, Jeffrey <span class="citation">(1968)</span> takes Levi to task for introducing an epiphenomenon.
+<ul class="incremental">
+<li>What does/should one do with an accepted proposition?</li>
+<li><em>Gambling With Truth</em> doesn’t say.</li>
+<li>So what <em>is</em> “acceptance”? And why theorize it??</li>
+</ul></li>
+</ul>
+<h2 id="section"></h2>
+<div class="figure">
+<img src="images/Jeffrey.jpg" />
+</div>
+<blockquote>
+<p>“Levi urges that the notions of belief, disbelief, and suspension of judgment […] are no less but no more in need of clarification than the notions of declaring war, taking a walk, writing a book, and cooking an omelet […] I doubt this. True enough, the notions of belief, disbelief, and suspension of judgment are as familiar as those of declaring war, taking a walk and the rest; but so are the notions of luck, divination, and lunacy.” <span class="citation">(Jeffrey 1968)</span></p>
+</blockquote>
+<h2 id="to-infallibilism">…to Infallibilism</h2>
+<ul class="incremental">
+<li>In <em>The Enterprise of Knowledge</em> <span class="citation">(1980)</span> and after, Levi holds that accepting <em>P</em> means treating only <em>P</em>-possibilities seriously.
+<ul class="incremental">
+<li>In effect, conditionalize your ur-priors on your full beliefs.</li>
+<li>(But do so corrigibly: contract your full beliefs a la AGM.)</li>
+</ul></li>
+<li>The problem: dumb results.
+<ul class="incremental">
+<li>Paradoxes of acceptance, betting your life, hyper-assertiveness</li>
+</ul></li>
+<li>The apparent moral: credence is always smarter.
+<ul class="incremental">
+<li>So ditch full belief, it’s dumb.</li>
+<li>Bayesianism is already complete; don’t mess with perfection!</li>
+</ul></li>
+</ul>
+<h1 id="eliminativism">Eliminativism</h1>
+<h2 id="the-temptations-of-eliminativism">The Temptations of Eliminativism</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Ontological parsimony</li>
+<li>Epistemological parsimony:
+<ul class="incremental">
+<li>Bayesianism: pre-assembled, batteries &amp; decision theory included.</li>
+</ul></li>
+<li>No causal overdetermination problem</li>
+<li>No normative conflict, hence no paradoxes of acceptance:
+<ul class="incremental">
+<li>Preface, Harman-Vogel, bootstrapping, etc… all gone.</li>
+</ul></li>
+</ol>
+<center>
+    
+Summary: all the advantages of abandonment over honest toil!
+</center>
+
+<h2 id="cons-of-eliminativism">Cons of Eliminativism</h2>
+<ul class="incremental">
+<li>Disrespects folk discourse</li>
+<li>Disrespects phenomenology
+<ul class="incremental">
+<li>Acceptance/settling</li>
+<li>Premising</li>
+</ul></li>
+</ul>
+<h2 id="dracula-meets-wolfman">Dracula Meets Wolfman</h2>
+<div class="figure">
+<img src="images/Jeffrey&#32;as&#32;Dracula.png" />
+</div>
+<blockquote>
+<p>“[…] nor am I disturbed by the fact that our ordinary notion of belief is only vestigially present in the notion of degree of belief. I am inclined to think Ramsey sucked the marrow out of the ordinary notion, and used it to nourish a more adequate view.” <span class="citation">(Jeffrey 1970)</span></p>
+</blockquote>
+<h2 id="roll-212">Roll 2:12!</h2>
+<div class="figure">
+<img src="images/Jon&#32;Stewart.jpg" />
+</div>
+<blockquote>
+<p>“In the simplest cases, the number of possible acts that the agent believes are available to him is finite, as is the number of possible circumstances that he regards as relevant to the outcomes of the acts.” <span class="citation">(Jeffrey 1965)</span></p>
+</blockquote>
+<h2 id="more-seriously">More Seriously</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Massive error theories should be a last resort.</li>
+<li>Eliminativism clashes with empirical research, as we’ll see.</li>
+</ol>
+<h1 id="reductionism">Reductionism</h1>
+<h2 id="i-have-high-credence-i-can-fly">“I have high credence I can fly”</h2>
+<div class="figure">
+<img src="images/RKelly.jpg" />
+</div>
+<center>
+    
+Basically: <em>S</em> believes that <em>P</em> just in case <em>S</em> has high credence in <em>P</em>.
+</center>
+
+<h2 id="the-charms-of-reductionism">The Charms of Reductionism</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Ontological parsimony</li>
+<li>Epistemological parsimony:
+<ul class="incremental">
+<li>Bayesianism for partial beliefs, Lockeanism for full beliefs</li>
+</ul></li>
+<li>No causal overdetermination</li>
+<li>No normative conflict—always defer to your partial beliefs.
+<ul class="incremental">
+<li>E.g.: solve the preface by replacing deductive consistency with coherence of the underlying credences.</li>
+</ul></li>
+</ol>
+<h2 id="dismissive-reductionism-christensen">Dismissive Reductionism: Christensen</h2>
+<blockquote>
+<p>“It is clear that our everyday binary way of talking about beliefs has immense practical advantages over a system which insisted on some more fine-grained reporting of degrees of confidence […] What is somewhat doubtful, though, is that this project will reveal to us a species of belief that will prove important from the point of view of epistemic rationality.” <span class="citation">(Christensen 2004)</span></p>
+</blockquote>
+<h2 id="a-worry">A Worry…</h2>
+<ul class="incremental">
+<li>Dismissiveness, like eliminativism, is in tension with the phenomology and epistemology of full belief:
+<ul class="incremental">
+<li>Can I regard the question whether <em>P</em> as settled?
+<ul class="incremental">
+<li>Can’t we close the book on the climate change debate?</li>
+</ul></li>
+<li>Can I take it as a given in context <em>C</em>?
+<ul class="incremental">
+<li>Can’t we take it as fact for further deliberation?</li>
+</ul></li>
+</ul></li>
+<li>There seems to be <em>something</em> of psychological and epistemological significance here…</li>
+</ul>
+<h2 id="section-1"></h2>
+<div class="figure">
+<img src="images/John&#32;Oliver.jpg" />
+</div>
+<blockquote>
+<p>“The debate on climate change ought not to be whether or not it exists. It is what we should do about it.” –John Oliver</p>
+</blockquote>
+<h2 id="the-decision-theoretic-gambit">The Decision-Theoretic Gambit</h2>
+<ul class="incremental">
+<li>Couldn’t this phenomenon just reflect a cognitive decision about when to stop deliberating?</li>
+<li>If so, it’s a cognitive decision that leaves one in a persisting state.
+<ul class="incremental">
+<li>In that state we (a) resist re-opening deliberation, and (b) are prepared to assume <em>P</em> in further reasoning.</li>
+<li>A causal rather than constitutive relationship.</li>
+</ul></li>
+<li>So maybe we should seek a thicker, less dismissive reductionism.</li>
+</ul>
+<h2 id="respectful-reductionism-sturgeon">Respectful Reductionism: Sturgeon</h2>
+<ul class="incremental">
+<li>“[…] the epistemology of binary belief falls out of the epistemology of confidence; yet norms for binary belief do not always derive from more fundamental ones for confidence.” <span class="citation">(Sturgeon 2008)</span></li>
+<li>How can this be?
+<ol class="incremental" style="list-style-type: decimal">
+<li>Full belief is “thick”, high-end confidence:<br />
+<center>
+<img src="images/High&#32;End&#32;Thick&#32;Confidence.png" />
+</center></li>
+<li>Bayesian epistemology doesn’t govern thick confidence.</li>
+<li>So it doesn’t say when you should fully believe.</li>
+</ol></li>
+</ul>
+<h2 id="my-beef-with-sturgeon">My Beef with Sturgeon</h2>
+<ul class="incremental">
+<li>Classic Bayesianism may not settle full belief, but generalized Bayesianism will.
+<ul class="incremental">
+<li>Suppose folks like van Fraassen, Joyce, and Moss are right:
+<ul class="incremental">
+<li>Representor theory gives the correct norms for thick confidence.</li>
+</ul></li>
+<li>Then it governs all thick confidences: high-end and mid-shelf.</li>
+<li>There’s no special role for high-end thick confidence, just as there’s no special role for 97% confidence in the classic theory.</li>
+</ul></li>
+</ul>
+<h2 id="respectful-reductionism-foley">Respectful Reductionism: Foley</h2>
+<ul class="incremental">
+<li>“[…] it is worth asking why we […] shouldn’t abandon the epistemology of belief for an epistemology of degrees of belief?” <span class="citation">(Foley 1993)</span></li>
+<li>Foley’s answer: full beliefs are <em>useful</em>, they make reasoning <em>manageable</em>.
+<ol class="incremental" style="list-style-type: decimal">
+<li>They shape decision-problems.
+<ul class="incremental">
+<li>What are the available acts, states, and outcomes?</li>
+</ul></li>
+<li>They ground probability judgments.
+<ul class="incremental">
+<li>1/4 chance of drawing a spade because it’s a standard, shuffled deck.</li>
+</ul></li>
+</ol></li>
+</ul>
+<h2 id="my-son-my-son-what-have-ye-done">My Son, My Son… What Have Ye Done?</h2>
+<ul class="incremental">
+<li>Wait, full beliefs aren’t just high credences now!
+<ul class="incremental">
+<li>When we fully believe <em>P</em>, we have a policy of using <em>P</em> as a premise in further reasoning.</li>
+<li>Apparently, to fully believe <em>P</em> isn’t just to give it high credence.
+<ul class="incremental">
+<li>It’s also to be disposed to use <em>P</em> as a premise.</li>
+</ul></li>
+<li>Cf. Ross &amp; Schroeder <span class="citation">(2012)</span>.</li>
+</ul></li>
+<li>Revives the dualist dilemma:
+<ul class="incremental">
+<li>Need a way to keep full beliefs from grounding dumb inferences, actions, and assertions.</li>
+</ul></li>
+</ul>
+<h2 id="moral-a-functional-distinction">Moral: A Functional Distinction</h2>
+<ul class="incremental">
+<li>The naive conception of full belief has distinctive functional features, which resist reduction to credal states.
+<ul class="incremental">
+<li>Part of what it is to fully believe <em>P</em> is:
+<ol class="incremental" style="list-style-type: decimal">
+<li>to be disposed to deploy <em>P</em> in reasoning, sans weighting, and</li>
+<li>to be inclined against deliberation about whether <em>P</em>.</li>
+</ol></li>
+</ul></li>
+<li>By affirming such features, Foley gives up the reductionist game.
+<ul class="incremental">
+<li>Now the reductionist is in the $#@*! with the dualist.</li>
+</ul></li>
+</ul>
+<h2 id="objection">“Objection!”</h2>
+<ul class="incremental">
+<li>If full beliefs had the functional role you describe, wouldn’t Carnapian Robots be incapable of full belief?
+<ul class="incremental">
+<li>Suppose Martians land tomorrow and they turn out to have perfect Bayesian brains.
+<center>
+<img src="images/Mars&#32;Attacks.jpg" />
+</center></li>
+<li>We’d still talk about what they “believe”.</li>
+</ul></li>
+</ul>
+<h2 id="reply">Reply</h2>
+<ul class="incremental">
+<li>The referent of ‘belief’ is the best candidate for the functional role (assuming it’s good enough).
+<ul class="incremental">
+<li>In a Carnapian Robot, the closest thing to the functional role of full beliefs might be high confidences.</li>
+<li>But that doesn’t tell us what the best candidate is in a human being.</li>
+</ul></li>
+</ul>
+<h2 id="the-two-hanneses">The Two Hanneses</h2>
+<center>
+<p><img src="images/Good&#32;Hannes.jpg" /> <img src="images/Evil&#32;Hannes.png" /></p>
+Good vs. Evil
+</center>
+    
+<h2 id="good-hannes">Good Hannes</h2>
+<ul class="incremental">
+<li>Reductionism is <em>architecture dependent</em>:
+<ul class="incremental">
+<li>Carnap’s Robot: stores only probabilities.</li>
+<li>The Leviathan: stores probability assignments in one data-structure, AGM-style beliefs in another.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>“If one understands our question […] from this ontological point of view, then it is inevitable that in order to answer it successfully one will need to carry out some empirical investigations into belief along the lines of: what are the agent’s belief-generating systems like?” <span class="citation">(Leitgeb 2013)</span></p>
+</blockquote>
+<h2 id="the-question-to-ask-then">The Question to Ask Then</h2>
+<ul class="incremental">
+<li>What <em>does</em> the human cognitive architecture look like?
+<ul class="incremental">
+<li>Does it contain both partial and full beliefs?</li>
+<li>Does one of them “precede” or “realize” the other in some way?</li>
+</ul></li>
+<li>I claim the empirical evidence leans dualist…</li>
+</ul>
+<h1 id="empirical-evidence">Empirical Evidence</h1>
+<h2 id="three-literatures">Three Literatures</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Memory</li>
+<li>Judgment &amp; Decision-Making</li>
+<li>Cognitive Closure</li>
+</ol>
+<h1 id="part-1-memory">Part 1: Memory</h1>
+<h2 id="confidence-memory">Confidence &amp; Memory</h2>
+<ul class="incremental">
+<li>Many (most?) of our judgments are based on <em>memory</em>.</li>
+<li>Confidence in memory-based judgments involves <em>metacognition</em> .
+<ul class="incremental">
+<li>“Confidence in an answer increases with the speed with which that answer is selected or retrieved…” <span class="citation">(Koriat 2012)</span></li>
+<li>“…confidence and its accuracy appear to depend in part on the on-line feedback from the process of answering a question or solving a problem.” –ibid</li>
+</ul></li>
+</ul>
+<h2 id="metacognition">Metacognition</h2>
+<div class="figure">
+<img src="images/Nelson&#32;&amp;&#32;Narens&#32;Model&#32;-&#32;Simple.png" />
+</div>
+<center>
+    
+<span class="citation">(Nelson and Narens 1990)</span>
+</center>
+
+<h2 id="a-stroll-down-metamemory-lane">A Stroll Down Metamemory Lane</h2>
+<div class="figure">
+<img src="images/Nelson&#32;&amp;&#32;Narens&#32;Model&#32;-&#32;Detailed.png" />
+</div>
+<center>
+    
+<span class="citation">(Nelson and Narens 1990)</span>
+</center>
+
+<h2 id="do-humans-store-credences">Do Humans Store Credences?</h2>
+<ul class="incremental">
+<li>At first glance, it looks like we store <strong>qualitative</strong> beliefs <strong>sans credences</strong>:
+<ul class="incremental">
+<li>40+ years of memory research suggests that confidence levels are constructed on the fly, during recall.
+<ul class="incremental">
+<li>’70s: Tversky &amp; Kahneman <span class="citation">(1973; 1974)</span> on the availability heuristic.</li>
+<li>’80s: Jacoby &amp; Whittlesea on fluency and familiarity, e.g. <span class="citation">(Jacoby, Kelley, and Dywan 1989; Whittlesea, Jacoby, and Girard 1990)</span></li>
+<li>’90s: Koriat <span class="citation">(1993; 1995)</span> on fluency, quantity, and FOKs.</li>
+<li>’00s: Koriat on fluency, quantity, and confidence, e.g. <span class="citation">(Koriat et al. 2008; Koriat 2012)</span> &gt; “Research has shown that virtually any method of making information easier to process can lead to more positive judgments.” <span class="citation">(Overschelde 2008)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="a-naive-argument">A Naive Argument</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Human memory stores factual information, sans confidence levels.</li>
+<li>Confidence levels are constructed at the time of recall, based on metacognitive cues like fluency &amp; quantity.</li>
+<li>So full belief is ontologically prior to partial belief!</li>
+</ol>
+<h2 id="a-more-careful-look">A More Careful Look</h2>
+<ul class="incremental">
+<li>Stored information does not a belief make.
+<ul class="incremental">
+<li>Some memories we place no stock in—we’ve since learned better.</li>
+<li>EB vs. IB cues <span class="citation">(Koriat et al. 2008)</span></li>
+</ul></li>
+<li>How recalled information gets <em>used</em> determines whether it stores a full or partial belief.</li>
+</ul>
+<h2 id="even-so-some-traction">Even So, Some Traction</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Belies an apparent, extreme disadvantage w.r.t. parsimony
+<ul class="incremental">
+<li>Pitting Carnap’s Robot against the Leviathan makes the Leviathan look unwieldy, redundant, unnecessarily complicated.</li>
+<li>But maintaining full beliefs doesn’t actually require extra/redundant storage and updating.
+<ul class="incremental">
+<li>Full &amp; partial belief share storage.</li>
+<li>“Updating” actually happens on the fly (at least partly).</li>
+</ul></li>
+</ul></li>
+</ol>
+<h2 id="a-bit-more">A Bit More…</h2>
+<ol class="incremental" start="2" style="list-style-type: decimal">
+<li>Also suggests a picture on which neither form of belief is prior to the other:
+<ul class="incremental">
+<li>We’re disposed to judge recalled information true by default.</li>
+<li>Defeating information or disfluency can trigger hesitation, doubt, and further processing.</li>
+<li>1 information store, 2 kinds of processes drawing on it.</li>
+</ul></li>
+</ol>
+<h2 id="objection-1">“Objection!”</h2>
+<ul class="incremental">
+<li>Only one process really draws on storage here:
+<ol class="incremental" style="list-style-type: decimal">
+<li>Try to recall the desired answer.</li>
+<li>Form a confidence-level based on how smoothly the recall goes.</li>
+<li>When desired, decide whether to assert <em>P</em> (inwardly or outwardly) based on that confidence-level.</li>
+</ol></li>
+</ul>
+<p>. . .</p>
+<ul class="incremental">
+<li>It only <em>appears</em> we’re disposed to judge <em>P</em> by default.
+<ul class="incremental">
+<li>Really, these are cases where the assessed confidence is high, so we decide to assert (inwardly or outwardly).</li>
+</ul></li>
+</ul>
+<h2 id="reply-1">Reply</h2>
+<ul class="incremental">
+<li>Now who’s being unparsimonious??
+<ul class="incremental">
+<li>This picture requires extra processing:</li>
+<li>confidence assessment → decision → judge <em>P</em></li>
+<li>Simpler to judge that <em>P</em> by default, unless disfluency or conflict signal a need for intervention.
+<ul class="incremental">
+<li>Indeed, disfluency is a classic “System 2” alarm-bell <span class="citation">(Alter et al. 2007)</span></li>
+<li>Stanovich’s <span class="citation">(2009)</span> Axiom: we are cognitive misers.<br /></li>
+</ul></li>
+</ul></li>
+<li>Compare with introspection, especially on cases of perception.
+<ul class="incremental">
+<li>Seems we <em>automatically</em> judge <em>P</em>, only forming a confidence and processing further in cases of disfluency or conflict.</li>
+</ul></li>
+</ul>
+<h2 id="reply-part-ii">Reply, part II</h2>
+<ul class="incremental">
+<li>There are reasons to think a disposition to judge <em>P</em> is prior.
+<ul class="incremental">
+<li>Metacognition is evolutionarily new <span class="citation">(Metcalfe 2008)</span> and PFC-located <span class="citation">(Shimamura 2008)</span>.</li>
+<li>The disposition to judge <em>P</em> probably predates the metacognitive mechanism for forming confidence levels.</li>
+</ul></li>
+</ul>
+<h2 id="corroboration">Corroboration?</h2>
+<ul class="incremental">
+<li>Ultimately though, we’d like more direct evidence about how retrieved information gets deployed in further processing.
+<ul class="incremental">
+<li>Does it always get weighted by a confidence level?</li>
+<li>Is it sometimes used unweighted?</li>
+</ul></li>
+<li>If the latter, we’d have a stronger case for dualism.</li>
+</ul>
+<h1 id="part-2-judgment-decision-making">Part 2: Judgment &amp; Decision-Making</h1>
+<h2 id="substantive-vs.procedural">Substantive vs. Procedural</h2>
+<div class="figure">
+<img src="images/Simon.jpg" />
+</div>
+<blockquote>
+<p>“Economics is a theory of human rationality that must be as concerned with procedural rationality—the ways in which decisions are made—as with substantive rationality—the content of those decisions.” <span class="citation">(Simon 1981)</span></p>
+</blockquote>
+<h2 id="monolithic-vs.fractured">Monolithic vs. Fractured</h2>
+<center>
+    
+<img src="images/Payne.jpg" /> <img src="images/Bettman.jpg" />
+</center>
+
+<blockquote>
+<p>“…decision researchers increasingly believe that […] preferences are not generated by some invariant algorithm such as Bayesian updating or expected utility calculations, but instead are generated by the contingent use of a variety of different decision heuristics or simplification mechanisms.” <span class="citation">(Payne and Bettman 2004)</span></p>
+</blockquote>
+<h2 id="crash-course-in-decision-strategy">Crash Course in Decision Strategy</h2>
+<center>
+<h4 id="the-jdm-literature">The JDM Literature</h4>
+<h4 id="from">from</h4>
+<h4 id="the-garage-days">the Garage Days</h4>
+<h4 id="to">to</h4>
+<h4 id="becoming-some-kind-of-monster">Becoming Some Kind of Monster</h4>
+</center>
+
+<h2 id="varieties-of-judgment-decision">Varieties of Judgment &amp; Decision</h2>
+<ul class="incremental">
+<li>’70s: Heuristics &amp; Biases
+<ul class="incremental">
+<li>The demise of homo economicus and rise of economical homo sapiens</li>
+</ul></li>
+<li>’80s &amp; ’90s: The Adaptive Toolbox
+<ul class="incremental">
+<li>The information processing paradigm</li>
+</ul></li>
+<li>’00s: The Evidence Accumulation Model
+<ul class="incremental">
+<li>Fumbling towards unity</li>
+</ul></li>
+</ul>
+<h2 id="s-heuristics-biases">’70s: Heuristics &amp; Biases</h2>
+<ul class="incremental">
+<li>Kahneman &amp; Tversky famously posit heuristics to explain biases in probability assessments.
+<ol class="incremental" style="list-style-type: decimal">
+<li>Bank tellers: Linda more likely a feminist bank teller than a bank teller. Why?
+<ul class="incremental">
+<li>Representativeness: probability <span class="math"> ∼ </span> similarity to a typical representative. <span class="citation">(Tversky and Kahneman 1982)</span></li>
+</ul></li>
+<li>Letter-positions: R more likely to be the 1st vs. 3rd letter in a word. Why?
+<ul class="incremental">
+<li>Availability: probability <span class="math"> ∼ </span> number of instances recalled/ease of recall. <span class="citation">(Tversky and Kahneman 1974)</span></li>
+</ul></li>
+</ol></li>
+</ul>
+<h2 id="s-90s-the-adaptive-toolbox">’80s &amp; ’90s: The Adaptive Toolbox</h2>
+<ul class="incremental">
+<li>Payne, Bettman, and Johnson <span class="citation">(1993)</span>, Gigerenzer <span class="citation">(1999)</span>, and many others posit the <em>adaptive toolbox</em>:
+<ul class="incremental">
+<li>A collection of economical judgment and decision methods.</li>
+</ul></li>
+<li>Subjects choose and switch between tools adaptively, based on:
+<ul class="incremental">
+<li>time pressure</li>
+<li>stakes</li>
+<li>number and structure of the options</li>
+<li>etc.</li>
+</ul></li>
+</ul>
+<h2 id="tools-in-the-box-wadd">Tools in the Box: WADD</h2>
+<ul class="incremental">
+<li>For each option, weigh each of its desirable features by the importance of that feature to you, then sum up.</li>
+<li>Example: choosing the optimal flight.
+<ol class="incremental" style="list-style-type: decimal">
+<li>Measure the extent to which the first flight has each desirable <strong>feature</strong>: price, stops, comfort-level, etc.</li>
+<li>Weight each of these values by its <strong>importance</strong>.</li>
+<li>Sum up to get a desirability rating.</li>
+<li>Repeat for each remaining flight.</li>
+<li>Choose the one with the highest sum.</li>
+</ol></li>
+</ul>
+<h2 id="wadd-two-notes">WADD: Two Notes</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>WADD is formally equivalent to EU-max: both are linear weightings.
+<ul class="incremental">
+<li>The interpretation is different though:
+<ul class="incremental">
+<li>outcomes are replaced by features.</li>
+<li>utilities are replaced by degrees of feature-possession.</li>
+<li>probabilities are replaced by degrees of feature-importance.</li>
+</ul></li>
+</ul></li>
+<li>WADD is fully <em>compensatory</em>:
+<ul class="incremental">
+<li>Evaluates all the information available.</li>
+<li>Recommendations based on more important features can be overturned by considering less important features.</li>
+</ul></li>
+</ol>
+<h2 id="an-aside-alternatives-vs.attributes">An Aside: Alternatives vs. Attributes</h2>
+<ul class="incremental">
+<li>WADD is an <em>attribute-based</em> decision rule.
+<ul class="incremental">
+<li>EU-max is an <em>alternative-based</em> decision rule.</li>
+</ul></li>
+<li>Expected utility theory doesn’t acknowledge attributes.</li>
+<li>Common sense and empirical research agree:
+<ul class="incremental">
+<li>We tend to prefer attribute-based decision methods.</li>
+<li>Make of that what you will.</li>
+</ul></li>
+</ul>
+<h2 id="tools-in-the-box-lex">Tools in the Box: LEX</h2>
+<ul class="incremental">
+<li>Select the option that does best with respect to the most important feature.
+<ul class="incremental">
+<li>Resolve ties by appeal to the next most important feature.</li>
+</ul></li>
+<li>Example: choosing the optimal flight.
+<ol class="incremental" style="list-style-type: decimal">
+<li>Identify the most important feature: price.</li>
+<li>Eliminate all flights except those with the lowest price.</li>
+<li>If multiple flights remain, repeat with the second-most important feature: stops.</li>
+<li>Lather, rinse, repeat.</li>
+</ol></li>
+<li>Non-compensatory: tends to neglect information about less important attributes.</li>
+</ul>
+<h2 id="tools-in-the-box-eba">Tools in the Box: EBA</h2>
+<ul class="incremental">
+<li>Eliminate options lacking the most important feature, then those lacking the second most important feature, etc.</li>
+<li>Example: choosing the optimal flight.
+<ol class="incremental" style="list-style-type: decimal">
+<li>Eliminate all flights that aren’t affordable.</li>
+<li>If multiple flights remain, eliminate those with lots of stops.</li>
+<li>Lather, rinse, repeat.</li>
+</ol></li>
+<li>Non-compensatory: tends to neglect information about less important attributes.</li>
+</ul>
+<h2 id="tools-in-the-box-tally-n">Tools in the Box: TALLY-<em>n</em></h2>
+<ul class="incremental">
+<li>For each option, count up how many of the <em>n</em> most-desirable features it has.
+<ul class="incremental">
+<li>Choose the option with the highest tally.</li>
+</ul></li>
+<li>Example: choosing the optimal flight.
+<ol class="incremental" style="list-style-type: decimal">
+<li>Choose how many features to consider: 3.</li>
+<li>Identify the 3 most important features.</li>
+<li>For each option, count how many out of those 3 features it has.</li>
+<li>Choose the/an option with the highest tally.</li>
+</ol></li>
+<li>Non-compensatory: neglects information about less important features.</li>
+</ul>
+<h2 id="tools-in-the-box-combo-packs">Tools in the Box: Combo Packs</h2>
+<ul class="incremental">
+<li>Obviously, these tools can be combined in various ways:
+<ol class="incremental" style="list-style-type: decimal">
+<li>EBA + WADD
+<ul class="incremental">
+<li>Eliminate by aspects until fewer than <em>n</em> options remain.</li>
+<li>Then apply WADD.</li>
+</ul></li>
+<li>LEX + TALLY-<em>n</em>
+<ul class="incremental">
+<li>Eliminate options lacking the most important feature.</li>
+<li>Select the remaining option with the highest <em>n</em>-tally.</li>
+</ul></li>
+<li>Etc.</li>
+</ol></li>
+</ul>
+<h2 id="s-the-adjustable-spanner-eam">’00s: The Adjustable Spanner, EAM</h2>
+<ul class="incremental">
+<li>The ’00s: Lee &amp; Cummins <span class="citation">(2004)</span> posit the <strong><em>E</em></strong>vidence <strong><em>A</em></strong>ccumulation <strong><em>M</em></strong>odel. (See also <span class="citation">(Newell and Lee 2011)</span>, amongst many others.)
+<ul class="incremental">
+<li>Consider each feature in order of importance.</li>
+<li>Give points to each alternative that has that feature.</li>
+<li>Stop when one alternative emerges as sufficiently promising.
+<ul class="incremental">
+<li>i.e. it accrues enough points to meet some <em>pre-determined threshold</em>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="eam-an-example">EAM: An Example</h2>
+<ul class="incremental">
+<li>Choosing the optimal flight.
+<ol class="incremental" style="list-style-type: decimal">
+<li>Set a threshold for sufficient evidence of superiority.
+<ul class="incremental">
+<li>Contextual determinants: stakes, time, available attention, etc.</li>
+</ul></li>
+<li>Identify the most important feature: price.</li>
+<li>Give each flight points in proportion to its affordability.</li>
+<li>Identify the next most important feature: stops.</li>
+<li>Give each flight points in proportion to its contiguity.</li>
+<li>Stop when one flight hits the threshold.</li>
+</ol></li>
+</ul>
+<h2 id="e.a.m.-u.n.i.t.y.">E.A.M. ⇒ U.N.I.T.Y.</h2>
+<ul class="incremental">
+<li>EAM aims to unify the toolbox.
+<ul class="incremental">
+<li>LEX: when the threshold is super low, just one feature may be considered.</li>
+<li>TALLY-<em>n</em>: when the threshold is middling, something like TALLY-3 might be observed.</li>
+<li>WADD: when the threshold is super-high, all features will be considered, yielding WADD-like behaviour.</li>
+</ul></li>
+<li>One tool with an adjustable setting: <em>evidential threshold</em>.
+<ul class="incremental">
+<li><em>Quantity of information sampled</em> then follows.</li>
+</ul></li>
+</ul>
+<h2 id="punchline">Punchline</h2>
+<ul class="incremental">
+<li>These procedures (and many more) rely on <em>qualitative</em> assumptions.
+<ul class="incremental">
+<li>Representativeness &amp; Availability: facts about Linda, facts about recalled words.</li>
+<li>The Toolbox/EAM: facts about each flight’s features.</li>
+</ul></li>
+<li>Shameless plug: Weisberg <span class="citation">(2013)</span> applies this point to the debate over knowledge-based norms of action.
+<ul class="incremental">
+<li><em>The Reason-Knowledge Principle</em>: it’s permissible to assume <em>P</em> as a reason for action just in case you know <em>P</em> (and it’s relevant).</li>
+</ul></li>
+</ul>
+<h2 id="objection-2">“Objection!”</h2>
+<ul class="incremental">
+<li>These psychologists just aren’t bothering to distinguish assuming <em>P</em> from assuming <em>P with 99% certainty</em>.
+<ul class="incremental">
+<li>The difference is so small, it would have negligible impact on decision behaviours.</li>
+<li>So the effects won’t be observable in the lab.</li>
+<li>No wonder psychologists haven’t noticed it’s credences all the way down.</li>
+</ul></li>
+</ul>
+<h2 id="replies">Replies</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Well look who’s being unparsimonious again!</li>
+<li>There’s good empirical reason to think assumptions aren’t weighted.
+<ul class="incremental">
+<li>EIPs: measuring the effort and time a procedure requires.
+<ul class="incremental">
+<li>READ, MOVE, COMPARE, DIFFERENCE, ADD, PRODUCT, ELIMINATE</li>
+</ul></li>
+<li>Turns out PRODUCT is <em>very</em> expensive.
+<ul class="incremental">
+<li>By far the most time-consuming</li>
+<li>2nd for self-reported effort</li>
+</ul></li>
+<li>Related: <span class="citation">(Shah and Oppenheimer 2008; Stanovich 2009)</span></li>
+</ul></li>
+</ol>
+<h2 id="section-2"></h2>
+<h3 id="the-unbearable-weightiness-of-bayesianism">The Unbearable Weightiness of Bayesianism</h3>
+<div class="figure">
+<img src="images/Table&#32;7.png" />
+</div>
+<center>
+    
+Bettman, Johnson, &amp; Payne <span class="citation">(1990)</span>
+</center>
+
+
+<h1 id="part-3-cognitive-closure">Part 3: Cognitive Closure</h1>
+<h2 id="i-feel-the-need">I Feel the Need…</h2>
+<div class="figure">
+<img src="images/Nagel.jpg" />
+</div>
+<blockquote>
+<p>“Where high degrees of confidence are compatible with a continuing feeling of uncertainty, outright belief yields the subjective sense of a solid result. Psychologists who have studied these phenomenal qualities have characterized them in a way that would support the notion that […] we switch from an anxious phase of searching for evidence and weighing it to a satisfied or relieved phase of possessing a determinate representation…” <span class="citation">(Nagel 2010)</span></p>
+</blockquote>
+<h2 id="the-need-for-closure">…the Need for Closure</h2>
+<div class="figure">
+<img src="images/Nagel.jpg" />
+</div>
+<blockquote>
+<p>“Kruglanski introduces the term ‘closure’ as a name for arrival at a settled belief: in his words, closure is ’the juncture at which a belief crystallizes and turns from hesitant conjecture to a subjectively firm”fact&quot; […] Achieving closure or judgemental commitment on a question puts an end to the experience of ambiguity and delivers the sense of having a firm answer.&quot; <span class="citation">(Nagel 2008)</span></p>
+</blockquote>
+<h2 id="the-nature-of-nfc">The Nature of NFC</h2>
+<ul class="incremental">
+<li>Affective: a feeling of discomfort or anxiety, relieved upon closure</li>
+<li>Motivational: drives pursuit of closure, aversion to surrendering it</li>
+<li>Individual: baseline NFC levels vary across subjects.
+<ul class="incremental">
+<li>Measured by the <a href="http://terpconnect.umd.edu/~hannahk/NFC_Scale.html">NFC scale</a> <span class="citation">(Webster and Kruglanski 1994)</span></li>
+</ul></li>
+<li>Situational: varies with perceived costs and benefits of closing
+<ul class="incremental">
+<li>Need for action, time pressure, accountability, difficulty of information processing (distraction, fatigue, intoxication), etc.</li>
+</ul></li>
+<li>Truncation: once achieved, closure “obviates the necessity for further information processing.” <span class="citation">(Kruglanski 2004)</span></li>
+</ul>
+<h2 id="consequences-seizing-freezing">Consequences: Seizing &amp; Freezing</h2>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Urgency: motivation to close can yield “seizing”.
+<ul class="incremental">
+<li>Jumping on “any notion that promises closure”</li>
+<li>Leaping to conclusions with skimpy evidence</li>
+</ul></li>
+<li>Permanence: aversion to surrendering closure can yield “freezing”.
+<ul class="incremental">
+<li>Reluctance to reopen a question</li>
+</ul></li>
+<li>These aims can pull against one another though:
+<ul class="incremental">
+<li>We “abhor the specter of having to part with closure.”</li>
+<li>So we may prefer to wait for a stable, lasting answer. See <span class="citation">(Kruglanski and Webster 1996; Kruglanski 2004)</span> for details.</li>
+</ul></li>
+</ol>
+<h2 id="the-high-nfc-personality">The High NFC Personality</h2>
+<ul class="incremental">
+<li>Overconfidence:
+<ul class="incremental">
+<li>High NFC → fewer alternatives considered → greater confidence</li>
+</ul></li>
+<li>Linguistic abstraction: a preference for general character traits over situational attributions.
+<ul class="incremental">
+<li>High NFC → desire for stable knowledge</li>
+<li>Traits are more robust, freezer-friendly</li>
+</ul></li>
+<li>Conservatism:
+<ul class="incremental">
+<li>High NFC → preference for the known</li>
+<li>New policies and effects require more processing to determine their effects.</li>
+</ul></li>
+</ul>
+<h2 id="the-high-nfc-personality-1">The High NFC Personality</h2>
+<div class="figure">
+<img src="images/Ham&#32;Rove.jpg" />
+</div>
+<h2 id="high-nfc-biases">High NFC &amp; Biases</h2>
+<ul class="incremental">
+<li>Order effects (“primacy”):
+<ul class="incremental">
+<li>High NFC → seize on early cues, freeze belief, neglect later cues</li>
+</ul></li>
+<li>Anchoring effects:
+<ul class="incremental">
+<li>High NFC → seize on early estimates, freeze belief, fail to adjust sufficiently later</li>
+</ul></li>
+<li>Availability effects:
+<ul class="incremental">
+<li>High NFC → ideas that come more easily to mind more likely seized upon.</li>
+</ul></li>
+</ul>
+<h2 id="more-concrete-predictions-i">More Concrete Predictions I</h2>
+<ul class="incremental">
+<li>A prediction schema:
+<ul class="incremental">
+<li>Open + High NFC → Seize</li>
+<li>Closed + High NFC → Freeze</li>
+</ul></li>
+<li>Kruglanski et al <span class="citation">(1993)</span>, Experiment 1: ask subjects for a legal verdict based on a described case.
+<ul class="incremental">
+<li>With a legal analysis included (Closed):
+<ul class="incremental">
+<li>High NFC (noise) subjects less persuadable than low (quiet)</li>
+</ul></li>
+<li>No legal analysis included (Open):
+<ul class="incremental">
+<li>High NFC (noise) subjects more persuadable than low (quiet)</li>
+</ul></li>
+</ul></li>
+<li>Experiment 2: tracked high/low by individual difference instead.
+<ul class="incremental">
+<li>Same result.</li>
+</ul></li>
+</ul>
+<h2 id="concrete-predictions-ii">Concrete Predictions II</h2>
+<ul class="incremental">
+<li>Increased NFC reduces evidence collection.</li>
+<li>Mayseless &amp; Kruglanski <span class="citation">(1987)</span>, Experiment 2:
+<ul class="incremental">
+<li>Heighten NFC by telling subjects intelligence correlates with unambiguous, clear-cut opinions.</li>
+<li>Ask them to identify barely visible digits in a tachistoscope. <img src="images/Tachistoscope.jpeg" /></li>
+<li>Allow unlimited operations of the tachistoscope.</li>
+<li>Result: higher NFC yields fewer operations.</li>
+</ul></li>
+</ul>
+<h2 id="concrete-predictions-iii">Concrete Predictions III</h2>
+<ul class="incremental">
+<li>Increased NFC reduces hypothesis generation.</li>
+<li>Mayseless &amp; Kruglanski <span class="citation">(1987)</span>, Experiment 3:
+<ul class="incremental">
+<li>Heighten NFC by telling subjects intelligence correlates with unambiguous, clear-cut opinions.
+<ul class="incremental">
+<li>Lower NFC in others by telling them the opposite.</li>
+</ul></li>
+<li>Display close-up photos of parts of household objects.</li>
+<li>Ask for as many hypotheses as possible.</li>
+<li>Result: higher NFC results in fewer hypotheses.</li>
+</ul></li>
+</ul>
+<h2 id="and-on-and-on-and-on">And On and On (and On)</h2>
+<div class="figure">
+<img src="images/Kruglanski&#32;cover.png" />
+</div>
+<h2 id="objection-3">“Objection!”</h2>
+<ul class="incremental">
+<li>So what if we have this need? All that shows is:
+<ol class="incremental" style="list-style-type: decimal">
+<li>We’re motivated to attain <strong><em>extreme credences</em></strong>.</li>
+<li>When we attain them, we feel relieved and we stop deliberating.</li>
+</ol></li>
+<li>It’s still credences all the way down.</li>
+</ul>
+<h2 id="reply-2">Reply</h2>
+<ul class="incremental">
+<li>Like Foley, this move gives away the game:
+<ul class="incremental">
+<li>Full belief isn’t just high credence now.</li>
+<li>It’s high credence <strong>+ extras</strong>.
+<ul class="incremental">
+<li>Presence/absence of a motivational, affective state</li>
+<li>Disposition to deliberate/resist deliberation</li>
+</ul></li>
+<li>You don’t count as fully believing <em>P</em> as long as you still feel the need for closure.</li>
+</ul></li>
+</ul>
+<h2 id="just-a-friendly-ammendment">Just a Friendly Ammendment?</h2>
+<ul class="incremental">
+<li>Ok, so full belief supervenes on credence + some extras.
+<ul class="incremental">
+<li>Partial belief is still more fundamental.</li>
+</ul></li>
+</ul>
+<h2 id="not-so-friendly-after-all">Not So Friendly After All</h2>
+<ul class="incremental">
+<li>Actually, it’s worse than that. Consider two facts about NFC:
+<ol class="incremental" style="list-style-type: decimal">
+<li>NFC goes up when a <em>P</em>-dependent decision is impending.
+<ul class="incremental">
+<li>Natural explanation: it’s easier to make the decision if you can assume <em>P</em>, ignore not-<em>P</em>.</li>
+</ul></li>
+<li>NFC’s measurement explicitly involves a preference for ignoring counter-possibilities:</li>
+</ol></li>
+</ul>
+<blockquote>
+<p>“I do not usually consult many different options before forming my own view.”</p>
+</blockquote>
+<blockquote>
+<p>“When thinking about a problem, I consider as many different opinions on the issue as possible.”</p>
+</blockquote>
+<blockquote>
+<p>“Even after I’ve made up my mind about something, I am always eager to consider a different opinion.”</p>
+</blockquote>
+<h2 id="license-to-ignore">License to Ignore</h2>
+<ul class="incremental">
+<li>Seems closing on <em>P</em> isn’t just settling into a high credence in <em>P</em>.
+<ul class="incremental">
+<li>It involves ignoring not-<em>P</em>.</li>
+</ul></li>
+</ul>
+<div class="references">
+<h1>References</h1>
+<p>Alter, Adam L, Daniel M. Oppenheimer, Nicholas Epley, and Rebecca N Eyre. 2007. “Overcoming Intuition: Metacognitive Difficulty Activates Analytic Reasoning.” <em>Journal of Experimental Psychology. General</em> 136 (4) (November): 569–576.</p>
+<p>Bettman, James R., Eric J. Johnson, and John W. Payne. 1990. “A Componential Analysis of Cognitive Effort in Choice.” <em>Organizational Behavior and Human Decision Processes</em> 45 (1): 111–139.</p>
+<p>Christensen, David. 2004. <em>Putting Logic in Its Place</em>. New York: Oxford University Press.</p>
+<p>Foley, Richard. 1993. <em>Working Without a Net</em>. A Study of Egocentric Epistemology. New York: Oxford University Press.</p>
+<p>Gigerenzer, Gerd, Peter M. Todd, and The ABC Research Group. 1999. <em>Simple Heuristics That Make Us Smart</em>. New York: Oxford University Press.</p>
+<p>Jacoby, Larry L, Colleen M Kelley, and Jane Dywan. 1989. “Memory Attriburions.” In <em>Varieties of Memory and Consciousness</em>, edited by Henry L Roediger and Fergus I M Craik, 391–422.</p>
+<p>Jeffrey, Richard C. 1965. <em>The Logic of Decision</em>. Chicago, IL: The University of Chicago Press.</p>
+<p>——— 1968. “Book Review: Isaac Levi’s Gambling with Truth.” <em>The Journal of Philosophy</em> 65 (May): 1–11.</p>
+<p>——— 1970. “Dracula Meets Woflman.” In , 157–185.</p>
+<p>Koriat, Asher. 1993. “How Do We Know That We Know?” <em>Psychological Review</em> 100 (4): 609–639.</p>
+<p>———. 1995. “Illusions of Knowing.” In <em>Symposium on Social and Cognitive Aspects of Metacognition, Louvain-la-neuve, Belgium</em>.</p>
+<p>———. 2012. “The Self-Consistency Model of Subjective Confidence.” <em>Psychological Review</em> 119 (1): 80–113.</p>
+<p>Koriat, Asher, Ravit Nussinson, Herbert Bless, and Nira Shaked. 2008. “Information-Based and Experience-Based Metacognitive Judgments: Evidence from Subjective Confidence.” In <em>Handbook of Metamemory and Memory</em>, edited by John Dunlosky and Robert A Bjork, 117–135. New York: Taylor &amp; Francis.</p>
+<p>Kruglanski, Arie W. 2004. <em>The Psychology of Closed Mindedness</em>. New York: Psychology Press.</p>
+<p>Kruglanski, Arie W., and Donna M. Webster. 1996. “Motivated Closing of the Mind: ‘Seizing’ and ‘Freezing’.” <em>Psychological Review</em> 103 (2) (April): 263–283.</p>
+<p>Kruglanski, Arie W., Donna M. Webster, and Adena Klem. 1993. “Motivated Resistance and Openness to Persuasion in the Presence or Absence of Prior Information.” <em>Joumal of Personality and Social Psychology</em> 65 (5): 861–876.</p>
+<p>Lee, Michael D., and Tarrant D. R. Cummins. 2004. “Evidence Accumulation in Decision Making.” <em>Psychonomic Bulletin &amp; Review</em> 11 (2) (April): 343–352.</p>
+<p>Leitgeb, Hannes. 2013. “Reducing Belief Simpliciter to Degrees of Belief.” <em>Annals of Pure and Applied Logic</em> 164 (12): 1338–1389.</p>
+<p>Levi, Isaac. 1965. <em>Gambling with Truth</em>. An Essay on Induction and the Aims of Science. New York: Alfred A. Knopf.</p>
+<p>———. 1980. <em>The Enterprise of Knowledge</em>. An Essay on Knowledge, Credal Probability, and Chance. Cambridge, Mass.: MIT Press.</p>
+<p>Mayseless, Ofra, and Arie W. Kruglanski. 1987. “What Makes You So Sure?” <em>Organizational Behavior and Human Decision Processes</em> 39 (2) (April): 162–183.</p>
+<p>Metcalfe, Janet. 2008. “Evolution of Metacognition.” In <em>Handbook of Metamemory and Memory</em>, edited by John Dunlosky and Robert A Bjork, 29–45.</p>
+<p>Nagel, Jennifer. 2008. “Knowledge Ascriptions and the Psychological Consequences of Changing Stakes.” <em>Australasian Journal of Philosophy</em> 86 (2) (June): 279–294.</p>
+<p>———. 2010. “Epistemic Anxiety and Adaptive Invariantism.” <em>Philosophical Perspectives</em> 24 (1) (December): 407–435.</p>
+<p>Nelson, Thomas O, and Louis Narens. 1990. “Metamemory: a Theoretical Framework and New Findings.” In <em>The Psychology of Learning and Motivation</em>, edited by Gordon H Bower, 125–173.</p>
+<p>Newell, Ben R., and Michael D. Lee. 2011. “The Right Tool for the Job? Comparing an Evidence Accumulation and a Naive Strategy Selection Model of Decision Making.” <em>Journal of Behavioral Decision Making</em> 24 (5) (December): 456–481.</p>
+<p>Overschelde, James P van. 2008. “Metacognition: Knowing About Knowing.” In <em>Handbook of Metamemory and Memory</em>, edited by John Dunlosky and Robert A Bjork, 47–71.</p>
+<p>Payne, John W., and James R. Bettman. 2004. “Walking With the Scarecrow.” In <em>Blackwell Handbook of Judgment and Decision Making</em>, edited by Derek J Koehler and Nigel Harvey, 110–132.</p>
+<p>Payne, John W., James R. Bettman, and Eric J. Johnson. 1993. <em>The Adaptive Decision Maker</em>. Cambridge: Cambridge University Press.</p>
+<p>Ross, Jacob, and Mark Schroeder. 2012. “Belief, Credence, and Pragmatic Encroachment.” <em>Philosophy and Phenomenological …</em> LXXXVIII (2): 259–288.</p>
+<p>Shah, Anuj K., and Daniel M. Oppenheimer. 2008. “Heuristics Made Easy.” <em>Psychological Bulletin</em> 134 (2) (March): 207–222.</p>
+<p>Shimamura, Arthur P. 2008. “A Neurocognitive Approach to Metacognitive Monitoring and Control.” In <em>Handbook of Metamemory and Memory</em>, edited by John Dunlosky and Robert A Bjork, 373–389.</p>
+<p>Simon, Herbert A. 1981. <em>The Sciences of the Artificial</em>. 2nd ed. Cambridge, MA: MIT Press.</p>
+<p>Stanovich, Keith E. 2009. <em>What Intelligence Tests Miss</em>. The Psychology of Rational Thought. Yale University Press.</p>
+<p>Sturgeon, Scott. 2008. “Reason and the Grain of Belief*.” <em>Noûs</em> 42 (1): 139–165.</p>
+<p>Tversky, Amos, and Daniel Kahneman. 1973. “Availability: A Heuristic for Judging Frequency and Probability”: 163–178.</p>
+<p>———. 1974. “Judgment Under Uncertainty.” <em>Science</em> 185: 1124–1131.</p>
+<p>———. 1982. “Judgments of and by Representativeness.” In <em>Judgment Under Uncertainty</em>, edited by Daniel Kahneman, Paul Slovic, and Amos Tversky, 84–99.</p>
+<p>Webster, Donna M., and Arie W. Kruglanski. 1994. “Individual Differences in Need for Cognitive Closure.” <em>Journal of Personality and Social Psychology</em> 67 (6) (December): 1049–1062.</p>
+<p>Weisberg, Jonathan. 2013. “Knowledge in Action.” <em>Philosophers’ Imprint</em> 13 (22): 1–23.</p>
+<p>Whittlesea, Bruce W A, Larry L Jacoby, and Krista Girard. 1990. “Illusions of Immediate Memory.” <em>Journal of Memory and Language</em> 29: 716–732.</p>
+</div>
+
+</div>
+</body>
+</html>

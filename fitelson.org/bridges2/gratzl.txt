@@ -1,0 +1,4 @@
+Single Conclusion Rocks! ... and so does Classical Logic
+
+Abstract: In this talk I shall (1) pursue the possibility of classical logic within the setting of single conclusion sequent calculus.
+Obviously, there is no direct way of establishing such a desired sequent calculus. With some modifications to the original approach this is, however, feasible. In part two (2) of my talk I shall relate the calculus in question against both: some considerations in proof-theoretic semantics and inferentialism.

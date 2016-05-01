@@ -1,0 +1,1840 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     65662,       1831]
+NotebookOptionsPosition[     62416,       1724]
+NotebookOutlinePosition[     62829,       1742]
+CellTagsIndexPosition[     62786,       1739]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Companion",
+ StyleBox[" Mathematica",
+  FontSlant->"Italic"],
+ " Notebook for \"What is The 'Equal Weight View'?\""
+}], "Subtitle",
+ CellChangeTimes->{{3.403963269168429*^9, 3.403963287408637*^9}, 
+   3.4039863753114977`*^9, {3.457935106680838*^9, 3.457935117291938*^9}}],
+
+Cell[TextData[{
+ "David Jehle\n       &\n",
+ ButtonBox["Branden Fitelson",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://fitelson.org/"], None},
+  ButtonNote->"http://fitelson.org/"],
+ " <",
+ StyleBox["http://fitelson.org/", "Input"],
+ ">\n\nJuly 30, 2009"
+}], "Text",
+ CellChangeTimes->{{3.457935129549199*^9, 3.45793513788465*^9}, {
+  3.457935304809911*^9, 3.457935322896661*^9}, {3.45793544384442*^9, 
+  3.457935470779407*^9}, {3.457935567696392*^9, 3.457935603795342*^9}}],
+
+Cell[TextData[{
+ "The methods used in this notebook are special cases of a more general \
+decision procedure for the probability calculus called ",
+ StyleBox["PrSAT", "Input"],
+ ", which is described in ",
+ ButtonBox["this paper ",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://fitelson.org/pm.pdf"], None},
+  ButtonNote->"http://fitelson.org/pm.pdf"],
+ "<",
+ StyleBox["http://fitelson.org/pm.pdf", "Input"],
+ ">, and which can be downloaded ",
+ ButtonBox["here ",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://fitelson.org/PrSAT/"], None},
+  ButtonNote->"http://fitelson.org/PrSAT/"],
+ "<",
+ StyleBox["http://fitelson.org/PrSAT/", "Input"],
+ ">",
+ ButtonBox[".",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://fitelson.org/PrSAT/"], None},
+  ButtonNote->"http://fitelson.org/PrSAT/"]
+}], "Text",
+ CellChangeTimes->{{3.4579351939879827`*^9, 3.457935297487625*^9}, {
+  3.457935385648087*^9, 3.457935386540572*^9}, {3.457935479364295*^9, 
+  3.457935540846253*^9}}],
+
+Cell[TextData[{
+ StyleBox["Table 1 Example",
+  FontWeight->"Bold"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.402244149753828*^9, 3.4022441503431997`*^9}, {
+  3.402244318362433*^9, 3.4022443356922693`*^9}, {3.4039615182208853`*^9, 
+  3.403961525960815*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    SubsuperscriptBox["P", "1", "1"], 
+    SubsuperscriptBox["P", "2", "1"]},
+   {"T", "T", "0.1", "0.55", "a", "d"},
+   {"T", "F", "0.2", "0.25", "b", "e"},
+   {"F", "T", "0.3", "0.15", "c", "f"},
+   {"F", "F", "0.4", "0.05", 
+    RowBox[{"1", "-", "a", "-", "b", "-", "c"}], 
+    RowBox[{"1", "-", "d", "-", "e", "-", "f"}]}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.402244152834319*^9, 3.402244158920175*^9}, {
+  3.402244236386429*^9, 3.402244271112261*^9}}],
+
+Cell[TextData[{
+ "Assume ",
+ StyleBox["p ",
+  FontSlant->"Italic"],
+ "& ",
+ StyleBox["q",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["p ",
+  FontSlant->"Italic"],
+ "& ~",
+ StyleBox["q",
+  FontSlant->"Italic"],
+ " are only peer-propositions.  Then, applying (SA), we'll have:"
+}], "Text",
+ CellChangeTimes->{{3.4022443379927073`*^9, 3.4022443862222767`*^9}, {
+  3.402244428961287*^9, 3.4022444290944033`*^9}, {3.403961679681683*^9, 
+  3.403961683545377*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    SubsuperscriptBox["P", "1", "1"], 
+    SubsuperscriptBox["P", "2", "1"]},
+   {"T", "T", "0.1", "0.55", "0.325", "0.325"},
+   {"T", "F", "0.2", "0.25", "0.225", "0.225"},
+   {"F", "T", "0.3", "0.15", "??", "??"},
+   {"F", "F", "0.4", "0.05", "??", "??"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.402244152834319*^9, 3.402244158920175*^9}, {
+  3.402244236386429*^9, 3.402244271112261*^9}, {3.4022443973862133`*^9, 
+  3.40224441641234*^9}, {3.403961533123453*^9, 3.403961538785426*^9}}],
+
+Cell[TextData[{
+ StyleBox["Table 2 Example",
+  FontWeight->"Bold"],
+ ": When we apply (SAMC), we end-up with: "
+}], "Text",
+ CellChangeTimes->{{3.4022444349775887`*^9, 3.402244451686206*^9}, {
+  3.403961547174293*^9, 3.403961549481419*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    SubsuperscriptBox["P", "1", "1"], 
+    SubsuperscriptBox["P", "2", "1"]},
+   {"T", "T", "0.1", "0.55", "0.325", "0.325"},
+   {"T", "F", "0.2", "0.25", "0.225", "0.225"},
+   {"F", "T", "0.3", "0.15", "a", "c"},
+   {"F", "F", "0.4", "0.05", "b", "d"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.4022444564853277`*^9, 3.4022444719827957`*^9}}],
+
+Cell[TextData[{
+ "Here is the minimization code that yields the (unique) (SAMC)-solutions for \
+",
+ StyleBox["a", "Input"],
+ ", ",
+ StyleBox["b", "Input"],
+ ", ",
+ StyleBox["c", "Input"],
+ ", ",
+ StyleBox["d", "Input"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.402244474358157*^9, 3.402244474941904*^9}, {
+  3.403961700428576*^9, 3.4039617344331217`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"EuclideanDistance", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.1", ",", "0.2", ",", "0.3", ",", "0.4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.325", ",", "0.225", ",", "a", ",", "b"}], "}"}]}], "]"}], 
+     ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Plus", "@@", 
+         RowBox[{"{", 
+          RowBox[{"0.325", ",", "0.225", ",", "a", ",", "b"}], "}"}]}], ")"}],
+        "==", "1"}], "&&", 
+      RowBox[{"0", "<", "a", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "b", "<", "1"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4021824245362577`*^9, 3.402182446957417*^9}, {
+  3.40218431554993*^9, 3.4021843537977858`*^9}, {3.402184513049409*^9, 
+  3.4021845422286386`*^9}, {3.402184651949667*^9, 3.402184654197195*^9}, {
+  3.4021846900008173`*^9, 3.402184715538786*^9}, {3.402194908080241*^9, 
+  3.4021949124208927`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.2872281323269015`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "0.175`"}], ",", 
+     RowBox[{"b", "\[Rule]", "0.27499999999999997`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.402184706510167*^9, 3.402184724690947*^9}, 
+   3.4021949128944197`*^9, 3.4022443715222816`*^9, 3.402244491872962*^9, 
+   3.403917531883664*^9, 3.404001675725806*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"EuclideanDistance", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0.55", ",", "0.25", ",", "0.15", ",", "0.05"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.325", ",", "0.225", ",", "c", ",", "d"}], "}"}]}], "]"}], 
+     ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Plus", "@@", 
+         RowBox[{"{", 
+          RowBox[{"0.325", ",", "0.225", ",", "c", ",", "d"}], "}"}]}], ")"}],
+        "==", "1"}], "&&", 
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "d"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4021845754170933`*^9, 3.4021845795028467`*^9}, 
+   3.402184660899803*^9, {3.4021846949951363`*^9, 3.402184717263462*^9}, {
+   3.4021948676660213`*^9, 3.402194893689067*^9}, {3.4022444815330143`*^9, 
+   3.402244490385489*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.2872281323269015`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c", "\[Rule]", "0.27500000261003676`"}], ",", 
+     RowBox[{"d", "\[Rule]", "0.1749999973899632`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.4021845799741993`*^9, 3.40218466517828*^9, {3.402184702547908*^9, 
+   3.4021847237379217`*^9}, {3.402194884079275*^9, 3.4021949000076*^9}, 
+   3.402244371745676*^9, {3.402244494065402*^9, 3.4022445042292128`*^9}, 
+   3.403917532104732*^9, 3.404001675959867*^9}]
+}, Open  ]],
+
+Cell["\<\
+Thus, (SAMC) yields the following pair of updated distributions:\
+\>", "Text",
+ CellChangeTimes->{{3.4022445160581427`*^9, 3.402244545605917*^9}, {
+  3.403961756524794*^9, 3.403961767712941*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    SubsuperscriptBox["P", "1", "1"], 
+    SubsuperscriptBox["P", "2", "1"]},
+   {"T", "T", "0.1", "0.55", "0.325", "0.325"},
+   {"T", "F", "0.2", "0.25", "0.225", "0.225"},
+   {"F", "T", "0.3", "0.15", "0.175", "0.275"},
+   {"F", "F", "0.4", "0.05", "0.275", "0.175"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.402244528313249*^9, 3.4022445390946217`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Table 3 Example",
+  FontWeight->"Bold"],
+ ": Now, if we add the further assumption that ",
+ StyleBox["p",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["q",
+  FontSlant->"Italic"],
+ " are also peer-propositions, we get the following single distribution:"
+}], "Text",
+ CellChangeTimes->{{3.4022446359495153`*^9, 3.4022446631179132`*^9}, {
+  3.4039615557898703`*^9, 3.40396155743474*^9}, {3.403961777685032*^9, 
+  3.4039617827208652`*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    RowBox[{
+     SubsuperscriptBox["P", "1", "1"], "=", 
+     SubsuperscriptBox["P", "2", "1"]}]},
+   {"T", "T", "0.1", "0.55", "0.325"},
+   {"T", "F", "0.2", "0.25", "0.225"},
+   {"F", "T", "0.3", "0.15", "0.225"},
+   {"F", "F", "0.4", "0.05", "0.225"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.402244667697337*^9, 3.402244675870702*^9}}],
+
+Cell[TextData[{
+ "But, this solution violates (C), since:\n",
+ Cell[BoxData[
+  SubsuperscriptBox["P", "i", "1"]],
+  CellChangeTimes->{{3.402244667697337*^9, 3.402244675870702*^9}}],
+ "(q | p) = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubsuperscriptBox["P", "i", "1"], "(", 
+     RowBox[{
+      RowBox[{"q", "&"}], "p"}], ")"}], 
+    RowBox[{
+     SubsuperscriptBox["P", "i", "1"], "(", "p", ")"}]], TraditionalForm]]],
+ "=",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["0.325", 
+     RowBox[{"0.325", "+", "0.225"}]], "="}], TraditionalForm]]],
+ " 0.590909 \[NotEqual] ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["P", "1", "0"], "(", 
+      RowBox[{"q", "|", "p"}], ")"}], "+", 
+     RowBox[{
+      SubsuperscriptBox["P", "2", "0"], "(", 
+      RowBox[{"q", "|", "p"}], ")"}]}], "2"], TraditionalForm]]],
+ "=",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SubsuperscriptBox["P", "1", "0"], "(", 
+       RowBox[{
+        RowBox[{"q", "&"}], "p"}], ")"}], 
+      RowBox[{
+       SubsuperscriptBox["P", "1", "0"], "(", "p", ")"}]], "+", 
+     FractionBox[
+      RowBox[{
+       SubsuperscriptBox["P", "2", "0"], "(", 
+       RowBox[{
+        RowBox[{"q", "&"}], "p"}], ")"}], 
+      RowBox[{
+       SubsuperscriptBox["P", "2", "0"], "(", "p", ")"}]]}], "2"], 
+   TraditionalForm]]],
+ "=",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     FractionBox["0.1", 
+      RowBox[{"0.1", "+", "0.2"}]], "+", 
+     FractionBox["0.55", 
+      RowBox[{"0.55", "+", "0.25"}]]}], "2"], TraditionalForm]]],
+ "= 0.510417."
+}], "Text",
+ CellChangeTimes->{{3.40224469729055*^9, 3.40224491428603*^9}}],
+
+Cell[TextData[{
+ "What if we weaken (SAMC) to only require \"approximate straight averaging\" \
+(ASAMC)?  There are three versions of this sort of rule that we consider in \
+the paper.  The first is the weakest: it only requires that each peer get \
+\"close to the straight average\".  First, we define a \[TildeTilde]\
+\[NonBreakingSpace]b iff |a\[Dash]b| < \[Epsilon].  Then, on the weakest \
+version of the rule, we need to require that each peer ends-up satisfying (P) \
+and (C), and also ends-up \"close to the straight average\".  More precisely, \
+in the example above, we're looking for a pair of vectors <",
+ StyleBox["a,b,c,d", "Input"],
+ "> and <",
+ StyleBox["e,f,g,h", "Input"],
+ "> such that ",
+ StyleBox["a", "Input"],
+ " \[TildeTilde] 0.325, ",
+ StyleBox["b", "Input"],
+ " \[TildeTilde] 0.225, ",
+ StyleBox["c", "Input"],
+ " \[TildeTilde] 0.225, and ",
+ StyleBox["d", "Input"],
+ " \[TildeTilde] 0.225, and (P) and (C) are satisfied by <",
+ StyleBox["a,b,c,d", "Input"],
+ ">, and  ",
+ StyleBox["e", "Input"],
+ " \[TildeTilde] 0.325, ",
+ StyleBox["f", "Input"],
+ " \[TildeTilde] 0.225, ",
+ StyleBox["g", "Input"],
+ " \[TildeTilde] 0.225, and ",
+ StyleBox["h", "Input"],
+ " \[TildeTilde] 0.225, and (P) and (C) are satisfied by <",
+ StyleBox["e,f,g,h", "Input"],
+ ">.  Moreover, we want both vectors to be  ",
+ StyleBox["in between ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  SubsuperscriptBox["P", "1", "0"]],
+  CellChangeTimes->{{3.402244667697337*^9, 3.402244675870702*^9}}],
+ StyleBox[" and ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  SubsuperscriptBox["P", "2", "0"]],
+  CellChangeTimes->{{3.402244667697337*^9, 3.402244675870702*^9}}],
+ StyleBox[".",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.4022450839056892`*^9, 3.402245100022272*^9}, {
+  3.4022451797298822`*^9, 3.402245399718213*^9}, {3.4022455863590517`*^9, 
+  3.4022455895744677`*^9}, {3.402245806421937*^9, 3.402245833886878*^9}, {
+  3.403360289542714*^9, 3.403360292099636*^9}, {3.403361017082713*^9, 
+  3.40336106125216*^9}, {3.4033611488940353`*^9, 3.403361305931855*^9}, {
+  3.403961788145129*^9, 3.403961788241503*^9}, {3.403961821368956*^9, 
+  3.403961822937722*^9}, {3.403961878025714*^9, 3.403961879385548*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    SubsuperscriptBox["P", "1", "1"], 
+    SubsuperscriptBox["P", "2", "1"]},
+   {"T", "T", "0.1", "0.55", "a", "e"},
+   {"T", "F", "0.2", "0.25", "b", "f"},
+   {"F", "T", "0.3", "0.15", "c", "g"},
+   {"F", "F", "0.4", "0.05", "d", "h"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.402267922215996*^9, 3.402267924771605*^9}, {
+  3.4033613140790997`*^9, 3.403361330039785*^9}}],
+
+Cell[TextData[{
+ "Here, we see that (even on this weakest rendition of ASAMC) any solution \
+requires that ",
+ Cell[BoxData[
+  RowBox[{"\[Epsilon]", ">", 
+   FractionBox["1", "16"]}]],
+  CellChangeTimes->{{3.403361344601263*^9, 3.403361345864043*^9}, {
+    3.4033613820032988`*^9, 3.403361481660678*^9}, {3.4033650410147953`*^9, 
+    3.403365042099276*^9}, {3.40391757266395*^9, 3.403917572736134*^9}, 
+    3.403961856902974*^9}],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.403961847869102*^9, 3.4039618736896133`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "a", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "a", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "b", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "b", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "c", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "c", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "d", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "d", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "<", 
+     FractionBox["1", "15"]}], "&&", 
+    RowBox[{
+     FormBox[
+      FractionBox["a", 
+       RowBox[{"a", "+", "b"}]],
+      TraditionalForm], "==", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        FractionBox["0.1", 
+         RowBox[{"0.1", "+", "0.2"}]], "+", 
+        FractionBox["0.55", 
+         RowBox[{"0.55", "+", "0.25"}]]}], "2"],
+      TraditionalForm]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}], "&&", 
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "e", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "e", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "f", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "f", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "g", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "g", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "h", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "h", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "\[LessEqual]", 
+     FractionBox["1", "15"]}], "&&", 
+    RowBox[{
+     FormBox[
+      FractionBox["e", 
+       RowBox[{"e", "+", "f"}]],
+      TraditionalForm], "==", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        FractionBox["0.1", 
+         RowBox[{"0.1", "+", "0.2"}]], "+", 
+        FractionBox["0.55", 
+         RowBox[{"0.55", "+", "0.25"}]]}], "2"],
+      TraditionalForm]}], "&&", 
+    RowBox[{
+     RowBox[{"e", "+", "f", "+", "g", "+", "h"}], "\[Equal]", "1"}], "&&", 
+    RowBox[{"a", "\[NotEqual]", "e"}], "&&", 
+    RowBox[{"b", "\[NotEqual]", "f"}], "&&", 
+    RowBox[{"c", "\[NotEqual]", "g"}], "&&", 
+    RowBox[{"d", "\[NotEqual]", "h"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", "h",
+      ",", "\[Epsilon]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.403961947525724*^9, 3.4039619476108093`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "0.25948581560283696`"}], ",", 
+    RowBox[{"b", "\[Rule]", "0.24889455782312936`"}], ",", 
+    RowBox[{"c", "\[Rule]", "0.24638605442176853`"}], ",", 
+    RowBox[{"d", "\[Rule]", "0.2452335721522651`"}], ",", 
+    RowBox[{"e", "\[Rule]", "0.26006205673758875`"}], ",", 
+    RowBox[{"f", "\[Rule]", "0.2494472789115647`"}], ",", 
+    RowBox[{"g", "\[Rule]", "0.26873823997684154`"}], ",", 
+    RowBox[{"h", "\[Rule]", "0.221752424374005`"}], ",", 
+    RowBox[{"\[Epsilon]", "\[Rule]", "0.06609042553191491`"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.403961950027774*^9, 3.4040016810589437`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "a", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "a", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "b", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "b", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "c", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "c", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "d", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "d", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "<", 
+     FractionBox["1", "15"]}], "&&", 
+    RowBox[{
+     FormBox[
+      FractionBox["a", 
+       RowBox[{"a", "+", "b"}]],
+      TraditionalForm], "==", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        FractionBox["0.1", 
+         RowBox[{"0.1", "+", "0.2"}]], "+", 
+        FractionBox["0.55", 
+         RowBox[{"0.55", "+", "0.25"}]]}], "2"],
+      TraditionalForm]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}], "&&", 
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "e", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "e", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "f", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "f", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "g", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "g", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "h", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "h", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "\[LessEqual]", 
+     FractionBox["1", "16"]}], "&&", 
+    RowBox[{
+     FormBox[
+      FractionBox["e", 
+       RowBox[{"e", "+", "f"}]],
+      TraditionalForm], "==", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        FractionBox["0.1", 
+         RowBox[{"0.1", "+", "0.2"}]], "+", 
+        FractionBox["0.55", 
+         RowBox[{"0.55", "+", "0.25"}]]}], "2"],
+      TraditionalForm]}], "&&", 
+    RowBox[{
+     RowBox[{"e", "+", "f", "+", "g", "+", "h"}], "\[Equal]", "1"}], "&&", 
+    RowBox[{"a", "\[NotEqual]", "e"}], "&&", 
+    RowBox[{"b", "\[NotEqual]", "f"}], "&&", 
+    RowBox[{"c", "\[NotEqual]", "g"}], "&&", 
+    RowBox[{"d", "\[NotEqual]", "h"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", "h",
+      ",", "\[Epsilon]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.403361344601263*^9, 3.403361345864043*^9}, {
+   3.4033613820032988`*^9, 3.403361481660678*^9}, {3.4033650410147953`*^9, 
+   3.403365042099276*^9}, {3.40391757266395*^9, 3.403917572736134*^9}, 
+   3.403961856902974*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.4033613871933613`*^9, 3.403361482222707*^9}, 
+   3.403365042790216*^9, {3.403917570653882*^9, 3.403917595116365*^9}, 
+   3.403961857369185*^9, 3.403961955108261*^9, 3.4040016824256763`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The strongest version of this \"approximate\" strategy forces the two peers \
+to end-up in ",
+ StyleBox["exact",
+  FontSlant->"Italic"],
+ " agreement on all peer-propositions, and to be \"close to splitting the \
+difference\" as well.  For instance, let \[Epsilon] = 0.05.  Then, the \
+question is this (for the strongest rendition).  Is there a vector <",
+ StyleBox["a,b,c,d", "Input"],
+ "> such that ",
+ StyleBox["a", "Input"],
+ " \[TildeTilde] 0.325, ",
+ StyleBox["b", "Input"],
+ " \[TildeTilde] 0.225, ",
+ StyleBox["c", "Input"],
+ " \[TildeTilde] 0.225, and ",
+ StyleBox["d", "Input"],
+ " \[TildeTilde] 0.225, and (P) and (C) are satisfied by the resulting \
+vector?  Moreover, we want these values to be ",
+ StyleBox["in between ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  SubsuperscriptBox["P", "1", "0"]],
+  CellChangeTimes->{{3.402244667697337*^9, 3.402244675870702*^9}}],
+ StyleBox[" and ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  SubsuperscriptBox["P", "2", "0"]],
+  CellChangeTimes->{{3.402244667697337*^9, 3.402244675870702*^9}}],
+ StyleBox[".  ",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.4022450839056892`*^9, 3.402245100022272*^9}, {
+   3.4022451797298822`*^9, 3.402245399718213*^9}, {3.4022455863590517`*^9, 
+   3.4022455895744677`*^9}, {3.402245806421937*^9, 3.402245833886878*^9}, {
+   3.403360289542714*^9, 3.403360292099636*^9}, {3.403361017082713*^9, 
+   3.403361141722999*^9}, 3.403361221048521*^9}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    RowBox[{
+     SubsuperscriptBox["P", "1", "1"], "=", 
+     SubsuperscriptBox["P", "2", "1"]}]},
+   {"T", "T", "0.1", "0.55", "a"},
+   {"T", "F", "0.2", "0.25", "b"},
+   {"F", "T", "0.3", "0.15", "c"},
+   {"F", "F", "0.4", "0.05", "d"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.402267922215996*^9, 3.402267924771605*^9}}],
+
+Cell[TextData[{
+ "Once again, the only way to satisfy this is if \[Epsilon] > ",
+ Cell[BoxData[
+  FractionBox["1", "16"]],
+  CellChangeTimes->{{3.4022454026275578`*^9, 3.402245685202738*^9}, {
+   3.402245737649817*^9, 3.402245737765635*^9}, {3.402245844939797*^9, 
+   3.4022459098805656`*^9}}],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.4039619335578613`*^9, 3.4039619367695417`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "a", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "a", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "b", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "b", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "c", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "c", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "d", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "d", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "<", 
+     FractionBox["1", "15"]}], "&&", 
+    RowBox[{
+     FormBox[
+      FractionBox["a", 
+       RowBox[{"a", "+", "b"}]],
+      TraditionalForm], "==", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        FractionBox["0.1", 
+         RowBox[{"0.1", "+", "0.2"}]], "+", 
+        FractionBox["0.55", 
+         RowBox[{"0.55", "+", "0.25"}]]}], "2"],
+      TraditionalForm]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "\[Epsilon]"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.4022454026275578`*^9, 3.402245685202738*^9}, {
+  3.402245737649817*^9, 3.402245737765635*^9}, {3.402245844939797*^9, 
+  3.4022459098805656`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "0.2594858156028369`"}], ",", 
+    RowBox[{"b", "\[Rule]", "0.2488945578231293`"}], ",", 
+    RowBox[{"c", "\[Rule]", "0.24638605442176864`"}], ",", 
+    RowBox[{"d", "\[Rule]", "0.24523357215226516`"}], ",", 
+    RowBox[{"\[Epsilon]", "\[Rule]", "0.06609042553191491`"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.4022456159294453`*^9, 3.402245697498036*^9}, {
+   3.402245730401558*^9, 3.4022457381890163`*^9}, {3.402245897972289*^9, 
+   3.40224591502147*^9}, 3.403917598962475*^9, 3.403961907547217*^9, 
+   3.4040016848116627`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "a", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "a", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "b", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "b", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "c", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "c", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "d", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "d", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "\[LessEqual]", 
+     FractionBox["1", "16"]}], "&&", 
+    RowBox[{
+     FormBox[
+      FractionBox["a", 
+       RowBox[{"a", "+", "b"}]],
+      TraditionalForm], "==", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        FractionBox["0.1", 
+         RowBox[{"0.1", "+", "0.2"}]], "+", 
+        FractionBox["0.55", 
+         RowBox[{"0.55", "+", "0.25"}]]}], "2"],
+      TraditionalForm]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "\[Epsilon]"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.403961587368553*^9, 3.403961603860104*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.403961588374626*^9, 3.403961604215929*^9}, 
+   3.40400168605621*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "What if we also require (PCI) to be satisfied as well?  In the above \
+example, both agents start out agreeing that ",
+ StyleBox["p",
+  FontSlant->"Italic"],
+ " and ",
+ StyleBox["q",
+  FontSlant->"Italic"],
+ " are ",
+ StyleBox["negatively",
+  FontSlant->"Italic"],
+ " dependent. Thus, (PCI) requires that we ensure they continue to agree \
+about this.  This adds an additional constraint.  But, so long as (C) is \
+satisfied (",
+ StyleBox["i.e.",
+  FontSlant->"Italic"],
+ ", if \[Epsilon] > ",
+ Cell[BoxData[
+  FractionBox["1", "16"]],
+  CellChangeTimes->{{3.4022454026275578`*^9, 3.402245685202738*^9}, {
+   3.402245737649817*^9, 3.402245737765635*^9}, {3.402245844939797*^9, 
+   3.4022459098805656`*^9}}],
+ "), this constraint can also be met.  In general, this will be the case (at \
+least, for the 2-atomic-proposition case)."
+}], "Text",
+ CellChangeTimes->{{3.402245934900879*^9, 3.4022459721521606`*^9}, {
+  3.402246743181925*^9, 3.402246752858006*^9}, {3.402267693382922*^9, 
+  3.4022678858276033`*^9}, {3.402267989752265*^9, 3.402267992791053*^9}, {
+  3.4039616187230263`*^9, 3.403961642768586*^9}, {3.403961919588455*^9, 
+  3.403961927000066*^9}, {3.403961966111981*^9, 3.403961968119803*^9}, {
+  3.403962008907234*^9, 3.403962021984311*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "a", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "a", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "b", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "b", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "c", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "c", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "d", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "d", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "\[LessEqual]", 
+     FractionBox["1", "15"]}], "&&", 
+    RowBox[{
+     FractionBox["a", 
+      RowBox[{"a", "+", "b"}]], "==", 
+     FractionBox[
+      RowBox[{
+       FractionBox["0.1", 
+        RowBox[{"0.1", "+", "0.2"}]], "+", 
+       FractionBox["0.55", 
+        RowBox[{"0.55", "+", "0.25"}]]}], "2"]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b"}], ">", 
+     FractionBox["a", 
+      RowBox[{"a", "+", "c"}]]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "\[Epsilon]"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.403961997678924*^9, 3.403961998836684*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "0.26052517361111105`"}], ",", 
+    RowBox[{"b", "\[Rule]", "0.24989149305555555`"}], ",", 
+    RowBox[{"c", "\[Rule]", "0.2707790798611111`"}], ",", 
+    RowBox[{"d", "\[Rule]", "0.21880425347222227`"}], ",", 
+    RowBox[{"\[Epsilon]", "\[Rule]", "0.06666666666666667`"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.403962066095818*^9, 3.403962093760283*^9}, 
+   3.4040017205378647`*^9, 3.4041261817432747`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"0.325", "-", "\[Epsilon]"}], "<", "a", "<", 
+     RowBox[{"0.325", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.1", "<", "a", "<", "0.55"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "b", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.2", "<", "b", "<", "0.25"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "c", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.15", "<", "c", "<", "0.3"}], "&&", 
+    RowBox[{
+     RowBox[{"0.225", "-", "\[Epsilon]"}], "<", "d", "<", 
+     RowBox[{"0.225", "+", "\[Epsilon]"}]}], "&&", 
+    RowBox[{"0.05", "<", "d", "<", "0.4"}], "&&", 
+    RowBox[{"0", "<", "\[Epsilon]", "<", 
+     FractionBox["1", "16"]}], "&&", 
+    RowBox[{
+     FractionBox["a", 
+      RowBox[{"a", "+", "b"}]], "==", 
+     FractionBox[
+      RowBox[{
+       FractionBox["0.1", 
+        RowBox[{"0.1", "+", "0.2"}]], "+", 
+       FractionBox["0.55", 
+        RowBox[{"0.55", "+", "0.25"}]]}], "2"]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b"}], ">", 
+     FractionBox["a", 
+      RowBox[{"a", "+", "c"}]]}], "&&", 
+    RowBox[{
+     RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "\[Epsilon]"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.402267950703334*^9, 3.4022680048567657`*^9}, {
+  3.402268057285741*^9, 3.402268097950919*^9}, {3.4022682232656317`*^9, 
+  3.402268223347045*^9}, {3.403961987335693*^9, 3.403961993180492*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.402268087874646*^9, 3.4022680947414217`*^9}, 
+   3.402268127293901*^9, 3.40226829025249*^9, 3.403917615606922*^9, 
+   3.403926912241239*^9, 3.403961672852337*^9, 3.403962038278447*^9, 
+   3.4040018076631193`*^9, 3.404126239363758*^9}]
+}, Open  ]],
+
+Cell["\<\
+Here's an example near our Table 3 example which requires \[Epsilon] > 0.115: \
+\>", "Text",
+ CellChangeTimes->{{3.4039612869055233`*^9, 3.4039613318206663`*^9}, {
+  3.403961430897977*^9, 3.403961468580247*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    RowBox[{
+     SubsuperscriptBox["P", "1", "1"], "=", 
+     SubsuperscriptBox["P", "2", "1"]}]},
+   {"T", "T", 
+    FractionBox["168", "6539"], 
+    FractionBox["3", "5"], "a"},
+   {"T", "F", 
+    FractionBox["17937", "65390"], 
+    FractionBox["2", "10"], "b"},
+   {"F", "T", "0.3", "0.15", "c"},
+   {"F", "F", "0.4", "0.05", "d"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.403931498028536*^9, 3.403931525151827*^9}, 
+   3.403961468580742*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"test", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"e_", ",", "f_", ",", "g_", ",", "h_"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i_", ",", "j_", ",", "k_", ",", "l_"}], "}"}], ",", "\[Xi]_"}],
+     "]"}], ":=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"e", "+", "i"}], "2"], "-", "\[Epsilon]"}], "<", "a", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"e", "+", "i"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"e", ">", "i"}], ",", 
+        RowBox[{"i", "<", "a", "<", "e"}], ",", 
+        RowBox[{"e", "<", "a", "<", "i"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"f", "+", "j"}], "2"], "-", "\[Epsilon]"}], "<", "b", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"f", "+", "j"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"j", ">", "f"}], ",", 
+        RowBox[{"f", "<", "b", "<", "j"}], ",", 
+        RowBox[{"j", "<", "b", "<", "f"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"g", "+", "k"}], "2"], "-", "\[Epsilon]"}], "<", "c", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"g", "+", "k"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"k", ">", "g"}], ",", 
+        RowBox[{"g", "<", "c", "<", "k"}], ",", 
+        RowBox[{"k", "<", "c", "<", "g"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"h", "+", "l"}], "2"], "-", "\[Epsilon]"}], "<", "d", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"h", "+", "l"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"l", ">", "h"}], ",", 
+        RowBox[{"h", "<", "d", "<", "l"}], ",", 
+        RowBox[{"l", "<", "d", "<", "h"}]}], "]"}], "&&", 
+      RowBox[{"0", "<", "\[Epsilon]", "\[LessEqual]", "\[Xi]"}], "&&", 
+      RowBox[{
+       FormBox[
+        FractionBox["a", 
+         RowBox[{"a", "+", "b"}]],
+        TraditionalForm], "==", 
+       FormBox[
+        FractionBox[
+         RowBox[{
+          FractionBox["e", 
+           RowBox[{"e", "+", "f"}]], "+", 
+          FractionBox["i", 
+           RowBox[{"i", "+", "j"}]]}], "2"],
+        TraditionalForm]}], "&&", 
+      RowBox[{
+       RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"e", "+", "f", "+", "g", "+", "h"}], "\[Equal]", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"i", "+", "j", "+", "k", "+", "l"}], "\[Equal]", "1"}]}], ",", 
+     
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "\[Epsilon]"}], "}"}]}],
+     "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.403919312989127*^9, 3.403919366119841*^9}, {
+   3.403919396490759*^9, 3.403919622779039*^9}, {3.4039196623283253`*^9, 
+   3.403919721826536*^9}, {3.403927677776225*^9, 3.4039276788442917`*^9}, {
+   3.403927731581197*^9, 3.403927732696643*^9}, {3.4039295124013233`*^9, 
+   3.403929519284511*^9}, {3.403961307156176*^9, 3.40396130991745*^9}, 
+   3.4039628523924437`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["168", "6539"], ",", 
+     FractionBox["17937", "65390"], ",", 
+     FractionBox["3", "10"], ",", 
+     FractionBox["4", "10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "5"], ",", 
+     FractionBox["2", "10"], ",", 
+     FractionBox["15", "100"], ",", 
+     FractionBox["5", "100"]}], "}"}], ",", "0.115"}], "]"}]], "Input",
+ CellChangeTimes->{{3.403927174270509*^9, 3.403927331525797*^9}, {
+   3.403927427675867*^9, 3.4039274321800117`*^9}, 3.403927692031158*^9, {
+   3.403929351997963*^9, 3.403929437840267*^9}, {3.403929522390337*^9, 
+   3.40392952345926*^9}, {3.403930240712905*^9, 3.403930249006859*^9}, {
+   3.403930280861713*^9, 3.403930301709505*^9}, {3.403930333350457*^9, 
+   3.403930344005834*^9}, {3.403931364002062*^9, 3.4039313795350857`*^9}, {
+   3.40393142190452*^9, 3.4039314362926064`*^9}, {3.403931541457199*^9, 
+   3.4039315707966747`*^9}, {3.403933139291955*^9, 3.40393315357311*^9}, {
+   3.4039612677260933`*^9, 3.403961279296999*^9}, {3.4039613140997334`*^9, 
+   3.403961316883305*^9}, {3.403961424453815*^9, 3.40396142469932*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.403927324215497*^9, 3.4039273316617947`*^9}, 
+   3.4039274353621492`*^9, {3.403927683626964*^9, 3.403927692416481*^9}, 
+   3.4039277348550787`*^9, {3.403929378485339*^9, 3.403929438113969*^9}, {
+   3.403929520930727*^9, 3.4039295237922573`*^9}, {3.4039302703663807`*^9, 
+   3.403930301837832*^9}, {3.403930333500187*^9, 3.4039303441184483`*^9}, {
+   3.403931364268312*^9, 3.4039313796536407`*^9}, {3.403931425060176*^9, 
+   3.403931436794685*^9}, {3.403931532371994*^9, 3.403931570978763*^9}, {
+   3.403933140239736*^9, 3.403933153832769*^9}, {3.403961264146105*^9, 
+   3.4039612797122593`*^9}, {3.403961311455707*^9, 3.403961317045*^9}, 
+   3.403961414767565*^9, 3.404002031150415*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["168", "6539"], ",", 
+     FractionBox["17937", "65390"], ",", 
+     FractionBox["3", "10"], ",", 
+     FractionBox["4", "10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "5"], ",", 
+     FractionBox["2", "10"], ",", 
+     FractionBox["15", "100"], ",", 
+     FractionBox["5", "100"]}], "}"}], ",", "0.116"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4039614221736307`*^9, 3.4039614260112762`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "0.19685593291469247`"}], ",", 
+    RowBox[{"b", "\[Rule]", "0.2742941591671757`"}], ",", 
+    RowBox[{"c", "\[Rule]", "0.24392495395906588`"}], ",", 
+    RowBox[{"d", "\[Rule]", "0.2849249539590659`"}], ",", 
+    RowBox[{"\[Epsilon]", "\[Rule]", "0.11599999999999999`"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.403961422484583*^9, 3.403961426207*^9}, 
+   3.4040020322414207`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Code for larger \[Epsilon] case search near our Table 3 example\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.403961390452289*^9, 3.4039613950259027`*^9}, {
+  3.403961489484889*^9, 3.403961494361476*^9}, {3.403962341365706*^9, 
+  3.403962355713502*^9}}],
+
+Cell["\<\
+Reverse engineering a larger \[Epsilon] case near Table 3 (for the strongest \
+rendition of ASAMC):\
+\>", "Text",
+ CellChangeTimes->{{3.4039176213774*^9, 3.403917658230966*^9}, 
+   3.403961356540955*^9, {3.403962121077022*^9, 3.403962128313323*^9}}],
+
+Cell[BoxData[GridBox[{
+   {"p", "q", 
+    SubsuperscriptBox["P", "1", "0"], 
+    SubsuperscriptBox["P", "2", "0"], 
+    RowBox[{
+     SubsuperscriptBox["P", "1", "1"], "=", 
+     SubsuperscriptBox["P", "2", "1"]}]},
+   {"T", "T", "x", "y", "a"},
+   {"T", "F", "z", "u", "b"},
+   {"F", "T", "0.3", "0.15", "c"},
+   {"F", "F", "0.4", "0.05", "d"}
+  },
+  GridBoxDividers->{
+   "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]], "Input",
+ CellChangeTimes->{{3.403917688867111*^9, 3.4039176906799173`*^9}, {
+  3.40391792563519*^9, 3.403917927504548*^9}, {3.403929666275107*^9, 
+  3.403929670418294*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"FindExample", "[", 
+    RowBox[{
+    "x_", ",", "y_", ",", "z_", ",", "u_", ",", "a_", ",", "b_", ",", "c_", 
+     ",", "d_", ",", "\[Xi]_"}], "]"}], ":=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "+", "z", "+", 
+        FractionBox["3", "10"], "+", 
+        FractionBox["4", "10"]}], "\[Equal]", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"y", "+", "u", "+", 
+        FractionBox["15", "100"], "+", 
+        FractionBox["5", "100"]}], "\[Equal]", "1"}], "&&", 
+      RowBox[{"0", "<", "x", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "y", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "z", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "u", "<", "1"}], "&&", 
+      RowBox[{
+       SubscriptBox["\[ForAll]", 
+        RowBox[{
+         RowBox[{"{", "\[Epsilon]", "}"}], ",", 
+         RowBox[{"0", "<", "\[Epsilon]", "<", "\[Xi]"}]}]], 
+       RowBox[{"!", 
+        RowBox[{
+         SubscriptBox["\[Exists]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"a", "|", "b", "|", "c", "|", "d"}], ")"}], "\[Element]",
+             "Reals"}]}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             FractionBox[
+              RowBox[{"x", "+", "y"}], "2"], "-", "\[Epsilon]"}], "<", "a", 
+            "<", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"x", "+", "y"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"y", ">", "x"}], ",", 
+             RowBox[{"x", "<", "a", "<", "y"}], ",", 
+             RowBox[{"y", "<", "a", "<", "x"}]}], "]"}], "&&", 
+           RowBox[{
+            RowBox[{
+             FractionBox[
+              RowBox[{"z", "+", "u"}], "2"], "-", "\[Epsilon]"}], "<", "b", 
+            "<", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"z", "+", "u"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"u", ">", "z"}], ",", 
+             RowBox[{"z", "<", "b", "<", "u"}], ",", 
+             RowBox[{"u", "<", "b", "<", "z"}]}], "]"}], "&&", 
+           RowBox[{
+            RowBox[{
+             FractionBox[
+              RowBox[{
+               FractionBox["3", "10"], "+", 
+               FractionBox["15", "100"]}], "2"], "-", "\[Epsilon]"}], "<", 
+            "c", "<", 
+            RowBox[{
+             FractionBox[
+              RowBox[{
+               FractionBox["3", "10"], "+", 
+               FractionBox["15", "100"]}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+           
+           RowBox[{
+            FractionBox["15", "100"], "<", "c", "<", 
+            FractionBox["3", "10"]}], "&&", 
+           RowBox[{
+            RowBox[{
+             FractionBox[
+              RowBox[{
+               FractionBox["4", "10"], "+", 
+               FractionBox["5", "100"]}], "2"], "-", "\[Epsilon]"}], "<", "d",
+             "<", 
+            RowBox[{
+             FractionBox[
+              RowBox[{
+               FractionBox["4", "10"], "+", 
+               FractionBox["5", "100"]}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+           RowBox[{
+            FractionBox["5", "100"], "<", "d", "<", 
+            FractionBox["4", "10"]}], "&&", 
+           RowBox[{
+            FractionBox["a", 
+             RowBox[{"a", "+", "b"}]], "\[Equal]", 
+            RowBox[{
+             FractionBox["1", "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               FractionBox["x", 
+                RowBox[{"x", "+", "y"}]], "+", 
+               FractionBox["z", 
+                RowBox[{"x", "+", "u"}]]}], ")"}]}]}], "&&", 
+           RowBox[{
+            RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}]}], 
+          ")"}]}]}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z", ",", "u"}], "}"}], ",", "Reals"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.403917702575704*^9, 3.403918034894845*^9}, {
+   3.403918066653818*^9, 3.40391809606321*^9}, {3.403918129897283*^9, 
+   3.403918135230976*^9}, {3.403918178815629*^9, 3.403918214667144*^9}, {
+   3.40391824927932*^9, 3.4039182547600937`*^9}, {3.40391848410386*^9, 
+   3.4039185201989603`*^9}, {3.4039185969123383`*^9, 3.40391865010972*^9}, {
+   3.403918722401392*^9, 3.403918764205571*^9}, {3.4039188142204514`*^9, 
+   3.403918883725872*^9}, {3.403918931197698*^9, 3.403918939910125*^9}, {
+   3.4039190759119864`*^9, 3.4039190783820887`*^9}, {3.403919131823745*^9, 
+   3.403919271391898*^9}, 3.4039197422485447`*^9, {3.403920041350133*^9, 
+   3.403920048648581*^9}, {3.403920232943596*^9, 3.403920233005864*^9}, {
+   3.403921889340439*^9, 3.403921953350024*^9}, {3.403921993432472*^9, 
+   3.40392203760709*^9}, {3.403926983441938*^9, 3.403927006349876*^9}, {
+   3.403927128275881*^9, 3.403927152520957*^9}, {3.4039291621149187`*^9, 
+   3.4039291641371307`*^9}, 3.403929339117632*^9, {3.4039296316961517`*^9, 
+   3.403929916588414*^9}, {3.403929952300747*^9, 3.403930032262306*^9}, {
+   3.403930722497271*^9, 3.4039307259689827`*^9}, 3.403930768888205*^9, {
+   3.403930801683566*^9, 3.403930850385797*^9}, 3.403963202154896*^9}],
+
+Cell[BoxData[
+ RowBox[{"FindExample", "[", 
+  RowBox[{"x", ",", "y", ",", "z", ",", 
+   FractionBox["2", "10"], ",", "a", ",", "b", ",", 
+   FractionBox["29", "100"], ",", 
+   FractionBox["2", "10"], ",", 
+   FractionBox["1", "10"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4039300528608007`*^9, 3.403930089298074*^9}, 
+   3.403930189023026*^9, 3.403930609390167*^9, {3.403962146174272*^9, 
+   3.4039621462224607`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FindInstance", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["7", "10"], "+", "x", "+", "z"}], "\[Equal]", "1"}], "&&", 
+     
+     RowBox[{
+      RowBox[{
+       FractionBox["2", "5"], "+", "y"}], "\[Equal]", "1"}], "&&", 
+     RowBox[{"0", "<", "x", "<", "1"}], "&&", 
+     RowBox[{"0", "<", "y", "<", "1"}], "&&", 
+     RowBox[{"0", "<", "z", "<", "1"}], "&&", 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{
+        RowBox[{"{", "\[Epsilon]", "}"}], ",", 
+        RowBox[{"0", "<", "\[Epsilon]", "<", 
+         FractionBox["1", "10"]}]}]], 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["\[ForAll]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"a", ",", "b"}], "}"}], ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"a", "|", "b"}], ")"}], "\[Element]", "Reals"}]}]], 
+        RowBox[{"(", 
+         RowBox[{"!", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              FractionBox[
+               RowBox[{"x", "+", "y"}], "2"], "-", "\[Epsilon]"}], "<", "a", 
+             "<", 
+             RowBox[{
+              FractionBox[
+               RowBox[{"x", "+", "y"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"y", ">", "x"}], ",", 
+              RowBox[{"x", "<", "a", "<", "y"}], ",", 
+              RowBox[{"y", "<", "a", "<", "x"}]}], "]"}], "&&", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{"z", "+", 
+                 FractionBox["1", "5"]}], ")"}]}], "-", "\[Epsilon]"}], "<", 
+             "b", "<", 
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{"z", "+", 
+                 FractionBox["1", "5"]}], ")"}]}], "+", "\[Epsilon]"}]}], "&&", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "5"], ">", "z"}], ",", 
+              RowBox[{"z", "<", "b", "<", 
+               FractionBox["1", "5"]}], ",", 
+              RowBox[{
+               FractionBox["1", "5"], "<", "b", "<", "z"}]}], "]"}], "&&", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 FractionBox["3", "10"], "+", 
+                 FractionBox["15", "100"]}], ")"}]}], "-", "\[Epsilon]"}], 
+             "<", 
+             FractionBox["29", "100"], "<", 
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 FractionBox["3", "10"], "+", 
+                 FractionBox["15", "100"]}], ")"}]}], "+", "\[Epsilon]"}]}], "&&", 
+            RowBox[{
+             FractionBox["15", "100"], "<", 
+             FractionBox["29", "100"], "<", 
+             FractionBox["3", "10"]}], "&&", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 FractionBox["4", "10"], "+", 
+                 FractionBox["5", "100"]}], ")"}]}], "-", "\[Epsilon]"}], "<", 
+             FractionBox["1", "5"], "<", 
+             RowBox[{
+              RowBox[{
+               FractionBox["1", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 FractionBox["4", "10"], "+", 
+                 FractionBox["5", "100"]}], ")"}]}], "+", "\[Epsilon]"}]}], "&&", 
+            RowBox[{
+             FractionBox["5", "100"], "<", 
+             FractionBox["1", "5"], "<", 
+             FractionBox["4", "10"]}], "&&", 
+            RowBox[{
+             FractionBox["a", 
+              RowBox[{"a", "+", "b"}]], "\[Equal]", 
+             RowBox[{
+              FractionBox["1", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                FractionBox["x", 
+                 RowBox[{"x", "+", "y"}]], "+", 
+                FractionBox["z", 
+                 RowBox[{"x", "+", 
+                  FractionBox["1", "5"]}]]}], ")"}]}]}], "&&", 
+            RowBox[{
+             RowBox[{"a", "+", "b", "+", 
+              FractionBox["29", "100"], "+", 
+              FractionBox["1", "5"]}], "\[Equal]", "1"}]}], ")"}]}], ")"}]}], 
+       ")"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", "Reals", ",", "2"}], 
+   "]"}], "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]], "Input",
+ CellChangeTimes->{{3.403962149689129*^9, 3.403962165475726*^9}, {
+  3.403963324283752*^9, 3.403963325077105*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"x", "\[Rule]", 
+    FractionBox["168", "6539"]}], ",", 
+   RowBox[{"y", "\[Rule]", 
+    FractionBox["3", "5"]}], ",", 
+   RowBox[{"z", "\[Rule]", 
+    FractionBox["17937", "65390"]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.403962167098082*^9, 3.403962296232448*^9, {3.403963297304652*^9, 
+   3.403963326739005*^9}, 3.40396345956411*^9, 3.4040021737643538`*^9}]
+}, Open  ]],
+
+Cell["Verifying the example:", "Text",
+ CellChangeTimes->{{3.403962448157647*^9, 3.403962455345846*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"test", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"e_", ",", "f_", ",", "g_", ",", "h_"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i_", ",", "j_", ",", "k_", ",", "l_"}], "}"}], ",", "\[Xi]_"}],
+     "]"}], ":=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"e", "+", "i"}], "2"], "-", "\[Epsilon]"}], "<", "a", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"e", "+", "i"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"e", ">", "i"}], ",", 
+        RowBox[{"i", "<", "a", "<", "e"}], ",", 
+        RowBox[{"e", "<", "a", "<", "i"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"f", "+", "j"}], "2"], "-", "\[Epsilon]"}], "<", "b", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"f", "+", "j"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"j", ">", "f"}], ",", 
+        RowBox[{"f", "<", "b", "<", "j"}], ",", 
+        RowBox[{"j", "<", "b", "<", "f"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"g", "+", "k"}], "2"], "-", "\[Epsilon]"}], "<", "c", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"g", "+", "k"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"k", ">", "g"}], ",", 
+        RowBox[{"g", "<", "c", "<", "k"}], ",", 
+        RowBox[{"k", "<", "c", "<", "g"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"h", "+", "l"}], "2"], "-", "\[Epsilon]"}], "<", "d", "<", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"h", "+", "l"}], "2"], "+", "\[Epsilon]"}]}], "&&", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"l", ">", "h"}], ",", 
+        RowBox[{"h", "<", "d", "<", "l"}], ",", 
+        RowBox[{"l", "<", "d", "<", "h"}]}], "]"}], "&&", 
+      RowBox[{"0", "<", "\[Epsilon]", "<", "\[Xi]"}], "&&", 
+      RowBox[{
+       FormBox[
+        FractionBox["a", 
+         RowBox[{"a", "+", "b"}]],
+        TraditionalForm], "==", 
+       FormBox[
+        FractionBox[
+         RowBox[{
+          FractionBox["e", 
+           RowBox[{"e", "+", "f"}]], "+", 
+          FractionBox["i", 
+           RowBox[{"i", "+", "j"}]]}], "2"],
+        TraditionalForm]}], "&&", 
+      RowBox[{
+       RowBox[{"a", "+", "b", "+", "c", "+", "d"}], "\[Equal]", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"e", "+", "f", "+", "g", "+", "h"}], "\[Equal]", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"i", "+", "j", "+", "k", "+", "l"}], "\[Equal]", "1"}]}], ",", 
+     
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "\[Epsilon]"}], "}"}]}],
+     "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.403919312989127*^9, 3.403919366119841*^9}, {
+  3.403919396490759*^9, 3.403919622779039*^9}, {3.4039196623283253`*^9, 
+  3.403919721826536*^9}, {3.403927677776225*^9, 3.4039276788442917`*^9}, {
+  3.403927731581197*^9, 3.403927732696643*^9}, {3.4039295124013233`*^9, 
+  3.403929519284511*^9}, {3.403961307156176*^9, 3.40396130991745*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["168", "6539"], ",", 
+     FractionBox["17937", "65390"], ",", 
+     FractionBox["3", "10"], ",", 
+     FractionBox["4", "10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "5"], ",", 
+     FractionBox["2", "10"], ",", 
+     FractionBox["15", "100"], ",", 
+     FractionBox["5", "100"]}], "}"}], ",", "0.1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.403927174270509*^9, 3.403927331525797*^9}, {
+   3.403927427675867*^9, 3.4039274321800117`*^9}, 3.403927692031158*^9, {
+   3.403929351997963*^9, 3.403929437840267*^9}, {3.403929522390337*^9, 
+   3.40392952345926*^9}, {3.403930240712905*^9, 3.403930249006859*^9}, {
+   3.403930280861713*^9, 3.403930301709505*^9}, {3.403930333350457*^9, 
+   3.403930344005834*^9}, {3.403931364002062*^9, 3.4039313795350857`*^9}, {
+   3.40393142190452*^9, 3.4039314362926064`*^9}, {3.403931541457199*^9, 
+   3.4039315707966747`*^9}, {3.403933139291955*^9, 3.40393315357311*^9}, {
+   3.4039612677260933`*^9, 3.403961279296999*^9}, {3.4039613140997334`*^9, 
+   3.403961316883305*^9}, {3.403961424453815*^9, 3.40396142469932*^9}, {
+   3.4039624197986517`*^9, 3.403962420092152*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.403927324215497*^9, 3.4039273316617947`*^9}, 
+   3.4039274353621492`*^9, {3.403927683626964*^9, 3.403927692416481*^9}, 
+   3.4039277348550787`*^9, {3.403929378485339*^9, 3.403929438113969*^9}, {
+   3.403929520930727*^9, 3.4039295237922573`*^9}, {3.4039302703663807`*^9, 
+   3.403930301837832*^9}, {3.403930333500187*^9, 3.4039303441184483`*^9}, {
+   3.403931364268312*^9, 3.4039313796536407`*^9}, {3.403931425060176*^9, 
+   3.403931436794685*^9}, {3.403931532371994*^9, 3.403931570978763*^9}, {
+   3.403933140239736*^9, 3.403933153832769*^9}, {3.403961264146105*^9, 
+   3.4039612797122593`*^9}, {3.403961311455707*^9, 3.403961317045*^9}, 
+   3.403961414767565*^9, 3.403962423872644*^9, 3.403963471063355*^9, 
+   3.40400339938102*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["168", "6539"], ",", 
+     FractionBox["17937", "65390"], ",", 
+     FractionBox["3", "10"], ",", 
+     FractionBox["4", "10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "5"], ",", 
+     FractionBox["2", "10"], ",", 
+     FractionBox["15", "100"], ",", 
+     FractionBox["5", "100"]}], "}"}], ",", "0.115"}], "]"}]], "Input",
+ CellChangeTimes->{{3.403927174270509*^9, 3.403927331525797*^9}, {
+   3.403927427675867*^9, 3.4039274321800117`*^9}, 3.403927692031158*^9, {
+   3.403929351997963*^9, 3.403929437840267*^9}, {3.403929522390337*^9, 
+   3.40392952345926*^9}, {3.403930240712905*^9, 3.403930249006859*^9}, {
+   3.403930280861713*^9, 3.403930301709505*^9}, {3.403930333350457*^9, 
+   3.403930344005834*^9}, {3.403931364002062*^9, 3.4039313795350857`*^9}, {
+   3.40393142190452*^9, 3.4039314362926064`*^9}, {3.403931541457199*^9, 
+   3.4039315707966747`*^9}, {3.403933139291955*^9, 3.40393315357311*^9}, {
+   3.4039612677260933`*^9, 3.403961279296999*^9}, {3.4039613140997334`*^9, 
+   3.403961316883305*^9}, {3.403961424453815*^9, 3.40396142469932*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.403927324215497*^9, 3.4039273316617947`*^9}, 
+   3.4039274353621492`*^9, {3.403927683626964*^9, 3.403927692416481*^9}, 
+   3.4039277348550787`*^9, {3.403929378485339*^9, 3.403929438113969*^9}, {
+   3.403929520930727*^9, 3.4039295237922573`*^9}, {3.4039302703663807`*^9, 
+   3.403930301837832*^9}, {3.403930333500187*^9, 3.4039303441184483`*^9}, {
+   3.403931364268312*^9, 3.4039313796536407`*^9}, {3.403931425060176*^9, 
+   3.403931436794685*^9}, {3.403931532371994*^9, 3.403931570978763*^9}, {
+   3.403933140239736*^9, 3.403933153832769*^9}, {3.403961264146105*^9, 
+   3.4039612797122593`*^9}, {3.403961311455707*^9, 3.403961317045*^9}, 
+   3.403961414767565*^9, 3.403962433548685*^9, 3.403963472319206*^9, 
+   3.404003400532509*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["168", "6539"], ",", 
+     FractionBox["17937", "65390"], ",", 
+     FractionBox["3", "10"], ",", 
+     FractionBox["4", "10"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "5"], ",", 
+     FractionBox["2", "10"], ",", 
+     FractionBox["15", "100"], ",", 
+     FractionBox["5", "100"]}], "}"}], ",", "0.116"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4039614221736307`*^9, 3.4039614260112762`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "0.19685593291469247`"}], ",", 
+    RowBox[{"b", "\[Rule]", "0.2742941591671757`"}], ",", 
+    RowBox[{"c", "\[Rule]", "0.24392991995762636`"}], ",", 
+    RowBox[{"d", "\[Rule]", "0.28491998796050544`"}], ",", 
+    RowBox[{"\[Epsilon]", "\[Rule]", "0.11599503400143954`"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.403961422484583*^9, 3.403961426207*^9}, 
+   3.403962434508006*^9, 3.403963473882647*^9, 3.404003401423135*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1436, 856},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+Magnification->1.5,
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 289, 7, 69, "Subtitle"],
+Cell[859, 31, 488, 13, 129, "Text"],
+Cell[1350, 46, 997, 29, 62, "Text"],
+Cell[2350, 77, 254, 7, 39, "Text"],
+Cell[2607, 86, 719, 17, 142, "Input"],
+Cell[3329, 105, 458, 17, 39, "Text"],
+Cell[3790, 124, 745, 16, 142, "Input"],
+Cell[4538, 142, 240, 6, 39, "Text"],
+Cell[4781, 150, 600, 14, 142, "Input"],
+Cell[5384, 166, 354, 13, 39, "Text"],
+Cell[CellGroupData[{
+Cell[5763, 183, 1047, 27, 64, "Input"],
+Cell[6813, 212, 419, 10, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7269, 227, 982, 26, 64, "Input"],
+Cell[8254, 255, 530, 12, 40, "Output"]
+}, Open  ]],
+Cell[8799, 270, 205, 4, 39, "Text"],
+Cell[9007, 276, 614, 14, 142, "Input"],
+Cell[9624, 292, 462, 13, 39, "Text"],
+Cell[10089, 307, 598, 15, 142, "Input"],
+Cell[10690, 324, 1725, 63, 121, "Text"],
+Cell[12418, 389, 2210, 52, 135, "Text"],
+Cell[14631, 443, 631, 15, 142, "Input"],
+Cell[15265, 460, 515, 12, 51, "Text"],
+Cell[CellGroupData[{
+Cell[15805, 476, 2927, 78, 256, "Input"],
+Cell[18735, 556, 691, 14, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19463, 575, 3100, 81, 256, "Input"],
+Cell[22566, 658, 257, 4, 40, "Output"]
+}, Open  ]],
+Cell[22838, 665, 1455, 36, 90, "Text"],
+Cell[24296, 703, 582, 15, 142, "Input"],
+Cell[24881, 720, 381, 9, 51, "Text"],
+Cell[CellGroupData[{
+Cell[25287, 733, 1567, 42, 164, "Input"],
+Cell[26857, 777, 628, 13, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27522, 795, 1476, 40, 164, "Input"],
+Cell[29001, 837, 136, 3, 40, "Output"]
+}, Open  ]],
+Cell[29152, 843, 1269, 30, 96, "Text"],
+Cell[CellGroupData[{
+Cell[30446, 877, 1505, 40, 164, "Input"],
+Cell[31954, 919, 506, 11, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32497, 935, 1642, 42, 164, "Input"],
+Cell[34142, 979, 302, 5, 40, "Output"]
+}, Open  ]],
+Cell[34459, 987, 221, 4, 39, "Text"],
+Cell[34683, 993, 704, 20, 172, "Input"],
+Cell[35390, 1015, 3273, 90, 216, "Input"],
+Cell[CellGroupData[{
+Cell[38688, 1109, 1175, 24, 68, "Input"],
+Cell[39866, 1135, 754, 11, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40657, 1151, 515, 15, 68, "Input"],
+Cell[41175, 1168, 478, 11, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41690, 1184, 262, 5, 36, "Subsubsection"],
+Cell[41955, 1191, 259, 5, 39, "Text"],
+Cell[42217, 1198, 671, 17, 142, "Input"],
+Cell[42891, 1217, 5306, 129, 320, "Input"],
+Cell[48200, 1348, 419, 9, 68, "Input"],
+Cell[CellGroupData[{
+Cell[48644, 1361, 4813, 131, 327, "Input"],
+Cell[53460, 1494, 417, 11, 64, "Output"]
+}, Open  ]],
+Cell[53892, 1508, 104, 1, 39, "Text"],
+Cell[53999, 1511, 3230, 89, 258, "Input"],
+Cell[CellGroupData[{
+Cell[57254, 1604, 1225, 25, 68, "Input"],
+Cell[58482, 1631, 801, 12, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59320, 1648, 1175, 24, 68, "Input"],
+Cell[60498, 1674, 802, 12, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61337, 1691, 515, 15, 68, "Input"],
+Cell[61855, 1708, 521, 11, 40, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

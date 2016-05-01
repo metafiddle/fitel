@@ -1,0 +1,7 @@
+CONDITIONAL PROPOSITIONS AND CONDITIONAL ASSERTIONS
+
+Robert Stalnaker
+
+Abstract
+
+The traditional approach to conditionals interprets them as sentences that express a proposition that is a (perhaps context-dependent) function of two other propositions expressed by the antecedent and consequent clauses, but some philosophers have argued that one should instead treat conditionals as sentences used to express a distinctive kind of speech act rather than a distinctive proposition–a qualified assertion of the proposition expressed by the consequent, with the antecedent expressing the qualification.  The aim of this paper is to develop versions of both approaches in a common framework (focusing just on indicative conditionals), and to compare them. Each approach has its costs and benefits, but I argue that the differences between them may be less than is usually assumed, and that it may be possible to have the advantages of both.

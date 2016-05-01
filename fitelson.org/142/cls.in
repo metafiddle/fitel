@@ -1,0 +1,79 @@
+set(hyper_resolution).
+
+formulas(usable).
+% truth-conditions for boolean connectives (and completeness/consistency of worlds)
+%all p all w ((P(p) & W(w)) -> ((T(-p,w) <-> -T(p,w)) & -(T(p,w) & T(-p,w)))).
+%all p all q all w ((P(p) & P(q) & W(w)) -> (T(p & q, w) <-> (T(p,w) & T(q,w)))).
+
+%all p all q all w ((P(p) & P(q) & W(w)) -> (T(p v q, w) <-> (T(p,w) | T(q,w)))).
+%all p all q all w ((P(p) & P(q) & W(w)) -> (T(p <-> q, w) <-> (T(p,w) <-> T(q,w)))).
+%all p all q all w ((P(p) & P(q) & W(w)) -> (T(p -> q, w) <-> (T(p,w) -> T(q,w)))).
+
+% truth-conditions for box and diamond (S5)
+%all p all w ((P(p) & W(w)) -> (T(L(p),w) <-> (all w1 (W(w1) -> T(p,w1))))).
+%all p all w ((P(p) & W(w)) -> (T(M(p),w) <-> (exists w1 (W(w1) & T(p,w1))))).
+
+% basic truth condition for >
+all p all q all w ((P(p) & P(q) & W(w)) -> (T(p > q, w) <-> (all w1 (W(w1) -> (R(p,w,w1) -> T(q,w1)))))).
+
+% C+ constraints on R(p,w,w1)
+all p all w all w1 ((P(p) & W(w) & W(w1)) ->  (R(p,w,w1) -> T(p,w1))).  % (1)
+all p all w ((P(p) & W(w)) ->  (T(p,w) -> R(p,w,w))).  % (2)
+
+% S constraints on R(p,w,w1)
+all p all w ((P(p) & W(w)) ->  ((exists w1 (W(w1) & T(p,w1))) -> (exists w2 (W(w2) & R(p,w,w2))))).  % (3)
+
+all p all q all w ((P(p) & P(q) & W(w)) -> (((all w1 (W(w1) -> (R(p,w,w1) -> T(q,w1)))) & (all w2 (W(w2) -> (R(q,w,w2) -> T(p,w2))))) -> (all w3 (W(w3) -> (R(p,w,w3) <-> R(q,w,w3)))))).  % (4)
+		
+all p all q all w ((P(p) & P(q) & W(w)) -> ((exists w1 (W(w1) & R(p,w,w1) & T(q,w1))) -> (all w2 (W(w2) -> (R(p & q,w,w2) -> R(p,w,w2)))))).  % (5)
+
+% C2
+all p all w all x all y ((P(p) & W(w) & W(x) & W(y)) -> ((R(p,w,x) & R(p,w,y)) -> (x = y))).  % (6)
+
+% C1
+all p all w all w1 ((P(p) & W(w) & W(w1)) -> ((T(p,w) & R(p,w,w1)) -> (w = w1))). % (7)x
+
+% additional typing constraints (for models)
+all p all q ((P(p) & P(q)) -> P(p > q)).
+all p all w (T(p,w) -> (P(p) & W(w))).
+all p all w1 all w2 (R(p,w1,w2) -> (P(p) & W(w1) & W(w2))).
+end_of_list.
+
+formulas(sos).
+% non-triviality -- there are some worlds and some propostions
+%exists p (P(p)).
+%exists w (W(w)).
+
+% typing on worlds/props -- mutually exclusive types
+all x (P(x) -> -W(x)).
+
+% goal theorem of S
+%-(all w ((T(a>b,w) & T(b>a,w)) -> T((a>c) <-> (b>c),w))).
+
+% non-theorem of C1 (but theorem of C2)
+%-(all w ((W(w) & P(a) & P(b) & P(a > b) & P(a > -b) & P(-b)) -> (T(a > b,w) | T(a > -b,w)))).
+
+% non-theorem of S
+%-(all w ((W(w) & P(a) & P(b) & P(a & b) & P(a > b)) -> (T(a & b,w) -> T(a > b, w)))).
+
+% theorem of C2?  NOPE!
+%-(all w ((W(w) & P(a) & P(b) & P(a > b) & P(a > (b > a))) -> T(a > (b > a),w))).
+
+% theorem of C2?  NOPE!
+%-(all w ((W(w) & P(a) & P(b) & P(a > b) & P(a > c) & P(a > (b & c))) -> T(((a>b)>((a>c)>(a>b&c))),w))).
+
+% Justin problem #1 (holds in S, but not C+)
+%-(all w ((W(w) & P(p) & P(q) & P(M(p)) & P(-q) & P(q & -q) & P(p > (q & -q)) & P(-(p > (q & -q)))) -> (T(M(p),w) -> T(-(p > (q & -q)),w)))).
+
+%all p (- - p = p).
+%all p (M(M(p)) = M(p)).
+
+% permutation -- HW problem -- invalid in C2
+-(all w ((P(p) & P(q) & P(r) & W(w) & P(p > (q > r)) & P(q > r) & P(q > (p > r)) & P(p > r)) -> (T(p > (q > r),w) -> T(q > (p > r),w)))).
+
+%-(all w ((W(w) & P(p) & P(q) & P(r) & P(p>q) & P(-(p > -r)) & P(p & r) & P((p & r) > q)) -> 
+%((T(p>q,w) & T(-(p>-r),w)) -> T((p & r) > q,w)))).
+
+% holds in C+ but not C, as it should
+%-(all w ((W(w) & P(p) & P(q) & P(-q) & P(-p) & P(p -> q) & P(p>q)) -> (T(L(p -> q),w) -> T(p > q,w)))).
+end_of_list.

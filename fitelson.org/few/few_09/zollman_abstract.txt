@@ -1,0 +1,14 @@
+Communication via signaling is widespread among a large variety of animals.
+Signaling between individuals who have perfectly coinciding interests has
+been regarded as self-explanatory, while situations without such perfect
+agreement are more puzzling. In these later cases there is sometimes
+incentive for signalers to "lie," but they don't. These later cases have
+traditionally been explained in terms of signal cost; lying does not occur
+because the cost one has to pay to lie outweighs the gain one gets from lying.
+Recent work, using different methods, has called into question two of the
+primary assumptions in this literature. First, some explanation is required
+even in cases where the creatures have perfect overlapping interest --
+evolution is far from guaranteed. Second, signal cost may explain one mystery
+(the absence of lying), but does so by introducing another (how honest
+signaling evolved in the first place). This tutorial will give a brief
+overview of this literature and discuss a large collection of open problems.

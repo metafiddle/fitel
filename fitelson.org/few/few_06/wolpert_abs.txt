@@ -1,0 +1,60 @@
+
+	HOW MUCH DO WE HAVE TO PAY TO EAT?
+
+
+		David Wolpert
+		
+		http://ic.arc.nasa.gov/people/dhw/
+
+
+Overview: At least since Hume, people have wondered whether there are
+first principles limitations on what humans can deduce / infer about
+reality. Godel was perhaps the first to produce a formal mathematical
+result on this theme, concentrating on the topic of what can be
+deduced.
+
+More recent work has returned to the topic that originally interested
+Hume, inductive inference. That work establishes that the expected
+generalization accuracy of any given inference algorithm is given by
+an inner product between two quantities. The first of those quantities
+is (a particular representation of) the inference algorithm. The
+second quantity is the distribution of inference problems likely to be
+encountered in reality.
+
+One ramification of this inner product formula is the ``No Free
+Lunch'' (NFL) theorems. These state that any two inference algorithms
+are equivalent, when their performance is averaged across all possible
+inference problems.  On the other hand, in addition to the NFL
+theorems, there are other ``Free Lunch'' theorems, establishing
+assumption-free superiorities of some inference algorithms over
+others.  So the mathematics tells us that while in some senses Hume
+was correct, he didn't see the full picture.
+
+More recently still it has been realized that black-box optimization
+is formally analogous to inductive inference.  In particular, it is now
+known that an inner product between one's optimization algorithm and
+the distribution of optimization problems likely to be encountered
+determines expected optimization performance.  This again results in
+NFL theorems. Here those theorems state that any two optimization
+algorithms are equivalent when their performance is averaged across
+all possible optimization problems.  Some have argued that when
+translated into biology this result has implications for intelligent
+design.
+
+The most recent work on this topic has considered a framework covering
+many optimization scenarios in addition to black-box optimization. In
+particular this framework also covers multi-armed bandit problems, and
+the evolution of multiple co-evolving players. As a particular
+instance of the latter type of optimization problem, the framework
+covers ``self-play'' problems. In these problems one has a set of
+multiple players. The set of players work together, to produce a
+champion. That champion then engages one or more antagonists in a
+subsequent multi-player game.  The optimization problem is how the
+players should work together to produce a best possible champion. 
+
+In contrast to the traditional optimization case where the NFL results
+hold, in self-play there are free lunches: in coevolution some
+algorithms produce better champions than other algorithms, averaged
+across all possible problems. However in the typical coevolutionary
+scenarios encountered in biology, there is no champion. There the NFL
+theorems still hold.

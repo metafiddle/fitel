@@ -1,0 +1,3 @@
+Probability and Graded Truth: A Qualitative Perspective
+
+In this paper we argue that the contrast between probabilities and degrees of truth is best articulated on a qualitative level of analysis, namely by investigating the properties of the two orderings *more or less probable than* and *more or less true than*. The key shift in focus is from real-valued functions (logical valuations and probability functions) representing point-wise evaluations of sentences - quantitative level - to binary relations over the set of sentences representing pairwise evaluations or comparative judgments - qualitative level. The overall aim of this inquiry is to shed light on the conceptual differences and analogies which hold between probability and graded truth. 

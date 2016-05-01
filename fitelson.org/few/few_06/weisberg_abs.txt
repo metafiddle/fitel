@@ -1,0 +1,17 @@
+"A Dilemma For Jeffrey Conditionalizers"
+
+Abstract:  A rule for updating degrees of belief should be commutative:
+if the same total information is gleaned then the same degrees of belief
+should result, regardless of the order in which the information is
+learned.  Commutativity is an old worry for Jeffrey Conditionalization,
+since the order in which values are put into the rule makes a difference
+to the end result.   The worry seems to have been resolved in recent
+work  by Lange (2000) and Wagner (2002).  But I argue that, to resolve
+the commutativity problem we must give up another important desideratum
+on updating rules: holism.  Holism requires that the effect sensory
+input has on one's corpus of beliefs be sensitive to one's background
+beliefs.  When an object looks red, whether or not we should judge that
+it is red depends on what we think about the lighting, the reliability
+of our vision, etc.  Since preserving commutativity means giving up
+holism, proponents of Jeffrey Conditionalization face a troubling
+dilemma: they may have commutativity or holism, but not both.

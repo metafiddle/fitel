@@ -1,0 +1,9 @@
+Creating and testing states of knowledge in groups.
+
+Tentative abstract:  
+ 
+A popular way of describing states of knowledge in groups is via Kripke structures.  How do we create a particular state of knowledge described by a finite Kripke structure in a (finite) group of  agents?  And given such a group of agents with beliefs about some propositions, how can we test their states of knowledge via observing their behavior?   
+ 
+Note that if the agents are babies, toddlers or animals, or people likely to lie, observing behavior is the best way we can find out their beliefs. 
+ 
+We use Shakespeare's Much Ado about Nothing and the Wimmer and Perner work on Maxi as illustrations.

@@ -1,0 +1,56 @@
+% Basic OTTER/MACE input file for reasoning about properties of Kripke frames
+% For further OTTER options, see McCune's user manual (or Kalman's text)
+% For MACE options, see McCune's MACE website (this file works with both)
+% 
+%     http://www-unix.mcs.anl.gov/AR/otter/
+%     http://www-unix.mcs.anl.gov/AR/mace/
+% 
+% Remove "%" symbol from front of line to activate it (uncomment)
+% 
+% Example MACE input: "mace -N 4 -p 1 < kripke.txt" looks for models
+% up to size 4, and then prints out the first model found.
+% 
+% Example OTTER input: "otter < kripke.txt" runs the file.  
+% All OTTER options are set within the input file.
+% 
+% In this case, the proofs are easy enough so that no options should be needed.
+
+set(auto).
+
+formula_list(usable).
+% Properties of R (affirmed)
+
+% R is serial (axiom D)
+% all x exists y (R(x,y)).
+
+% R is reflexive (axiom T)
+% all x (R(x,x)).
+
+% R is symmetric (axiom B) 
+% all x y (R(x,y) -> R(y,x)).
+ 
+% R is transitive (axiom 4)
+all x y z ((R(x,y) & R(y,z)) -> R(x,z)).
+
+% R is Euclidean (axiom 5)
+% all x y z ((R(x,y) & R(x,z)) -> R(y,z)).
+end_of_list.
+
+formula_list(usable).
+% Denials of R properties -- for "reductio" (resolution) proofs
+
+% R is NOT serial (denial of axiom D)
+% -(all x exists y (R(x,y))).
+
+% R is NOT reflexive (denial of axiom T)
+% -(all x (R(x,x))).
+
+% R is NOT symmetric (denial of axiom B) 
+% -(all x y (R(x,y) -> R(y,x))).
+
+% R is NOT transitive (denial of axiom 4)
+% -(all x y z ((R(x,y) & R(y,z)) -> R(x,z))).
+
+% R is NOT Euclidean (denial of axiom 5)
+-(all x y z ((R(x,y) & R(x,z)) -> R(y,z))).
+end_of_list.

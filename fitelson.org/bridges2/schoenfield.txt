@@ -1,0 +1,3 @@
+Conditionalization does not (in general) Maximize Expected Accuracy
+
+Abstract: Greaves and Wallace argue that conditionalization maximizes expected accuracy.  In this paper I show that their result only applies to a restricted range of cases.  I then show that the update-procedure that maximizes expected accuracy in general is one in which, upon learning P, we conditionalize, not on P, but on the proposition that we learned P.  After proving this result, I provide further generalizations of it and show that "accuracy-first" epistemologists are committed to KK-like iteration principles and to the existence of a class of propositions that rational agents will be certain of if and only if they are true. 

@@ -1,0 +1,84 @@
+% Gibbardian collapse input file --- prover9 syntax 
+% collapse entails import-export --- relative to our background theory
+%					  	e(X,Y) := X entails Y (where X,Y are sentences)
+% 						t(X)   := X is a logical truth (or, a theorem)
+%						h(X,Y) := X hook Y (logical conditional)
+%						i(X,Y) := X -> Y (indicative conditional)
+%						a(X,Y) := X & Y (conjunction)
+
+clear(auto).
+set(prolog_style_variables).
+clear(print_given).
+set(hyper_resolution).
+set(input_sos_first).
+assign(max_proofs,1).
+assign(max_weight,1).
+set(breadth_first_hints).
+
+formulas(hints).
+ e(a(A,B),A).
+ t(h(A,h(B,A))).
+ t(h(a(a(h(A,B),C),A),B)).
+ t(h(a(A,B),B)).
+ t(h(a(c1,c2),c3)) | t(i(c1,i(c2,c3))).
+ e(A,h(B,A)).
+ e(a(a(h(A,B),C),A),B).
+ e(a(A,B),B).
+ e(A,a(h(B,A),h(C,A))).
+ e(a(A,B),a(A,B)).
+ e(a(A,B),a(B,A)).
+ e(a(A,B),a(a(A,B),B)).
+ e(a(a(h(A,B),C),A),a(a(a(h(A,B),C),A),B)).
+ t(i(a(a(h(A,B),C),A),B)).
+ t(i(a(h(A,B),A),B)).
+ t(h(a(h(A,B),A),B)).
+ e(a(h(A,B),A),B).
+ t(i(A,h(B,A))).
+ t(i(i(A,B),h(C,h(A,B)))).
+ t(i(h(A,B),h(C,i(A,B)))).
+ t(h(i(A,B),h(C,h(A,B)))).
+ t(h(h(A,B),h(C,i(A,B)))).
+ t(h(a(i(A,B),C),h(A,B))).
+ t(h(a(h(A,B),C),i(A,B))).
+ e(a(i(A,B),C),h(A,B)).
+ e(a(h(A,B),C),i(A,B)).
+ e(a(i(A,B),C),a(a(i(A,B),C),h(A,B))).
+ e(a(h(A,B),C),a(a(h(A,B),C),i(A,B))).
+ t(i(a(i(A,B),C),h(A,B))).
+ t(i(a(h(A,B),C),i(A,B))).
+ t(i(a(A,i(B,C)),h(B,C))).
+ t(i(a(A,h(B,C)),i(B,C))).
+ t(h(c1,h(c2,c3))) | t(i(c1,i(c2,c3))).
+ t(h(c1,i(c2,c3))) | t(h(c1,h(c2,c3))).
+ e(c1,i(c2,c3)) | t(h(c1,h(c2,c3))).
+ e(c1,a(h(A,c1),i(c2,c3))) | t(h(c1,h(c2,c3))).
+ t(i(c1,h(c2,c3))) | t(h(c1,h(c2,c3))).
+ t(h(c1,h(c2,c3))).
+ e(c1,h(c2,c3)).
+ t(h(a(c1,c2),c3)).
+ e(c1,a(h(A,c1),h(c2,c3))).
+ e(a(c1,c2),c3).
+ t(i(c1,i(c2,c3))).
+ e(a(c1,c2),a(a(c1,c2),c3)).
+ t(i(a(c1,c2),c3)).
+end_of_list.
+
+formulas(sos).
+% our background theory
+t(h(a(A,B),A)) # label(ax1).
+t(i(a(A,B),B)) # label(ax5).
+-t(h(A,h(B,C))) | t(h(a(A,B),C)) # label(ax2).
+t(h(A,h(B,C))) | -t(h(a(A,B),C)) # label(ax2).
+-t(i(A,B)) | t(h(A,B)) # label(ax4).
+-e(A,B) | -e(A,C) | e(A,a(B,C)) # label(ax6).
+-t(h(A,B)) | e(A,B) # label(ax7).
+-e(A,B) | -e(B,A) | -t(i(A,C)) | t(i(B,C)) # label(ax8).
+
+% Gibbardian collapse
+e(i(A,B),h(A,B)).
+e(h(A,B),i(A,B)).
+
+% denial of import-export
+t(i(c1,i(c2,c3))) | t(i(a(c1,c2),c3)). 
+-t(i(c1,i(c2,c3))) | -t(i(a(c1,c2),c3)).
+end_of_list.

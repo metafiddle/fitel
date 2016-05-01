@@ -1,0 +1,36 @@
+"Belief, Knowledge and Tracking the Truth"
+
+Horacio Arlo-Costa & Rohit Parikh
+
+The talk will be given by Parikh and it will consist of two parts.
+
+The first (somewhat longer) part will look at the possibility of
+formally implementing Nozick's `Tracking the Truth' suggestion in his
+book Philosophical Explanations. There he suggested that the usual
+requirements of belief and truth for knowledge be supplemented by a
+`tracking the truth' requirement according to which, for true beliefs to
+count as knowledge, they have to be sensitive to both the truth and
+falsehood of the proposition in question. Since Nozick makes essential
+use of conditionals (interpreted somewhat differently from the way that
+Lewis and Stalnaker interpret them), we will discuss formal properties
+of conditionals and the resulting formal properties of knowledge. (This
+part is jointly due to Horacio Arlo Costa and Parikh).
+
+The second part of the talk will no longer take the notion of belief for
+granted, but will go into the issue of what it is to believe something,
+and what it is that we believe in the first place. Do we believe
+sentences? Or do we believe propositions? And if the latter, what are
+propositions? We will suggest that actually we believe, in somewhat
+different senses of "believe," both "propositions" and sentences (but
+that inanimate devices like thermostats "believe" only propositions).
+Once we take this stance, we immediately enter the thicket of Frege's
+problem, the question of logical omniscience, and the problem of
+explaining the mental states of people who "believe" one sentence, but
+fail to believe another, "equivalent" one. These issues can be resolved
+if we take seriously the fact that there are actually (at least) two
+varieties of belief. Propositional beliefs do not "suffer" from logical
+omniscience as it is not a problem. Sentential beliefs, on the other
+hand, are not closed under logical deduction, nor should we expect them
+to be. If they are closed under deduction to some extent, it is for
+pragmatic reasons, rather than because such closure is somehow logically
+necessary.

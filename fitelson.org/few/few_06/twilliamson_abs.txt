@@ -1,0 +1,20 @@
+Why Epistemology Cant be Operationalized
+
+
+Timothy Williamson 
+University of Oxford
+Timothy.williamson@philosophy.ox.ac.uk
+
+
+ABSTRACT: Operational epistemology is, to a first approximation, the
+attempt to provide cognitive rules such that one is in principle always
+in a position to know whether one is complying with them. In Knowledge
+and its Limits, I argue that the only such rules are trivial ones. In
+this paper, I generalize the argument in several ways to more thoroughly
+probabilistic settings, in order to show that it does not merely
+demonstrate some oddity of the folk epistemological conception of
+knowledge. Some of the generalizations involve a formal semantic
+framework for treating epistemic probabilities of epistemic
+probabilities and expectations of expectations. The upshot is that
+operational epistemology cannot work, and that knowledge-based
+epistemology has the right characteristics to avoid its problems.

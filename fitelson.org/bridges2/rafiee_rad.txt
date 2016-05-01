@@ -1,0 +1,5 @@
+Maximum Entropy and the Uninformative Models of First Order Theories
+
+ABSTRACT:
+
+In this talk we investigate maximum entropy models for first order theories. In particular, we will identify those theories for which the most uninformative models are well defined while showing that such models do not necessarily exist for general first order theories. Finally we will briefly discuss some structural properties of maximum entropy models on first order languages.

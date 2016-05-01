@@ -1,0 +1,84 @@
+% This OTTER input file generates a 26-step proof of distributivity 
+% in the positive system {M+,C1,C2,C3}. We use the infix operators 
+% ->, &, and V instead of the polish C, K, and A, respectively.
+
+op(400,xfx,[->,&,V]).
+set(hyper_res).  
+assign(max_weight, 1). 
+set(ancestor_subsume).
+clear(print_kept).  
+clear(print_new_demod).
+clear(print_back_demod).
+clear(print_back_sub).
+clear(print_given).
+set(order_history). 
+set(input_sos_first).
+assign(equiv_hint_wt, 1).
+set(keep_hint_subsumers).
+
+% Turning the following flag on causes OTTER to generate a proof object 
+% which shows ALL instantiations and unifications in the proof.
+set(build_proof_object).
+
+list(hints).
+% 26-step proof of distributivity in system {M+, C1, C2, C3}
+P((x-> (y V x))& (z-> (z V u))).
+P((x-> ((y->z)& (y->u)))-> (x-> (y-> (z&u)))).
+P((x->y)-> (x-> (y V z))).
+P((x->y)-> ((x&z)->y)).
+P((x->y)-> ((z&x)->y)).
+P(x-> (y->y)).
+P(x-> (y-> (z V y))).
+P((x V y)-> (y V x)).
+P((x-> (y->z))-> (x-> (y-> (z V u)))).
+P((x-> (y->y))& (z-> (u->z))).
+P(x-> (y-> (z V x))).
+P((x-> (y V z))-> (x-> (z V y))).
+P(x-> ((y->y)& (z->x))).
+P(x-> (y-> (y&x))).
+P(x-> (y-> ((y&x) V z))).
+P((x-> (y-> ((y&x) V z)))& (u-> (v-> (w V u)))).
+P((x V y)-> (z-> ((z&x) V y))).
+P((x& (y V z))-> (u-> ((u&y) V z))).
+P(x-> ((y& (z V u))-> ((x&z) V u))).
+P((x&y)-> ((z& (u V v))-> ((x&u) V v))).
+P((x& (y V z))-> ((x&y) V z)).
+P((x& (y V z))-> (z V (x&y))).
+P(((x&y)->x)& ((z& (u V v))-> (v V (z&u)))).
+P((x-> (y& (z V u)))-> (x-> (u V (y&z)))).
+P((x& (y V z))-> (x& (z V (x&y)))).
+P((x& (y V z))-> ((x&y) V (x&z))).
+end_of_list.
+
+list(usable).
+x=x.
+
+% Condensed Detachment Rule (CD)
+-P(x -> y) | -P(x) | P(y).
+
+% Condensed Adjunction Rule (CA)
+-P(x) | -P(y) | P(x & y).
+end_of_list.
+
+list(sos).
+% Axioms for minimal system M+
+P((x & y) -> x) #label(M1).
+P((x & y) -> y) #label(M2).
+P(x -> (x V y)) #label(M3).
+P(y -> (x V y)) #label(M4).
+P(((x -> y) & (x -> z)) -> (x -> (y & z))) #label(M5).
+P(((x -> z) & (y -> z)) -> ((x V y) -> z)) #label(M6).
+P(x -> x) #label(M7).
+P((y -> z) -> ((x -> y) -> (x -> z))) #label(M8).
+P((x -> y) -> ((y -> z) -> (x -> z))) #label(M9).
+
+% Classical implicational Axioms C1, C2, and C3
+P(x -> (y -> x)) # label(C1).
+P((x -> (y -> z)) -> (y -> (x -> z))) # label(C2).
+P((x -> (x -> y)) -> (x -> y)) # label(C3).
+end_of_list.
+
+list(passive).
+% Denial of distributivity
+-P((a & (b V c)) -> ((a & b) V (a & c))).
+end_of_list.

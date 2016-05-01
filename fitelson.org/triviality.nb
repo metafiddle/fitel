@@ -1,0 +1,971 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33902,        962]
+NotebookOptionsPosition[     31623,        883]
+NotebookOutlinePosition[     32033,        901]
+CellTagsIndexPosition[     31990,        898]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["The Strongest Possible Lewisian Triviality Result", "Title",
+ CellChangeTimes->{{3.621608693593498*^9, 3.621608708530059*^9}}],
+
+Cell["\<\
+Branden Fitelson
+April 23, 2015\
+\>", "Text",
+ CellChangeTimes->{{3.621608710629994*^9, 3.6216087196562757`*^9}, {
+  3.638655688469706*^9, 3.638655692443205*^9}, {3.638698215017754*^9, 
+  3.638698215100922*^9}, {3.638780421390956*^9, 3.638780421478121*^9}}],
+
+Cell[TextData[{
+ "This notebook makes extensive use of the functions provided in my ",
+ StyleBox["PrSAT", "Input"],
+ " package, which can be downloaded here:\n\n\t",
+ ButtonBox["http://fitelson.org/PrSAT/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://fitelson.org/PrSAT/"], None},
+  ButtonNote->"http://fitelson.org/PrSAT/"]
+}], "Text",
+ CellChangeTimes->{{3.6216087214682617`*^9, 3.621608783593198*^9}}],
+
+Cell[TextData[{
+ "First, we need to load in the ",
+ StyleBox["PrSAT", "Input"],
+ " package."
+}], "Text",
+ CellChangeTimes->{{3.621608785530807*^9, 3.6216087948689404`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "PrSAT`"}]], "Input",
+ CellChangeTimes->{{3.620949885761922*^9, 3.620949890261318*^9}}],
+
+Cell[TextData[{
+ "Here is a set of functions which compute ",
+ StyleBox["all",
+  FontSlant->"Italic"],
+ " (191) instances of ",
+ StyleBox["The Resilient Equation.",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.620953195301708*^9, 3.620953201860303*^9}, {
+  3.6209556007023478`*^9, 3.6209556667789497`*^9}, {3.620958161760438*^9, 
+  3.620958188036491*^9}, {3.6209585281553707`*^9, 3.620958528296775*^9}, {
+  3.621608812807239*^9, 3.621608836656101*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"states", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[GothicCapitalC]", "\[And]", "P", "\[And]", "Q"}], ",", 
+     RowBox[{"\[GothicCapitalC]", "\[And]", "P", "\[And]", 
+      RowBox[{"\[Not]", "Q"}]}], ",", 
+     RowBox[{"\[GothicCapitalC]", "\[And]", 
+      RowBox[{"\[Not]", "P"}], "\[And]", "Q"}], ",", 
+     RowBox[{"\[GothicCapitalC]", "\[And]", 
+      RowBox[{"\[Not]", "P"}], "\[And]", 
+      RowBox[{"\[Not]", "Q"}]}], ",", 
+     RowBox[{
+      RowBox[{"\[Not]", "\[GothicCapitalC]"}], "\[And]", "P", "\[And]", "Q"}],
+      ",", 
+     RowBox[{
+      RowBox[{"\[Not]", "\[GothicCapitalC]"}], "\[And]", "P", "\[And]", 
+      RowBox[{"\[Not]", "Q"}]}], ",", 
+     RowBox[{
+      RowBox[{"\[Not]", "\[GothicCapitalC]"}], "\[And]", 
+      RowBox[{"\[Not]", "P"}], "\[And]", "Q"}], ",", 
+     RowBox[{
+      RowBox[{"\[Not]", "\[GothicCapitalC]"}], "\[And]", 
+      RowBox[{"\[Not]", "P"}], "\[And]", 
+      RowBox[{"\[Not]", "Q"}]}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"props", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Or", "@@", "#"}], "&"}], "/@", 
+    RowBox[{"Subsets", "[", "states", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"test", "[", "p_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Not", "[", 
+     RowBox[{
+      RowBox[{"BooleanMinimize", "[", 
+       RowBox[{"p", "&&", "P"}], "]"}], "===", "False"}], "]"}], "&&", 
+    RowBox[{"!", 
+     RowBox[{"TautologyQ", "[", 
+      RowBox[{"Implies", "[", 
+       RowBox[{
+        RowBox[{"p", "&&", "P"}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Not]", "Q"}], "&&", "\[GothicCapitalC]"}], ")"}], "||", 
+         
+         RowBox[{"(", 
+          RowBox[{"Q", "&&", 
+           RowBox[{"\[Not]", "\[GothicCapitalC]"}]}], ")"}]}]}], "]"}], 
+      "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PconProps", "=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{
+     RowBox[{"BooleanMinimize", "/@", 
+      RowBox[{"Select", "[", 
+       RowBox[{"props", ",", 
+        RowBox[{
+         RowBox[{"test", "[", "#", "]"}], "&"}]}], "]"}]}], ",", 
+     RowBox[{"-", "1"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RESILIENT", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"\[GothicCapitalC]", "|", 
+        RowBox[{
+        "PconProps", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}],
+        "]"}], "\[Equal]", 
+      RowBox[{"Pr", "[", 
+       RowBox[{"Q", "|", 
+        RowBox[{"BooleanMinimize", "[", 
+         RowBox[{"P", "&&", 
+          RowBox[{
+          "PconProps", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}]}], "]"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "PconProps", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6209545323081284`*^9, 3.620954708670005*^9}, {
+  3.620954787249133*^9, 3.6209548351195593`*^9}, {3.6209551185425787`*^9, 
+  3.620955132355983*^9}, {3.620955216755303*^9, 3.620955219529393*^9}, {
+  3.620955315010524*^9, 3.6209553242960978`*^9}, {3.620956357305603*^9, 
+  3.6209563574796667`*^9}, {3.620956388761466*^9, 3.620956462738167*^9}, {
+  3.620956540045315*^9, 3.620956548286148*^9}, {3.620957049937532*^9, 
+  3.6209570509247713`*^9}, {3.638656275199955*^9, 3.63865629367776*^9}, {
+  3.6387274992725153`*^9, 3.638727499377534*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RESILIENT", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.638656521984972*^9, 3.638656522917808*^9}, {
+  3.638657146771626*^9, 3.638657159661807*^9}}],
+
+Cell[BoxData["191"], "Output",
+ CellChangeTimes->{3.6387165162129717`*^9, 3.638723328245585*^9, 
+  3.638727504231522*^9, 3.6387280950444603`*^9, 3.638732543461787*^9, 
+  3.638737007055578*^9, 3.638740063022683*^9, 3.638778834290091*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here ",
+ StyleBox["PrSAT", "Input"],
+ "\[CloseCurlyQuote]s internal stochastic truth-table representation of the \
+set of probability functions over the states induced by ",
+ StyleBox["{P,Q,\[GothicCapitalC]}", "Input"],
+ ", where ",
+ StyleBox["\[GothicCapitalC]", "Input"],
+ " is (extra-systematically interpreted as) the indicative conditional ",
+ StyleBox["P \[LongRightArrow] Q", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.621608917870014*^9, 3.62160902710779*^9}, {
+  3.621609090472246*^9, 3.621609091383319*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"P", "Q", "\[GothicCapitalC]", 
+     RowBox[{"Pr", "[", "\[Bullet]", "]"}]},
+    {"T", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "8"]},
+    {"T", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "5"]},
+    {"T", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "6"]},
+    {"T", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "2"]},
+    {"F", "T", "T", 
+     SubscriptBox["\[DoubleStruckA]", "7"]},
+    {"F", "T", "F", 
+     SubscriptBox["\[DoubleStruckA]", "3"]},
+    {"F", "F", "T", 
+     SubscriptBox["\[DoubleStruckA]", "4"]},
+    {"F", "F", "F", 
+     SubscriptBox["\[DoubleStruckA]", "1"]}
+   },
+   AutoDelete->False,
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Input",
+ TextAlignment->-0.5],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["PrReduce", "Input"],
+ " function gives necessary and sufficient conditions for the satisfaction of \
+a probabilistic constraint.  When we run it on the (conjunction of the) full \
+set ",
+ StyleBox["RESILIENT", "Input"],
+ " of instances of ",
+ StyleBox["The Resilient Equation",
+  FontWeight->"Bold"],
+ ", we see that probability masses ",
+ Cell[BoxData[
+  SubscriptBox["\[DoubleStruckA]", "8"]],
+  TextAlignment->-0.5],
+ " and ",
+ Cell[BoxData[
+  SubscriptBox["\[DoubleStruckA]", "2"]],
+  TextAlignment->-0.5],
+ " are ",
+ StyleBox["the only ones",
+  FontSlant->"Italic"],
+ " that are non-zero."
+}], "Text",
+ CellChangeTimes->{{3.621608859169381*^9, 3.62160891404421*^9}, 
+   3.621609034596592*^9, {3.621609125672686*^9, 3.621609173034129*^9}, {
+   3.621609617677971*^9, 3.621609631938033*^9}, {3.638728648087256*^9, 
+   3.63872866485993*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Triviality", "=", 
+  RowBox[{"PrReduce", "[", 
+   RowBox[{"And", "@@", "RESILIENT"}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.6216088944344997`*^9, {3.638728103638164*^9, 3.638728104325745*^9}, {
+   3.638738128958522*^9, 3.638738132632539*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"0", "<", 
+   SubscriptBox["\[DoubleStruckA]", "8"], "<", "1"}], "&&", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[DoubleStruckA]", "2"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "8"]}], "\[Equal]", "1"}]}]], "Output",
+ CellChangeTimes->{
+  3.621086073953459*^9, 3.621179751866831*^9, 3.6211798545121317`*^9, 
+   3.621608896230342*^9, 3.638636230584313*^9, 3.6386379562864637`*^9, 
+   3.6386379901063747`*^9, 3.638638265293664*^9, 3.638655720731509*^9, {
+   3.638656960490288*^9, 3.638656972367432*^9}, 3.638657062208734*^9, 
+   3.638716527924327*^9, 3.638727507613954*^9, 3.638728102085463*^9, 
+   3.638728147293745*^9, 3.638732374973157*^9, 3.6387325846118917`*^9, 
+   3.638737014569537*^9, 3.638738137943172*^9, 3.638739306358973*^9, 
+   3.638740069641121*^9, 3.6387401671136217`*^9, 3.638749129001679*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "In other words, we\[CloseCurlyQuote]re down to the following ",
+ StyleBox["single-parameter",
+  FontSlant->"Italic"],
+ " stochastic truth-table (as reported in the paper)."
+}], "Text",
+ CellChangeTimes->{{3.621609236122588*^9, 3.621609250959594*^9}, {
+  3.621609605777218*^9, 3.621609608337729*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\t\t\t\t\t", 
+  TagBox[GridBox[{
+     {"P", "Q", "\[GothicCapitalC]", "state", 
+      RowBox[{"Pr", "[", "\[Bullet]", "]"}]},
+     {"T", "T", "T", 
+      SubscriptBox["\[DoubleStruckA]", "8"], 
+      RowBox[{"1", "-", "a"}]},
+     {"T", "T", "F", 
+      SubscriptBox["\[DoubleStruckA]", "5"], 
+      StyleBox["0",
+       FontSlant->"Italic"]},
+     {"T", "F", "T", 
+      SubscriptBox["\[DoubleStruckA]", "6"], 
+      StyleBox["0",
+       FontSlant->"Italic"]},
+     {"T", "F", "F", 
+      SubscriptBox["\[DoubleStruckA]", "2"], 
+      RowBox[{"0", "<", "a", "<", "1"}]},
+     {"F", "T", "T", 
+      SubscriptBox["\[DoubleStruckA]", "7"], 
+      StyleBox["0",
+       FontSlant->"Italic"]},
+     {"F", "T", "F", 
+      SubscriptBox["\[DoubleStruckA]", "3"], 
+      StyleBox["0",
+       FontSlant->"Italic"]},
+     {"F", "F", "T", 
+      SubscriptBox["\[DoubleStruckA]", "4"], 
+      StyleBox["0",
+       FontSlant->"Italic"]},
+     {"F", "F", "F", 
+      SubscriptBox["\[DoubleStruckA]", "1"], 
+      StyleBox["0",
+       FontSlant->"Italic"]}
+    },
+    AutoDelete->False,
+    GridBoxDividers->{
+     "Columns" -> {False, {True}, False}, "Rows" -> {False, {True}, False}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Grid"]}]], "Input",
+ CellChangeTimes->{
+  3.620957264504986*^9, {3.6209573228627167`*^9, 3.620957324587244*^9}, {
+   3.620958441457037*^9, 3.620958459927825*^9}, {3.6209610382438507`*^9, 
+   3.6209610385851088`*^9}, {3.620989506655902*^9, 3.620989515149016*^9}, {
+   3.638657163641808*^9, 3.638657164756971*^9}, 3.638715461867464*^9, 
+   3.638728275796973*^9}],
+
+Cell[TextData[{
+ "The following computations establish the two directions of ",
+ StyleBox["Triviality",
+  FontWeight->"Bold"],
+ " (assuming Pr(P & Q) > 0 and Pr(P &~Q) > 0)."
+}], "Text",
+ CellChangeTimes->{{3.621609259022732*^9, 3.62160927370979*^9}, {
+  3.621609445962467*^9, 3.621609468612825*^9}, {3.621609794415271*^9, 
+  3.621609798639073*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"p_", "\[Congruent]", "q_"}], ":=", 
+   RowBox[{
+    RowBox[{"Implies", "[", 
+     RowBox[{"p", ",", "q"}], "]"}], "&&", 
+    RowBox[{"Implies", "[", 
+     RowBox[{"q", ",", "p"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.620957403366662*^9, 3.620957424631831*^9}, {
+  3.621609471388695*^9, 3.621609492300226*^9}, {3.621610047745015*^9, 
+  3.6216100478937263`*^9}}],
+
+Cell["First, the left-to-right direction.", "Text",
+ CellChangeTimes->{{3.621609812702342*^9, 3.621609819839107*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"P", "\[And]", 
+        RowBox[{"(", 
+         RowBox[{"Q", "\[Congruent]", "\[GothicCapitalC]"}], ")"}]}], "]"}], 
+      "<", "1"}], ",", "RESILIENT"}], "}"}], ",", 
+   RowBox[{"BypassSearch", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6216095837160397`*^9, 3.6216095869786787`*^9}, {
+  3.621609765692635*^9, 3.621609765815909*^9}, {3.638732609227388*^9, 
+  3.638732612496831*^9}, {3.638738392723381*^9, 3.638738393708692*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.621609852448065*^9, 3.6216098844426517`*^9, 3.638617758804459*^9, 
+   3.638636251509968*^9, 3.638657082467033*^9, 3.638657268263816*^9, 
+   3.63871654895151*^9, 3.638727527130734*^9, 3.638728162729568*^9, 
+   3.638732390153109*^9, {3.6387325997656183`*^9, 3.63873262857408*^9}, 
+   3.638737047327292*^9, 3.638738408783655*^9, 3.6387401975894327`*^9}]
+}, Open  ]],
+
+Cell["Then, the right-to-left direction. ", "Text",
+ CellChangeTimes->{{3.621609824652308*^9, 3.621609831452115*^9}, 
+   3.638657270602467*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"P", "\[And]", 
+        RowBox[{"(", 
+         RowBox[{"Q", "\[Congruent]", "\[GothicCapitalC]"}], ")"}]}], "]"}], "==",
+       "1"}], ",", 
+     RowBox[{"Or", "@@", 
+      RowBox[{"(", 
+       RowBox[{"Not", "/@", "RESILIENT"}], ")"}]}]}], "}"}], ",", 
+   RowBox[{"BypassSearch", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.621609282499524*^9, 3.621609302023017*^9}, {
+   3.62160949630275*^9, 3.621609551937566*^9}, {3.6216099373316298`*^9, 
+   3.621609951379174*^9}, 3.638732617406493*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.621609307855597*^9, {3.6216095055743217`*^9, 3.621609530801886*^9}, 
+   3.621609984103464*^9, 3.638636283661641*^9, 3.638657115545003*^9, 
+   3.6386573019572372`*^9, 3.638716578967307*^9, 3.6387275551272297`*^9, 
+   3.638728192613388*^9, 3.638732421862482*^9, 3.638732606247129*^9, 
+   3.638732641183797*^9, 3.6387370621396513`*^9, 3.638740212129031*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The following calculation shows that we only need our ",
+ StyleBox["three instances ",
+  FontSlant->"Italic"],
+ "of ",
+ StyleBox["The Resilient Equation",
+  FontWeight->"Bold"],
+ " to deduce ",
+ StyleBox["Triviality.",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.621609359836238*^9, 3.621609375910596*^9}, {
+   3.621609407024832*^9, 3.621609411035939*^9}, {3.621609836703774*^9, 
+   3.6216098400913363`*^9}, 3.6386608843148518`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrReduce", "[", 
+   RowBox[{"And", "@@", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Lewis", "'"}], "s", " ", "Instance"}], " ", "+", " ", 
+       RowBox[{
+        RowBox[{"Milne", "'"}], "s", " ", "Instance", " ", "of", " ", "The", 
+        " ", "Resilient", " ", "Equation"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Pr", "[", 
+        RowBox[{"\[GothicCapitalC]", "|", 
+         RowBox[{"\[Not]", "Q"}]}], "]"}], "\[Equal]", "0"}], ",", " ", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"let", " ", "X"}], " ", "=", " ", 
+        RowBox[{"\[Not]", "Q"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Pr", "[", 
+        RowBox[{"\[GothicCapitalC]", "|", " ", 
+         RowBox[{
+          RowBox[{"\[Not]", "P"}], "\[Or]", "Q"}]}], "]"}], " ", "==", " ", 
+       RowBox[{"Pr", "[", 
+        RowBox[{"Q", "|", " ", 
+         RowBox[{"P", "\[And]", 
+          RowBox[{"(", " ", 
+           RowBox[{
+            RowBox[{"\[Not]", "P"}], "\[Or]", "Q"}], ")"}]}]}], "]"}]}], ",", 
+      
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"let", " ", "X"}], " ", "=", " ", 
+        RowBox[{
+         RowBox[{"\[Not]", "P"}], "\[Or]", "Q"}]}], " ", "*)"}], 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"The", " ", "Equation"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Pr", "[", "\[GothicCapitalC]", "]"}], "\[Equal]", 
+       RowBox[{"Pr", "[", 
+        RowBox[{"Q", "|", "P"}], "]"}]}]}], "\[IndentingNewLine]", "}"}]}], 
+   "]"}], "===", "Triviality"}]], "Input",
+ CellChangeTimes->{{3.620987168554751*^9, 3.6209871694081163`*^9}, {
+  3.6216244512707367`*^9, 3.621624470092173*^9}, {3.638663370392852*^9, 
+  3.638663386591015*^9}, {3.638728117006276*^9, 3.638728118796843*^9}, {
+  3.638738159859617*^9, 3.638738162182658*^9}, {3.6387402314578953`*^9, 
+  3.638740231993762*^9}, {3.638740289032613*^9, 3.638740317718791*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.638740293832302*^9, 3.638740318301126*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Lewis\[CloseCurlyQuote]s result is weaker than ours \[LongDash] it does not \
+imply Pr(P) = 1.\
+\>", "Text",
+ CellChangeTimes->{{3.62162285858265*^9, 3.621622861995172*^9}, {
+  3.621624370654743*^9, 3.621624378378394*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Lewis", "'"}], "s", " ", "Two", " ", "Instances", " ", "of", 
+     " ", "The", " ", "Resilient", " ", "Equation"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Pr", "[", 
+      RowBox[{"\[GothicCapitalC]", "|", 
+       RowBox[{"\[Not]", "Q"}]}], "]"}], "\[Equal]", "0"}], ",", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"let", " ", "X"}], " ", "=", " ", 
+      RowBox[{"\[Not]", "Q"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Pr", "[", 
+      RowBox[{"\[GothicCapitalC]", "|", " ", "Q"}], "]"}], " ", "\[Equal]", 
+     "1"}], ",", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"let", " ", "X"}], " ", "=", " ", "Q"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"Failure", " ", "of", " ", 
+       RowBox[{"Pr", "[", "P", "]"}]}], "=", "1"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Pr", "[", "P", "]"}], "<", "1"}]}], "\[IndentingNewLine]", 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6216228514342937`*^9, 3.6216228981480293`*^9}, {
+  3.621623911502178*^9, 3.621623911601756*^9}, {3.621623954491111*^9, 
+  3.6216239800897284`*^9}, {3.621624441034268*^9, 3.621624443004487*^9}, {
+  3.621624481343573*^9, 3.621624486742372*^9}, {3.6216245571700983`*^9, 
+  3.621624564943082*^9}, {3.63871655346101*^9, 3.6387165583708487`*^9}, {
+  3.6387275194015903`*^9, 3.638727519630289*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"P", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Q", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[GothicCapitalC]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", 
+      FractionBox["41", "102"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", 
+      FractionBox["5", "51"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["2", "19"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", 
+      FractionBox["15", "38"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.621622870156918*^9, 3.6216228996102953`*^9}, 
+   3.6216239125142517`*^9, {3.621623965933136*^9, 3.621623981411007*^9}, {
+   3.6216245594311543`*^9, 3.6216245656960583`*^9}, 3.6386177605069847`*^9, 
+   3.6386575173483343`*^9, 3.638716580244396*^9, 3.63872755660779*^9, 
+   3.6387281983559504`*^9, 3.63873242347685*^9, 3.6387326417876453`*^9, 
+   3.6387370628060904`*^9, 3.638740212930854*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Milne\[CloseCurlyQuote]s Result is weaker than ours \[LongDash] it does not \
+imply ",
+ StyleBox["either",
+  FontSlant->"Italic"],
+ " Pr(P) = 1 ",
+ StyleBox["or",
+  FontSlant->"Italic"],
+ " Pr(Q) = Pr(",
+ StyleBox["P \[LongRightArrow] Q",
+  FontWeight->"Plain"],
+ ")."
+}], "Text",
+ CellChangeTimes->{{3.6216229061334352`*^9, 3.6216229094577436`*^9}, {
+  3.62162438353001*^9, 3.621624420141142*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrSAT", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"Milne", "'"}], "s", " ", "instance", " ", "of", " ", "The", 
+      " ", "Resilient", " ", "Equation"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pr", "[", 
+       RowBox[{"\[GothicCapitalC]", "|", " ", 
+        RowBox[{
+         RowBox[{"\[Not]", "P"}], "\[Or]", "Q"}]}], "]"}], " ", "==", " ", 
+      RowBox[{"Pr", "[", 
+       RowBox[{"Q", "|", " ", 
+        RowBox[{"P", "\[And]", 
+         RowBox[{"(", " ", 
+          RowBox[{
+           RowBox[{"\[Not]", "P"}], "\[Or]", "Q"}], ")"}]}]}], "]"}]}], ",", 
+     " ", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"let", " ", "X"}], " ", "=", " ", 
+       RowBox[{
+        RowBox[{"\[Not]", "P"}], "\[Or]", "Q"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Both", " ", "Pr", 
+        RowBox[{"(", "P", ")"}]}], " ", "<", " ", 
+       RowBox[{"1", " ", "and", " ", 
+        RowBox[{"Pr", "[", "Q", "]"}]}], " ", "\[NotEqual]", " ", 
+       RowBox[{"Pr", "[", 
+        StyleBox[
+         RowBox[{"P", " ", "\[LongRightArrow]", " ", "Q"}],
+         FontWeight->"Plain"], "]"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pr", "[", "P", "]"}], "<", "1"}], ",", 
+     RowBox[{
+      RowBox[{"Pr", "[", "Q", "]"}], "\[NotEqual]", 
+      RowBox[{"Pr", "[", "\[GothicCapitalC]", "]"}]}]}], 
+    "\[IndentingNewLine]", "}"}], ",", 
+   RowBox[{"BypassSearch", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.621622919986006*^9, 3.621622930848143*^9}, {
+  3.621623915140985*^9, 3.6216239173771963`*^9}, {3.621623989541698*^9, 
+  3.6216240054654293`*^9}, {3.6216244345337677`*^9, 3.621624437829542*^9}, {
+  3.6216244724061337`*^9, 3.621624554173134*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"P", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"Q", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[GothicCapitalC]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}], ",", 
+     RowBox[{"\[CapitalOmega]", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["\[DoubleStruckA]", "1"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "2"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "3"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "4"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "5"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "6"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "7"], ",", 
+        SubscriptBox["\[DoubleStruckA]", "8"]}], "}"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "1"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "2"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "3"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "4"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "5"], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "6"], "\[Rule]", 
+      FractionBox["1", "2"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "7"], "\[Rule]", 
+      FractionBox["1", "2"]}], ",", 
+     RowBox[{
+      SubscriptBox["\[DoubleStruckA]", "8"], "\[Rule]", "0"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.6216239249118032`*^9, {3.621623990445427*^9, 3.6216240103527927`*^9}, {
+   3.621624546721477*^9, 3.621624574969194*^9}, 3.638617760751473*^9, 
+   3.6386376632452583`*^9, 3.638657519604724*^9, 3.638727556806016*^9, 
+   3.638728200306472*^9, 3.6387324236686773`*^9, 3.638732642060782*^9, 
+   3.638737062898645*^9, 3.638740213042305*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "As it happens, there are ",
+ StyleBox["pairs",
+  FontSlant->"Italic"],
+ " of constraints from ",
+ StyleBox["RESILIENT", "Input"],
+ " that entails ",
+ StyleBox["Triviality", "Input"],
+ ".  [This pair was discovered by a long and complicated search process that \
+I will not reproduce here.]  Here is one such pair:"
+}], "Text",
+ CellChangeTimes->{{3.6386581548093653`*^9, 3.6386582144156847`*^9}, 
+   3.6387144568857117`*^9, {3.6387387728367147`*^9, 3.6387387990352573`*^9}, {
+   3.638740587884601*^9, 3.638740588031892*^9}, {3.6387406840963306`*^9, 
+   3.638740746070068*^9}, {3.638741317825296*^9, 3.6387413497983418`*^9}, {
+   3.638779809026462*^9, 3.638779897582107*^9}, {3.638780035765094*^9, 
+   3.6387800361706657`*^9}, {3.638780402266005*^9, 3.638780416687512*^9}, {
+   3.6387886409708977`*^9, 3.638788658631428*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrReduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"\[GothicCapitalC]", "|", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"P", "&&", "Q"}], ")"}], "||", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Not]", "P"}], "&&", 
+         RowBox[{"\[Not]", "\[GothicCapitalC]"}]}], ")"}]}]}], "]"}], 
+    "\[Equal]", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"Q", "|", 
+      RowBox[{"P", "&&", "Q"}]}], "]"}]}], "&&", 
+   RowBox[{
+    RowBox[{"Pr", "[", 
+     RowBox[{"\[GothicCapitalC]", "|", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"P", "&&", 
+         RowBox[{"\[Not]", "Q"}]}], ")"}], "||", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Not]", "P"}], "&&", "\[GothicCapitalC]"}], ")"}]}]}], 
+     "]"}], "\[Equal]", 
+    RowBox[{"Pr", "[", 
+     RowBox[{"Q", "|", 
+      RowBox[{"P", "&&", 
+       RowBox[{"\[Not]", "Q"}]}]}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.63877976118338*^9, 3.6387797936524773`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"0", "<", 
+   SubscriptBox["\[DoubleStruckA]", "8"], "<", "1"}], "&&", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[DoubleStruckA]", "2"], "+", 
+    SubscriptBox["\[DoubleStruckA]", "8"]}], "\[Equal]", "1"}]}]], "Output",
+ CellChangeTimes->{3.6387797951047993`*^9}]
+}, Open  ]],
+
+Cell["\<\
+That is, the first instance of the pair takes: X := ((P\[And]Q) \[Or] \
+(\[Not]P\[And]\[Not]\[GothicCapitalC])).  And, the second instance of the \
+pair takes X := (P\[And]\[Not]Q) \[Or] (\[Not]P\[And]\[GothicCapitalC]).\
+\>", "Text",
+ CellChangeTimes->{{3.6387801462722263`*^9, 3.6387801787847853`*^9}, {
+  3.638780216039587*^9, 3.638780257331944*^9}, {3.63878046684007*^9, 
+  3.638780468029419*^9}, {3.638788664488194*^9, 3.638788666033799*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{"P", "\[And]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"P", "\[And]", "Q"}], ")"}], "\[Or]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Not]", "P"}], "\[And]", 
+        RowBox[{"\[Not]", "\[GothicCapitalC]"}]}], ")"}]}], ")"}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.638780129599465*^9, 3.638780168385974*^9}, {
+   3.638780243249116*^9, 3.638780248067182*^9}, 3.638780302452567*^9}],
+
+Cell[BoxData[
+ RowBox[{"P", "&&", "Q"}]], "Output",
+ CellChangeTimes->{{3.63878013556192*^9, 3.638780141148026*^9}, 
+   3.6387801831412277`*^9, 3.638780267585287*^9, 3.6387803035098457`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{"P", "\[And]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"P", "\[And]", 
+        RowBox[{"\[Not]", "Q"}]}], ")"}], "\[Or]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Not]", "P"}], "\[And]", "\[GothicCapitalC]"}], ")"}]}], 
+     ")"}]}], "]"}], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.6387801963057623`*^9, 3.638780196440116*^9}, {
+  3.6387802772221813`*^9, 3.638780296897697*^9}}],
+
+Cell[BoxData[
+ RowBox[{"P", "&&", 
+  RowBox[{"\[Not]", "Q"}]}]], "Output",
+ CellChangeTimes->{
+  3.638780196846765*^9, {3.63878027027835*^9, 3.638780297354693*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "This is \[OpenCurlyDoubleQuote]simpler\[CloseCurlyDoubleQuote] in one sense \
+(",
+ StyleBox["i.e.",
+  FontSlant->"Italic"],
+ ", as it involves 2 constraints rather than 3), but it is more complex in \
+terms of (a) the propositions involved and (b) how this version of our \
+triviality argument relates to the existing arguments of Lewis and Milne."
+}], "Text",
+ CellChangeTimes->{{3.6387804768143177`*^9, 3.638780483781008*^9}, {
+  3.638780797206089*^9, 3.638780892976799*^9}, {3.638788676600214*^9, 
+  3.638788689614451*^9}}]
+}, Open  ]]
+},
+WindowSize->{1436, 855},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 132, 1, 137, "Title"],
+Cell[715, 25, 267, 6, 76, "Text"],
+Cell[985, 33, 418, 10, 105, "Text"],
+Cell[1406, 45, 172, 5, 46, "Text"],
+Cell[1581, 52, 116, 2, 43, "Input"],
+Cell[1700, 56, 463, 11, 46, "Text"],
+Cell[2166, 69, 3470, 92, 145, "Input"],
+Cell[CellGroupData[{
+Cell[5661, 165, 178, 3, 43, "Input"],
+Cell[5842, 170, 236, 3, 43, "Output"]
+}, Open  ]],
+Cell[6093, 176, 542, 13, 76, "Text"],
+Cell[6638, 191, 885, 26, 261, "Input"],
+Cell[7526, 219, 878, 26, 105, "Text"],
+Cell[CellGroupData[{
+Cell[8429, 249, 271, 6, 43, "Input"],
+Cell[8703, 257, 845, 16, 44, "Output"]
+}, Open  ]],
+Cell[9563, 276, 317, 7, 46, "Text"],
+Cell[9883, 285, 1638, 46, 261, "Input"],
+Cell[11524, 333, 349, 8, 46, "Text"],
+Cell[11876, 343, 420, 11, 44, "Input"],
+Cell[12299, 356, 117, 1, 46, "Text"],
+Cell[CellGroupData[{
+Cell[12441, 361, 581, 14, 43, "Input"],
+Cell[13025, 377, 420, 7, 43, "Output"]
+}, Open  ]],
+Cell[13460, 387, 143, 2, 46, "Text"],
+Cell[CellGroupData[{
+Cell[13628, 393, 643, 17, 43, "Input"],
+Cell[14274, 412, 424, 7, 43, "Output"]
+}, Open  ]],
+Cell[14713, 422, 462, 13, 46, "Text"],
+Cell[CellGroupData[{
+Cell[15200, 439, 2100, 51, 222, "Input"],
+Cell[17303, 492, 97, 1, 43, "Output"]
+}, Open  ]],
+Cell[17415, 496, 232, 5, 46, "Text"],
+Cell[CellGroupData[{
+Cell[17672, 505, 1595, 38, 221, "Input"],
+Cell[19270, 545, 2714, 64, 107, "Output"]
+}, Open  ]],
+Cell[21999, 612, 416, 14, 46, "Text"],
+Cell[CellGroupData[{
+Cell[22440, 630, 1904, 47, 195, "Input"],
+Cell[24347, 679, 2605, 63, 106, "Output"]
+}, Open  ]],
+Cell[26967, 745, 842, 17, 76, "Text"],
+Cell[CellGroupData[{
+Cell[27834, 766, 1009, 32, 45, "Input"],
+Cell[28846, 800, 298, 8, 44, "Output"]
+}, Open  ]],
+Cell[29159, 811, 457, 7, 46, "Text"],
+Cell[CellGroupData[{
+Cell[29641, 822, 513, 14, 43, "Input"],
+Cell[30157, 838, 190, 3, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30384, 846, 497, 14, 43, "Input"],
+Cell[30884, 862, 164, 4, 43, "Output"]
+}, Open  ]],
+Cell[31063, 869, 544, 11, 76, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

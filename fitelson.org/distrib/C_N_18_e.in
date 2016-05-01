@@ -1,0 +1,63 @@
+% This OTTER input file generates an 18-step equational (knuth-bendix)
+% proof of distributivity in the C,N fragment of Ln --- using only (axioms
+% and) equational lemmas proved by Rose and Rosser.  The lemmas are labeled
+% according to the Rose and Rosser conventions.  We use prefix notation.
+
+set(knuth_bendix).
+assign(max_weight, 1).
+clear(print_kept).  
+clear(print_new_demod).
+clear(print_back_demod).
+clear(print_back_sub).
+clear(print_given).
+assign(bsub_hint_wt, 1).
+set(keep_hint_subsumers).
+
+% Turning the following flag on causes OTTER to generate a proof object 
+% which shows ALL instantiations and unifications in the proof.
+set(build_proof_object).
+
+list(hints).
+% 18-step proof of distributivity, using only equalities known to Rose and Rosser
+-P(C(C(N(a),N(C(C(b,c),c))),C(C(C(b,c),c),C(C(C(N(a),N(b)),C(b,N(C(C(N(a),N(c)),N(c))))),N(C(C(N(a),N(c)),N(c))))))).
+C(N(x),N(y))=C(y,x).
+C(x,C(y,C(z,u)))=C(z,C(x,C(y,u))).
+C(C(x,y),C(z,C(u,C(y,x))))=C(z,C(u,C(y,x))).
+P(C(x,C(C(x,y),C(z,y)))).
+P(C(x,C(C(x,y),C(C(y,z),z)))).
+C(C(C(x,y),N(x)),N(x))=C(N(y),N(x)).
+C(x,N(C(C(x,y),N(x))))=C(N(y),N(x)).
+C(C(C(x,y),C(z,y)),C(u,C(z,x)))=C(C(C(z,x),C(y,x)),C(u,C(y,x))).
+P(C(C(C(x,y),C(z,y)),C(C(C(x,z),C(x,y)),C(z,y)))).
+P(C(C(C(x,y),C(z,y)),C(C(C(y,z),C(y,x)),C(z,x)))).
+C(C(N(x),N(y)),C(y,z))=C(C(x,y),C(x,z)).
+-P(C(C(a,C(C(b,c),c)),C(a,C(C(C(a,b),C(a,N(C(C(N(a),N(c)),N(c))))),N(C(C(N(a),N(c)),N(c))))))).
+-P(C(C(C(b,c),C(a,c)),C(a,C(C(C(a,b),C(a,N(C(C(N(a),N(c)),N(c))))),N(C(C(N(a),N(c)),N(c))))))).
+-P(C(C(C(b,c),C(a,c)),C(C(C(a,b),C(a,N(C(C(N(a),N(c)),N(c))))),C(a,N(C(C(N(a),N(c)),N(c))))))).
+N(C(C(N(x),N(y)),N(y)))=N(C(C(x,y),N(x))).
+-P(C(C(C(b,c),C(a,c)),C(C(C(a,b),C(N(c),N(a))),C(N(c),N(a))))).
+-P(C(C(C(b,c),C(a,c)),C(C(C(c,a),C(c,b)),C(a,b)))).
+end_of_list.
+
+list(usable).
+x=x.
+end_of_list.
+
+list(sos).
+% Axioms and equational lemmas of Ln proved by Rose and Rosser
+P(C(x,C(y,x)))   # label(MV_1).
+C(C(x,y),C(y,x))=C(y,x)   # label(MV_5e).
+C(C(x,y),y)=C(C(y,x),x)   # label(2_2).
+C(x,C(y,z))=C(y,C(x,z))   # label(2_7).
+C(C(x,y),C(z,y))=C(C(y,x),C(z,x))   # label(2_22).
+C(C(x,y),C(x,z))=C(C(y,x),C(y,z))   # label(3_51).
+C(x,y)=C(N(y),N(x))   # label(3_5).
+C(N(C(x,N(y))),z)=C(x,C(y,z))   # label(3_35).
+C(C(x,C(C(y,z),z)),C(C(y,z),z))=C(C(C(C(x,y),y),z),z)   # label(2_21).
+C(C(C(x,y),y),y)=C(x,y)   # label(2_24).
+N(N(x))=x   # label(3_4).
+N(C(C(N(x),N(y)),N(y)))=N(C(C(N(y),N(x)),N(x)))   # label(3_12).
+
+% Denial of distributivity
+-P(C(N(C(C(N(a),N(C(C(b,c),c))),N(C(C(b,c),c)))),C(C(N(C(C(N(a),N(b)),N(b))),N(C(C(N(a),N(c)),N(c)))),N(C(C(N(a),N(c)),N(c)))))).
+end_of_list.

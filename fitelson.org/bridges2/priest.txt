@@ -1,0 +1,3 @@
+How Do You Know What the Right Logic Is?
+
+This is a talk about the epistemology of logic. Logics are many, and views about what is correct have changed over the history of Western logic.  How does one determine which logic it is rational to accept?  I will answer this question by giving an account of rational theory-choice familiar from the philosophy of science: essentially a version of constraint maximization. I will then look at some of the consequences of applying the model to logic.

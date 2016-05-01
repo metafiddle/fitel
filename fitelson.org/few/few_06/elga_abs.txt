@@ -1,0 +1,26 @@
+Title: Reflection and Disagreement
+
+Abstract:
+
+How should you take into account the opinions of an advisor?  When you
+completely defer to the advisor's judgment (the manner in which she
+responds to her evidence), then you should treat the advisor as a guru.
+Roughly, that means you should believe what you expect she would
+believe, if supplied with your extra evidence.  When the advisor is your
+own future self, the resulting principle amounts to a version of the
+Reflection Principle---a version amended to handle cases of information
+loss.
+
+When you count an advisor as an epistemic peer, you should give her
+conclusions the same weight as your own.  Denying that view---call it
+the ``equal weight view''---leads to absurdity: the absurdity that you
+could reasonably come to believe yourself to be an epistemic superior to
+an advisor simply by noting cases of disagreement with her, and taking
+it that she made most of the mistakes.  Accepting the view seems to lead
+to another absurdity: that one should suspend judgment about everything
+that one's smart and well-informed friends disagree on, which means
+suspending judgment about almost everything interesting.  But despite
+appearances, the equal weight view does not have this absurd
+consequence.  Furthermore, the view can be generalized to handle cases
+involving not just epistemic peers, but also epistemic superiors and
+inferiors.

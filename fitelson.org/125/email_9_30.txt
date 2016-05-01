@@ -1,0 +1,147 @@
+Dear gang,
+
+Some nice exchanges with various students (Erica was especially helpful
+here) have got me psyched for tomorrow's section.  Come prepared to
+discuss the modal, set-theoretic arguments broached in lecture today.
+Here are some questions/comments, to serve as a rough agenda.  Please 
+print out this email (or otherwise bring it to class tomorrow).
+
+(1) Proper names of concrete particulars are (often) taken to be rigid
+designators: that is, they pick-out the same particulars in different
+possible worlds (to put things roughly).  For instance, when we say:
+
+"Branden might have had more hairs on his head than he in fact does."
+
+if we take "Branden" to denote the same individual across possible
+worlds, then the name "Branden" is a rigid designator in this context.
+
+(2) It seems that the realist would want to say something similar about
+abstract singular terms: that they (often, at least) rigidly designate.
+But, in this case, things are significantly different, since it's not as
+if (from a realist perspective, here!) there are "attributes" that the
+property Courage can have in some possible worlds but not in others.  It
+seems silly to say:
+
+"Courage might not have been a virtue."
+
+Nonetheless, I do think it is plausible that "Courage" should rigidly
+designate, from the point of view of a realist - even though it's tough
+to think of such modal statements involving abstract singular terms that
+would allow us to "test" this hypothesis on a non-trivial case.  
+
+Be that as it may, I suggest that the main reason that  we want "Courage"
+to be rigid is that we want claims like "Courage is a virtue" to come out 
+*necessarily* true.  If "courage" and "virtue" are rigid, and "courage is a 
+virtue" is *actually* true, then it will also be *necessarily* true.  Keep 
+this in mind -- I will return to this point, below.
+
+Note: Despite the fact that "Courage" rigidly designates on a realist 
+account, it is still a contingent matter which particulars exemplify 
+courage (in which worlds, and at which times, etc.), which is also good.  
+I claim we can have this "best of both worlds" as trope theorists too.
+
+(3) For a trope theorist, it's not as clear what one should say about 
+abstract singular terms.   Consider the trope theorist's account 
+of what "Courage" denotes:
+
+"Courage = the set of courage tropes."
+
+There are at least two ways to read this.  (i) One could say that there
+is a SPECIFIC set of tropes (whose membership is pre-determined), and
+THAT set is what courage is.  On this view, "Courage" rigidly designates
+THAT VERY SET across all possible worlds.  So, in this sense, at least
+"Courage" is one and the same thing in all possible worlds (and so is
+"virtue"), which is what  realist intuitions seem to recommend. However,
+on this view, it does seem to follow that there could not have been more
+or fewer courageous people than there in fact are, which seems patently
+false.  But, (ii) one could say that "the set of courage tropes" picks
+out different sets of tropes in different possible worlds (or at
+different times, etc.).  This avoids the problem of it being impossible
+for there to have been more or fewer courageous people than there in
+fact are.  But, it does so at the expense of making the denoting phrase
+"the set of courage tropes" a non-rigid designator, since it will denote
+a different set of tropes in different worlds (even at different times,
+etc.), just like "the number of planets" does. HOWEVER, it is unclear
+why this should be such a deep problem.  This NEED NOT imply that what
+MAKES courage tropes COURAGE tropes (as opposed, say, to color tropes)
+varies from world to world.  And, THIS may be enough to preserve the key
+intuitions we wanted in the first place (which, it seems to me, are 
+logically orthogonal to the rigidity/non-rigidity issue).  For instance, 
+why couldn't the following claim be a NECESSARY TRUTH, EVEN on the account 
+just sketched?  Is there are ARGUMENT against this?
+
+"Courage is a virtue."
+
+I see no reason why this is not possible.  You may think this ad hoc, but 
+LOUX CANNOT claim this, I reckon.  After all, he says that:
+
+    One objection that might be raised against the account is that it
+    explains one case of subject-predicate truth only by invoking another.
+    Thus, we explain the truth of 'Socrates is wise' by appealing to a trope
+    that Socrates has; but clearly the trope can do its explanatoy job only
+    if it is the right kind of trope. It cannot, for example, be a color
+    trope or a shape trope. It must be a wisdom. But, then, how do trope
+    theorists explain the fact that the relevant trope is a wisdom? They
+    invoke a strategy we have met repeatedly in our discussion of the
+    different forms of nominalism: they insist that a trope's being what it
+    is, being the sort of thing it is, represents a basic, unanalyzable,
+    primitive fact. Tropes just are what they are - wisdoms, rednesses, and
+    circularities; their being such things is not susceptible of any
+    analysis, explanation, or reduction; but because they are what they are,
+    the concrete objects that have them are how they are, are what they are,
+    and are related to each other in all the ways they are.
+    
+This, as far as I can tell, leaves the door wide open to my suggestion, 
+and to the possibility that BOTH "the set of courage tropes" is not a 
+rigid designator, AND (nonetheless) what MAKES courage tropes COURAGE 
+tropes IS "rigid" in this sense.  Since this is a primitive for the 
+trope theorist anyway, why can't they just build the requisite rigidity 
+into the account HERE?  Nothing Loux says rules this out, does it?  It 
+seems to me that this is an independent way to preserve the realist 
+intuitions in question WITHOUT making "the set of courage tropes" rigid.  
+Perhaps, this gives us "the best of both worlds"?  Anyway, it's a thought.
+
+(4) Finally, what about the bundle theory for PARTICULARS?  This (either 
+in realist or trope-theorist flavors) will be similar to the trope theory 
+account of abstract singular terms.  In this case, we have a collection of 
+compresent attributes (properties or tropes, as the case may be).  Here's a 
+more precise rendition of how this might go:
+
+"Branden is the set of compresent attributes in slice R of space-time"
+
+Here, R is some spatio-temporal "slice".  Now, once again, we have
+choices here.  We can say that "Branden" is a CERTAIN set of compresent
+attributes, or we can say that the referent of "the set of compresent
+attributes in slice R of space-time" varies from world to world.  Either
+way, things are a bit strange.  If we say the former, than we are always
+referring to the ACTUAL Branden, whenever we say "Branden" (and in
+whichever world we say it!).  On the latter, we'd be talking about
+wildly different sets of attributes from world to world.  But, in any
+case, it seems that bundle theory countenances lots of different
+distinct individuals, where intuition might suggest there is but one.
+There are very deep problems all around here, which I will not say much
+more about here.  I want to conclude by saying something about the sense
+in which "particulars have their attributes necessarily" on this kind of
+account.  As above, I just don't see why this follows.  Why can't
+"Branden" have his properties contingently (taking the non-rigid route),
+EVEN on this kind of bundle view?  I grant that we end-up with a rather
+weird "Branden" (not very common sensical).  But, I don't see why bundle
+theorists MUST have the view that things have their properties
+necessarily.  Van Cleve and Loux seem to think this for reasons very
+similar (the same?) as those which led them to conclude that trope
+theory was committed to the view that there couldn't have been more or
+fewer courageous people than there in fact are.  And, I don't see why 
+this argument is compelling in either case.
+
+See you tomorrow.
+
+
+Best,
+Branden
+
+
+PS.  Did you buy Wolterstorff's argument THAT sets have their members
+necessarily?  Why not just make the argument that I did today, that the
+claim "1 is an element of {1,2,3}" is a mathematical truth, and be done
+with it?  I found this, too, a strange argument, but I believe the
+conclusion for the same reasons that I believe "9 > 4" is a necessary truth.

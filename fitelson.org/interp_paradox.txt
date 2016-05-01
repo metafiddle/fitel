@@ -1,0 +1,59 @@
+% Basic Paradox input file for reasoning about interpretability logics
+% For further Paradox options, see the Paradox website 
+%
+%    http://www.cs.chalmers.se/%7Ekoen/paradox/
+%
+% Remove "%" symbol from front of a line to activate it (uncomment it)
+% 
+% Example Paradox input: "paradox --print Model interp_paradox.txt" 
+% looks for models starting at size 1, until it finds one at some size 
+% (or runs out of memory!), and then it prints the model.  
+
+set(prolog_style_variables).
+
+list(usable).
+% Rule of Modus Ponens
+-p(i(X,Y)) | -p(X) | p(Y).
+
+% Rule of Necessitation
+-p(X) | p(l(X)). % L1
+
+% % Luka's axioms for classical propositional logic (PL)
+% % With definitions of other connectives
+p(i(i(X,Y),i(i(Y,Z),i(X,Z)))).
+p(i(i(n(X),X),X)).
+p(i(X,i(n(X),Y))).
+n(n(X)) = X.
+i(X,Y) = i(n(Y),n(X)).
+
+% Axioms of basic system IL -- translated into <l,i,n,i1 = I>
+p(i(l(i(X,Y)),i(l(X),l(Y)))). % L2
+p(i(l(X),l(l(X)))). % L3
+p(i(l(i(l(X),X)),l(X))). % L4
+p(i(l(i(X,Y)),i1(X,Y))). % J1
+p(i(n(i(i1(X,Y),n(i1(Y,Z)))),i1(X,Z))). % J2
+p(i(n(i(i1(X,Y),n(i1(Z,Y)))),i1(i(n(X),Z),Y))). % J3                       
+p(i(i1(X,Y),i1(n(l(n(X))),n(l(n(Y)))))). % J4
+p(i1(n(l(n(X))),X)). % J5
+
+% Further formulas of interest (to assert)
+% p(i(i1(X,Y),l(i1(X,Y)))). % p
+% p(i(i1(X,Y),i1(n(i(X,n(l(Z)))),n(i(Y,n(l(Z))))))). % M
+p(i(i1(X,Y),i1(X,n(i(Y,n(l(n(X)))))))). % W
+% p(i(i1(X,n(l(n(Y)))),l(i1(X,Y)))). % p$_0$
+p(i(i1(X,Y),i1(n(i(n(l(n(X))),n(l(Z)))),n(i(Y,n(l(Z))))))). % M$_0$. 
+% p(i(i1(X,n(l(n(Y)))),l(i1(X,n(l(n(Y))))))). % C
+
+% % Denials of some formulas of interest (to refute)
+% -p(i(l(A),i1(n(A),n(i(B,B))))). % K3a  
+% -p(i(i1(n(A),n(i(B,B))),l(A))). % K3b.  
+% -p(i1(A,i(n(A),n(l(n(A)))))). % K1a 
+% -p(i1(i(n(A),n(l(n(A)))),A)). % K1b 
+% -p(i1(A,n(i(A,n(l(n(A))))))). % K2a 
+% -p(i(i1(a,b),l(i1(a,b)))). % p
+% -p(i(i1(a,b),i1(n(i(a,n(l(c)))),n(i(b,n(l(c))))))). % M
+% -p(i(i1(a,b),i1(a,n(i(b,n(l(n(a)))))))). % W
+-p(i(i1(a,n(l(n(b)))),l(i1(a,b)))). % P0
+% -p(i(i1(a,b),i1(n(i(n(l(n(a))),n(l(c)))),n(i(b,n(l(c))))))). % M0
+% -p(i(i1(a,n(l(n(b)))),l(i1(a,n(l(n(b))))))). % C
+end_of_list.

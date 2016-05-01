@@ -1,0 +1,80 @@
+Dear 125ers,
+
+In lecture Thursday, I said a few things (some of which were new) about
+"impure" properties.  This email serves to set out those ideas more
+clearly.
+
+First, in Black's (and Kant's) alleged counterexamples to the identity
+of indiscernibles (II), we have spheres that (intuitively) are
+apparently spatially separated, and this apparent spatial separation is
+the reason we think there are 2 spheres, rather than 1, which "share all
+the same properties".
+
+In response to these examples, a bundle theorist (who accepts II) might
+say "OK, in your example, the spheres don't really share ALL properties
+in common -- they seem to differ in their spatial properties".  So, the
+bundle theorist might then just try to include the spatial properties in
+their bundles, and thus avoid the counterexamples and restore the truth
+of the principle II.
+
+At this stage in the dialectic, a substratum theorist (or an
+Aristotelian) who rejects II usually says something like "Not so fast! 
+Spatial properties are IMPURE -- they already presuppose the notion of a
+substantive particular, or primitive thisness that transcends the II. 
+So, you are not allowed to pack those properties into your bundles." 
+So, "impure properties" are ones that are supposed to presuppose a
+notion of particular (in some sense that transcends mere bundles of
+properties).
+
+There are various ways the bundle theorist can respond at this point,
+some of which we discussed during the course.  But, it now seems to me
+that there is another line of attack here -- to turn the tables back on
+the substratum theorist or the Aristotelian.  Why can't the bundle
+theorist just say at this point: "Well, you guys each claim to have a
+THEORY of particulars that implies the falsity of II, right?  So, I ask
+each of you, does your THEORY imply that spatial properties are impure? 
+If so, how?"  To give a contrast here, think about Quine's or Lewis'
+theory of particulars, which identifies them with spatial (or
+spatiotemporal) regions.  On these theories, it is OBVIOUS why spatial
+properties are impure.  The theories IMPLY straightaway that spatial
+properties are essential to the notion of a particular.  But, it's not
+at all obvious that substratum theory or Aristotelian theory has any
+such implication.
+
+Think about substratum theory first.  On this theory, a concrete
+particular is whole constituted by (a) properties, and (b) a substratum.
+ And, it is the substratum that provides the "thisness" which
+distinguishes one particular from another. But, it seems pretty clear
+that a substratum is not a concrete thing, since all of the physical or
+material substance in a particular can be replaced, while it retains its
+identity.  But, if a substratum is abstract, then why is it impossible
+for two distinct substrata to occupy the same spatial region?  And, if
+it's abstract, why can't one substratum be simultaneously "located" in
+(or associated with) two spatial regions at once?  Maybe these things
+are ruled-out, but it's certainly not obvious what the connection
+between substrata and spatial properties is, and so it's not clear why
+the substratum theorist -- BY THEIR OWN LIGHTS -- should view the Black
+and Kant examples as reasons to reject the II.
+
+The Aristotelian theory faces a similar worry.  On that theory, it is
+the kind a particular instantiates that endows it with its
+individuality.  But, what does THAT have to do with the spatial
+properties of the particular?  Again, the connection -- IN THE THEORY --
+is unclear.  And, so the OFFICIAL doctrine doesn't seem to place any
+special emphasis on spatial properties.  Why, then, think there is
+anything "impure" about them, or that they are "essential" to a thing's
+being what it is (as opposed to some other thing)?
+
+This is my current thinking on "impurity" as it relates to the theories
+of particulars we studied in the course.  If you want to read a very
+nice book on "spatiotemporal" approaches to particulars, have a look at
+Ted Sider's "Four Dimensionalism".  That's a nice book to read after
+taking this course.
+
+Best of luck on the final, and beyond!
+
+-Branden
+
+P.S.  Remember, I have office hours next week: T (2-4) and W (4-6).
+Also, Vanessa and Josh will have review sessions on Wednesday (and their
+own office hours).  See the course homepage for details.  

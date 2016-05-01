@@ -1,0 +1,6 @@
+"A Generalised Sorites"
+
+
+Mark Colyvan (Sydney Centre for the Foundations of Science, The University of Sydney)
+
+Abstract: I present a topological version of the sorites paradox that holds both practical and theoretical interest. On the theoretical side, the topological sorites reveals shortcomings of some of the standard philosophical treatments of the garden-variety sorites, it forces us to rethink our definition of 'vagueness', and it suggests that the liar and sorites paradoxes are much closer related than one might think. On the practical side, the topological sorites is found in various applied scientific contexts, giving rise to a particularly nasty kind of uncertainty; its interest is not merely philosophical.
